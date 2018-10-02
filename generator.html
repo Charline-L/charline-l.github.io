@@ -13,9 +13,12 @@
 <script>
     alert("helloe")
 
+    var $boxes = document.getElementById("boxe")
+
     document.addEventListener("click", function(){
-        alert("click")
-        document.getElementById("boxe").setAttribute("material", 'color: red')
+        alert("click");
+        $boxes.setAttribute("material", 'color: red');
+        $boxes.setAttribute("position", '0 1 0');
     })
 </script>
 </body>
