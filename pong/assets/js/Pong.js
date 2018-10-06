@@ -5,7 +5,7 @@
 THREEx.ArToolkitContext.baseURL = './assets/markers/'
 let ww = window.innerWidth
 let wh = window.innerHeight
-const white = 0x000000
+const white = 0xfffff
 
 // tableau de fonction pour la boucle de rendu
 var onRenderFcts= []
@@ -90,7 +90,7 @@ onRenderFcts.push(function(){
     })
     // add a gizmo in the center of the marker
     var geometry = new THREE.BoxGeometry( 2, 1, 1 )
-    var material = new THREE.MeshNormalMaterial({color: white});
+    var material = new THREE.MeshBasicMaterial({color: white});
     var mesh = new THREE.Mesh( geometry, material );
     markerRoot1.add( mesh );
     //////////////////////////////////////////////////////////////////////////////
