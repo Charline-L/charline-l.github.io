@@ -8722,7 +8722,7 @@ AFRAME.registerSystem('arjs', {
                 renderer.render = function customRender(scene, camera, renderTarget, forceClear) {
                     renderer.autoClear = false;
                     // clear it all
-                    renderer.clear()
+                    renderer.clear()else if( _this.data.preset === 'custom' ){
                     // render tangoVideoMesh
                     if( arProfile.contextParameters.trackingBackend === 'tango' ){
                         // FIXME fails on three.js r84
