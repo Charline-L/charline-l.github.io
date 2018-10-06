@@ -5,7 +5,9 @@
 THREEx.ArToolkitContext.baseURL = './assets/markers/'
 let ww = window.innerWidth
 let wh = window.innerHeight
-const white = "0xffff00"
+const colors = {
+    raket: "0xffff00",
+}
 
 // tableau de fonction pour la boucle de rendu
 var onRenderFcts= []
@@ -15,8 +17,9 @@ var scene	= new THREE.Scene()
 /*
 * Render
 * */
+// TODO === regarder les fonctionnalités du render
 let renderer	= new THREE.WebGLRenderer({
-    antialias	: true,
+    antialias: true,
     alpha: true
 })
 renderer.setClearColor(new THREE.Color('lightgrey'), 0)
@@ -91,29 +94,27 @@ onRenderFcts.push(function(){
 
     // création du block raquette
     let geometryMarker1 = new THREE.BoxGeometry( 2, 1, 1 )
-    let materialMarker1 = new THREE.MeshBasicMaterial({color: white});
+    let materialMarker1 = new THREE.MeshBasicMaterial({color: colors.raket});
     let meshMarker1 = new THREE.Mesh( geometryMarker1, materialMarker1 );
     markerRoot1.add( meshMarker1 );
 
 
-    //////////////////////////////////////////////////////////////////////////////
-    //		markerRoot2
-    //////////////////////////////////////////////////////////////////////////////
-    // build markerControls
-    var markerRoot2 = new THREE.Group
+    /*
+    * Deuxièmes marker
+    * */
+    // prépare les controles
+    let markerRoot2 = new THREE.Group
     markerRoot2.name = 'marker2'
     scene.add(markerRoot2)
-    var markerRoot2Controls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
+    let markerRoot2Controls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
         type : 'pattern',
         patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.kanji',
     })
-    // add a gizmo in the center of the marker
-    var geometry	= new THREE.OctahedronGeometry( 0.1, 0 )
-    var material	= new THREE.MeshNormalMaterial({
-        wireframe: true
-    });
-    var mesh	= new THREE.Mesh( geometry, material );
-    markerRoot2.add( mesh );
+    // création du block raquette
+    let geometryMarker2	= new THREE.BoxGeometry( 2, 1, 1 )
+    let materialMarker2 = new THREE.MeshBasicMaterial({color: colors.raket})
+    let meshMarker2	= new THREE.Mesh( geometryMarker2, materialMarker2 )
+    markerRoot2.add( meshMarker2 )
 })()
 
 
