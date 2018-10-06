@@ -8310,8 +8310,7 @@ AFRAME.registerComponent('arjs-anchor', {
                 arProfile.defaultMarkerParameters.type = 'pattern'
                 arProfile.defaultMarkerParameters.patternUrl = _this.data.patternUrl;
                 arProfile.defaultMarkerParameters.markersAreaEnabled = false
-            }
-            else {
+            }else {
                 // console.assert( this.data.preset === '', 'illegal preset value '+this.data.preset)
             }
 
@@ -8722,7 +8721,7 @@ AFRAME.registerSystem('arjs', {
                 renderer.render = function customRender(scene, camera, renderTarget, forceClear) {
                     renderer.autoClear = false;
                     // clear it all
-                    renderer.clear()else if( _this.data.preset === 'custom' ){
+                    renderer.clear()
                     // render tangoVideoMesh
                     if( arProfile.contextParameters.trackingBackend === 'tango' ){
                         // FIXME fails on three.js r84
