@@ -1,40 +1,54 @@
-<!doctype HTML>
-<html>
-<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-<body style='margin : 0; overflow: hidden;'>
-<a-scene embedded arjs='sourceType: webcam;'>
-    <!-- handle marker with your own pattern -->
-    <!--<a-marker-camera type='pattern' patternUrl='multiMarker/pattern-marker.patt'>-->
-    <!--</a-marker-camera>-->
+<!--<!doctype HTML>-->
+<!--<html>-->
+<!--<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>-->
+<!--<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>-->
+<!--<body style='margin : 0; overflow: hidden;'>-->
+<!--<a-scene embedded arjs='sourceType: webcam;'>-->
+    <!--&lt;!&ndash; handle marker with your own pattern &ndash;&gt;-->
+    <!--&lt;!&ndash;<a-marker-camera type='pattern' patternUrl='multiMarker/pattern-marker.patt'>&ndash;&gt;-->
+    <!--&lt;!&ndash;</a-marker-camera>&ndash;&gt;-->
 
-    <a-marker type='pattern' preset='custom' patternUrl='multiMarker/pattern-marker.patt'>
+    <!--<a-marker type='pattern' preset='custom' patternUrl='multiMarker/pattern-marker.patt'>-->
+
+    <!--</a-marker>-->
+
+
+    <!--<a-box position='0 0.5 0' material='color: red;'></a-box>-->
+
+    <!--&lt;!&ndash;&lt;!&ndash; handle marker with hiro preset &ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<a-marker preset='hiro'>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a-box position='0 0.5 0' material='color: green;'></a-box>&ndash;&gt;-->
+    <!--&lt;!&ndash;</a-marker>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;&lt;!&ndash; handle barcode marker &ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<a-marker type='barcode' value='5'>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a-box position='0 0.5 0' material='color: blue;'></a-box>&ndash;&gt;-->
+    <!--&lt;!&ndash;</a-marker>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<a-marker-camera type='pattern' url='multiMarker/pattern-marker.patt'></a-marker-camera>&ndash;&gt;-->
+
+
+    <!--&lt;!&ndash; add a simple camera &ndash;&gt;-->
+    <!--<a-entity camera></a-entity>-->
+<!--</a-scene>-->
+
+<!--<script>-->
+    <!--alert("ok multimarker a-marker-camera")-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html>
+<script src=”https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+<script src=”https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"> </script>
+<body style=”margin : 0px; overflow: hidden;”>
+<a-scene embedded arjs>
+    <a-marker type=”pattern” preset=”custom” url=”multiMarker/pattern-marker.patt">
+
+        <a-box position='0 0.5 0' material='color: red;'></a-box>
 
     </a-marker>
-
-
-    <a-box position='0 0.5 0' material='color: red;'></a-box>
-
-    <!--&lt;!&ndash; handle marker with hiro preset &ndash;&gt;-->
-    <!--<a-marker preset='hiro'>-->
-        <!--<a-box position='0 0.5 0' material='color: green;'></a-box>-->
-    <!--</a-marker>-->
-
-    <!--&lt;!&ndash; handle barcode marker &ndash;&gt;-->
-    <!--<a-marker type='barcode' value='5'>-->
-        <!--<a-box position='0 0.5 0' material='color: blue;'></a-box>-->
-    <!--</a-marker>-->
-
-    <!--<a-marker-camera type='pattern' url='multiMarker/pattern-marker.patt'></a-marker-camera>-->
-
-
-    <!-- add a simple camera -->
     <a-entity camera></a-entity>
 </a-scene>
-
-<script>
-    alert("ok multimarker a-marker-camera")
-</script>
-</body>
 </body>
 </html>
