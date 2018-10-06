@@ -3,12 +3,19 @@
 <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
 <script src="multiMarker/ar.js"></script>
 <body style='margin : 0; overflow: hidden;'>
-<a-scene embedded arjs='sourceType: webcam;'>
+<!--<a-scene embedded arjs='sourceType: webcam;'>-->
 
-    <a-box color="#4CC3D9" position='0 0.5 0' material='opacity: 1;'></a-box>
-    <!--<a-marker-camera preset='hiro'></a-marker-camera>-->
-    <a-marker-camera preset='custom' type='pattern' url='https://charline-l.github.io/multiMarker/pattern-marker-2.patt'></a-marker-camera>
+<!--<a-box color="#4CC3D9" position='0 0.5 0' material='opacity: 1;'></a-box>-->
+<!--&lt;!&ndash;<a-marker-camera preset='hiro'></a-marker-camera>&ndash;&gt;-->
+<!--<a-marker-camera preset='custom' type='pattern' url='https://charline-l.github.io/multiMarker/pattern-marker-2.patt'></a-marker-camera>-->
 
+<!--</a-scene>-->
+
+<a-scene embedded arjs='sourceType: webcam;'> <!-- handle marker with your own pattern -->
+    <a-marker preset='custom' url='https://charline-l.github.io/multiMarker/pattern-marker-2.patt'>
+        <a-box color="#4CC3D9" position='0 0.5 0' material='opacity: 1;'></a-box>
+    </a-marker> <!-- add a simple camera -->
+    <a-entity camera></a-entity>
 </a-scene>
 
 
