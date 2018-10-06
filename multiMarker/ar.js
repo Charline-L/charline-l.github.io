@@ -8288,10 +8288,10 @@ AFRAME.registerComponent('arjs-anchor', {
                 markerParameters.patternUrl = THREEx.ArToolkitContext.baseURL+'examples/marker-training/examples/pattern-files/pattern-hiro.patt'
                 markerParameters.markersAreaEnabled = false
 
-                console.group("in hiro")
-                console.log('type', arProfile.defaultMarkerParameters.type)
-                console.log('patternUrl', arProfile.defaultMarkerParameters.patternUrl)
-                console.groupEnd()
+                // console.group("in hiro")
+                // console.log('type', arProfile.defaultMarkerParameters.type)
+                // console.log('patternUrl', arProfile.defaultMarkerParameters.patternUrl)
+                // console.groupEnd()
 
             }else if( _this.data.preset === 'kanji' ){
                 markerParameters.type = 'pattern'
@@ -8313,14 +8313,17 @@ AFRAME.registerComponent('arjs-anchor', {
                 markerParameters.patternUrl = _this.data.patternUrl;
                 markerParameters.markersAreaEnabled = false
             }else if( _this.data.preset === 'custom' ){
-                arProfile.defaultMarkerParameters.type = 'pattern'
-                arProfile.defaultMarkerParameters.patternUrl = _this.data.patternUrl;
-                arProfile.defaultMarkerParameters.markersAreaEnabled = false
+                markerParameters.type = 'pattern'
+                // arProfile.defaultMarkerParametersmarkerParameters.patternUrl = _this.data.patternUrl;
+                markerParameters.patternUrl = THREEx.ArToolkitContext.baseURL + _this.data.patternUrl
+                // markerParameters.patternUrl = THREEx.ArToolkitContext.baseURL+'examples/marker-training/examples/pattern-files/pattern-hiro.patt'
+                markerParameters.markersAreaEnabled = false
 
-                console.group("in custom")
-                console.log('type', arProfile.defaultMarkerParameters.type)
-                console.log('patternUrl', arProfile.defaultMarkerParameters.patternUrl)
-                console.groupEnd()
+
+                // console.group("in custom")
+                // console.log('type', arProfile.defaultMarkerParameters.type)
+                // console.log('patternUrl', arProfile.defaultMarkerParameters.patternUrl)
+                // console.groupEnd()
             }else {
                 // console.assert( this.data.preset === '', 'illegal preset value '+this.data.preset)
             }
