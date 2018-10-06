@@ -1,53 +1,51 @@
-alert("hello pong")
+/*
+* Variables
+* */
+// url qui va nous permettre d'aller chercher nos composants
 THREEx.ArToolkitContext.baseURL = './assets/markers/'
+let ww = window.innerWidth
+let wh = window.innerHeight
+// tableau de fonction pour la boucle de rendu
+var onRenderFcts= []
+var scene	= new THREE.Scene()
 
 
-//////////////////////////////////////////////////////////////////////////////////
-//		Init
-//////////////////////////////////////////////////////////////////////////////////
-// init renderer
-var renderer	= new THREE.WebGLRenderer({
+/*
+* Render
+* */
+let renderer	= new THREE.WebGLRenderer({
     antialias	: true,
     alpha: true
-});
+})
 renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-renderer.setSize( 640, 480 );
+renderer.setSize( ww, wh )
 renderer.domElement.style.position = 'absolute'
-renderer.domElement.style.top = '0px'
-renderer.domElement.style.left = '0px'
-document.body.appendChild( renderer.domElement );
-// array of functions for the rendering loop
-var onRenderFcts= [];
-// init scene and camera
-var scene	= new THREE.Scene();
-//////////////////////////////////////////////////////////////////////////////////
-//		Initialize a basic camera
-//////////////////////////////////////////////////////////////////////////////////
-// Create a camera
-var camera = new THREE.Camera();
-scene.add(camera);
-////////////////////////////////////////////////////////////////////////////////
-//          handle arToolkitSource
-////////////////////////////////////////////////////////////////////////////////
-var arToolkitSource = new THREEx.ArToolkitSource({
-    // to read from the webcam
-    sourceType : 'webcam',
+renderer.domElement.style.top = '0'
+renderer.domElement.style.left = '0'
+document.body.appendChild( renderer.domElement )
 
-    // to read from an image
-    // sourceType : 'image',
-    // sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/images/img.jpg',
-    // to read from a video
-    // sourceType : 'video',
-    // sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/videos/headtracking.mp4',
+/*
+* Camera
+* */
+let camera = new THREE.Camera()
+scene.add(camera)
+
+/*
+* Gérer ArToolkitSource
+* */
+let arToolkitSource = new THREEx.ArToolkitSource({
+    // lecture depuis la webcam
+    sourceType : 'webcam',
 })
 arToolkitSource.init(function onReady(){
     onResize()
 })
 
-// handle resize
-window.addEventListener('resize', function(){
-    onResize()
-})
+/*
+* Gérer Resize
+* */
+window.addEventListener('resize', onResize )
+
 function onResize(){
     arToolkitSource.onResize()
     arToolkitSource.copySizeTo(renderer.domElement)
@@ -55,20 +53,21 @@ function onResize(){
         arToolkitSource.copySizeTo(arToolkitContext.arController.canvas)
     }
 }
-////////////////////////////////////////////////////////////////////////////////
-//          initialize arToolkitContext
-////////////////////////////////////////////////////////////////////////////////
-// create atToolkitContext
-var arToolkitContext = new THREEx.ArToolkitContext({
+
+/*
+* Intialise l' ArToolkitContext
+* */
+// créer un context
+let arToolkitContext = new THREEx.ArToolkitContext({
     cameraParametersUrl: THREEx.ArToolkitContext.baseURL + 'camera_para.dat',
     detectionMode: 'mono',
 })
-// initialize it
+// lance init
 arToolkitContext.init(function onCompleted(){
-    // copy projection matrix to camera
+    // TODO : à checker === copy projection matrix to camera
     camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
 })
-// update artoolkit on every frame
+// update toolikt à chaque image
 onRenderFcts.push(function(){
     if( arToolkitSource.ready === false )	return
     arToolkitContext.update( arToolkitSource.domElement )
