@@ -5,6 +5,8 @@
 THREEx.ArToolkitContext.baseURL = './assets/markers/'
 let ww = window.innerWidth
 let wh = window.innerHeight
+const white = 0x000000
+
 // tableau de fonction pour la boucle de rendu
 var onRenderFcts= []
 var scene	= new THREE.Scene()
@@ -75,25 +77,21 @@ onRenderFcts.push(function(){
 
 ;(function(){
 
-    //////////////////////////////////////////////////////////////////////////////
-    //		markerRoot1
-    //////////////////////////////////////////////////////////////////////////////
+    /*
+    * Premier marker
+    * */
     // build markerControls
-    var markerRoot1 = new THREE.Group
+    let markerRoot1 = new THREE.Group
     markerRoot1.name = 'marker1'
     scene.add(markerRoot1)
-    var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
+    let markerRoot1Controls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
         type : 'pattern',
         patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.hiro',
-        // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro',
-        // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
     })
     // add a gizmo in the center of the marker
-    var geometry	= new THREE.OctahedronGeometry( 0.1, 0 )
-    var material	= new THREE.MeshNormalMaterial({
-        wireframe: true
-    });
-    var mesh	= new THREE.Mesh( geometry, material );
+    var geometry = new THREE.BoxGeometry( 2, 1, 1 )
+    var material = new THREE.MeshNormalMaterial({color: white});
+    var mesh = new THREE.Mesh( geometry, material );
     markerRoot1.add( mesh );
     //////////////////////////////////////////////////////////////////////////////
     //		markerRoot2
@@ -102,9 +100,8 @@ onRenderFcts.push(function(){
     var markerRoot2 = new THREE.Group
     markerRoot2.name = 'marker2'
     scene.add(markerRoot2)
-    var markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
+    var markerRoot2Controls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
         type : 'pattern',
-        // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro',
         patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.kanji',
     })
     // add a gizmo in the center of the marker
@@ -115,6 +112,10 @@ onRenderFcts.push(function(){
     var mesh	= new THREE.Mesh( geometry, material );
     markerRoot2.add( mesh );
 })()
+
+
+
+
 ;(function(){
     var markerRoot1 = scene.getObjectByName('marker1')
     var markerRoot2 = scene.getObjectByName('marker2')
