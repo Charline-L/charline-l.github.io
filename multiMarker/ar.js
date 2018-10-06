@@ -8287,6 +8287,12 @@ AFRAME.registerComponent('arjs-anchor', {
                 markerParameters.type = 'pattern'
                 markerParameters.patternUrl = THREEx.ArToolkitContext.baseURL+'examples/marker-training/examples/pattern-files/pattern-hiro.patt'
                 markerParameters.markersAreaEnabled = false
+
+                console.group("in hiro")
+                console.log('type', arProfile.defaultMarkerParameters.type)
+                console.log('patternUrl', arProfile.defaultMarkerParameters.patternUrl)
+                console.groupEnd()
+
             }else if( _this.data.preset === 'kanji' ){
                 markerParameters.type = 'pattern'
                 markerParameters.patternUrl = THREEx.ArToolkitContext.baseURL+'examples/marker-training/examples/pattern-files/pattern-kanji.patt'
@@ -8310,6 +8316,11 @@ AFRAME.registerComponent('arjs-anchor', {
                 arProfile.defaultMarkerParameters.type = 'pattern'
                 arProfile.defaultMarkerParameters.patternUrl = _this.data.patternUrl;
                 arProfile.defaultMarkerParameters.markersAreaEnabled = false
+
+                console.group("in custom")
+                console.log('type', arProfile.defaultMarkerParameters.type)
+                console.log('patternUrl', arProfile.defaultMarkerParameters.patternUrl)
+                console.groupEnd()
             }else {
                 // console.assert( this.data.preset === '', 'illegal preset value '+this.data.preset)
             }
