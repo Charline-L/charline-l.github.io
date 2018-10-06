@@ -5,7 +5,7 @@
 THREEx.ArToolkitContext.baseURL = './assets/markers/'
 let ww = window.innerWidth
 let wh = window.innerHeight
-const white = 0xfffff
+const white = "0xffff00"
 
 // tableau de fonction pour la boucle de rendu
 var onRenderFcts= []
@@ -80,7 +80,7 @@ onRenderFcts.push(function(){
     /*
     * Premier marker
     * */
-    // build markerControls
+    // prépare les controles
     let markerRoot1 = new THREE.Group
     markerRoot1.name = 'marker1'
     scene.add(markerRoot1)
@@ -88,11 +88,14 @@ onRenderFcts.push(function(){
         type : 'pattern',
         patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.hiro',
     })
-    // add a gizmo in the center of the marker
-    var geometry = new THREE.BoxGeometry( 2, 1, 1 )
-    var material = new THREE.MeshBasicMaterial({color: white});
-    var mesh = new THREE.Mesh( geometry, material );
-    markerRoot1.add( mesh );
+
+    // création du block raquette
+    let geometryMarker1 = new THREE.BoxGeometry( 2, 1, 1 )
+    let materialMarker1 = new THREE.MeshBasicMaterial({color: white});
+    let meshMarker1 = new THREE.Mesh( geometryMarker1, materialMarker1 );
+    markerRoot1.add( meshMarker1 );
+
+
     //////////////////////////////////////////////////////////////////////////////
     //		markerRoot2
     //////////////////////////////////////////////////////////////////////////////
