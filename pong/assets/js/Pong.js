@@ -1,5 +1,5 @@
 alert("hello pong")
-THREEx.ArToolkitContext.baseURL = './pong/assets/markers/'
+THREEx.ArToolkitContext.baseURL = './assets/markers/'
 
 
 //////////////////////////////////////////////////////////////////////////////////
