@@ -8,9 +8,14 @@
 <body style='margin : 0px; overflow: hidden;'>
 <a-scene embedded arjs='sourceType: webcam;'>
     <!-- handle marker with your own pattern -->
-    <a-marker-camera type='pattern' url='multiMarker/pattern-marker.patt'>
+    <!--<a-marker-camera type='pattern' patternUrl='multiMarker/pattern-marker.patt'>-->
+    <!--</a-marker-camera>-->
+
+    <a-marker type='pattern' patternUrl='multiMarker/pattern-marker.patt'>
         <a-box position='0 0.5 0' material='color: red;'></a-box>
-    </a-marker-camera>
+    </a-marker>
+
+
 
     <!--&lt;!&ndash; handle marker with hiro preset &ndash;&gt;-->
     <!--<a-marker preset='hiro'>-->
@@ -27,7 +32,7 @@
 </a-scene>
 
 <script>
-    alert("ok multimarker")
+    alert("ok multimarker a-marker")
 </script>
 </body>
 </body>
