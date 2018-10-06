@@ -11,9 +11,9 @@
     <!--<a-marker-camera type='pattern' patternUrl='multiMarker/pattern-marker.patt'>-->
     <!--</a-marker-camera>-->
 
-    <a-marker type='pattern' patternUrl='multiMarker/pattern-marker.patt'>
-        <a-box position='0 0.5 0' material='color: red;'></a-box>
-    </a-marker>
+    <!--<a-marker type='pattern' patternUrl='multiMarker/pattern-marker.patt'>-->
+
+    <!--</a-marker>-->
 
 
 
@@ -27,12 +27,15 @@
         <!--<a-box position='0 0.5 0' material='color: blue;'></a-box>-->
     <!--</a-marker>-->
 
+    <a-marker-camera type='pattern' url='multiMarker/pattern-marker.patt'></a-marker-camera>
+
+    <a-box position='0 0.5 0' material='color: red;'></a-box>
     <!-- add a simple camera -->
     <a-entity camera></a-entity>
 </a-scene>
 
 <script>
-    alert("ok multimarker a-marker")
+    alert("ok multimarker a-marker-camera")
 </script>
 </body>
 </body>
