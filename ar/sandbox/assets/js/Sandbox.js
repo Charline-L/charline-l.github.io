@@ -73,7 +73,6 @@ class Sandboxe {
 
         // ajoute au dom
         document.body.insertBefore(t.renderer.domElement, t.$header);
-        // document.body.appendChild(t.renderer.domElement)
     }
 
     createCamera() {
@@ -184,7 +183,7 @@ class Sandboxe {
 
                 // chacun des block on ajoute un écouteur d'évènements
                 t.domEvents.addEventListener( mesh, 'click', function() {
-                    alert("click " + mesh.name)
+                    console.log("click ")
                 })
             }
         }
