@@ -78,7 +78,12 @@ onRenderFcts.push(function(){
     arToolkitContext.update( arToolkitSource.domElement )
 })
 
+
+/*
+   * Création des markers
+   * */
 ;(function(){
+
 
     /*
     * Premier marker
@@ -100,7 +105,7 @@ onRenderFcts.push(function(){
 
 
     /*
-    * Deuxièmes marker
+    * Deuxième marker
     * */
     // prépare les controles
     let markerRoot2 = new THREE.Group
@@ -119,14 +124,19 @@ onRenderFcts.push(function(){
 
 
 
-
+/*
+* Création de la ligne qui mesure
+* */
 ;(function(){
-    var markerRoot1 = scene.getObjectByName('marker1')
-    var markerRoot2 = scene.getObjectByName('marker2')
+    let markerRoot1 = scene.getObjectByName('marker1')
+    let markerRoot2 = scene.getObjectByName('marker2')
 
-    var container = new THREE.Group
+    /*
+    * Détection des markers
+    * */
+    let container = new THREE.Group
     scene.add(container)
-    // update container.visible and scanningSpinner visibility
+    // attend que les deux markers soient détectés et on retire la div scanning
     onRenderFcts.push(function(){
         if( markerRoot1.visible === true && markerRoot2.visible === true ){
             container.visible = true
@@ -137,31 +147,31 @@ onRenderFcts.push(function(){
         }
     })
 
-    //////////////////////////////////////////////////////////////////////////////
-    //		build lineMesh
-    //////////////////////////////////////////////////////////////////////////////
-    var material = new THREE.LineDashedMaterial( {
-        dashSize: 1,
-        gapSize: 1,
-    } );
-    var geometry = new THREE.Geometry();
-    geometry.vertices.push(new THREE.Vector3(1, 0, -3));
-    geometry.vertices.push(new THREE.Vector3(-1, 0, -3));
-    var lineMesh = new THREE.Line(geometry, material);
-    container.add(lineMesh)
-    // update lineMesh
-    onRenderFcts.push(function(){
-        var geometry = lineMesh.geometry
-        geometry.vertices[0].copy(markerRoot1.position)
-        geometry.vertices[1].copy(markerRoot2.position)
-        geometry.verticesNeedUpdate = true
-        geometry.computeBoundingSphere();
-        geometry.computeLineDistances();
-
-        var length = markerRoot1.position.distanceTo(markerRoot2.position)
-        lineMesh.material.scale = length * 10
-        lineMesh.material.needsUpdate = true
-    })
+    // /*
+    // * Création de la ligne
+    // * */
+    // let materialLine = new THREE.LineDashedMaterial( {
+    //     dashSize: 1,
+    //     gapSize: 1,
+    // } );
+    // let geometryLine = new THREE.Geometry();
+    // geometryLine.vertices.push(new THREE.Vector3(1, 0, -3));
+    // geometryLine.vertices.push(new THREE.Vector3(-1, 0, -3));
+    // let lineMesh = new THREE.Line(geometryLine, materialLine);
+    // container.add(lineMesh)
+    // // update lineMesh
+    // onRenderFcts.push(function(){
+    //     var geometry = lineMesh.geometry
+    //     geometry.vertices[0].copy(markerRoot1.position)
+    //     geometry.vertices[1].copy(markerRoot2.position)
+    //     geometry.verticesNeedUpdate = true
+    //     geometry.computeBoundingSphere();
+    //     geometry.computeLineDistances();
+    //
+    //     var length = markerRoot1.position.distanceTo(markerRoot2.position)
+    //     lineMesh.material.scale = length * 10
+    //     lineMesh.material.needsUpdate = true
+    // })
     //////////////////////////////////////////////////////////////////////////////
     //		display the distance between the 2 markers
     //////////////////////////////////////////////////////////////////////////////
