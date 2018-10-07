@@ -309,7 +309,7 @@ THREEx.DomEvents.prototype._onMove	= function(eventName, mouseX, mouseY, origDom
 THREEx.DomEvents.prototype._onEvent	= function(eventName, mouseX, mouseY, origDomEvent)
 {
 
-    console.log("EVENT NAME", eventName)
+    // console.log("EVENT NAME", eventName)
     //console.log('eventName', eventName, 'boundObjs', this._boundObjs[eventName])
     // get objects bound to this event
     var boundObjs	= this._boundObjs[eventName];
@@ -389,7 +389,7 @@ THREEx.DomEvents.prototype._onMouseUp	= function(event){ return this._onMouseEve
 
 THREEx.DomEvents.prototype._onMouseEvent	= function(eventName, domEvent, isTouch)
 {
-    console.log("CLIIICK touch", isTouch)
+    // console.log("CLIIICK touch", isTouch)
 
     if (isTouch) {
         var mouseX	= domEvent.touches[0].pageX;
@@ -439,8 +439,6 @@ THREEx.DomEvents.prototype._onTouchEnd	= function(event){ return this._onTouchEv
 THREEx.DomEvents.prototype._onTouchStart		= function(domEvent)
 {
     // domEvent.preventDefault();
-    console.log('touche start dom :', domEvent )
-    // TODO handle touch ?
     this._onMouseEvent('click'	, domEvent, true);
 }
 THREEx.DomEvents.prototype._onTouchMove	= function(domEvent)

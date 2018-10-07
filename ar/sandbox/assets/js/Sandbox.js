@@ -16,7 +16,8 @@ class Sandboxe {
 
         // toutes les couleurs
         t.colors = {
-            white: 0xffffff
+            white: 0xffffff,
+            red: 0x00ffff
         }
 
         // loop des functions
@@ -166,7 +167,7 @@ class Sandboxe {
             for (let j = 0; j < t.gridSize ; j++) {
 
                 let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
-                let material = new THREE.MeshBasicMaterial({color: t.colors.white})
+                let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
                 let mesh = new THREE.Mesh(geometry, material)
 
                 mesh.position.x = ( i * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
@@ -179,7 +180,8 @@ class Sandboxe {
 
                 // chacun des block on ajoute un écouteur d'évènements
                 t.domEvents.addEventListener( mesh, 'click', function() {
-                    alert("click "+ mesh.name)
+                    t.updateMesh(mesh.name)
+                    // alert("click "+ mesh.name)
                 })
             }
         }
@@ -227,6 +229,17 @@ class Sandboxe {
                 onRenderFct(deltaMsec / 1000, nowMsec / 1000)
             })
         })
+    }
+
+    updateMesh(name) {
+        const t = this
+
+        console.log("updateMesh", updateMesh)
+
+        let mesh = t.scene.getObjectByName('name')
+        let material = new THREE.MeshBasicMaterial({color: t.colors.red})
+
+        mesh.material = material
     }
 
 }
