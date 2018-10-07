@@ -199,7 +199,7 @@ class Pong {
         const t = this
 
         t.player1 = t.scene.getObjectByName('player1')
-        t.player1 = t.scene.getObjectByName('player2')
+        t.player2 = t.scene.getObjectByName('player2')
         t.angleA = t.scene.getObjectByName('angleA')
 
         /*
