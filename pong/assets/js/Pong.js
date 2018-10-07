@@ -12,6 +12,7 @@ class Pong {
         // toutes les couleurs du jeux
         t.colors = {
             raket: 0xff0000,
+            plane: 0xffffff
         }
 
         // fonctions à lancer pour animation
@@ -237,10 +238,15 @@ class Pong {
 
         t.gameIsStarted = true
 
-
         let length = t.markerRoot1.position.distanceTo( t.markerRoot2.position )
+        let settings = {
+            scene: t.scene,
+            length: length,
+            colors: t.colors
+        }
+        t.board = new Board(settings)
 
-        alert("new game " + length )
+        // TODO === voir comment remettre quand devra sélectionner la taille terrain
         // /*
         // * Afficher la distance entre les deux markers
         // * */
@@ -274,8 +280,6 @@ class Pong {
         //     context.fillText(text, canvas.width/4, 3*canvas.height/4 )
         //     sprite.material.map.needsUpdate = true
         // })
-
-        // t.board = new Board()
     }
 }
 
