@@ -23,7 +23,7 @@ class Pong {
         t.scene = new THREE.Scene()
 
         // animationFrame
-        t.lastTimeMsec= null
+        t.lastTimeMsec = null
 
         // flag
         t.gameIsStarted = false
@@ -106,9 +106,9 @@ class Pong {
 
         // gestion arToolKit
         t.arToolkitSource.onResize()
-        t.arToolkitSource.copyElementSizeTo( t.renderer.domElement)
-        if ( t.arToolkitContext.arController !== null) {
-            t.arToolkitSource.copyElementSizeTo( t.arToolkitContext.arController.canvas)
+        t.arToolkitSource.copyElementSizeTo(t.renderer.domElement)
+        if (t.arToolkitContext.arController !== null) {
+            t.arToolkitSource.copyElementSizeTo(t.arToolkitContext.arController.canvas)
         }
     }
 
@@ -145,16 +145,16 @@ class Pong {
         let markerPlayer1 = new THREE.Group
         markerPlayer1.name = 'player1'
         t.scene.add(markerPlayer1)
-        let player1Controls = new THREEx.ArMarkerControls( t.arToolkitContext, markerPlayer1, {
-            type : 'pattern',
-            patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.hiro',
+        let player1Controls = new THREEx.ArMarkerControls(t.arToolkitContext, markerPlayer1, {
+            type: 'pattern',
+            patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.hiro',
         })
 
         // création du block raquette
-        let geometryPlayer1 = new THREE.BoxGeometry( 2, 1, 1 )
+        let geometryPlayer1 = new THREE.BoxGeometry(2, 1, 1)
         let materialPlayer1 = new THREE.MeshBasicMaterial({color: t.colors.raket})
-        let meshPlayer1 = new THREE.Mesh( geometryPlayer1, materialPlayer1 )
-        markerPlayer1.add( meshPlayer1 )
+        let meshPlayer1 = new THREE.Mesh(geometryPlayer1, materialPlayer1)
+        markerPlayer1.add(meshPlayer1)
 
 
         /*
@@ -164,16 +164,16 @@ class Pong {
         let markerPlayer2 = new THREE.Group
         markerPlayer2.name = 'player2'
         t.scene.add(markerPlayer2)
-        let player2Controls = new THREEx.ArMarkerControls( t.arToolkitContext, markerPlayer2, {
-            type : 'pattern',
-            patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.kanji',
+        let player2Controls = new THREEx.ArMarkerControls(t.arToolkitContext, markerPlayer2, {
+            type: 'pattern',
+            patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.kanji',
         })
 
         // création du block raquette
-        let geometryPlayer2	= new THREE.BoxGeometry( 2, 1, 1 )
+        let geometryPlayer2 = new THREE.BoxGeometry(2, 1, 1)
         let materialPlayer2 = new THREE.MeshBasicMaterial({color: t.colors.raket})
-        let meshPlayer2	= new THREE.Mesh( geometryPlayer2, materialPlayer2 )
-        markerPlayer2.add( meshPlayer2 )
+        let meshPlayer2 = new THREE.Mesh(geometryPlayer2, materialPlayer2)
+        markerPlayer2.add(meshPlayer2)
 
         /*
        * Angle Marker A
@@ -182,16 +182,71 @@ class Pong {
         let markerAngleA = new THREE.Group
         markerAngleA.name = 'angleA'
         t.scene.add(markerAngleA)
-        let markerAControls = new THREEx.ArMarkerControls( t.arToolkitContext, markerAngleA, {
-            type : 'pattern',
-            patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.letterA',
+        let markerAControls = new THREEx.ArMarkerControls(t.arToolkitContext, markerAngleA, {
+            type: 'pattern',
+            patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.letterA',
         })
 
         // création du block raquette
-        let geometryAngleA = new THREE.BoxGeometry( 1, 1, 1 )
-        let materialAngleA = new THREE.MeshBasicMaterial({color: t.colors.angle});
-        let meshAngleA = new THREE.Mesh( geometryAngleA, materialAngleA );
-        markerAngleA.add( meshAngleA );
+        let geometryAngleA = new THREE.BoxGeometry(1, 1, 1)
+        let materialAngleA = new THREE.MeshBasicMaterial({color: t.colors.angle})
+        let meshAngleA = new THREE.Mesh(geometryAngleA, materialAngleA)
+        markerAngleA.add(meshAngleA)
+
+        /*
+        * Angle Marker B
+        * */
+        // prépare les controles
+        let markerAngleB = new THREE.Group
+        markerAngleB.name = 'angleB'
+        t.scene.add(markerAngleB)
+        let markerBControls = new THREEx.ArMarkerControls(t.arToolkitContext, markerAngleB, {
+            type: 'pattern',
+            patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.letterB',
+        })
+
+        // création du block raquette
+        let geometryAngleB = new THREE.BoxGeometry(1, 1, 1)
+        let materialAngleB = new THREE.MeshBasicMaterial({color: t.colors.angle})
+        let meshAngleB = new THREE.Mesh(geometryAngleB, materialAngleB)
+        markerAngleB.add(meshAngleB)
+
+
+        /*
+        * Angle Marker C
+        * */
+        // prépare les controles
+        let markerAngleC = new THREE.Group
+        markerAngleC.name = 'angleC'
+        t.scene.add(markerAngleC)
+        let markerBControls = new THREEx.ArMarkerControls(t.arToolkitContext, markerAngleC, {
+            type: 'pattern',
+            patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.letterC',
+        })
+
+        // création du block raquette
+        let geometryAngleC = new THREE.BoxGeometry(1, 1, 1)
+        let materialAngleC = new THREE.MeshBasicMaterial({color: t.colors.angle})
+        let meshAngleC = new THREE.Mesh(geometryAngleC, materialAngleC)
+        markerAngleC.add(meshAngleC)
+
+        /*
+        * Angle Marker D
+        * */
+        // prépare les controles
+        let markerAngleD = new THREE.Group
+        markerAngleD.name = 'angleD'
+        t.scene.add(markerAngleD)
+        let markerBControls = new THREEx.ArMarkerControls(t.arToolkitContext, markerAngleD, {
+            type: 'pattern',
+            patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.letterD',
+        })
+
+        // création du block raquette
+        let geometryAngleD = new THREE.BoxGeometry(1, 1, 1)
+        let materialAngleD = new THREE.MeshBasicMaterial({color: t.colors.angle})
+        let meshAngleD = new THREE.Mesh(geometryAngleD, materialAngleD)
+        markerAngleD.add(meshAngleD)
 
     }
 
@@ -201,6 +256,9 @@ class Pong {
         t.player1 = t.scene.getObjectByName('player1')
         t.player2 = t.scene.getObjectByName('player2')
         t.angleA = t.scene.getObjectByName('angleA')
+        t.angleB = t.scene.getObjectByName('angleB')
+        t.angleC = t.scene.getObjectByName('angleC')
+        t.angleD = t.scene.getObjectByName('angleD')
 
         /*
         * Détection des markers
@@ -209,16 +267,19 @@ class Pong {
         t.scene.add(container)
 
         // attend que les 6 markers soient détectés et on retire la div scanning
-        t.onRenderFcts.push(function(){
+        t.onRenderFcts.push(function () {
 
             // une fois que la partie est commencée on block l'exécution de la fonction
-            if ( t.gameIsStarted ) return null;
+            if (t.gameIsStarted) return null;
 
             let player1Visible = t.player1.visible === true
             let player2Visible = t.player2.visible === true
-            let angleAvisible = t.angleA.visible === true
+            let angleAVisible = t.angleA.visible === true
+            let angleBVisible = t.angleB.visible === true
+            let angleCVisible = t.angleC.visible === true
+            let angleDVisible = t.angleD.visible === true
 
-            if( player1Visible && player2Visible && angleAvisible ){
+            if (player1Visible && player2Visible && angleAVisible && angleBVisible && angleCVisible && angleDVisible) {
                 document.querySelector('.scanningSpinner').style.display = 'none'
                 t.startGame()
             }
@@ -229,26 +290,26 @@ class Pong {
         const t = this
 
         // ajoute renderer au tableau d'update
-        t.onRenderFcts.push(function(){
-            t.renderer.render( t.scene, t.camera );
+        t.onRenderFcts.push(function () {
+            t.renderer.render(t.scene, t.camera);
         })
     }
 
     animationFrame() {
         const t = this
 
-        requestAnimationFrame(function animate(nowMsec){
+        requestAnimationFrame(function animate(nowMsec) {
             // lance la boucle
-            requestAnimationFrame( animate );
+            requestAnimationFrame(animate);
 
             // measure time
-            t.lastTimeMsec	= t.lastTimeMsec || nowMsec-1000/60
-            let deltaMsec	= Math.min(200, nowMsec - t.lastTimeMsec)
-            t.lastTimeMsec	= nowMsec
+            t.lastTimeMsec = t.lastTimeMsec || nowMsec - 1000 / 60
+            let deltaMsec = Math.min(200, nowMsec - t.lastTimeMsec)
+            t.lastTimeMsec = nowMsec
 
             // appelle les function d'update que l'on vait stocké dans un tableau
-            t.onRenderFcts.forEach(function(onRenderFct){
-                onRenderFct(deltaMsec/1000, nowMsec/1000)
+            t.onRenderFcts.forEach(function (onRenderFct) {
+                onRenderFct(deltaMsec / 1000, nowMsec / 1000)
             })
         })
     }
@@ -257,6 +318,8 @@ class Pong {
         const t = this
 
         t.gameIsStarted = true
+
+        t.createPlane()
 
         // let length = t.markerRoot1.position.distanceTo( t.markerRoot2.position )
         // let settings = {
@@ -299,6 +362,45 @@ class Pong {
         //     context.fillText(text, canvas.width/4, 3*canvas.height/4 )
         //     sprite.material.map.needsUpdate = true
         // })
+    }
+
+    createPlane() {
+        const t = this
+
+        alert("create plane")
+
+        // récupère nos marqueurs
+        let angleA = t.scene.getObjectByName('angleA')
+        let angleB = t.scene.getObjectByName('angleB')
+        let angleC = t.scene.getObjectByName('angleC')
+        let angleD = t.scene.getObjectByName('angleD')
+
+        // ajoute un groupe pour contenir le terrain
+        let container = new THREE.Group
+        t.scene.add(container)
+
+        let planeMaterial = new THREE.MeshBasicMaterial( {
+        })
+
+        let planeGeometry = new THREE.Geometry()
+
+        planeGeometry.vertices.push(new THREE.Vector3(1, 0, -3))
+        planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
+        planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
+        planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
+
+        planeGeometry.vertices[0].copy(angleA.position)
+        planeGeometry.vertices[1].copy(angleB.position)
+        planeGeometry.vertices[1].copy(angleC.position)
+        planeGeometry.vertices[1].copy(angleD.position)
+
+        // BESOIN ?
+        planeGeometry.verticesNeedUpdate = true
+        planeGeometry.computeBoundingSphere()
+        planeGeometry.computeLineDistances()
+
+        let plane = new THREE.Line(planeGeometry, planeMaterial)
+        container.add(plane)
     }
 }
 
@@ -350,7 +452,6 @@ class Pong {
 //         container.add(lineMesh)
 //     }
 // }
-
 
 
 // /*
