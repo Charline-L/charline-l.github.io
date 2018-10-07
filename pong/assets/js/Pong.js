@@ -24,7 +24,7 @@ class Pong {
         t.lastTimeMsec= null
 
 
-        alert("fix toolkit")
+        alert("fix toolkit initmarker")
         t.init()
     }
 
@@ -142,7 +142,7 @@ class Pong {
         let markerRoot1 = new THREE.Group
         markerRoot1.name = 'marker1'
         t.scene.add(markerRoot1)
-        let markerRoot1Controls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
+        let markerRoot1Controls = new THREEx.ArMarkerControls( t.arToolkitContext, markerRoot1, {
             type : 'pattern',
             patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.hiro',
         })
@@ -161,7 +161,7 @@ class Pong {
         let markerRoot2 = new THREE.Group
         markerRoot2.name = 'marker2'
         t.scene.add(markerRoot2)
-        let markerRoot2Controls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
+        let markerRoot2Controls = new THREEx.ArMarkerControls( t.arToolkitContext, markerRoot2, {
             type : 'pattern',
             patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.kanji',
         })
