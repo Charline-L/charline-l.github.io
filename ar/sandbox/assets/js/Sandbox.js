@@ -140,11 +140,10 @@ class Sandboxe {
         const t = this
 
         // création d'un groupe d'éléments
-        let grid = new THREE.Group
+        let grid = new THREE.Group()
 
         // donne un nom au groupe pour le récupérer dans la scene
         grid.name = 'grid'
-
 
         // récupère le marker que l'on doit chercher
         let controls = new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
@@ -160,8 +159,8 @@ class Sandboxe {
                 let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
                 let mesh = new THREE.Mesh(geometry, material)
 
-                mesh.position.x = i + 1
-                mesh.position.z = j + 1
+                mesh.position.x = i + 1 - (t.gridSize / 2)
+                mesh.position.z = j + 1 - (t.gridSize / 2)
 
                 // ajoute à notre groupe
                 grid.add(mesh)
@@ -169,10 +168,10 @@ class Sandboxe {
         }
 
 
-        alert("changement position")
-        // je recentre mon groupe
-        grid.position.x = - t.gridSize / 2
-        grid.position.z = - t.gridSize / 2
+        // alert("changement position")
+        // // je recentre mon groupe
+        // grid.position.x =
+        // grid.position.z = - t.gridSize / 2
 
         // ajoute à la scene
         t.scene.add(grid)
