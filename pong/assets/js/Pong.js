@@ -175,32 +175,33 @@ onRenderFcts.push(function(){
     /*
     * Afficher la distance entre les deux markers
     * */
-    // build texture
+    // Création d'un canvas pour l'afficher
     let canvas = document.createElement( 'canvas' );
     canvas.width = 128;
     canvas.height = 64;
     let context = canvas.getContext( '2d' );
     let texture = new THREE.CanvasTexture( canvas );
-    // build sprite
+    // Sprite : container pour le texte de la distance
+    let multiplyScalar = 0.5
     let materialSprite = new THREE.SpriteMaterial({
         map: texture,
         color: 0xffffff,
     });
     let sprite = new THREE.Sprite( materialSprite );
-    sprite.scale.multiplyScalar(1.5)
+    sprite.scale.multiplyScalar(multiplyScalar)
     container.add(sprite)
-    // upload measure
+    // mise à jour de la mesure à chaque fois que le request animation frame
     onRenderFcts.push(function(){
-        // update sprite position
-        sprite.position.addVectors(markerRoot1.position, markerRoot2.position).multiplyScalar(1/2)
-        // get the text to display
-        var length = markerRoot1.position.distanceTo(markerRoot2.position)
-        var text = length.toFixed(2)
+        // change la position
+        sprite.position.addVectors(markerRoot1.position, markerRoot2.position).multiplyScalar(multiplyScalar)
+        // affihce le texte
+        let length = markerRoot1.position.distanceTo(markerRoot2.position)
+        let text = length.toFixed(2)
 
-        // put the text in the sprite
-        context.font = '40px monospace';
+        // mets le texte dans le sprite
+        context.font = '70px monospace';
         context.clearRect( 0, 0, canvas.width, canvas.height );
-        context.fillStyle = '#fff';
+        context.fillStyle = '#FF0000';
         context.fillText(text, canvas.width/4, 3*canvas.height/4 )
         sprite.material.map.needsUpdate = true
     })
