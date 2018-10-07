@@ -106,7 +106,7 @@ class Pong {
         t.wh = window.innerHeight
 
         // gestion arToolKit
-        t.arToolkitSource.onResize()
+        t.arToolkitSource.onResizeElement()
         t.arToolkitSource.copyElementSizeTo(t.renderer.domElement)
         if (t.arToolkitContext.arController !== null) {
             t.arToolkitSource.copyElementSizeTo(t.arToolkitContext.arController.canvas)
@@ -264,8 +264,12 @@ class Pong {
         let container = new THREE.Group
         t.scene.add(container)
 
-        let planeMaterial = new THREE.MeshBasicMaterial( {color: t.colors.plane })
-        let planeGeometry = new THREE.Geometry()
+        let planeMaterial =  new THREE.LineBasicMaterial( {
+            color: t.colors.plane,
+            linewidth: 1,
+        })
+
+        let planeGeometry = new THREE.Line()
 
         planeGeometry.vertices.push(new THREE.Vector3(1, 0, -3))
         planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
