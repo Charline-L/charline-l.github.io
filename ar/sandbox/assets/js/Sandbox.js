@@ -4,7 +4,6 @@ class Sandboxe {
 
         // DOM
         t.$container = document.querySelector(".sandboxe-game__canvas")
-        t.$shapes = document.querySelector(".sandboxe-game__shapes")
         t.$colors = document.querySelector(".sandboxe-game__colors")
 
         // variable urls
@@ -24,6 +23,12 @@ class Sandboxe {
 
         // scene
         t.scene = new THREE.Scene()
+
+        // flag
+        t.elementSelected = false
+
+        // grille
+        t.gridSize = 3
 
         t.init()
     }
@@ -149,31 +154,36 @@ class Sandboxe {
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.hiro',
         })
 
-        // création de la forme qui lui ait liée
-        let geometry = new THREE.BoxGeometry(1, 1, 1)
-        let material = new THREE.MeshBasicMaterial({color: t.colors.white})
-        let mesh = new THREE.Mesh(geometry, material)
+        // création de la grille lui sera liée
+        for (let i = 0; i < t.gridSize ; i++) {
+            for (let j = 0; j < t.gridSize ; j++) {
 
-        // ajoute à notre groupe
-        marker.add(mesh)
+                let geometry = new THREE.BoxGeometry(1, 1, 1)
+                let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
+                let mesh = new THREE.Mesh(geometry, material)
+
+                mesh.position.x = i + 1
+                mesh.position.y = j + 1
+
+                // ajoute à notre groupe
+                marker.add(mesh)
+            }
+        }
+
     }
 
     initDetectMarker() {
         const t = this
 
         let marker = t.scene.getObjectByName('marker')
-        // let container = new THREE.Group
-        // t.scene.add(container)
 
         t.onRenderFcts.push(function () {
 
-            if ( marker.visible === true) {
+            if ( t.elementSelected && marker.visible ) {
                 t.$colors.classList.remove("hidden")
-                t.$shapes.classList.remove("hidden")
             }
             else {
                 t.$colors.classList.add("hidden")
-                t.$shapes.classList.add("hidden")
             }
         })
     }
