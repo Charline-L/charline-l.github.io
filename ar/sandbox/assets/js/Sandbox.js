@@ -31,8 +31,6 @@ class Sandboxe {
         t.gridSize = 3
         t.sizeCube = 1
 
-        // permet d'intéragir avec le DOM
-        t.domEvents	= new THREEx.DomEvents(t.camera, t.renderer.domElement)
 
         t.init()
     }
@@ -100,6 +98,9 @@ class Sandboxe {
         const t = this
 
         document.addEventListener("resize", t.resize.bind(t))
+
+        // permet d'intéragir avec le DOM
+        t.domEvents	= new THREEx.DomEvents(t.camera, t.renderer.domElement)
     }
 
     resize() {
