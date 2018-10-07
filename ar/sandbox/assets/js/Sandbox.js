@@ -29,6 +29,8 @@ class Sandboxe {
 
         // grille
         t.gridSize = 3
+        t.sizeCube = 1
+        t.gap = 0
 
         t.init()
     }
@@ -145,35 +147,32 @@ class Sandboxe {
         // donne un nom au groupe pour le récupérer dans la scene
         grid.name = 'grid'
 
+        // ajoute à la scene
+        t.scene.add(grid)
+
         // récupère le marker que l'on doit chercher
         let controls = new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.hiro',
         })
 
+        let sizeGroupe = t.sizeCube * t.gridSize + (t.gap *  (t.gridSize - 1 ) )
+
         // création de la grille lui sera liée
         for (let i = 0; i < t.gridSize ; i++) {
             for (let j = 0; j < t.gridSize ; j++) {
 
-                let geometry = new THREE.BoxGeometry(1, 1, 1)
+                let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
                 let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
                 let mesh = new THREE.Mesh(geometry, material)
 
-                mesh.position.x = i + 1
-                mesh.position.z = j + 1
+                mesh.position.x = ( i + t.gap ) + t.sizeCube - ( sizeGroupe / 2 )
+                mesh.position.z = ( j + t.gap ) + t.sizeCube - ( sizeGroupe / 2 )
 
                 // ajoute à notre groupe
                 grid.add(mesh)
             }
         }
-
-
-        // alert("changement position")
-        // je recentre mon groupe
-        grid.set(- t.gridSize, 1, - t.gridSize)
-
-        // ajoute à la scene
-        t.scene.add(grid)
     }
 
     initDetectMarker() {
