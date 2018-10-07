@@ -68,9 +68,10 @@ class Sandboxe {
         t.renderer.domElement.style.position = 'absolute'
         t.renderer.domElement.style.top = '0'
         t.renderer.domElement.style.left = '0'
+        t.renderer.domElement.classList.add("sandboxe-game__canvas")
 
         // ajoute au dom
-        t.$container.appendChild(t.renderer.domElement)
+        document.appendChild(t.renderer.domElement)
     }
 
     createCamera() {
