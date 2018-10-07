@@ -172,22 +172,22 @@ onRenderFcts.push(function(){
     //     lineMesh.material.scale = length * 10
     //     lineMesh.material.needsUpdate = true
     // })
-    //////////////////////////////////////////////////////////////////////////////
-    //		display the distance between the 2 markers
-    //////////////////////////////////////////////////////////////////////////////
+    /*
+    * Afficher la distance entre les deux markers
+    * */
     // build texture
-    var canvas = document.createElement( 'canvas' );
+    let canvas = document.createElement( 'canvas' );
     canvas.width = 128;
     canvas.height = 64;
-    var context = canvas.getContext( '2d' );
-    var texture = new THREE.CanvasTexture( canvas );
+    let context = canvas.getContext( '2d' );
+    let texture = new THREE.CanvasTexture( canvas );
     // build sprite
-    var material = new THREE.SpriteMaterial({
+    let materialSprite = new THREE.SpriteMaterial({
         map: texture,
         color: 0xffffff,
     });
-    var sprite = new THREE.Sprite( material );
-    sprite.scale.multiplyScalar(0.5)
+    let sprite = new THREE.Sprite( materialSprite );
+    sprite.scale.multiplyScalar(1.5)
     container.add(sprite)
     // upload measure
     onRenderFcts.push(function(){
