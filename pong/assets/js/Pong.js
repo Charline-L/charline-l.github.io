@@ -24,7 +24,7 @@ class Pong {
         t.lastTimeMsec= null
 
 
-        alert("fix toolkit initmarker")
+        alert("fix colors")
         t.init()
     }
 
@@ -149,7 +149,7 @@ class Pong {
 
         // création du block raquette
         let geometryMarker1 = new THREE.BoxGeometry( 2, 1, 1 )
-        let materialMarker1 = new THREE.MeshBasicMaterial({color: colors.raket});
+        let materialMarker1 = new THREE.MeshBasicMaterial({color: t.colors.raket});
         let meshMarker1 = new THREE.Mesh( geometryMarker1, materialMarker1 );
         markerRoot1.add( meshMarker1 );
 
@@ -168,7 +168,7 @@ class Pong {
 
         // création du block raquette
         let geometryMarker2	= new THREE.BoxGeometry( 2, 1, 1 )
-        let materialMarker2 = new THREE.MeshBasicMaterial({color: colors.raket})
+        let materialMarker2 = new THREE.MeshBasicMaterial({color: t.colors.raket})
         let meshMarker2	= new THREE.Mesh( geometryMarker2, materialMarker2 )
         markerRoot2.add( meshMarker2 )
     }
