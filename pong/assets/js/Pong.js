@@ -185,7 +185,7 @@ onRenderFcts.push(function(){
     let multiplyScalar = 0.5
     let materialSprite = new THREE.SpriteMaterial({
         map: texture,
-        color: 0xffffff,
+        color: 0xff0000,
     });
     let sprite = new THREE.Sprite( materialSprite );
     sprite.scale.multiplyScalar(multiplyScalar)
