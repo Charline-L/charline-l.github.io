@@ -236,7 +236,7 @@ class Sandboxe {
 
         console.log("updateMesh", name)
 
-        let mesh = t.scene.getObjectByName('name')
+        let mesh = t.scene.getObjectByName(name)
         let material = new THREE.MeshBasicMaterial({color: t.colors.red})
 
         mesh.material = material
