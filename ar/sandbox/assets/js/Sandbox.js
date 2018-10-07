@@ -29,8 +29,7 @@ class Sandboxe {
 
         // grille
         t.gridSize = 3
-        t.sizeCube = 2
-        t.gap = 1
+        t.sizeCube = 1
 
         t.init()
     }
@@ -156,7 +155,7 @@ class Sandboxe {
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.hiro',
         })
 
-        let sizeGroupe = t.sizeCube * t.gridSize + (t.gap *  (t.gridSize - 1 ) )
+        // let sizeGroupe = t.sizeCube * t.gridSize + (t.gap *  (t.gridSize - 1 ) )
 
         // création de la grille lui sera liée
         for (let i = 0; i < t.gridSize ; i++) {
@@ -166,8 +165,8 @@ class Sandboxe {
                 let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
                 let mesh = new THREE.Mesh(geometry, material)
 
-                mesh.position.x = ( (i * t.sizeCube) + t.gap ) - ( ( (t.gridSize - 1) + ((t.gridSize - 1) * t.gap)) / 2 * t.sizeCube )
-                mesh.position.z = ( (j * t.sizeCube) + t.gap ) - ( ( (t.gridSize - 1) + ((t.gridSize - 1) * t.gap)) / 2 * t.sizeCube )
+                mesh.position.x = ( i * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
+                mesh.position.z = ( j * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
 
                 // ajoute à notre groupe
                 grid.add(mesh)
