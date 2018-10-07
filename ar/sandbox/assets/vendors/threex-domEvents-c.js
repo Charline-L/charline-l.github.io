@@ -385,20 +385,10 @@ THREEx.DomEvents.prototype._onMouseDown	= function(event){ return this._onMouseE
 THREEx.DomEvents.prototype._onMouseUp	= function(event){ return this._onMouseEvent('mouseup'	, event);	}
 
 
-THREEx.DomEvents.prototype._onMouseEvent	= function(eventName, domEvent, isTouch)
+THREEx.DomEvents.prototype._onMouseEvent	= function(eventName, domEvent)
 {
-    console.log("CLIIICK touch", isTouch)
-
-    if (isTouch) {
-        var mouseX	= domEvent.touches[0].pageX;
-        var mouseY	=  domEvent.touches[0].pageY;
-        this._onEvent('click', mouseX, mouseY, domEvent);
-    }
-    else {
-        var mouseCoords = this._getRelativeMouseXY(domEvent);
-        this._onEvent(eventName, mouseCoords.x, mouseCoords.y, domEvent);
-    }
-
+    var mouseCoords = this._getRelativeMouseXY(domEvent);
+    this._onEvent(eventName, mouseCoords.x, mouseCoords.y, domEvent);
 }
 
 THREEx.DomEvents.prototype._onMouseMove	= function(domEvent)
@@ -434,13 +424,6 @@ THREEx.DomEvents.prototype._onContextmenu	= function(event)
 
 THREEx.DomEvents.prototype._onTouchStart	= function(event){ return this._onTouchEvent('touchstart', event);	}
 THREEx.DomEvents.prototype._onTouchEnd	= function(event){ return this._onTouchEvent('touchend'	, event);	}
-// THREEx.DomEvents.prototype._onTouchStart		= function(domEvent)
-// {
-//     domEvent.preventDefault();
-//     console.log('touche start', domEvent )
-//     // TODO handle touch ?
-//     this._onMouseEvent('click'	, domEvent, true);
-// }
 THREEx.DomEvents.prototype._onTouchMove	= function(domEvent)
 {
     if( domEvent.touches.length != 1 )	return undefined;
