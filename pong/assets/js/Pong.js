@@ -379,8 +379,7 @@ class Pong {
         let container = new THREE.Group
         t.scene.add(container)
 
-        let planeMaterial = new THREE.MeshBasicMaterial( {
-        })
+        let planeMaterial = new THREE.MeshBasicMaterial( {color: t.colors.plane })
 
         let planeGeometry = new THREE.Geometry()
 
@@ -391,8 +390,8 @@ class Pong {
 
         planeGeometry.vertices[0].copy(angleA.position)
         planeGeometry.vertices[1].copy(angleB.position)
-        planeGeometry.vertices[1].copy(angleC.position)
-        planeGeometry.vertices[1].copy(angleD.position)
+        planeGeometry.vertices[2].copy(angleC.position)
+        planeGeometry.vertices[3].copy(angleD.position)
 
         // BESOIN ?
         planeGeometry.verticesNeedUpdate = true
