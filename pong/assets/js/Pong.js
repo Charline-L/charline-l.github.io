@@ -269,7 +269,7 @@ class Pong {
             linewidth: 1,
         })
 
-        let planeGeometry = new THREE.Line()
+        let planeGeometry = new THREE.Geometry()
 
         planeGeometry.vertices.push(new THREE.Vector3(1, 0, -3))
         planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
