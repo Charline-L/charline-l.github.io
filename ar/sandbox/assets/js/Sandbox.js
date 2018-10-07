@@ -15,6 +15,9 @@ class Sandboxe {
         // toutes les couleurs
         t.colors = {}
 
+        // loop des functions
+        t.onRenderFcts = []
+
         // scene
         t.scene = new THREE.Scene()
 
