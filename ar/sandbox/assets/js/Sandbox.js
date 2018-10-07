@@ -15,7 +15,9 @@ class Sandboxe {
         t.wh = window.innerHeight
 
         // toutes les couleurs
-        t.colors = {}
+        t.colors = {
+            white: 0xffffff
+        }
 
         // loop des functions
         t.onRenderFcts = []
@@ -149,7 +151,7 @@ class Sandboxe {
 
         // création de la forme qui lui ait liée
         let geometry = new THREE.BoxGeometry(1, 1, 1)
-        let material = new THREE.MeshBasicMaterial({color: t.colors.angle})
+        let material = new THREE.MeshBasicMaterial({color: t.colors.white})
         let mesh = new THREE.Mesh(geometry, material)
 
         // ajoute à notre groupe
