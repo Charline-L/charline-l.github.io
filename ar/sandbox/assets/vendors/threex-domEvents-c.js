@@ -387,6 +387,7 @@ THREEx.DomEvents.prototype._onMouseUp	= function(event){ return this._onMouseEve
 
 THREEx.DomEvents.prototype._onMouseEvent	= function(eventName, domEvent, isTouch)
 {
+    console.log("CLIIICK")
 
     if (isTouch) {
         var mouseX	= +(domEvent.touches[ 0 ].pageX / window.innerWidth ) * 2 - 1;
