@@ -77,6 +77,7 @@ class Sandboxe {
         const t = this
 
         // TODO === regarder si ne pas mettre camera perspective ?
+        console.log("perspective camera")
         t.camera = new THREE.PerspectiveCamera( 75, t.ww / t.wh, 0.1, 1000 )
         t.scene.add(t.camera)
     }
