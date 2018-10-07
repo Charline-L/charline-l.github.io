@@ -390,8 +390,8 @@ THREEx.DomEvents.prototype._onMouseEvent	= function(eventName, domEvent, isTouch
     console.log("CLIIICK touch", isTouch)
 
     if (isTouch) {
-        var mouseX	= +(domEvent.touches[ 0 ].pageX / window.innerWidth ) * 2 - 1;
-        var mouseY	= -(domEvent.touches[ 0 ].pageY / window.innerHeight) * 2 + 1;
+        var mouseX	= domEvent.touches[0].pageX;
+        var mouseY	=  domEvent.touches[0].pageY;
         this._onEvent('click', mouseX, mouseY, domEvent);
     }
     else {
@@ -432,12 +432,13 @@ THREEx.DomEvents.prototype._onContextmenu	= function(event)
 // # handle touch events
 
 
-THREEx.DomEvents.prototype._onTouchStart	= function(event){ return this._onTouchEvent('touchstart', event);	}
+// THREEx.DomEvents.prototype._onTouchStart	= function(event){ return this._onTouchEvent('touchstart', event);	}
 // THREEx.DomEvents.prototype._onTouchEnd	= function(event){ return this._onTouchEvent('touchend'	, event);	}
-THREEx.DomEvents.prototype._onTouchEnd		= function(event)
+THREEx.DomEvents.prototype._onTouchStart		= function(event)
 {
+    console.log('touche start', event.changedTouches )
     // TODO handle touch ?
-    this._onMouseEvent('click'	, event, true);
+    this._onMouseEvent('click'	, event.changedTouches, true);
 }
 THREEx.DomEvents.prototype._onTouchMove	= function(domEvent)
 {
