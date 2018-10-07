@@ -166,8 +166,8 @@ class Sandboxe {
                 let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
                 let mesh = new THREE.Mesh(geometry, material)
 
-                mesh.position.x = ( i + t.gap ) - ( (t.gridSize - 1) / 2 * t.sizeCube )//+ t.sizeCube - sizeGroupe
-                mesh.position.z = ( j + t.gap ) //+ t.sizeCube - sizeGroupe
+                mesh.position.x = ( i + t.gap ) - ( (t.gridSize - 1) / 2 * t.sizeCube )
+                mesh.position.z = ( j + t.gap ) - ( (t.gridSize - 1) / 2 * t.sizeCube )
 
                 // ajoute à notre groupe
                 grid.add(mesh)
