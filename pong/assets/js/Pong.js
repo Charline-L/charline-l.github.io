@@ -201,7 +201,7 @@ onRenderFcts.push(function(){
         // mets le texte dans le sprite
         context.font = '40px monospace';
         context.clearRect( 0, 0, canvas.width, canvas.height );
-        context.fillStyle = '#FF0000';
+        context.fillStyle = '#FFFFFF';
         context.fillText(text, canvas.width/4, 3*canvas.height/4 )
         sprite.material.map.needsUpdate = true
     })
