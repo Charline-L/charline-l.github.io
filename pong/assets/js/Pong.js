@@ -24,7 +24,7 @@ class Pong {
         t.lastTimeMsec= null
 
 
-        alert("in constructor")
+        alert("fix toolkit")
         t.init()
     }
 
@@ -102,10 +102,10 @@ class Pong {
         t.wh = window.innerHeight
 
         // gestion arToolKit
-        arToolkitSource.onResize()
-        arToolkitSource.copySizeTo(renderer.domElement)
-        if (arToolkitContext.arController !== null) {
-            arToolkitSource.copySizeTo(arToolkitContext.arController.canvas)
+        t.arToolkitSource.onResize()
+        t.arToolkitSource.copySizeTo( t.renderer.domElement)
+        if ( t.arToolkitContext.arController !== null) {
+            t.arToolkitSource.copySizeTo( t.arToolkitContext.arController.canvas)
         }
     }
 
