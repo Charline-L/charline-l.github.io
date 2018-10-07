@@ -23,6 +23,8 @@ class Pong {
         // animationFrame
         t.lastTimeMsec= null
 
+
+        alert("in constructor")
         t.init()
     }
 
