@@ -169,9 +169,8 @@ class Sandboxe {
 
 
         // alert("changement position")
-        // // je recentre mon groupe
-        grid.position.x = - t.gridSize
-        grid.position.z = - t.gridSize
+        // je recentre mon groupe
+        grid.set(- t.gridSize, 1, - t.gridSize)
 
         // ajoute à la scene
         t.scene.add(grid)
