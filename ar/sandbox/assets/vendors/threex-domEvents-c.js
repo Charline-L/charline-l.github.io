@@ -387,10 +387,20 @@ THREEx.DomEvents.prototype._onMouseDown	= function(event){ return this._onMouseE
 THREEx.DomEvents.prototype._onMouseUp	= function(event){ return this._onMouseEvent('mouseup'	, event);	}
 
 
-THREEx.DomEvents.prototype._onMouseEvent	= function(eventName, domEvent)
+THREEx.DomEvents.prototype._onMouseEvent	= function(eventName, domEvent, isTouch)
 {
-    var mouseCoords = this._getRelativeMouseXY(domEvent);
-    this._onEvent(eventName, mouseCoords.x, mouseCoords.y, domEvent);
+    console.log("CLIIICK touch", isTouch)
+
+    if (isTouch) {
+        var mouseX	= domEvent.touches[0].pageX;
+        var mouseY	=  domEvent.touches[0].pageY;
+        this._onEvent('click', mouseX, mouseY, domEvent);
+    }
+    else {
+        var mouseCoords = this._getRelativeMouseXY(domEvent);
+        this._onEvent(eventName, mouseCoords.x, mouseCoords.y, domEvent);
+    }
+
 }
 
 THREEx.DomEvents.prototype._onMouseMove	= function(domEvent)
@@ -424,8 +434,15 @@ THREEx.DomEvents.prototype._onContextmenu	= function(event)
 // # handle touch events
 
 
-THREEx.DomEvents.prototype._onTouchStart	= function(event){ return this._onTouchEvent('touchstart', event);	}
+// THREEx.DomEvents.prototype._onTouchStart	= function(event){ return this._onTouchEvent('touchstart', event);	}
 THREEx.DomEvents.prototype._onTouchEnd	= function(event){ return this._onTouchEvent('touchend'	, event);	}
+THREEx.DomEvents.prototype._onTouchStart		= function(domEvent)
+{
+    domEvent.preventDefault();
+    console.log('touche start', domEvent )
+    // TODO handle touch ?
+    this._onMouseEvent('click'	, domEvent, true);
+}
 THREEx.DomEvents.prototype._onTouchMove	= function(domEvent)
 {
     if( domEvent.touches.length != 1 )	return undefined;
@@ -441,15 +458,15 @@ THREEx.DomEvents.prototype._onTouchMove	= function(domEvent)
 
 THREEx.DomEvents.prototype._onTouchEvent	= function(eventName, domEvent)
 {
-    console.log("in touche event ," , eventName, domEvent.touches.length)
-    if( domEvent.touches.length != 1 || eventName === 'touchend')	return undefined;
-
-    domEvent.preventDefault();
-
-    var mouseX	= domEvent.touches[0].pageX
-    // var mouseX	= +(domEvent.touches[ 0 ].pageX / window.innerWidth ) * 2 - 1;
-    var mouseY	= domEvent.touches[0].pageY
-    // var mouseY	= -(domEvent.touches[ 0 ].pageY / window.innerHeight) * 2 + 1;
-    console.log("x y", mouseX, mouseY)
-    this._onEvent("click", mouseX, mouseY, domEvent);
+    // console.log("in touche event ," , eventName, domEvent.touches.length)
+    // if( domEvent.touches.length !== 1 || eventName === 'touchend')	return undefined;
+    //
+    // domEvent.preventDefault();
+    //
+    // var mouseX	= domEvent.touches[0].pageX
+    // // var mouseX	= +(domEvent.touches[ 0 ].pageX / window.innerWidth ) * 2 - 1;
+    // var mouseY	= domEvent.touches[0].pageY
+    // // var mouseY	= -(domEvent.touches[ 0 ].pageY / window.innerHeight) * 2 + 1;
+    // console.log("x y", mouseX, mouseY)
+    // this._onEvent("click", mouseX, mouseY, domEvent);
 }
