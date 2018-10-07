@@ -113,7 +113,7 @@ onRenderFcts.push(function(){
     scene.add(markerRoot2)
     let markerRoot2Controls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
         type : 'pattern',
-        patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.kanji',
+        patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.letterA',
     })
     // création du block raquette
     let geometryMarker2	= new THREE.BoxGeometry( 2, 1, 1 )
