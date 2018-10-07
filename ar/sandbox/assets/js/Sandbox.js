@@ -167,7 +167,7 @@ class Sandboxe {
                 let mesh = new THREE.Mesh(geometry, material)
 
                 mesh.position.x = ( i + t.gap ) - ( ( (t.gridSize - 1) + ((t.gridSize - 1) * t.gap)) / 2 * t.sizeCube )
-                mesh.position.z = ( j + t.gap ) - ( (t.gridSize - 1) / 2 * t.sizeCube )
+                mesh.position.z = ( j + t.gap ) - ( ( (t.gridSize - 1) + ((t.gridSize - 1) * t.gap)) / 2 * t.sizeCube )
 
                 // ajoute à notre groupe
                 grid.add(mesh)
