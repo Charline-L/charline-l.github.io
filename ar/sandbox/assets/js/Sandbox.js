@@ -145,8 +145,6 @@ class Sandboxe {
         // donne un nom au groupe pour le récupérer dans la scene
         grid.name = 'grid'
 
-        // ajoute à la scene
-        t.scene.add(grid)
 
         // récupère le marker que l'on doit chercher
         let controls = new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
@@ -171,9 +169,13 @@ class Sandboxe {
         }
 
 
+        alert("changement position")
         // je recentre mon groupe
         grid.position.x = - t.gridSize / 2
         grid.position.z = - t.gridSize / 2
+
+        // ajoute à la scene
+        t.scene.add(grid)
     }
 
     initDetectMarker() {
