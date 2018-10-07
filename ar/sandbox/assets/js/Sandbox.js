@@ -132,11 +132,13 @@ class Sandboxe {
     initMarker() {
         const t = this
 
+        alert("in init marker")
+
         // création d'un groupe d'éléments
         let marker = new THREE.Group
 
         // donne un nom au groupe pour le récupérer dans la scene
-        marker.name = 'angleD'
+        marker.name = 'marker'
 
         // ajoute à la scene
         t.scene.add(marker)
