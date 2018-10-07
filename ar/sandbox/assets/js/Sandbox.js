@@ -169,7 +169,7 @@ class Sandboxe {
             for (let j = 0; j < t.gridSize ; j++) {
 
                 let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
-                let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
+                let material = new THREE.MeshBasicMaterial({color: t.colors.white})
                 let mesh = new THREE.Mesh(geometry, material)
 
                 mesh.position.x = ( i * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
@@ -179,7 +179,7 @@ class Sandboxe {
 
                 console.log('mesh.name', mesh.name)
                 // chacun des block on ajoute un écouteur d'évènements
-                t.domEvents.addEventListener( mesh, 'click', () => {
+                t.domEvents.addEventListener( mesh, 'click', function {
                     alert('click :' + mesh.name)
                 })
 
