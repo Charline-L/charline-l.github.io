@@ -4,6 +4,8 @@ class Sandboxe {
 
         // DOM
         t.$container = document.querySelector(".sandboxe-game__container")
+        t.$shapes = document.querySelector(".sandboxe-game__shapes")
+        t.$colors = document.querySelector(".sandboxe-game__colors")
 
         // variable urls
         THREEx.ArToolkitContext.baseURL = './assets/markers/'
@@ -35,6 +37,7 @@ class Sandboxe {
 
         t.initArToolKitSource()
         t.initMarker()
+        t.initDetectMarker()
         t.initRenderer()
 
         t.animationFrame()
@@ -58,7 +61,7 @@ class Sandboxe {
         t.renderer.domElement.style.left = '0'
 
         // ajoute au dom
-        t.$container.appendChild( t.renderer.domElement )
+        t.$container.appendChild(t.renderer.domElement)
     }
 
     createCamera() {
@@ -151,6 +154,26 @@ class Sandboxe {
 
         // ajoute à notre groupe
         marker.add(mesh)
+    }
+
+    initDetectMarker() {
+        const t = this
+
+        let marker = t.scene.getObjectByName('marker')
+        // let container = new THREE.Group
+        // t.scene.add(container)
+
+        t.onRenderFcts.push(function () {
+
+            if ( marker.visible === true) {
+                t.$colors.classList.remove("is-hidden")
+                t.$shapes.classList.remove("is-hidden")
+            }
+            else {
+                t.$colors.classList.add("is-hidden")
+                t.$shapes.classList.add("is-hidden")
+            }
+        })
     }
 
     initRenderer() {
