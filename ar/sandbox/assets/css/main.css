@@ -12,14 +12,6 @@ html {
     box-sizing: border-box;
 }
 
-/* HTML TAG */
-header, footer, main {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-}
-
-
 
 /* SANDBOXE */
 .sandboxe-game {
@@ -30,19 +22,32 @@ header, footer, main {
     position: relative;
 }
 
-.sandboxe-game__header {
-    text-align: center;
-    line-height: 50px;
-    height: 50px;
-}
-
-.sandboxe-game__container {
+.sandboxe-game__canvas {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: -1;
+}
+
+.sandboxe-game__inteface {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.sandboxe-game__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
 }
 
 .sandboxe-game__shapes {
@@ -106,6 +111,7 @@ header, footer, main {
 }
 
 .sandboxe-game__footer {
+    position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;

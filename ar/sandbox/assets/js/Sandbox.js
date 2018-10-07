@@ -3,7 +3,7 @@ class Sandboxe {
         const t = this
 
         // DOM
-        t.$container = document.querySelector(".sandboxe-game__container")
+        t.$container = document.querySelector(".sandboxe-game__canvas")
         t.$shapes = document.querySelector(".sandboxe-game__shapes")
         t.$colors = document.querySelector(".sandboxe-game__colors")
 
@@ -104,9 +104,6 @@ class Sandboxe {
         if (t.arToolkitContext.arController !== null) {
             t.arToolkitSource.copyElementSizeTo(t.arToolkitContext.arController.canvas)
         }
-
-        // remet la taille du renderer
-        t.renderer.setSize(t.ww, t.wh)
     }
 
     initArToolKitSource() {
@@ -169,12 +166,12 @@ class Sandboxe {
         t.onRenderFcts.push(function () {
 
             if ( marker.visible === true) {
-                console.log("marker-visible")
+                console.log("marker-visible", t.$colors, t.$shapes)
                 t.$colors.classList.remove("is-hidden")
                 t.$shapes.classList.remove("is-hidden")
             }
             else {
-                console.log("marker-not-visible")
+                console.log("marker-not-visible", t.$colors, t.$shapes)
                 t.$colors.classList.add("is-hidden")
                 t.$shapes.classList.add("is-hidden")
             }
