@@ -11,8 +11,8 @@ class Sandboxe {
         THREEx.ArToolkitContext.baseURL = './assets/markers/'
 
         // taille de l'écran
-        t.ww = window.outerHeight
-        t.wh = window.outerHeight
+        t.ww = window.innerWidth
+        t.wh = window.innerWidth
 
         // toutes les couleurs
         t.colors = {
