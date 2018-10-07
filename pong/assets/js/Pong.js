@@ -199,7 +199,7 @@ onRenderFcts.push(function(){
         let text = length.toFixed(2)
 
         // mets le texte dans le sprite
-        context.font = '70px monospace';
+        context.font = '40px monospace';
         context.clearRect( 0, 0, canvas.width, canvas.height );
         context.fillStyle = '#FF0000';
         context.fillText(text, canvas.width/4, 3*canvas.height/4 )
