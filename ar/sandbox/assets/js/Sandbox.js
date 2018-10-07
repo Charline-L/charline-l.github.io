@@ -99,6 +99,7 @@ class Sandboxe {
 
         document.addEventListener("resize", t.resize.bind(t))
 
+        console.log("renderer dom", t.renderer.domElement)
         // permet d'intéragir avec le DOM
         t.domEvents	= new THREEx.DomEvents(t.camera, t.renderer.domElement)
     }
