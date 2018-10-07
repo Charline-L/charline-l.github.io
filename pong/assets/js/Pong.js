@@ -11,7 +11,7 @@ class Pong {
 
         // toutes les couleurs du jeux
         t.colors = {
-            raket: "0xffff00",
+            raket: 0xff0000,
         }
 
         // fonctions à lancer pour animation
