@@ -12,7 +12,8 @@ class Pong {
         // toutes les couleurs du jeux
         t.colors = {
             raket: 0xff0000,
-            plane: 0xffffff
+            plane: 0xffffff,
+            angle: 0x0000ff
         }
 
         // fonctions à lancer pour animation
@@ -141,45 +142,65 @@ class Pong {
         * Premier marker
         * */
         // prépare les controles
-        let markerRoot1 = new THREE.Group
-        markerRoot1.name = 'marker1'
-        t.scene.add(markerRoot1)
-        let markerRoot1Controls = new THREEx.ArMarkerControls( t.arToolkitContext, markerRoot1, {
+        let markerPlayer1 = new THREE.Group
+        markerPlayer1.name = 'player1'
+        t.scene.add(markerPlayer1)
+        let player1Controls = new THREEx.ArMarkerControls( t.arToolkitContext, markerPlayer1, {
             type : 'pattern',
             patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.hiro',
         })
 
         // création du block raquette
-        let geometryMarker1 = new THREE.BoxGeometry( 2, 1, 1 )
-        let materialMarker1 = new THREE.MeshBasicMaterial({color: t.colors.raket});
-        let meshMarker1 = new THREE.Mesh( geometryMarker1, materialMarker1 );
-        markerRoot1.add( meshMarker1 );
+        let geometryPlayer1 = new THREE.BoxGeometry( 2, 1, 1 )
+        let materialPlayer1 = new THREE.MeshBasicMaterial({color: t.colors.raket})
+        let meshPlayer1 = new THREE.Mesh( geometryPlayer1, materialPlayer1 )
+        markerPlayer1.add( meshPlayer1 )
 
 
         /*
         * Deuxième marker
         * */
         // prépare les controles
-        let markerRoot2 = new THREE.Group
-        markerRoot2.name = 'marker2'
-        t.scene.add(markerRoot2)
-        let markerRoot2Controls = new THREEx.ArMarkerControls( t.arToolkitContext, markerRoot2, {
+        let markerPlayer2 = new THREE.Group
+        markerPlayer2.name = 'player2'
+        t.scene.add(markerPlayer2)
+        let player2Controls = new THREEx.ArMarkerControls( t.arToolkitContext, markerPlayer2, {
             type : 'pattern',
             patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.kanji',
         })
 
         // création du block raquette
-        let geometryMarker2	= new THREE.BoxGeometry( 2, 1, 1 )
-        let materialMarker2 = new THREE.MeshBasicMaterial({color: t.colors.raket})
-        let meshMarker2	= new THREE.Mesh( geometryMarker2, materialMarker2 )
-        markerRoot2.add( meshMarker2 )
+        let geometryPlayer2	= new THREE.BoxGeometry( 2, 1, 1 )
+        let materialPlayer2 = new THREE.MeshBasicMaterial({color: t.colors.raket})
+        let meshPlayer2	= new THREE.Mesh( geometryPlayer2, materialPlayer2 )
+        markerPlayer2.add( meshPlayer2 )
+
+        /*
+       * Angle Marker A
+       * */
+        // prépare les controles
+        let markerAngleA = new THREE.Group
+        markerAngleA.name = 'markerA'
+        t.scene.add(markerAngleA)
+        let markerAControls = new THREEx.ArMarkerControls( t.arToolkitContext, markerAngleA, {
+            type : 'pattern',
+            patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.letterA',
+        })
+
+        // création du block raquette
+        let geometryAngleA = new THREE.BoxGeometry( 1, 1, 1 )
+        let materialAngleA = new THREE.MeshBasicMaterial({color: t.colors.angle});
+        let meshAngleA = new THREE.Mesh( geometryAngleA, materialAngleA );
+        markerAngleA.add( meshAngleA );
+
     }
 
     initDetectMarker() {
         const t = this
 
-        t.markerRoot1 = t.scene.getObjectByName('marker1')
-        t.markerRoot2 = t.scene.getObjectByName('marker2')
+        t.player1 = t.scene.getObjectByName('player1')
+        t.player1 = t.scene.getObjectByName('player2')
+        t.angleA = t.scene.getObjectByName('angleA')
 
         /*
         * Détection des markers
@@ -187,21 +208,20 @@ class Pong {
         let container = new THREE.Group
         t.scene.add(container)
 
-        // attend que les deux markers soient détectés et on retire la div scanning
+        // attend que les 6 markers soient détectés et on retire la div scanning
         t.onRenderFcts.push(function(){
 
             // une fois que la partie est commencée on block l'exécution de la fonction
             if ( t.gameIsStarted ) return null;
 
-            if( t.markerRoot1.visible === true && t.markerRoot2.visible === true ){
-                // container.visible = true
+            let player1Visible = t.player1.visible === true
+            let player2Visible = t.player2.visible === true
+            let angleAvisible = t.angleA.visible === true
+
+            if(  player1Visible && player2Visible && angleAvisible ){
                 document.querySelector('.scanningSpinner').style.display = 'none'
                 t.startGame()
             }
-            // else{
-            //     container.visible = false
-            //     document.querySelector('.scanningSpinner').style.display = ''
-            // }
         })
     }
 
@@ -238,13 +258,12 @@ class Pong {
 
         t.gameIsStarted = true
 
-        let length = t.markerRoot1.position.distanceTo( t.markerRoot2.position )
-        let settings = {
-            scene: t.scene,
-            length: length,
-            colors: t.colors
-        }
-        t.board = new Board(settings)
+        // let length = t.markerRoot1.position.distanceTo( t.markerRoot2.position )
+        // let settings = {
+        //     scene: t.scene,
+        //     colors: t.colors
+        // }
+        // t.board = new Board(settings)
 
         // TODO === voir comment remettre quand devra sélectionner la taille terrain
         // /*
@@ -284,53 +303,53 @@ class Pong {
 }
 
 
-class Board {
-    constructor(settings) {
-        const t = this
-
-        t.length = Math.trunc(settings.length)
-        t.scene = settings.scene
-        t.colors = settings.colors
-
-        alert("length: "+ t.length)
-        t.init()
-    }
-
-    init() {
-        const t = this
-
-        t.createPlane()
-    }
-
-    createPlane() {
-        const t = this
-
-        // récupère nos marqueurs
-        let markerRoot1 = t.scene.getObjectByName('marker1')
-        let markerRoot2 = t.scene.getObjectByName('marker2')
-
-        // ajoute un groupe pour contenir le terrain
-        let container = new THREE.Group
-        t.scene.add(container)
-
-        let materialLine = new THREE.LineDashedMaterial( {
-            dashSize: 1,
-            gapSize: 1,
-        } );
-        let geometryLine = new THREE.Geometry()
-        geometryLine.vertices.push(new THREE.Vector3(1, 0, -3))
-        geometryLine.vertices.push(new THREE.Vector3(-1, 0, -3))
-
-        geometryLine.vertices[0].copy(markerRoot1.position)
-        geometryLine.vertices[1].copy(markerRoot2.position)
-        geometryLine.verticesNeedUpdate = true
-        geometryLine.computeBoundingSphere();
-        geometryLine.computeLineDistances();
-
-        let lineMesh = new THREE.Line(geometryLine, materialLine)
-        container.add(lineMesh)
-    }
-}
+// class Board {
+//     constructor(settings) {
+//         const t = this
+//
+//         t.length = Math.trunc(settings.length)
+//         t.scene = settings.scene
+//         t.colors = settings.colors
+//
+//         alert("length: "+ t.length)
+//         t.init()
+//     }
+//
+//     init() {
+//         const t = this
+//
+//         t.createPlane()
+//     }
+//
+//     createPlane() {
+//         const t = this
+//
+//         // récupère nos marqueurs
+//         let markerRoot1 = t.scene.getObjectByName('marker1')
+//         let markerRoot2 = t.scene.getObjectByName('marker2')
+//
+//         // ajoute un groupe pour contenir le terrain
+//         let container = new THREE.Group
+//         t.scene.add(container)
+//
+//         let materialLine = new THREE.LineDashedMaterial( {
+//             dashSize: 1,
+//             gapSize: 1,
+//         } );
+//         let geometryLine = new THREE.Geometry()
+//         geometryLine.vertices.push(new THREE.Vector3(1, 0, -3))
+//         geometryLine.vertices.push(new THREE.Vector3(-1, 0, -3))
+//
+//         geometryLine.vertices[0].copy(markerRoot1.position)
+//         geometryLine.vertices[1].copy(markerRoot2.position)
+//         geometryLine.verticesNeedUpdate = true
+//         geometryLine.computeBoundingSphere();
+//         geometryLine.computeLineDistances();
+//
+//         let lineMesh = new THREE.Line(geometryLine, materialLine)
+//         container.add(lineMesh)
+//     }
+// }
 
 
 
