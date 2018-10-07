@@ -140,16 +140,16 @@ class Sandboxe {
         const t = this
 
         // création d'un groupe d'éléments
-        let marker = new THREE.Group
+        let grid = new THREE.Group
 
         // donne un nom au groupe pour le récupérer dans la scene
-        marker.name = 'marker'
+        grid.name = 'grid'
 
         // ajoute à la scene
-        t.scene.add(marker)
+        t.scene.add(grid)
 
         // récupère le marker que l'on doit chercher
-        let controls = new THREEx.ArMarkerControls(t.arToolkitContext, marker, {
+        let controls = new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.hiro',
         })
@@ -162,25 +162,28 @@ class Sandboxe {
                 let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
                 let mesh = new THREE.Mesh(geometry, material)
 
-                mesh.position.x = (i + 1) - (t.gridSize / 2)
-                mesh.position.z = (j + 1) - ( t.gridSize / 2)
+                mesh.position.x = i + 1
+                mesh.position.z = j + 1
 
                 // ajoute à notre groupe
-                marker.add(mesh)
+                grid.add(mesh)
             }
         }
 
 
+        // je recentre mon groupe
+        grid.position.x = t.gridSize / 2
+        grid.position.z = t.gridSize / 2
     }
 
     initDetectMarker() {
         const t = this
 
-        let marker = t.scene.getObjectByName('marker')
+        let grid = t.scene.getObjectByName('grid')
 
         t.onRenderFcts.push(function () {
 
-            if ( t.elementSelected && marker.visible ) {
+            if ( t.elementSelected && grid.visible ) {
                 t.$colors.classList.remove("hidden")
             }
             else {
