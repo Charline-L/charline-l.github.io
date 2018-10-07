@@ -5,6 +5,7 @@ class Sandboxe {
         // DOM
         t.$container = document.querySelector(".sandboxe-game__canvas")
         t.$colors = document.querySelector(".sandboxe-game__colors")
+        t.$header = document.querySelector(".sandboxe-game__header")
 
         // variable urls
         THREEx.ArToolkitContext.baseURL = './assets/markers/'
@@ -71,7 +72,8 @@ class Sandboxe {
         t.renderer.domElement.classList.add("sandboxe-game__canvas")
 
         // ajoute au dom
-        document.appendChild(t.renderer.domElement)
+        document.body.insertBefore(t.renderer.domElement, t.$header);
+        // document.body.appendChild(t.renderer.domElement)
     }
 
     createCamera() {
