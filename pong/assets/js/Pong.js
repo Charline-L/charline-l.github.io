@@ -276,8 +276,7 @@ class Pong {
         let planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
         container.add(planeMesh)
 
-        // update lineMesh
-        onRenderFcts.push(function(){
+        t.onRenderFcts.push(function(){
             let geometry = planeMesh.geometry
             geometry.vertices[0].copy(angleA.position)
             geometry.vertices[1].copy(angleB.position)
