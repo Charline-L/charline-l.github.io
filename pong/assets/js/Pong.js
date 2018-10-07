@@ -219,7 +219,7 @@ class Pong {
         let markerAngleC = new THREE.Group
         markerAngleC.name = 'angleC'
         t.scene.add(markerAngleC)
-        let markerBControls = new THREEx.ArMarkerControls(t.arToolkitContext, markerAngleC, {
+        let markerCControls = new THREEx.ArMarkerControls(t.arToolkitContext, markerAngleC, {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.letterC',
         })
@@ -237,7 +237,7 @@ class Pong {
         let markerAngleD = new THREE.Group
         markerAngleD.name = 'angleD'
         t.scene.add(markerAngleD)
-        let markerBControls = new THREEx.ArMarkerControls(t.arToolkitContext, markerAngleD, {
+        let markerDControls = new THREEx.ArMarkerControls(t.arToolkitContext, markerAngleD, {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.letterD',
         })
