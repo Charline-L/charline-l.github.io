@@ -432,14 +432,15 @@ THREEx.DomEvents.prototype._onContextmenu	= function(event)
 // # handle touch events
 
 
-// THREEx.DomEvents.prototype._onTouchStart	= function(event){ return this._onTouchEvent('touchstart', event);	}
-// THREEx.DomEvents.prototype._onTouchEnd	= function(event){ return this._onTouchEvent('touchend'	, event);	}
-THREEx.DomEvents.prototype._onTouchStart		= function(event)
-{
-    console.log('touche start', event.changedTouches )
-    // TODO handle touch ?
-    this._onMouseEvent('click'	, event.changedTouches, true);
-}
+THREEx.DomEvents.prototype._onTouchStart	= function(event){ return this._onTouchEvent('touchstart', event);	}
+THREEx.DomEvents.prototype._onTouchEnd	= function(event){ return this._onTouchEvent('touchend'	, event);	}
+// THREEx.DomEvents.prototype._onTouchStart		= function(domEvent)
+// {
+//     domEvent.preventDefault();
+//     console.log('touche start', domEvent )
+//     // TODO handle touch ?
+//     this._onMouseEvent('click'	, domEvent, true);
+// }
 THREEx.DomEvents.prototype._onTouchMove	= function(domEvent)
 {
     if( domEvent.touches.length != 1 )	return undefined;
@@ -455,6 +456,7 @@ THREEx.DomEvents.prototype._onTouchMove	= function(domEvent)
 
 THREEx.DomEvents.prototype._onTouchEvent	= function(eventName, domEvent)
 {
+    console.log("in touche event ," , eventName)
     if( domEvent.touches.length != 1 )	return undefined;
 
     domEvent.preventDefault();
