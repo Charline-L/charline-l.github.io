@@ -99,7 +99,6 @@ class Sandboxe {
 
         document.addEventListener("resize", t.resize.bind(t))
 
-        console.log("renderer dom", t.renderer.domElement)
         // permet d'intéragir avec le DOM
         t.domEvents	= new THREEx.DomEvents(t.camera, t.renderer.domElement)
     }
@@ -175,17 +174,13 @@ class Sandboxe {
                 mesh.position.x = ( i * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
                 mesh.position.z = ( j * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
 
-                mesh.name = 'mesh' + count++
-
-                // console.log('mesh.name', mesh.name)
-
-
+                mesh.name = 'mesh-<' + count++
 
                 // ajoute à notre groupe
                 grid.add(mesh)
 
                 // chacun des block on ajoute un écouteur d'évènements
-                t.domEvents.addEventListener( mesh, 'mouseover', function() {
+                t.domEvents.addEventListener( mesh, 'click', function() {
                     console.log('mouse over')
                 })
             }

@@ -33,9 +33,7 @@ html {
 
 .sandboxe-game__interface {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    width: 100vw;
     bottom: 0;
     z-index: 1;
 }
