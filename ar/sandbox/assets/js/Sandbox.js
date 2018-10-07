@@ -172,8 +172,8 @@ class Sandboxe {
 
 
         // je recentre mon groupe
-        grid.position.x = t.gridSize / 2
-        grid.position.z = t.gridSize / 2
+        grid.position.x = - t.gridSize / 2
+        grid.position.z = - t.gridSize / 2
     }
 
     initDetectMarker() {
