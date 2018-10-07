@@ -24,7 +24,7 @@ class Pong {
         t.lastTimeMsec= null
 
 
-        alert("fix colors")
+        // alert("fix colors")
         t.init()
     }
 
@@ -103,9 +103,9 @@ class Pong {
 
         // gestion arToolKit
         t.arToolkitSource.onResize()
-        t.arToolkitSource.copySizeTo( t.renderer.domElement)
+        t.arToolkitSource.copyElementSizeTo( t.renderer.domElement)
         if ( t.arToolkitContext.arController !== null) {
-            t.arToolkitSource.copySizeTo( t.arToolkitContext.arController.canvas)
+            t.arToolkitSource.copyElementSizeTo( t.arToolkitContext.arController.canvas)
         }
     }
 
@@ -315,9 +315,9 @@ class Pong {
 //
 // function onResize(){
 //     arToolkitSource.onResize()
-//     arToolkitSource.copySizeTo(renderer.domElement)
+//     arToolkitSource.copyElementSizeTo(renderer.domElement)
 //     if( arToolkitContext.arController !== null ){
-//         arToolkitSource.copySizeTo(arToolkitContext.arController.canvas)
+//         arToolkitSource.copyElementSizeTo(arToolkitContext.arController.canvas)
 //     }
 // }
 //
