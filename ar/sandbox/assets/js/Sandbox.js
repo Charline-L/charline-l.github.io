@@ -62,13 +62,9 @@ class Sandboxe {
             alpha: true
         })
 
-        // TODO === regarder les fonctionnalités du render
         // lui ajoute les propriétés
         t.renderer.setClearColor(new THREE.Color('lightgrey'), 0)
         t.renderer.setSize(t.ww, t.wh)
-        t.renderer.domElement.style.position = 'absolute'
-        t.renderer.domElement.style.top = '0'
-        t.renderer.domElement.style.left = '0'
         t.renderer.domElement.classList.add("sandboxe-game__canvas")
 
         // ajoute au dom
@@ -176,7 +172,7 @@ class Sandboxe {
                 mesh.position.x = ( i * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
                 mesh.position.z = ( j * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
 
-                mesh.name = 'mesh-<' + count++
+                mesh.name = 'mesh-' + count++
 
                 // ajoute à notre groupe
                 grid.add(mesh)
