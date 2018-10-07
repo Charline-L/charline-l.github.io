@@ -177,15 +177,17 @@ class Sandboxe {
 
                 mesh.name = 'mesh' + count++
 
-                console.log('mesh.name', mesh.name)
-                // chacun des block on ajoute un écouteur d'évènements
-                t.domEvents.addEventListener( mesh, 'click', function() {
-                    alert('click :' + mesh.name)
-                })
+                // console.log('mesh.name', mesh.name)
+
 
 
                 // ajoute à notre groupe
                 grid.add(mesh)
+
+                // chacun des block on ajoute un écouteur d'évènements
+                t.domEvents.addEventListener( mesh, 'mouseover', function() {
+                    console.log('mouse over')
+                })
             }
         }
     }
