@@ -94,7 +94,7 @@ onRenderFcts.push(function(){
     scene.add(markerRoot1)
     let markerRoot1Controls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
         type : 'pattern',
-        patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.kanji',
+        patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.letterD',
     })
 
     // création du block raquette
@@ -113,7 +113,7 @@ onRenderFcts.push(function(){
     scene.add(markerRoot2)
     let markerRoot2Controls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
         type : 'pattern',
-        patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.letterB',
+        patternUrl : THREEx.ArToolkitContext.baseURL + 'patt.letterC',
     })
     // création du block raquette
     let geometryMarker2	= new THREE.BoxGeometry( 2, 1, 1 )
