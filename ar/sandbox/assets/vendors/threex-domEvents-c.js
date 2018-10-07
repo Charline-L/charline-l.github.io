@@ -308,6 +308,8 @@ THREEx.DomEvents.prototype._onMove	= function(eventName, mouseX, mouseY, origDom
 
 THREEx.DomEvents.prototype._onEvent	= function(eventName, mouseX, mouseY, origDomEvent)
 {
+
+    console.log("EVENT NAME", eventName)
     //console.log('eventName', eventName, 'boundObjs', this._boundObjs[eventName])
     // get objects bound to this event
     var boundObjs	= this._boundObjs[eventName];
