@@ -77,7 +77,6 @@ class Sandboxe {
         const t = this
 
         // TODO === regarder si ne pas mettre camera perspective ?
-        console.log("perspective camera")
         t.camera = new THREE.PerspectiveCamera( 75, t.ww / t.wh, 0.1, 1000 )
         t.scene.add(t.camera)
     }
@@ -182,7 +181,7 @@ class Sandboxe {
 
                 // chacun des block on ajoute un écouteur d'évènements
                 t.domEvents.addEventListener( mesh, 'click', function() {
-                    console.log('mouse over')
+                    alert("click " + mesh.name)
                 })
             }
         }
