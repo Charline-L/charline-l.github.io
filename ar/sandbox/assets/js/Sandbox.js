@@ -32,6 +32,7 @@ class Sandboxe {
 
         t.initArToolKitSource()
         t.initMarker()
+        t.initRenderer()
 
         t.animationFrame()
     }
@@ -135,7 +136,7 @@ class Sandboxe {
         t.scene.add(marker)
 
         // récupère le marker que l'on doit chercher
-        let markerDControls = new THREEx.ArMarkerControls(t.arToolkitContext, marker, {
+        let controls = new THREEx.ArMarkerControls(t.arToolkitContext, marker, {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.hiro',
         })
@@ -147,6 +148,15 @@ class Sandboxe {
 
         // ajoute à notre groupe
         marker.add(mesh)
+    }
+
+    initRenderer() {
+        const t = this
+
+        // ajoute renderer au tableau d'update
+        t.onRenderFcts.push(function () {
+            t.renderer.render(t.scene, t.camera);
+        })
     }
 
     animationFrame() {
