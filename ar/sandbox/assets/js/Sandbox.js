@@ -29,7 +29,10 @@ class Sandboxe {
 
         // grille
         t.gridSize = 3
-        t.sizeCube = 2
+        t.sizeCube = 1
+
+        // permet d'intéragir avec le DOM
+        t.domEvents	= new THREEx.DomEvents(t.camera, t.renderer.domElement)
 
         t.init()
     }
@@ -157,6 +160,8 @@ class Sandboxe {
 
         // let sizeGroupe = t.sizeCube * t.gridSize + (t.gap *  (t.gridSize - 1 ) )
 
+        let count = 0
+
         // création de la grille lui sera liée
         for (let i = 0; i < t.gridSize ; i++) {
             for (let j = 0; j < t.gridSize ; j++) {
@@ -167,6 +172,14 @@ class Sandboxe {
 
                 mesh.position.x = ( i * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
                 mesh.position.z = ( j * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
+
+                mesh.name = 'mesh' + count++
+
+                // chacun des block on ajoute un écouteur d'évènements
+                t.domEvents.addEventListener( mesh, 'click', () => {
+                    alert('click :' + mesh.name)
+                })
+
 
                 // ajoute à notre groupe
                 grid.add(mesh)
