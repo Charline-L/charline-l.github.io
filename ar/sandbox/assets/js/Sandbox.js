@@ -30,7 +30,7 @@ class Sandboxe {
         // grille
         t.gridSize = 3
         t.sizeCube = 1
-        t.gap = 0
+        t.gap = 1
 
         t.init()
     }
