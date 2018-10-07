@@ -185,7 +185,7 @@ onRenderFcts.push(function(){
     let multiplyScalar = 0.5
     let materialSprite = new THREE.SpriteMaterial({
         map: texture,
-        color: 0xff0000,
+        color: 0xffffff,
     });
     let sprite = new THREE.Sprite( materialSprite );
     sprite.scale.multiplyScalar(multiplyScalar)
@@ -194,12 +194,12 @@ onRenderFcts.push(function(){
     onRenderFcts.push(function(){
         // change la position
         sprite.position.addVectors(markerRoot1.position, markerRoot2.position).multiplyScalar(multiplyScalar)
-        // affihce le texte
+        // affiche le texte
         let length = markerRoot1.position.distanceTo(markerRoot2.position)
         let text = length.toFixed(2)
 
         // mets le texte dans le sprite
-        context.font = '40px monospace';
+        context.font = '100px monospace';
         context.clearRect( 0, 0, canvas.width, canvas.height );
         context.fillStyle = '#FFFFFF';
         context.fillText(text, canvas.width/4, 3*canvas.height/4 )
@@ -207,23 +207,22 @@ onRenderFcts.push(function(){
     })
 
 })()
-//////////////////////////////////////////////////////////////////////////////////
-//		render the whole thing on the page
-//////////////////////////////////////////////////////////////////////////////////
-// render the scene
+/*
+* Rendu de la scene
+* */
 onRenderFcts.push(function(){
     renderer.render( scene, camera );
 })
-// run the rendering loop
-var lastTimeMsec= null
+// animationFrame
+let lastTimeMsec= null
 requestAnimationFrame(function animate(nowMsec){
-    // keep looping
+    // lance la boucle
     requestAnimationFrame( animate );
     // measure time
     lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
-    var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+    let deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
     lastTimeMsec	= nowMsec
-    // call each update function
+    // appelle les function d'update que l'on vait stocké dans un tableau
     onRenderFcts.forEach(function(onRenderFct){
         onRenderFct(deltaMsec/1000, nowMsec/1000)
     })
