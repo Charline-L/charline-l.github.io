@@ -489,3 +489,6 @@ class Pong {
 //         onRenderFct(deltaMsec/1000, nowMsec/1000)
 //     })
 // })
+
+
+new Pong()
