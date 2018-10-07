@@ -166,14 +166,12 @@ class Sandboxe {
         t.onRenderFcts.push(function () {
 
             if ( marker.visible === true) {
-                console.log("marker-visible", t.$colors, t.$shapes)
-                t.$colors.classList.remove("is-hidden")
-                t.$shapes.classList.remove("is-hidden")
+                t.$colors.classList.remove("hidden")
+                t.$shapes.classList.remove("hidden")
             }
             else {
-                console.log("marker-not-visible", t.$colors, t.$shapes)
-                t.$colors.classList.add("is-hidden")
-                t.$shapes.classList.add("is-hidden")
+                t.$colors.classList.add("hidden")
+                t.$shapes.classList.add("hidden")
             }
         })
     }

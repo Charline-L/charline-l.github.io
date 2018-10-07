@@ -55,16 +55,12 @@ html {
     width: 100vw;
     position: absolute;
     bottom: 70px;
-}
-
-.sandboxe-game__shapes ul {
     font-size: 0;
-    height: 50px;
     line-height: 50px;
     text-align: center;
 }
 
-.sandboxe-game__shapes ul li {
+.sandboxe-game__shapes li {
     display: inline-block;
     vertical-align: middle;
     font-size: 12px;
@@ -75,21 +71,17 @@ html {
     margin: 0 10px;
 }
 
-.sandboxe-game__colors {
+.sandboxe-game__colors  {
     height: 50px;
     width: 100vw;
     position: absolute;
     bottom: 20px;
-}
-
-.sandboxe-game__colors ul {
     font-size: 0;
-    height: 50px;
     line-height: 50px;
     text-align: center;
 }
 
-.sandboxe-game__colors ul li {
+.sandboxe-game__colors li {
     display: inline-block;
     vertical-align: middle;
     margin: 0 10px;
@@ -98,15 +90,15 @@ html {
     border-radius: 100%;
 }
 
-.sandboxe-game__colors ul li:nth-child(1) {
+.sandboxe-game__colors li:nth-child(1) {
     background-color: red;
 }
 
-.sandboxe-game__colors ul li:nth-child(2) {
+.sandboxe-game__colors li:nth-child(2) {
     background-color: green;
 }
 
-.sandboxe-game__colors ul li:nth-child(3) {
+.sandboxe-game__colors li:nth-child(3) {
     background-color: blue;
 }
 
@@ -122,6 +114,6 @@ html {
 
 /* GENERAL */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
