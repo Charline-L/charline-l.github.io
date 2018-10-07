@@ -1,0 +1,104 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+
+/* SANDBOXE */
+.sandboxe-game {
+    overflow: hidden;
+    font-family: Helvetica, sans-serif;
+}
+
+.sandboxe-game__header {
+    text-align: center;
+    line-height: 50px;
+}
+
+.sandboxe-game__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.sandboxe-game__shapes {
+    height: 50px;
+    width: 100vw;
+    position: absolute;
+    bottom: 70px;
+}
+
+.sandboxe-game__shapes ul {
+    font-size: 0;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sandboxe-game__shapes ul li {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 12px;
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    margin: 0 10px;
+}
+
+.sandboxe-game__colors {
+    height: 50px;
+    width: 100vw;
+    position: absolute;
+    bottom: 20px;
+}
+
+.sandboxe-game__colors ul {
+    font-size: 0;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sandboxe-game__colors ul li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+.sandboxe-game__colors ul li:nth-child(1) {
+    background-color: red;
+}
+
+.sandboxe-game__colors ul li:nth-child(2) {
+    background-color: green;
+}
+
+.sandboxe-game__colors ul li:nth-child(3) {
+    background-color: blue;
+}
+
+.sandboxe-game__footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+}
+
