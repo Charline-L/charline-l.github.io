@@ -180,7 +180,7 @@ class Pong {
        * */
         // prépare les controles
         let markerAngleA = new THREE.Group
-        markerAngleA.name = 'markerA'
+        markerAngleA.name = 'angleA'
         t.scene.add(markerAngleA)
         let markerAControls = new THREEx.ArMarkerControls( t.arToolkitContext, markerAngleA, {
             type : 'pattern',
@@ -218,7 +218,7 @@ class Pong {
             let player2Visible = t.player2.visible === true
             let angleAvisible = t.angleA.visible === true
 
-            if(  player1Visible && player2Visible && angleAvisible ){
+            if( player1Visible && player2Visible && angleAvisible ){
                 document.querySelector('.scanningSpinner').style.display = 'none'
                 t.startGame()
             }
