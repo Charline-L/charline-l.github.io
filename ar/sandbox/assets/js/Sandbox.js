@@ -179,7 +179,7 @@ class Sandboxe {
 
                 // chacun des block on ajoute un écouteur d'évènements
                 t.domEvents.addEventListener( mesh, 'click', function() {
-                    console.log("click ")
+                    alert("click ", mesh.name)
                 })
             }
         }
