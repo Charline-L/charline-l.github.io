@@ -277,7 +277,7 @@ class Pong {
         planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
         planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
 
-        let planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
+        let planeMesh = new THREE.Line(planeGeometry, planeMaterial);
         container.add(planeMesh)
 
         t.onRenderFcts.push(function(){
