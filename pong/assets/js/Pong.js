@@ -387,11 +387,13 @@ class Pong {
         planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
         planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
         planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
+        planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
 
         planeGeometry.vertices[0].copy(angleA.position)
         planeGeometry.vertices[1].copy(angleB.position)
         planeGeometry.vertices[2].copy(angleC.position)
         planeGeometry.vertices[3].copy(angleD.position)
+        planeGeometry.vertices[4].copy(angleD.position)
 
         // BESOIN ?
         planeGeometry.verticesNeedUpdate = true
