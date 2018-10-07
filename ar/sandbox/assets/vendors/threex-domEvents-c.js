@@ -439,7 +439,7 @@ THREEx.DomEvents.prototype._onTouchEnd	= function(event){ return this._onTouchEv
 THREEx.DomEvents.prototype._onTouchStart		= function(domEvent)
 {
     // domEvent.preventDefault();
-    console.log('touche start', domEvent )
+    console.log('touche start dom :', domEvent )
     // TODO handle touch ?
     this._onMouseEvent('click'	, domEvent, true);
 }
