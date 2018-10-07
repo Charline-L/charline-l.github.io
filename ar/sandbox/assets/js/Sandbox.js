@@ -159,8 +159,8 @@ class Sandboxe {
                 let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
                 let mesh = new THREE.Mesh(geometry, material)
 
-                mesh.position.x = i + 1 - t.gridSize
-                mesh.position.z = j + 1 - t.gridSize
+                mesh.position.x = i + 1
+                mesh.position.z = j + 1
 
                 // ajoute à notre groupe
                 grid.add(mesh)
@@ -170,8 +170,8 @@ class Sandboxe {
 
         // alert("changement position")
         // // je recentre mon groupe
-        // grid.position.x =
-        // grid.position.z = - t.gridSize / 2
+        grid.position.x = - t.gridSize
+        grid.position.z = - t.gridSize
 
         // ajoute à la scene
         t.scene.add(grid)
