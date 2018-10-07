@@ -23,6 +23,8 @@ class Pong {
         // animationFrame
         t.lastTimeMsec= null
 
+        // flag
+        t.gameIsStarted = false
 
         // alert("fix colors")
         t.init()
@@ -39,8 +41,7 @@ class Pong {
 
         t.initArToolKitSource()
         t.initMarkers()
-        t.initCalcDistance()
-
+        t.initDetectMarker()
         t.initRenderer()
 
         t.animationFrame()
@@ -173,60 +174,33 @@ class Pong {
         markerRoot2.add( meshMarker2 )
     }
 
-    initCalcDistance() {
+    initDetectMarker() {
         const t = this
 
-        let markerRoot1 = t.scene.getObjectByName('marker1')
-        let markerRoot2 = t.scene.getObjectByName('marker2')
+        t.markerRoot1 = t.scene.getObjectByName('marker1')
+        t.markerRoot2 = t.scene.getObjectByName('marker2')
 
         /*
         * Détection des markers
         * */
         let container = new THREE.Group
         t.scene.add(container)
+
         // attend que les deux markers soient détectés et on retire la div scanning
         t.onRenderFcts.push(function(){
-            if( markerRoot1.visible === true && markerRoot2.visible === true ){
-                container.visible = true
+
+            // une fois que la partie est commencée on block l'exécution de la fonction
+            if ( t.gameIsStarted ) return null;
+
+            if( t.markerRoot1.visible === true && t.markerRoot2.visible === true ){
+                // container.visible = true
                 document.querySelector('.scanningSpinner').style.display = 'none'
-            }else{
-                container.visible = false
-                document.querySelector('.scanningSpinner').style.display = ''
+                t.startGame()
             }
-        })
-
-        /*
-        * Afficher la distance entre les deux markers
-        * */
-        // Création d'un canvas pour l'afficher
-        let canvas = document.createElement( 'canvas' );
-        canvas.width = 128;
-        canvas.height = 64;
-        let context = canvas.getContext( '2d' );
-        let texture = new THREE.CanvasTexture( canvas );
-        // Sprite : container pour le texte de la distance
-        let multiplyScalar = 0.5
-        let materialSprite = new THREE.SpriteMaterial({
-            map: texture,
-            color: 0xffffff,
-        });
-        let sprite = new THREE.Sprite( materialSprite );
-        sprite.scale.multiplyScalar(multiplyScalar)
-        container.add(sprite)
-        // mise à jour de la mesure à chaque fois que le request animation frame
-        t.onRenderFcts.push(function(){
-            // change la position
-            sprite.position.addVectors(markerRoot1.position, markerRoot2.position).multiplyScalar(multiplyScalar)
-            // affiche le texte
-            let length = markerRoot1.position.distanceTo(markerRoot2.position)
-            let text = length.toFixed(2)
-
-            // mets le texte dans le sprite
-            context.font = '40px monospace';
-            context.clearRect( 0, 0, canvas.width, canvas.height );
-            context.fillStyle = '#FFFFFF';
-            context.fillText(text, canvas.width/4, 3*canvas.height/4 )
-            sprite.material.map.needsUpdate = true
+            // else{
+            //     container.visible = false
+            //     document.querySelector('.scanningSpinner').style.display = ''
+            // }
         })
     }
 
@@ -256,6 +230,52 @@ class Pong {
                 onRenderFct(deltaMsec/1000, nowMsec/1000)
             })
         })
+    }
+
+    startGame() {
+        const t = this
+
+        t.gameIsStarted = true
+
+
+        let length = t.markerRoot1.position.distanceTo( t.markerRoot2.position )
+
+        alert("new game " + length )
+        // /*
+        // * Afficher la distance entre les deux markers
+        // * */
+        // // Création d'un canvas pour l'afficher
+        // let canvas = document.createElement( 'canvas' );
+        // canvas.width = 128;
+        // canvas.height = 64;
+        // let context = canvas.getContext( '2d' );
+        // let texture = new THREE.CanvasTexture( canvas );
+        // // Sprite : container pour le texte de la distance
+        // let multiplyScalar = 0.5
+        // let materialSprite = new THREE.SpriteMaterial({
+        //     map: texture,
+        //     color: 0xffffff,
+        // });
+        // let sprite = new THREE.Sprite( materialSprite );
+        // sprite.scale.multiplyScalar(multiplyScalar)
+        // container.add(sprite)
+        // // mise à jour de la mesure à chaque fois que le request animation frame
+        // t.onRenderFcts.push(function(){
+        //     // change la position
+        //     sprite.position.addVectors(markerRoot1.position, markerRoot2.position).multiplyScalar(multiplyScalar)
+        //     // affiche le texte
+        //
+        //     let text = length.toFixed(2)
+        //
+        //     // mets le texte dans le sprite
+        //     context.font = '40px monospace';
+        //     context.clearRect( 0, 0, canvas.width, canvas.height );
+        //     context.fillStyle = '#FFFFFF';
+        //     context.fillText(text, canvas.width/4, 3*canvas.height/4 )
+        //     sprite.material.map.needsUpdate = true
+        // })
+
+        // t.board = new Board()
     }
 }
 
