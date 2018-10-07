@@ -284,9 +284,9 @@ class Pong {
             let geometry = planeMesh.geometry
             geometry.vertices[0].copy(angleA.position)
             geometry.vertices[1].copy(angleB.position)
-            geometry.vertices[1].copy(angleC.position)
-            geometry.vertices[1].copy(angleD.position)
-            geometry.vertices[1].copy(angleA.position)
+            geometry.vertices[2].copy(angleC.position)
+            geometry.vertices[3].copy(angleD.position)
+            geometry.vertices[4].copy(angleA.position)
 
             geometry.verticesNeedUpdate = true
             geometry.computeBoundingSphere();
