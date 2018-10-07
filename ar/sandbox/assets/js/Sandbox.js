@@ -132,8 +132,6 @@ class Sandboxe {
     initMarker() {
         const t = this
 
-        alert("in init marker")
-
         // création d'un groupe d'éléments
         let marker = new THREE.Group
 
