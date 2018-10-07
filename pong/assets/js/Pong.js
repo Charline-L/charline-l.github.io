@@ -43,6 +43,7 @@ class Pong {
 
         t.initArToolKitSource()
         t.initMarkers()
+        t.initPlane()
         t.initDetectMarker()
         t.initRenderer()
 
@@ -187,7 +188,7 @@ class Pong {
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.letterA',
         })
 
-        // création du block raquette
+        // création du block angle
         let geometryAngleA = new THREE.BoxGeometry(1, 1, 1)
         let materialAngleA = new THREE.MeshBasicMaterial({color: t.colors.angle})
         let meshAngleA = new THREE.Mesh(geometryAngleA, materialAngleA)
@@ -205,7 +206,7 @@ class Pong {
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.letterB',
         })
 
-        // création du block raquette
+        // création du block angle
         let geometryAngleB = new THREE.BoxGeometry(1, 1, 1)
         let materialAngleB = new THREE.MeshBasicMaterial({color: t.colors.angle})
         let meshAngleB = new THREE.Mesh(geometryAngleB, materialAngleB)
@@ -224,7 +225,7 @@ class Pong {
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.letterC',
         })
 
-        // création du block raquette
+        // création du block angle
         let geometryAngleC = new THREE.BoxGeometry(1, 1, 1)
         let materialAngleC = new THREE.MeshBasicMaterial({color: t.colors.angle})
         let meshAngleC = new THREE.Mesh(geometryAngleC, materialAngleC)
@@ -242,12 +243,52 @@ class Pong {
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.letterD',
         })
 
-        // création du block raquette
+        // création du block angle
         let geometryAngleD = new THREE.BoxGeometry(1, 1, 1)
         let materialAngleD = new THREE.MeshBasicMaterial({color: t.colors.angle})
         let meshAngleD = new THREE.Mesh(geometryAngleD, materialAngleD)
         markerAngleD.add(meshAngleD)
 
+    }
+
+    initPlane() {
+        const t = this
+
+        // récupère nos marqueurs
+        let angleA = t.scene.getObjectByName('angleA')
+        let angleB = t.scene.getObjectByName('angleB')
+        let angleC = t.scene.getObjectByName('angleC')
+        let angleD = t.scene.getObjectByName('angleD')
+
+        // ajoute un groupe pour contenir le terrain
+        let container = new THREE.Group
+        t.scene.add(container)
+
+        let planeMaterial = new THREE.MeshBasicMaterial( {color: t.colors.plane })
+        let planeGeometry = new THREE.Geometry()
+
+        planeGeometry.vertices.push(new THREE.Vector3(1, 0, -3))
+        planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
+        planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
+        planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
+        planeGeometry.vertices.push(new THREE.Vector3(-1, 0, -3))
+
+        let planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
+        container.add(planeMesh)
+
+        // update lineMesh
+        onRenderFcts.push(function(){
+            let geometry = planeMesh.geometry
+            geometry.vertices[0].copy(angleA.position)
+            geometry.vertices[1].copy(angleB.position)
+            geometry.vertices[1].copy(angleC.position)
+            geometry.vertices[1].copy(angleD.position)
+            geometry.vertices[1].copy(angleA.position)
+
+            geometry.verticesNeedUpdate = true
+            geometry.computeBoundingSphere();
+            geometry.computeLineDistances();
+        })
     }
 
     initDetectMarker() {
@@ -319,7 +360,7 @@ class Pong {
 
         t.gameIsStarted = true
 
-        t.createPlane()
+        // t.createPlane()
 
         // let length = t.markerRoot1.position.distanceTo( t.markerRoot2.position )
         // let settings = {
@@ -367,8 +408,6 @@ class Pong {
     createPlane() {
         const t = this
 
-        alert("create plane")
-
         // récupère nos marqueurs
         let angleA = t.scene.getObjectByName('angleA')
         let angleB = t.scene.getObjectByName('angleB')
@@ -393,7 +432,7 @@ class Pong {
         planeGeometry.vertices[1].copy(angleB.position)
         planeGeometry.vertices[2].copy(angleC.position)
         planeGeometry.vertices[3].copy(angleD.position)
-        planeGeometry.vertices[4].copy(angleD.position)
+        planeGeometry.vertices[4].copy(angleA.position)
 
         // BESOIN ?
         planeGeometry.verticesNeedUpdate = true
