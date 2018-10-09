@@ -102,13 +102,13 @@ class Sandboxe {
         window.addEventListener('gestureend', function(e) {
             e.preventDefault()
 
+            let grid = t.scene.getObjectByName('grid')
+
             if (e.scale < 1.0) {
-                t.camera.fov *= -2
-                t.camera.updateProjectionMatrix()
+                grid.matrix.makeScale( 1, 1, 1 )
                 alert('dezoom')
             } else if (e.scale > 1.0) {
-                t.camera.fov *= 2
-                t.camera.updateProjectionMatrix()
+                grid.matrix.makeScale( 2, 2, 2 )
                 alert("zoom")
             }
         }, false)
