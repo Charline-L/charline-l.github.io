@@ -17,7 +17,7 @@ class Sandboxe {
         // toutes les couleurs
         t.colors = {
             white: 0xffffff,
-            red: 0x00ffff
+            blue: 0x00ffff
         }
 
         // loop des functions
@@ -33,7 +33,6 @@ class Sandboxe {
         t.gridSize = 3
         t.sizeCube = 1
 
-
         t.init()
     }
 
@@ -42,6 +41,7 @@ class Sandboxe {
 
         t.createRenderer()
         t.createCamera()
+        t.createControls()
         t.createArToolKitSource()
 
         t.bindEvents()
@@ -69,15 +69,21 @@ class Sandboxe {
         t.renderer.domElement.classList.add("sandboxe-game__canvas")
 
         // ajoute au dom
-        document.body.insertBefore(t.renderer.domElement, t.$header);
+        document.body.insertBefore(t.renderer.domElement, t.$header)
     }
 
     createCamera() {
         const t = this
 
-        // TODO === regarder si ne pas mettre camera perspective ?
-        t.camera = new THREE.PerspectiveCamera( 75, t.ww / t.wh, 0.1, 1000 )
+        t.camera = new THREE.PerspectiveCamera(75, t.ww / t.wh, 0.1, 1000)
         t.scene.add(t.camera)
+    }
+
+    createControls() {
+        const t = this
+
+        t.controls = new THREE.OrbitControls(t.camera)
+        t.controls.update()
     }
 
     createArToolKitSource() {
@@ -87,7 +93,6 @@ class Sandboxe {
             sourceType: 'webcam',
         })
 
-        // TODO === vérifier si fonction est : trigger un resize à son initialisation ?
         t.arToolkitSource.init(function onReady() {
             t.resize()
         })
@@ -99,7 +104,7 @@ class Sandboxe {
         document.addEventListener("resize", t.resize.bind(t))
 
         // permet d'intéragir avec le DOM
-        t.domEvents	= new THREEx.DomEvents(t.camera, t.renderer.domElement)
+        t.domEvents = new THREEx.DomEvents(t.camera, t.renderer.domElement)
     }
 
     resize() {
@@ -129,12 +134,11 @@ class Sandboxe {
         // lance init
         t.arToolkitContext.init(function onCompleted() {
             // TODO : à checker === copy projection matrix to camera
-            t.camera.projectionMatrix.copy(t.arToolkitContext.getProjectionMatrix());
+            t.camera.projectionMatrix.copy(t.arToolkitContext.getProjectionMatrix())
         })
 
-        // TODO === garde le tableau ou tout das une fonction ?
         // ajoute la fonction au tableau qui stocke les fonctions pour le loop
-        t.onRenderFcts.push(function () {
+        t.onRenderFcts.push(() => {
             if (t.arToolkitSource.ready === false) return
             t.arToolkitContext.update(t.arToolkitSource.domElement)
         })
@@ -158,20 +162,19 @@ class Sandboxe {
             patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.hiro',
         })
 
-        // let sizeGroupe = t.sizeCube * t.gridSize + (t.gap *  (t.gridSize - 1 ) )
-
+        // pour le nom des markers
         let count = 0
 
         // création de la grille lui sera liée
-        for (let i = 0; i < t.gridSize ; i++) {
-            for (let j = 0; j < t.gridSize ; j++) {
+        for (let i = 0; i < t.gridSize; i++) {
+            for (let j = 0; j < t.gridSize; j++) {
 
                 let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
                 let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
                 let mesh = new THREE.Mesh(geometry, material)
 
-                mesh.position.x = ( i * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
-                mesh.position.z = ( j * t.sizeCube ) - ( ( t.gridSize - 1 ) / 2 * t.sizeCube )
+                mesh.position.x = (i * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
+                mesh.position.z = (j * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
 
                 mesh.name = 'mesh-' + count++
 
@@ -179,9 +182,8 @@ class Sandboxe {
                 grid.add(mesh)
 
                 // chacun des block on ajoute un écouteur d'évènements
-                t.domEvents.addEventListener( mesh, 'click', function() {
+                t.domEvents.addEventListener(mesh, 'click', () => {
                     t.updateMesh(mesh.name)
-                    // alert("click "+ mesh.name)
                 })
             }
         }
@@ -192,9 +194,9 @@ class Sandboxe {
 
         let grid = t.scene.getObjectByName('grid')
 
-        t.onRenderFcts.push(function () {
+        t.onRenderFcts.push(() => {
 
-            if ( t.elementSelected && grid.visible ) {
+            if (t.elementSelected && grid.visible) {
                 t.$colors.classList.remove("hidden")
             }
             else {
@@ -207,8 +209,8 @@ class Sandboxe {
         const t = this
 
         // ajoute renderer au tableau d'update
-        t.onRenderFcts.push(function () {
-            t.renderer.render(t.scene, t.camera);
+        t.onRenderFcts.push(() => {
+            t.renderer.render(t.scene, t.camera)
         })
     }
 
@@ -216,16 +218,20 @@ class Sandboxe {
         const t = this
 
         requestAnimationFrame(function animate(nowMsec) {
+
             // lance la boucle
-            requestAnimationFrame(animate);
+            requestAnimationFrame(animate)
 
             // measure time
             t.lastTimeMsec = t.lastTimeMsec || nowMsec - 1000 / 60
             let deltaMsec = Math.min(200, nowMsec - t.lastTimeMsec)
             t.lastTimeMsec = nowMsec
 
+            // change les controls
+            t.controls.update()
+
             // appelle les function d'update que l'on vait stocké dans un tableau
-            t.onRenderFcts.forEach(function (onRenderFct) {
+            t.onRenderFcts.forEach((onRenderFct) => {
                 onRenderFct(deltaMsec / 1000, nowMsec / 1000)
             })
         })
@@ -234,14 +240,11 @@ class Sandboxe {
     updateMesh(name) {
         const t = this
 
-        console.log("updateMesh", name)
-
         let mesh = t.scene.getObjectByName(name)
-        let material = new THREE.MeshBasicMaterial({color: t.colors.red})
+        let material = new THREE.MeshBasicMaterial({color: t.colors.blue})
 
         mesh.material = material
     }
-
 }
 
 new Sandboxe()
