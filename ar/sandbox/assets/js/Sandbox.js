@@ -105,6 +105,15 @@ class Sandboxe {
 
         // permet d'intéragir avec le DOM
         t.domEvents = new THREEx.DomEvents(t.camera, t.renderer.domElement)
+
+        // TEST : si detect les pinch
+        window.addEventListener('gestureend', function(e) {
+            if (e.scale < 1.0) {
+                alert("dezoom")
+            } else if (e.scale > 1.0) {
+                alert("zoom")
+            }
+        }, false)
     }
 
     resize() {
