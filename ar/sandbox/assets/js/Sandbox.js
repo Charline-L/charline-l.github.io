@@ -103,8 +103,12 @@ class Sandboxe {
             e.preventDefault()
 
             if (e.scale < 1.0) {
-                alert("dezoom")
+                t.camera.fov *= -2
+                t.camera.updateProjectionMatrix()
+                alert('dezoom')
             } else if (e.scale > 1.0) {
+                t.camera.fov *= 2
+                t.camera.updateProjectionMatrix()
                 alert("zoom")
             }
         }, false)
