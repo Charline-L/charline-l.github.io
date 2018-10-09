@@ -41,7 +41,6 @@ class Sandboxe {
 
         t.createRenderer()
         t.createCamera()
-        t.createControls()
         t.createArToolKitSource()
 
         t.bindEvents()
@@ -77,13 +76,6 @@ class Sandboxe {
 
         t.camera = new THREE.PerspectiveCamera(75, t.ww / t.wh, 0.1, 1000)
         t.scene.add(t.camera)
-    }
-
-    createControls() {
-        const t = this
-
-        t.controls = new THREE.OrbitControls(t.camera)
-        t.controls.update()
     }
 
     createArToolKitSource() {
@@ -235,9 +227,6 @@ class Sandboxe {
             t.lastTimeMsec = t.lastTimeMsec || nowMsec - 1000 / 60
             let deltaMsec = Math.min(200, nowMsec - t.lastTimeMsec)
             t.lastTimeMsec = nowMsec
-
-            // change les controls
-            t.controls.update()
 
             // appelle les function d'update que l'on vait stocké dans un tableau
             t.onRenderFcts.forEach((onRenderFct) => {
