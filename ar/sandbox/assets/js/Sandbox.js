@@ -100,6 +100,8 @@ class Sandboxe {
 
         // TEST : si detect les pinch
         window.addEventListener('gestureend', function(e) {
+            e.preventDefault()
+
             if (e.scale < 1.0) {
                 alert("dezoom")
             } else if (e.scale > 1.0) {
