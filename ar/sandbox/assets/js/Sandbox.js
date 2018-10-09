@@ -4,7 +4,7 @@ class Sandboxe {
 
         // DOM
         t.$container = document.querySelector(".sandboxe-game__canvas")
-        t.$colors = document.querySelector(".sandboxe-game__colors")
+        // t.$colors = document.querySelector(".sandboxe-game__colors")
         t.$header = document.querySelector(".sandboxe-game__header")
 
         // variable urls
@@ -203,12 +203,12 @@ class Sandboxe {
 
         t.onRenderFcts.push(() => {
 
-            if (t.elementSelected && grid.visible) {
-                t.$colors.classList.remove("hidden")
-            }
-            else {
-                t.$colors.classList.add("hidden")
-            }
+            // if (t.elementSelected && grid.visible) {
+            //     t.$colors.classList.remove("hidden")
+            // }
+            // else {
+            //     t.$colors.classList.add("hidden")
+            // }
         })
     }
 
