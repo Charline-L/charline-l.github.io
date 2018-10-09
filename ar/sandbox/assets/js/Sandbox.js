@@ -98,20 +98,20 @@ class Sandboxe {
         // permet d'intéragir avec le DOM
         t.domEvents = new THREEx.DomEvents(t.camera, t.renderer.domElement)
 
-        // TEST : si detect les pinch
-        window.addEventListener('gestureend', function(e) {
-            e.preventDefault()
-
-            let grid = t.scene.getObjectByName('grid')
-
-            if (e.scale < 1.0) {
-                grid.matrix.makeScale( 1, 1, 1 )
-                alert('dezoom')
-            } else if (e.scale > 1.0) {
-                grid.matrix.makeScale( 2, 2, 2 )
-                alert("zoom")
-            }
-        }, false)
+        // // TEST : si detect les pinch
+        // window.addEventListener('gestureend', function(e) {
+        //     e.preventDefault()
+        //
+        //     let grid = t.scene.getObjectByName('grid')
+        //
+        //     if (e.scale < 1.0) {
+        //         grid.matrix.makeScale( 1, 1, 1 )
+        //         alert('dezoom')
+        //     } else if (e.scale > 1.0) {
+        //         grid.matrix.makeScale( 2, 2, 2 )
+        //         alert("zoom")
+        //     }
+        // }, false)
     }
 
     resize() {
