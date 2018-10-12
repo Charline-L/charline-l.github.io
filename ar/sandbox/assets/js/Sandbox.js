@@ -141,7 +141,7 @@ class Sandboxe {
     initMarker() {
         const t = this
 
-        alert("in ini marker")
+        alert("in init marker")
 
         // création d'un groupe d'éléments
         let grid = new THREE.Group()
@@ -190,9 +190,11 @@ class Sandboxe {
 
         let grid = t.scene.getObjectByName('grid')
 
+        alert("in intDetectMarker",)
+
         t.onRenderFcts.push(() => {
 
-            if (t.elementSelected && grid.visible) {
+            if (grid.visible) {
                 alert("visible")
             }
         })
