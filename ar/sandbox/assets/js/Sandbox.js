@@ -128,7 +128,6 @@ class Sandboxe {
 
         // lance init
         t.arToolkitContext.init(function onCompleted() {
-            // TODO : à checker === copy projection matrix to camera
             t.camera.projectionMatrix.copy(t.arToolkitContext.getProjectionMatrix())
         })
 
