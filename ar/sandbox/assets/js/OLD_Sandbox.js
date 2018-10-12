@@ -1,8 +1,6 @@
 class Sandboxe {
-    constructor(pattern) {
+    constructor() {
         const t = this
-
-        t.pattern = pattern
 
         // DOM
         t.$container = document.querySelector(".sandboxe-game__canvas")
@@ -33,6 +31,8 @@ class Sandboxe {
         // grille
         t.gridSize = 3
         t.sizeCube = 1
+
+        // si des formes existent déjà
 
         t.init()
     }
@@ -98,6 +98,7 @@ class Sandboxe {
 
         // permet d'intéragir avec le DOM
         t.domEvents = new THREEx.DomEvents(t.camera, t.renderer.domElement)
+
     }
 
     resize() {
@@ -152,34 +153,34 @@ class Sandboxe {
         // récupère le marker que l'on doit chercher
         let controls = new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
             type: 'pattern',
-            patternUrl: THREEx.ArToolkitContext.baseURL + t.pattern,
+            patternUrl: THREEx.ArToolkitContext.baseURL + 'patt.hiro',
         })
 
-        // // pour le nom des markers
-        // let count = 0
-        //
-        // // création de la grille lui sera liée
-        // for (let i = 0; i < t.gridSize; i++) {
-        //     for (let j = 0; j < t.gridSize; j++) {
-        //
-        //         let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
-        //         let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
-        //         let mesh = new THREE.Mesh(geometry, material)
-        //
-        //         mesh.position.x = (i * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
-        //         mesh.position.z = (j * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
-        //
-        //         mesh.name = 'mesh-' + count++
-        //
-        //         // ajoute à notre groupe
-        //         grid.add(mesh)
-        //
-        //         // chacun des block on ajoute un écouteur d'évènements
-        //         t.domEvents.addEventListener(mesh, 'click', () => {
-        //             t.updateMesh(mesh.name)
-        //         })
-        //     }
-        // }
+        // pour le nom des markers
+        let count = 0
+
+        // création de la grille lui sera liée
+        for (let i = 0; i < t.gridSize; i++) {
+            for (let j = 0; j < t.gridSize; j++) {
+
+                let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
+                let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
+                let mesh = new THREE.Mesh(geometry, material)
+
+                mesh.position.x = (i * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
+                mesh.position.z = (j * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
+
+                mesh.name = 'mesh-' + count++
+
+                // ajoute à notre groupe
+                grid.add(mesh)
+
+                // chacun des block on ajoute un écouteur d'évènements
+                t.domEvents.addEventListener(mesh, 'click', () => {
+                    t.updateMesh(mesh.name)
+                })
+            }
+        }
     }
 
     initDetectMarker() {
@@ -189,9 +190,12 @@ class Sandboxe {
 
         t.onRenderFcts.push(() => {
 
-            if (t.elementSelected && grid.visible) {
-                alert("visible")
-            }
+            // if (t.elementSelected && grid.visible) {
+            //     t.$colors.classList.remove("hidden")
+            // }
+            // else {
+            //     t.$colors.classList.add("hidden")
+            // }
         })
     }
 
