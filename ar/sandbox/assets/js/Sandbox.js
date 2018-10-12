@@ -2,6 +2,8 @@ class Sandboxe {
     constructor(pattern) {
         const t = this
 
+        alert("OK sanboxe: " + pattern)
+
         t.pattern = pattern
 
         // DOM
