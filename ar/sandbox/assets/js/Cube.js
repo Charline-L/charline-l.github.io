@@ -21,11 +21,11 @@ class Cube {
         t.gridSize = 3
         t.sizeCube = 1
 
-        // toutes les couleurs
-        t.colors = {
-            white: 0xffffff,
-            blue: 0x00ffff
-        }
+        // // toutes les couleurs
+        // t.colors = {
+        //     white: 0xffffff,
+        //     blue: 0x00ffff
+        // }
 
         t.init()
     }
@@ -46,7 +46,7 @@ class Cube {
 
         // défini la forme / texture du cube
         let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
-        let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
+        let material = new THREE.MeshBasicMaterial({color: t.color, wireframe: false})
         let mesh = new THREE.Mesh(geometry, material)
 
         // positionne le cube
