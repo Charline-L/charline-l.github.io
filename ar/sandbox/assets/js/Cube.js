@@ -2,8 +2,6 @@ class Cube {
     constructor(infos, scene) {
         const t = this
 
-        alert("in cube")
-
         // infomations de positions du cube
         t.x = infos.position.x
         t.y = infos.position.y
@@ -21,11 +19,6 @@ class Cube {
         t.gridSize = 3
         t.sizeCube = 1
 
-        // // toutes les couleurs
-        // t.colors = {
-        //     white: 0xffffff,
-        //     blue: 0x00ffff
-        // }
 
         t.init()
     }
@@ -42,11 +35,14 @@ class Cube {
         // récupère notre grille dans notre scene
         let grid = t.scene.getObjectByName('grid')
 
-        console.log("grid", grid)
-
         // défini la forme / texture du cube
         let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
-        let material = new THREE.MeshBasicMaterial({color: t.color, wireframe: false})
+        let material = new THREE.MeshBasicMaterial({
+            color: t.color,
+            wireframe: false,
+            transparent: true,
+            opacity: t.alpha
+        })
         let mesh = new THREE.Mesh(geometry, material)
 
         // positionne le cube
