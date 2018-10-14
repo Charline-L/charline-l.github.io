@@ -271,24 +271,25 @@ class Sandboxe {
         let cubeColor = t.hslToHex(t.$colorSlideChroma.value, 100, 50);
         t.$colorResult.style.backgroundColor = 'hsl(' + t.$colorSlideChroma.value + ', 100%, 50%)'
 
+        // trigger event de mise à jour de la couleur
+        window.dispatchEvent( new Event('changeColor', {color: cubeColor} ))
 
-        // Loop sur les éléments Mesh
-        t.scene.traverse(function (node) {
-
-            if (node instanceof THREE.Mesh) {
-                // Si le cube est sélectionné
-                if (node.active) {
-
-                    // trigger event de mise à jour de la couleur
-                    window.dispatchEvent( new Event('changeColor', {color: cubeColor, name: node.name} ))
-                    // window.dispatchEvent(window.customEvents.changeColor)
-                    // // Changement de couleur
-                    // let material = new THREE.MeshBasicMaterial({color: t.cubeColor})
-                    // node.material = material
-                    // t.cubeInactive(node.name)
-                }
-            }
-        })
+        // // Loop sur les éléments Mesh
+        // t.scene.traverse(function (node) {
+        //
+        //     if (node instanceof THREE.Mesh) {
+        //         // Si le cube est sélectionné
+        //         if (node.active) {
+        //
+        //
+        //             // window.dispatchEvent(window.customEvents.changeColor)
+        //             // // Changement de couleur
+        //             // let material = new THREE.MeshBasicMaterial({color: t.cubeColor})
+        //             // node.material = material
+        //             // t.cubeInactive(node.name)
+        //         }
+        //     }
+        // })
     }
 
     editMode() {
