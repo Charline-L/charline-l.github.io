@@ -10,7 +10,7 @@ class Sandboxe {
         t.$container = document.querySelector(".sandboxe-game__canvas")
         t.$header = document.querySelector(".sandboxe-game__header")
         t.$buttonEdit = document.querySelector(".sandboxe-game__button--edit")
-        t.$buttonRemove = document.querySelector(".sandboxe-game__button--delete")
+        t.$buttonDelete = document.querySelector(".sandboxe-game__button--delete")
         t.$buttonAdd = document.querySelector(".sandboxe-game__button--add")
         t.$colors = document.querySelector(".sandboxe-game__colors")
         t.$colorSlideChroma = document.querySelector(".sandboxe-game__slide-chroma")
@@ -106,7 +106,7 @@ class Sandboxe {
         t.$buttonEdit.addEventListener("click", t.editMode.bind(t))
         t.$buttonAdd.addEventListener("click", t.addMode.bind(t))
         // TODO === à remettre
-        // t.$buttonRemove.addEventListener("click", t.removeCube.bind(t))
+        // t.$buttonDelete.addEventListener("click", t.removeCube.bind(t))
 
         // Watcher évènements lancés depuis les classes Cubes
         window.addEventListener("hideButtonDelete", t.hideButtonDelete.bind(t))
@@ -362,13 +362,17 @@ class Sandboxe {
     hideButtonDelete() {
         const t = this
 
-        t.$buttonRemove.classList.add('hidden')
+        console.log("in hideButtonDelete")
+
+        t.$buttonDelete.classList.add('hidden')
     }
 
     showButtonDelete() {
         const t = this
 
-        t.$buttonRemove.classList.remove('hidden')
+        console.log("in showButtonDelete ")
+
+        t.$buttonDelete.classList.remove('hidden')
     }
 
     hslToHex(h, s, l) {
