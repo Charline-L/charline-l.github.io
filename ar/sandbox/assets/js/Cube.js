@@ -134,6 +134,9 @@ class Cube {
         if (t.mesh.active) {
 
             t.scene.remove(t.mesh)
+
+            console.log("still exist", t.scene.getObjectByName(t.id))
+
             t.mesh.geometry.dispose()
             t.mesh.material.dispose()
             t.mesh = undefined
