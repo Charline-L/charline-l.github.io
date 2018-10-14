@@ -378,15 +378,19 @@ class Sandboxe {
     hideButtonDelete() {
         const t = this
 
-        console.log("in hideButtonDelete")
+        let hasActiveCube = false
 
-        t.$buttonDelete.classList.add('hidden')
+        // si on a toujours un cube de sectionné on n'efface pas le bouton delete
+        if ( node instanceof THREE.Mesh ) {
+
+            if (node.active) hasActiveCube = true
+        }
+
+        if (!hasActiveCube) t.$buttonDelete.classList.add('hidden')
     }
 
     showButtonDelete() {
         const t = this
-
-        console.log("in showButtonDelete ")
 
         t.$buttonDelete.classList.remove('hidden')
     }

@@ -106,8 +106,6 @@ class Cube {
     changeColor(e){
         const t = this
 
-        console.log("changeColor", e.detail)
-
         if (t.mesh.active) {
 
             let material = new THREE.MeshBasicMaterial({
@@ -119,6 +117,5 @@ class Cube {
 
             t.mesh.material = material
         }
-
     }
 }
