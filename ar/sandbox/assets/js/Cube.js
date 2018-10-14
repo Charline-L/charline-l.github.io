@@ -133,12 +133,14 @@ class Cube {
 
         if (t.mesh.active) {
 
-            t.scene.remove(t.mesh)
+            let mesh = t.scene.getObjectByName(t.id)
+            t.scene.remove(mesh)
 
             console.log("still exist", t.scene.getObjectByName(t.id))
 
-            t.mesh.geometry.dispose()
-            t.mesh.material.dispose()
+            mesh.geometry.dispose()
+            mesh.material.dispose()
+
             t.mesh = undefined
 
             // TODO : envoyer au server que le cube a été effacé
