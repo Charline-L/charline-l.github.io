@@ -88,7 +88,7 @@ class Cube {
         t.mesh.active = true
 
         // Afficher le button remove
-        window.dispatchEvent(window.customEvents.showButtonDelete)
+        window.dispatchEvent( new Event('showButtonDelete') )
     }
 
     cubeInactive() {
@@ -98,18 +98,18 @@ class Cube {
         t.mesh.active = false
 
         // Ne pas afficher le button remove
-        window.dispatchEvent(window.customEvents.hideButtonDelete)
+        window.dispatchEvent( new Event('hideButtonDelete') )
     }
 
-    changeColor(infos){
+    changeColor(e){
         const t = this
 
-        console.log("changeColor", infos)
+        console.log("changeColor", e)
 
         if (t.mesh.active) {
 
             let material = new THREE.MeshBasicMaterial({
-                color: infos.color,
+                color: e.details.color,
                 wireframe: t.wireframe,
                 transparent: true,
                 opacity: t.alpha
