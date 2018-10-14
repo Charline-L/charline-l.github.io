@@ -2,6 +2,9 @@ class Cube {
     constructor(cube, three) {
         const t = this
 
+        console.log("cube", cube)
+        console.log("three", three)
+
         // infomations de positions du cube
         t.x = cube.position.x
         t.y = cube.position.y
