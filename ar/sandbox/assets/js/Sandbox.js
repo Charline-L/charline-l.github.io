@@ -332,28 +332,37 @@ class Sandboxe {
                         _id: null,
                     }
 
-                    let NW = index - t.gridSize - 1
-                    let N = index - t.gridSize
-                    let NE = index - t.gridSize + 1
-                    let E = index + 1
-                    let SE = index + t.gridSize + 1
-                    let S = index + t.gridSize
-                    let SW = index + t.gridSize - 1
-                    let W = index - 1
+                    let positions = {
+                        NW : index - t.gridSize - 1,
+                        N : index - t.gridSize,
+                        NE : index - t.gridSize + 1,
+                        E : index + 1,
+                        SE : index + t.gridSize + 1,
+                        S : index + t.gridSize,
+                        SW : index + t.gridSize - 1,
+                        W : index - 1
+                    }
 
-                    // vérfie s'il y a une case pour tous ses côtés
-                    // si pas de case on créer un cube
-                    if ( NW >= 0 || t.boardGame[y][NW] === null) {
 
-                        // prépare nouvelles coordonées
-                        cube.x = NW % t.gridSize
-                        cube.z = (NW - cube.x) / t.gridSize
+                    for (let property in positions) {
+                        if (positions.hasOwnProperty(property)) {
+                            console.log("property", property)
 
-                        // créer le cube
-                        new Cube(cube, three)
-
-                        // met à jour le tableau t.boardGame
-                        t.boardGame[y][NW] = cube
+                            // vérfie s'il y a une case pour tous ses côtés
+                            // si pas de case on créer un cube
+                            // if ( property >= 0 || t.boardGame[y][position] === null) {
+                            //
+                            //     // prépare nouvelles coordonées
+                            //     cube.x = NW % t.gridSize
+                            //     cube.z = (NW - cube.x) / t.gridSize
+                            //
+                            //     // créer le cube
+                            //     new Cube(cube, three)
+                            //
+                            //     // met à jour le tableau t.boardGame
+                            //     t.boardGame[y][NW] = cube
+                            // }
+                        }
                     }
                 }
             }
