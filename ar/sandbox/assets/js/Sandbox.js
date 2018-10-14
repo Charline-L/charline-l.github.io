@@ -312,44 +312,49 @@ class Sandboxe {
             domEvents: t.domEvents
         }
 
-        for (let y = 0; y < t.boardGame.length; y++ ) {
+        for (let y = 0; y < 1; y++ ) {
+        // for (let y = 0; y < t.boardGame.length; y++ ) {
 
-            for (let index = 0 ; t.boardGame[y].length; index++ ) {
+            for (let index = 0 ; index < t.boardGame[y].length; index++ ) {
 
-                let cube = {
-                    position: {
-                        x: null,
-                        y: y,
-                        z: null
-                    },
-                    color: 0xffffff,
-                    wireframe: true,
-                    alpha: 1,
-                    _id: null,
-                }
+                // si une valeur est enregistrée
+                if ( t.boardGame[y][index] !== null ) {
 
-                let NW = index - t.gridSize - 1
-                let N = index - t.gridSize
-                let NE = index - t.gridSize + 1
-                let E = index + 1
-                let SE = index + t.gridSize + 1
-                let S = index + t.gridSize
-                let SW = index + t.gridSize - 1
-                let W = index - 1
+                    let cube = {
+                        position: {
+                            x: null,
+                            y: y,
+                            z: null
+                        },
+                        color: 0xffffff,
+                        wireframe: true,
+                        alpha: 1,
+                        _id: null,
+                    }
 
-                // vérfie s'il y a une case pour tous ses côtés
-                // si pas de case on créer un cube
-                if ( NW >= 0 || t.boardGame[y][NW] === null) {
+                    let NW = index - t.gridSize - 1
+                    let N = index - t.gridSize
+                    let NE = index - t.gridSize + 1
+                    let E = index + 1
+                    let SE = index + t.gridSize + 1
+                    let S = index + t.gridSize
+                    let SW = index + t.gridSize - 1
+                    let W = index - 1
 
-                    // prépare nouvelles coordonées
-                    cube.x = NW % t.gridSize
-                    cube.z = (NW - cube.x) / t.gridSize
+                    // vérfie s'il y a une case pour tous ses côtés
+                    // si pas de case on créer un cube
+                    if ( NW >= 0 || t.boardGame[y][NW] === null) {
 
-                    // créer le cube
-                    new Cube(cube, three)
+                        // prépare nouvelles coordonées
+                        cube.x = NW % t.gridSize
+                        cube.z = (NW - cube.x) / t.gridSize
 
-                    // met à jour le tableau t.boardGame
-                    t.boardGame[y][NW] = cube
+                        // créer le cube
+                        new Cube(cube, three)
+
+                        // met à jour le tableau t.boardGame
+                        t.boardGame[y][NW] = cube
+                    }
                 }
             }
         }
