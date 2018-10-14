@@ -353,8 +353,8 @@ class Sandboxe {
 
 
                             // prépare nouvelles coordonées
-                            cube.position.z = sideCase % t.gridSize
-                            cube.position.x = (sideCase - cube.position.z) / t.gridSize
+                            cube.position.x = sideCase % t.gridSize
+                            cube.position.z = (sideCase - cube.position.x) / t.gridSize
 
                             // créer le cube
                             new Cube(cube, three)
