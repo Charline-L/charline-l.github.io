@@ -110,7 +110,7 @@ class Sandboxe {
 
         // Watcher évènements lancés depuis les classes Cubes
         window.addEventListener("hideButtonDelete", t.hideButtonDelete.bind(t))
-        window.addEventListener("showButtonRemove", t.showButtonDelete.bind(t))
+        window.addEventListener("showButtonDelete", t.showButtonDelete.bind(t))
     }
 
     resize() {
