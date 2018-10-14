@@ -35,6 +35,7 @@ class Website {
         window.customEvents = {
             hideButtonDelete: new Event('hideButtonDelete'),
             showButtonDelete: new Event('showButtonDelete'),
+            changeColor: new Event('changeColor'),
         }
     }
 }

@@ -66,6 +66,7 @@ class Cube {
     bindEvents() {
         const t = this
 
+        // si click sur un cube on lui change son "activité"
         t.domEvents.addEventListener(t.mesh, 'click', function () {
 
             // Si on est en mode edition
@@ -75,12 +76,14 @@ class Cube {
                 else t.cubeActive()
             }
         })
+
+        // event trigger dans la class Sandbox
+        window.addEventListener("changeColor", t.changeColor.bind(t))
     }
 
     cubeActive() {
         const t = this
 
-        console.log("in cubeActive")
         // Cube actif
         t.mesh.active = true
 
@@ -91,20 +94,29 @@ class Cube {
     cubeInactive() {
         const t = this
 
-        console.log("in cubeInactive")
         // Cube inactif
         t.mesh.active = false
 
         // Ne pas afficher le button remove
         window.dispatchEvent(window.customEvents.hideButtonDelete)
     }
-    //
-    // updateMesh(name) {
-    //     const t = this
-    //
-    //     let mesh = t.scene.getObjectByName(name)
-    //     let material = new THREE.MeshBasicMaterial({color: t.color})
-    //
-    //     mesh.material = material
-    // }
+
+    changeColor(infos){
+        const t = this
+
+        console.log("changeColor", infos)
+
+        if (infos.name === t.id) {
+
+            let material = new THREE.MeshBasicMaterial({
+                color: infos.color,
+                wireframe: t.wireframe,
+                transparent: true,
+                opacity: t.alpha
+            })
+
+            t.mesh.material = material
+        }
+
+    }
 }
