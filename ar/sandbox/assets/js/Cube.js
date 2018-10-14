@@ -68,11 +68,17 @@ class Cube {
         // si click sur un cube on lui change son "activité"
         t.domEvents.addEventListener(t.mesh, 'click', function () {
 
-            // Si on est en mode edition
+            // si on est en mode edition on peut changer la couleur du cube
             if (window.isEdition) {
 
                 if (t.mesh.active) t.cubeInactive()
                 else t.cubeActive()
+            }
+
+            // si on est en mode ajout on peut ajouter des cubes
+            if (window.isAdding){
+
+                t.addCube()
             }
         })
 
@@ -136,5 +142,11 @@ class Cube {
 
             // TODO : envoyer au server que le cube a été effacé
         }
+    }
+
+    addCube() {
+        const t = this
+
+        // TODO : envoyer au server que le cube a été créé
     }
 }

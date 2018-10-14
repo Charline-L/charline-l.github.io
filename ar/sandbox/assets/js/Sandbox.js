@@ -33,6 +33,10 @@ class Sandboxe {
         t.isSeen = false
         window.isEdition = false
 
+        // pour représentation sous la forme d'un tableau du plateau de jeu
+        t.gridSize = 3
+        t.boardGame = []
+
         t.init()
     }
 
@@ -43,6 +47,7 @@ class Sandboxe {
         t.createCamera()
         t.createLight()
         t.createArToolKitSource()
+        t.createGamePlay()
 
         t.bindEvents()
 
@@ -96,6 +101,18 @@ class Sandboxe {
         t.arToolkitSource.init(function onReady() {
             t.resize()
         })
+    }
+
+    createGamePlay() {
+        const t = this
+
+        // on va stocker dans objet de tableau toutes nos valeurs pour les cases
+        for (let i = 0; i < t.gridSize; i++) {
+
+            let array = []
+            for (let j = 0; j < Math.pow(t.gridSize, 2); j++) array[j] = null
+            t.boardGame[i] = array
+        }
     }
 
     bindEvents() {
@@ -226,7 +243,7 @@ class Sandboxe {
         }
 
         // appelle le serveur pour récupérer les cubes associées au marker
-        let cubesRegistered = [
+        t.cubesRegistered = [
             {
                 position: {
                     x: 1,
@@ -273,7 +290,16 @@ class Sandboxe {
             }
         ]
 
-        for (let cubeRegister of cubesRegistered) new Cube(cubeRegister, three)
+        for (let cubeRegister of t.cubesRegistered ) {
+
+            // on append le cube
+            new Cube(cubeRegister, three)
+
+            // on ajoute dans notre plateau de jeu les valeurs du cube
+            t.boardGame[y][x + (z * t.gridSize)]
+        }
+
+        console.log("t.boardGame", t.boardGame)
     }
 
     updateCubeColor() {
@@ -333,10 +359,16 @@ class Sandboxe {
             t.$colors.classList.add('hidden')
             t.$buttonDelete.classList.add('hidden')
             t.$buttonEdit.classList.remove('hidden')
+
+            // trigger pour cacher les cubes en wireframe
+            window.dispatchEvent( new CustomEvent("hideWireframe") )
         } else {
 
             // trigger change pour setter la couleur dans le result
-            t.$colorSlideChroma.dispatchEvent(new Event('change'))
+            t.$colorSlideChroma.dispatchEvent( new Event('change') )
+
+            // trigger pour afficher les cubes en wireframe
+            window.dispatchEvent( new CustomEvent("showWireframe") )
 
             // changement des boutons
             t.$colors.classList.remove('hidden')
@@ -350,26 +382,10 @@ class Sandboxe {
     removeCube() {
         const t = this
 
-        console.log("in remove cube")
-
         let event = new CustomEvent('removeCube')
 
         // trigger event de suppression du cube
         window.dispatchEvent(event)
-
-        // // Loop sur les éléments Mesh
-        // t.scene.traverse(function (node) {
-        //
-        //     if (node instanceof THREE.Mesh) {
-        //         // Si le cube est sélectionné
-        //         if (node.active) {
-        //             // Couleur transparentes sur le cube
-        //             let material = new THREE.MeshBasicMaterial({color: "#ffffff", wireframe: true})
-        //             node.material = material
-        //             t.cubeInactive(node.name)
-        //         }
-        //     }
-        // })
 
         // enlève le boutton delete
         t.hideButtonDelete()
@@ -380,7 +396,7 @@ class Sandboxe {
 
         let hasActiveCube = false
 
-        // si on a toujours un cube de sectionné on n'efface pas le bouton delete
+        // vérifie si on a toujours un cube de sectionné on n'efface pas le bouton delete
         t.scene.traverse( function( node ) {
             if ( node instanceof THREE.Mesh ) {
                 if (node.active) hasActiveCube = true
