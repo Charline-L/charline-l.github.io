@@ -322,7 +322,7 @@ class Sandboxe {
                     let cube = {
                         position: {
                             x: null,
-                            y: y,
+                            y: null,
                             z: null
                         },
                         color: 0xffffff,
@@ -352,6 +352,7 @@ class Sandboxe {
                             // prépare nouvelles coordonées
                             cube.position.x = sideCase % t.gridSize
                             cube.position.z = (sideCase - cube.position.x) / t.gridSize
+                            cube.position.y = y
 
                             // créer le cube
                             new Cube(cube, three)
@@ -367,6 +368,7 @@ class Sandboxe {
                         // prépare nouvelles coordonées
                         cube.position.x = t.boardGame[y][index].position.x
                         cube.position.z = t.boardGame[y][index].position.z
+                        cube.position.y = y + 1
 
                         // créer le cube
                         new Cube(cube, three)
@@ -381,6 +383,7 @@ class Sandboxe {
                         // prépare nouvelles coordonées
                         cube.position.x = t.boardGame[y][index].position.x
                         cube.position.z = t.boardGame[y][index].position.z
+                        cube.position.y = y - 1
 
                         // créer le cube
                         new Cube(cube, three)
