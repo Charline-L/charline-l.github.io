@@ -11,8 +11,8 @@ class Website {
         const t = this
 
         t.getMarkers()
+        t.defineCustomEvents()
     }
-
 
     getMarkers() {
         const t = this
@@ -27,6 +27,15 @@ class Website {
 
         new Sandboxe({pattern: 'patt.hiro', id: 'ar-sandbox'})
         // for (let pattern of patterns)  new Sandboxe(pattern)
+    }
+
+    defineCustomEvents() {
+        const t = this
+
+        window.customEvents = {
+            hideButtonRemove: new Event('hideButtonRemove'),
+            showButtonRemove: new Event('showButtonRemove'),
+        }
     }
 }
 

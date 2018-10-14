@@ -1,5 +1,5 @@
 class Cube {
-    constructor(infos, scene) {
+    constructor(infos, scene, domEvents) {
         const t = this
 
         // infomations de positions du cube
@@ -15,10 +15,15 @@ class Cube {
         // scene récupéré depuis la classe Sandboxe
         t.scene = scene
 
+        // domeEvents récupéré
+        t.domEvents = domEvents
+
         // grille
         t.gridSize = 3
         t.sizeCube = 1
 
+        // flag
+        t.modeEdition = false
 
         t.init()
     }
@@ -27,6 +32,7 @@ class Cube {
         const t = this
 
         t.appendCube()
+        t.bindEvents()
     }
 
     appendCube() {
@@ -43,17 +49,81 @@ class Cube {
             transparent: true,
             opacity: t.alpha
         })
-        let mesh = new THREE.Mesh(geometry, material)
+        t.mesh = new THREE.Mesh(geometry, material)
 
         // positionne le cube
-        mesh.position.x = (t.x * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
-        mesh.position.z = (t.z * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
-        mesh.position.y = t.y
+        t.mesh.position.x = (t.x * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
+        t.mesh.position.z = (t.z * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
+        t.mesh.position.y = t.y
 
         // donner nom unique au cube
-        mesh.name = t.id
+        t.mesh.name = t.id
+        t.mesh.new = true
+        t.mesh.active = false
 
         // ajoute à notre groupe qui va l'ajouter à la scène
-        grid.add(mesh)
+        grid.add(t.mesh)
+    }
+
+    bindEvents() {
+        const t = this
+
+        t.domEvents.addEventListener(t.mesh, 'click', function () {
+
+            // Si on est en mode edition
+            if (t.modeEdition) {
+
+                // Si le cube existe déjà
+                if (!t.mesh.new) {
+                    // Si le cube est déjà actif
+                    if (t.mesh.active) {
+                        // Désactivation du cube
+                        t.cubeInactive(t.mesh.name)
+                    } else {
+                        // Activation du cube
+                        t.cubeActive(t.mesh.name)
+                    }
+                } else {
+                    // Ajout du cube
+                    t.updateMesh(t.mesh.name)
+                }
+
+                // Cube ajouté
+                t.mesh.new = false
+            }
+        })
+    }
+
+    cubeActive(name) {
+        const t = this
+
+        let mesh = t.scene.getObjectByName(name)
+
+        // Cube actif
+        mesh.active = true
+
+        // Afficher le button remove
+        window.dispatchEvent(window.customEvents.showButtonRemove)
+    }
+
+    cubeInactive(name) {
+        const t = this
+
+        let mesh = t.scene.getObjectByName(name)
+
+        // Cube inactif
+        mesh.active = false
+
+        // Ne pas afficher le button remove
+        window.dispatchEvent(window.customEvents.hideButtonRemove)
+    }
+
+    updateMesh(name) {
+        const t = this
+
+        let mesh = t.scene.getObjectByName(name)
+        let material = new THREE.MeshBasicMaterial({color: t.color})
+
+        mesh.material = material
     }
 }

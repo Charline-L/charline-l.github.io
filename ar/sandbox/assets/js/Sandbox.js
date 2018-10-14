@@ -2,12 +2,16 @@ class Sandboxe {
     constructor(infos) {
         const t = this
 
+        // le marker
         t.pattern = infos.pattern
         t.id = infos.id
 
         // DOM
         t.$container = document.querySelector(".sandboxe-game__canvas")
         t.$header = document.querySelector(".sandboxe-game__header")
+        t.$colorSlideChroma = document.querySelector(".sandboxe-game__slideChroma")
+        t.$buttonEdit = document.querySelector(".sandboxe-game__editButton")
+        t.$buttonRemove = document.querySelector(".sandboxe-game__removeButton")
 
         // variable urls
         THREEx.ArToolkitContext.baseURL = './assets/markers/'
@@ -15,12 +19,6 @@ class Sandboxe {
         // taille de l'écran
         t.ww = window.innerWidth
         t.wh = window.innerWidth
-
-        // // toutes les couleurs
-        // t.colors = {
-        //     white: 0xffffff,
-        //     blue: 0x00ffff
-        // }
 
         // loop des functions
         t.onRenderFcts = []
@@ -30,11 +28,6 @@ class Sandboxe {
 
         // flag
         t.isSeen = false
-        // t.elementSelected = false
-
-        // // grille
-        // t.gridSize = 3
-        // t.sizeCube = 1
 
         t.init()
     }
@@ -100,6 +93,17 @@ class Sandboxe {
 
         // permet d'intéragir avec le DOM
         t.domEvents = new THREEx.DomEvents(t.camera, t.renderer.domElement)
+
+        // Change color
+        // TODO === on le met dans le cube ?
+        t.$colorSlideChroma.addEventListener("change", t.updateCubeColor.bind(t))
+
+        // Edit button
+        t.$buttonEdit.addEventListener("click", t.editMode.bind(t))
+        t.$buttonRemove.addEventListener("click", t.removeCube.bind(t))
+
+        // Watche évènements lancés depuis les classes Cubes
+        window.addEventListener("hideButtonRemove", t.hideButtonRemove.bind(t))
     }
 
     resize() {
@@ -284,8 +288,97 @@ class Sandboxe {
             }
         ]
 
-        for (let cubeRegister of cubesRegistered) new Cube(cubeRegister, t.scene)
+        for (let cubeRegister of cubesRegistered) new Cube(cubeRegister, t.scene, t.domEvents)
     }
+
+    updateCubeColor() {
+        const t = this
+
+        t.cubeColor = t.hslToHex(t.$colorSlideChroma.value,100,50);
+        t.$colorResult.style.backgroundColor = 'hsl(' + t.$colorSlideChroma.value + ', 100%, 50%)'
+
+        // Loop sur les éléments Mesh
+        t.scene.traverse( function( node ) {
+            if ( node instanceof THREE.Mesh ) {
+                // Si le cube est sélectionné
+                if (node.active) {
+                    // Changement de couleur
+                    let material = new THREE.MeshBasicMaterial({color: t.cubeColor})
+                    node.material = material
+                    t.cubeInactive(node.name)
+                }
+            }
+        } );
+    }
+
+    editMode() {
+        const t = this
+
+        // Si on est en mode vue, on passe en mode edition
+        if (t.$interface.classList.contains('vue')) {
+            // Interface en mode edition
+            t.$interface.classList.remove('vue');
+            t.$interface.classList.add('edition');
+            t.$modeDiv.innerHTML = "Edition";
+            // Button edit
+            t.$buttonEdit.querySelector('p').innerHTML = "Retour Vue";
+            // Affichage des couleurs
+            t.$colors.classList.remove('hidden');
+            // Mode edition à true -> autoriser le click sur la grille
+            t.$modeEdition = true;
+
+            // Si on est en mode édition, on passe en mode vue
+        } else {
+            // Interface en mode vue
+            t.$interface.classList.remove('edition');
+            t.$interface.classList.add('vue');
+            t.$modeDiv.innerHTML = "Vue";
+            // Button edit
+            t.$buttonEdit.querySelector('p').innerHTML = "Editer";
+            // Button remove
+            t.$buttonRemove.classList.add('hidden');
+            // Ne pas afficher les couleurs
+            t.$colors.classList.add('hidden');
+            // Mode edition à false -> ne pas autoriser le click sur la grille
+            t.$modeEdition = false;
+        }
+    }
+
+    removeCube() {
+        const t = this
+
+        // Loop sur les éléments Mesh
+        t.scene.traverse( function( node ) {
+            if ( node instanceof THREE.Mesh ) {
+                // Si le cube est sélectionné
+                if (node.active) {
+                    // Couleur transparentes sur le cube
+                    let material = new THREE.MeshBasicMaterial({color: "#000000", wireframe: true })
+                    node.material = material
+                    t.cubeInactive(node.name)
+                }
+            }
+        })
+
+        // Ne pas afficher le button remove
+        t.$buttonRemove.classList.add('hidden');
+    }
+
+    hideButtonRemove() {
+        const t = this
+
+        t.$buttonRemove.classList.add('hidden')
+    }
+
+    showButtonRemove() {
+        const t = this
+
+        t.$buttonRemove.classList.remove('hidden')
+    }
+
+
+
+
 }
 
 // new Sandboxe()
