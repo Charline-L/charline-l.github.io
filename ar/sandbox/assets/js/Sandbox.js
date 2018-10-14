@@ -378,7 +378,6 @@ class Sandboxe {
         // si on a toujours un cube de sectionné on n'efface pas le bouton delete
         t.scene.traverse( function( node ) {
             if ( node instanceof THREE.Mesh ) {
-
                 if (node.active) hasActiveCube = true
             }
         })
