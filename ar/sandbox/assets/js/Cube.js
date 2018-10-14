@@ -65,7 +65,7 @@ class Cube {
             uniforms: uniforms,
             vertexShader: vxs,
             fragmentShader: fgs
-        });
+        })
     }
 
     appendCube() {
@@ -93,6 +93,8 @@ class Cube {
         t.mesh.name = t.id
         // t.mesh.new = true
         t.mesh.active = false
+
+        alert("cube ajouté")
 
         // ajoute à notre groupe qui va l'ajouter à la scène
         grid.add(t.mesh)

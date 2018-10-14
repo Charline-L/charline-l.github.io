@@ -216,6 +216,12 @@ class Sandboxe {
         // met le flag à true pour en pas repasser dans la fonction
         t.isSeen = true
 
+        let three = {
+            scene: t.scene,
+            outScene: t.outScene,
+            domEvents: t.domEvents
+        }
+
         // appelle le serveur pour récupérer les cubes associées au marker
         let cubesRegistered = [
             {
@@ -264,7 +270,7 @@ class Sandboxe {
             }
         ]
 
-        for (let cubeRegister of cubesRegistered) new Cube(cubeRegister, {scene: t.scene, outScene: t.outScene, domEvents: t.domEvents})
+        for (let cubeRegister of cubesRegistered) new Cube(cubeRegister, three)
     }
 
     updateCubeColor() {
@@ -280,26 +286,8 @@ class Sandboxe {
                 }
             })
 
-        console.log("event", event)
         // trigger event de mise à jour de la couleur
         window.dispatchEvent(event)
-
-        // // Loop sur les éléments Mesh
-        // t.scene.traverse(function (node) {
-        //
-        //     if (node instanceof THREE.Mesh) {
-        //         // Si le cube est sélectionné
-        //         if (node.active) {
-        //
-        //
-        //             // window.dispatchEvent(window.customEvents.changeColor)
-        //             // // Changement de couleur
-        //             // let material = new THREE.MeshBasicMaterial({color: t.cubeColor})
-        //             // node.material = material
-        //             // t.cubeInactive(node.name)
-        //         }
-        //     }
-        // })
     }
 
     editMode() {
