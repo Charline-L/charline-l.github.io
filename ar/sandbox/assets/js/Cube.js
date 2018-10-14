@@ -9,6 +9,7 @@ class Cube {
 
         t.id = infos._id
 
+        t.wireframe = infos.wireframe
         t.color = infos.color
         t.alpha = infos.alpha
 
@@ -21,9 +22,6 @@ class Cube {
         // grille
         t.gridSize = 3
         t.sizeCube = 1
-
-        // flag
-        t.modeEdition = false
 
         t.init()
     }
@@ -45,7 +43,7 @@ class Cube {
         let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
         let material = new THREE.MeshBasicMaterial({
             color: t.color,
-            wireframe: false,
+            wireframe: t.wireframe,
             transparent: true,
             opacity: t.alpha
         })
@@ -71,7 +69,7 @@ class Cube {
         t.domEvents.addEventListener(t.mesh, 'click', function () {
 
             // Si on est en mode edition
-            if (t.modeEdition) {
+            if (window.isEdition) {
 
                 // Si le cube existe déjà
                 if (!t.mesh.new) {

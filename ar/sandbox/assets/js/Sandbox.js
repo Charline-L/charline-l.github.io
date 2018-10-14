@@ -9,9 +9,12 @@ class Sandboxe {
         // DOM
         t.$container = document.querySelector(".sandboxe-game__canvas")
         t.$header = document.querySelector(".sandboxe-game__header")
-        t.$colorSlideChroma = document.querySelector(".sandboxe-game__slideChroma")
-        t.$buttonEdit = document.querySelector(".sandboxe-game__editButton")
-        t.$buttonRemove = document.querySelector(".sandboxe-game__removeButton")
+        t.$buttonEdit = document.querySelector(".sandboxe-game__button--edit")
+        t.$buttonRemove = document.querySelector(".sandboxe-game__button--delete")
+        t.$buttonAdd = document.querySelector(".sandboxe-game__button--add")
+        t.$colors = document.querySelector(".sandboxe-game__colors")
+        t.$colorSlideChroma = document.querySelector(".sandboxe-game__slide-chroma")
+        t.$colorResult = document.querySelector(".sandboxe-game__result")
 
         // variable urls
         THREEx.ArToolkitContext.baseURL = './assets/markers/'
@@ -28,6 +31,7 @@ class Sandboxe {
 
         // flag
         t.isSeen = false
+        window.isEdition = false
 
         t.init()
     }
@@ -91,7 +95,7 @@ class Sandboxe {
 
         document.addEventListener("resize", t.resize.bind(t))
 
-        // permet d'intéragir avec le DOM
+        // permet d'intéragir avec le DOM >>> est envoyé dans la class Cube
         t.domEvents = new THREEx.DomEvents(t.camera, t.renderer.domElement)
 
         // Change color
@@ -100,6 +104,7 @@ class Sandboxe {
 
         // Edit button
         t.$buttonEdit.addEventListener("click", t.editMode.bind(t))
+        t.$buttonAdd.addEventListener("click", t.addMode.bind(t))
         t.$buttonRemove.addEventListener("click", t.removeCube.bind(t))
 
         // Watche évènements lancés depuis les classes Cubes
@@ -254,6 +259,7 @@ class Sandboxe {
               },
               color: 0xff0000,
               alpha: 0.5,
+                wireframe: false,
               _id: 123456,
             },
             {
@@ -264,6 +270,7 @@ class Sandboxe {
                 },
                 color: 0x00ff00,
                 alpha: 1,
+                wireframe: false,
                 _id: 123456,
             },
             {
@@ -274,6 +281,7 @@ class Sandboxe {
                 },
                 color: 0x0000ff,
                 alpha: 1,
+                wireframe: false,
                 _id: 123456,
             },
             {
@@ -284,6 +292,7 @@ class Sandboxe {
                 },
                 color: 0x00ffff,
                 alpha: 1,
+                wireframe: false,
                 _id: 123456,
             }
         ]
@@ -299,6 +308,7 @@ class Sandboxe {
 
         // Loop sur les éléments Mesh
         t.scene.traverse( function( node ) {
+
             if ( node instanceof THREE.Mesh ) {
                 // Si le cube est sélectionné
                 if (node.active) {
@@ -308,40 +318,61 @@ class Sandboxe {
                     t.cubeInactive(node.name)
                 }
             }
-        } );
+        })
     }
 
     editMode() {
         const t = this
 
-        // Si on est en mode vue, on passe en mode edition
-        if (t.$interface.classList.contains('vue')) {
-            // Interface en mode edition
-            t.$interface.classList.remove('vue');
-            t.$interface.classList.add('edition');
-            t.$modeDiv.innerHTML = "Edition";
-            // Button edit
-            t.$buttonEdit.querySelector('p').innerHTML = "Retour Vue";
-            // Affichage des couleurs
-            t.$colors.classList.remove('hidden');
-            // Mode edition à true -> autoriser le click sur la grille
-            t.$modeEdition = true;
+        // si active on revient au mode vue
+        if (t.$buttonEdit.classList.contains('active')) {
 
-            // Si on est en mode édition, on passe en mode vue
+            // changement des boutons
+            t.$colors.classList.add('hidden')
+            t.$buttonRemove.classList.add('hidden')
+            t.$buttonAdd.classList.remove('hidden')
+
+            // Mode edition à false -> dé-autoriser le click sur la grille
+            window.isEdition = false
         } else {
-            // Interface en mode vue
-            t.$interface.classList.remove('edition');
-            t.$interface.classList.add('vue');
-            t.$modeDiv.innerHTML = "Vue";
-            // Button edit
-            t.$buttonEdit.querySelector('p').innerHTML = "Editer";
-            // Button remove
-            t.$buttonRemove.classList.add('hidden');
-            // Ne pas afficher les couleurs
-            t.$colors.classList.add('hidden');
-            // Mode edition à false -> ne pas autoriser le click sur la grille
-            t.$modeEdition = false;
+
+            // trigger change pour setter la couleur dans le result
+            t.$colorSlideChroma.dispatchEvent(new Event('change'))
+
+            // changement des boutons
+            t.$colors.classList.remove('hidden')
+            t.$buttonRemove.classList.remove('hidden')
+            t.$buttonAdd.classList.add('hidden')
+
+            // Mode edition à true -> autoriser le click sur la grille
+            window.isEdition = true
         }
+
+        // met à jour la class
+        t.$buttonEdit.classList.toggle('active')
+    }
+
+    addMode(){
+        const t = this
+
+        // si active on revient au mode vue
+        if (t.$buttonAdd.classList.contains('active')) {
+
+            // changement des boutons
+            t.$colors.classList.add('hidden')
+            t.$buttonEdit.classList.remove('hidden')
+        } else {
+
+            // trigger change pour setter la couleur dans le result
+            t.$colorSlideChroma.dispatchEvent(new Event('change'))
+
+            // changement des boutons
+            t.$colors.classList.remove('hidden')
+            t.$buttonEdit.classList.add('hidden')
+        }
+
+        // met à jour la class
+        t.$buttonAdd.classList.toggle('active')
     }
 
     removeCube() {
@@ -349,6 +380,7 @@ class Sandboxe {
 
         // Loop sur les éléments Mesh
         t.scene.traverse( function( node ) {
+
             if ( node instanceof THREE.Mesh ) {
                 // Si le cube est sélectionné
                 if (node.active) {
@@ -361,7 +393,7 @@ class Sandboxe {
         })
 
         // Ne pas afficher le button remove
-        t.$buttonRemove.classList.add('hidden');
+        t.$buttonRemove.classList.add('hidden')
     }
 
     hideButtonRemove() {
@@ -376,9 +408,33 @@ class Sandboxe {
         t.$buttonRemove.classList.remove('hidden')
     }
 
+    hslToHex(h, s, l) {
+        h /= 360
+        s /= 100
+        l /= 100
+        let r, g, b
+        if (s === 0) {
+            r = g = b = l // achromatic
+        } else {
+            const hue2rgb = (p, q, t) => {
+                if (t < 0) t += 1
+                if (t > 1) t -= 1
+                if (t < 1 / 6) return p + (q - p) * 6 * t
+                if (t < 1 / 2) return q
+                if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6
+                return p
+            }
+            const q = l < 0.5 ? l * (1 + s) : l + s - l * s
+            const p = 2 * l - q
+            r = hue2rgb(p, q, h + 1 / 3)
+            g = hue2rgb(p, q, h)
+            b = hue2rgb(p, q, h - 1 / 3)
+        }
+        const toHex = x => {
+            const hex = Math.round(x * 255).toString(16)
+            return hex.length === 1 ? '0' + hex : hex
+        }
 
-
-
+        return `#${toHex(r)}${toHex(g)}${toHex(b)}`
+    }
 }
-
-// new Sandboxe()

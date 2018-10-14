@@ -22,26 +22,36 @@
 </head>
 <body class="sandboxe-game">
 
-<h1 class="sandboxe-game__header">Sanboxe</h1>
+<header class="sandboxe-game__header">
+    <img class="sandboxe-game__logo" src="assets/img/logo.png"/>
+</header>
 
-<div class="sandboxe-game__interface vue">
-
-    <!-- Mode -->
-    <div class="sandboxe-game__mode"><p>Mode <span>Vue</span></p></div>
+<main class="sandboxe-game__interface">
 
     <!-- Buttons -->
-    <div class="sandboxe-game__editButton"><p>Edit</p></div>
-    <div class="sandboxe-game__removeButton hidden"> <p>Remove</p></div>
+    <div class="sandboxe-game__button sandboxe-game__button--edit">
+        <img src="assets/img/icons/edit.svg" alt="Icone édition">
+    </div>
+
+    <div class="sandboxe-game__button sandboxe-game__button--add">
+        <img src="assets/img/icons/add.svg" alt="Icone ajouter">
+    </div>
+
+    <div class="sandboxe-game__button sandboxe-game__button--delete hidden">
+        <img src="assets/img/icons/delete.svg" alt="Icone effacer">
+    </div>
 
     <!-- colorpicker -->
     <div class="sandboxe-game__colors hidden">
-        <input class="sandboxe-game__slideChroma" type="range" id="slideChroma" name="slideChroma" min="0" max="360" value="178">
+        <input class="sandboxe-game__slide-chroma" type="range" id="slideChroma" name="slideChroma" min="0" max="360" value="178">
         <p class="sandboxe-game__result"></p>
     </div>
 
-</div>
+</main>
 
-<p class="sandboxe-game__footer">Cours AR - ECV Digital 2018</p>
+<footer class="sandboxe-game__footer">
+    <p>© FX Bresson - Marine Lancelin - Charline Laporte </p>
+</footer>
 
 <!--SCRIPT JEU-->
 <script type="text/javascript" src="assets/js/Sandbox.js"></script>
