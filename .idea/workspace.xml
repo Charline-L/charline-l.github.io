@@ -87,8 +87,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="319" column="96" selection-start-line="319" selection-start-column="96" selection-end-line="319" selection-end-column="96" />
+            <state relative-caret-position="486">
+              <caret line="289" column="16" lean-forward="true" selection-start-line="279" selection-start-column="16" selection-end-line="289" selection-end-column="16" />
               <folding>
                 <element signature="n#!!block;n#hslToHex#0;n#Sandboxe#0" />
               </folding>
@@ -341,12 +341,12 @@
       <workItem from="1539342720333" duration="8000" />
       <workItem from="1539342734195" duration="7497000" />
       <workItem from="1539443106145" duration="315000" />
-      <workItem from="1539516455020" duration="25233000" />
+      <workItem from="1539516455020" duration="25302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77181000" />
+    <option name="totallyTimeSpent" value="77250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -694,8 +694,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="319" column="96" selection-start-line="319" selection-start-column="96" selection-end-line="319" selection-end-column="96" />
+        <state relative-caret-position="486">
+          <caret line="289" column="16" lean-forward="true" selection-start-line="279" selection-start-column="16" selection-end-line="289" selection-end-column="16" />
           <folding>
             <element signature="n#!!block;n#hslToHex#0;n#Sandboxe#0" />
           </folding>

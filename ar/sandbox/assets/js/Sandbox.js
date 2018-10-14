@@ -277,17 +277,17 @@ class Sandboxe {
                 wireframe: false,
                 _id: 2,
             },
-            {
-                position: {
-                    x: 1,
-                    y: 1,
-                    z: 1
-                },
-                color: 0x00ffff,
-                alpha: 1,
-                wireframe: false,
-                _id: 3,
-            }
+            // {
+            //     position: {
+            //         x: 1,
+            //         y: 1,
+            //         z: 1
+            //     },
+            //     color: 0x00ffff,
+            //     alpha: 1,
+            //     wireframe: false,
+            //     _id: 3,
+            // }
         ]
 
         // on créer les cubes
