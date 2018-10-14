@@ -58,8 +58,6 @@ class Cube {
         t.mesh.name = t.id
         t.mesh.active = false
 
-        alert("cube ajouté")
-
         // ajoute à notre groupe qui va l'ajouter à la scène
         grid.add(t.mesh)
     }
@@ -79,9 +77,9 @@ class Cube {
         })
 
         // event trigger dans la class Sandbox
-        window.addEventListener("changeColor", (e) => {
-            t.changeColor(e)
-        })
+        window.addEventListener("changeColor", t.changeColor.bind(t))
+
+        window.addEventListener("removeCube", t.removeCube.bind(t))
     }
 
     cubeActive() {
@@ -125,6 +123,16 @@ class Cube {
             })
 
             t.mesh.material = material
+        }
+    }
+
+    removeCube() {
+        const t = this
+
+        if (t.mesh.active) {
+
+            // TODO : envoyer au server que le cube a été effacé
+            t.scene.remove(t.mesh)
         }
     }
 }

@@ -107,14 +107,12 @@ class Sandboxe {
         t.domEvents = new THREEx.DomEvents(t.camera, t.renderer.domElement)
 
         // Change color
-        // TODO === on le met dans le cube ?
         t.$colorSlideChroma.addEventListener("change", t.updateCubeColor.bind(t))
 
         // Edit button
         t.$buttonEdit.addEventListener("click", t.editMode.bind(t))
         t.$buttonAdd.addEventListener("click", t.addMode.bind(t))
-        // TODO === à remettre
-        // t.$buttonDelete.addEventListener("click", t.removeCube.bind(t))
+        t.$buttonDelete.addEventListener("click", t.removeCube.bind(t))
 
         // Watcher évènements lancés depuis les classes Cubes
         window.addEventListener("hideButtonDelete", t.hideButtonDelete.bind(t))
@@ -352,19 +350,25 @@ class Sandboxe {
     removeCube() {
         const t = this
 
-        // Loop sur les éléments Mesh
-        t.scene.traverse(function (node) {
 
-            if (node instanceof THREE.Mesh) {
-                // Si le cube est sélectionné
-                if (node.active) {
-                    // Couleur transparentes sur le cube
-                    let material = new THREE.MeshBasicMaterial({color: "#ffffff", wireframe: true})
-                    node.material = material
-                    t.cubeInactive(node.name)
-                }
-            }
-        })
+        let event = new CustomEvent('removeCube')
+
+        // trigger event de suppression du cube
+        window.dispatchEvent(event)
+
+        // // Loop sur les éléments Mesh
+        // t.scene.traverse(function (node) {
+        //
+        //     if (node instanceof THREE.Mesh) {
+        //         // Si le cube est sélectionné
+        //         if (node.active) {
+        //             // Couleur transparentes sur le cube
+        //             let material = new THREE.MeshBasicMaterial({color: "#ffffff", wireframe: true})
+        //             node.material = material
+        //             t.cubeInactive(node.name)
+        //         }
+        //     }
+        // })
 
         // enlève le boutton delete
         t.hideButtonDelete()
