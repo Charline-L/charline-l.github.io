@@ -314,8 +314,6 @@ class Sandboxe {
 
         for (let y = 0; y < t.boardGame.length; y++ ) {
 
-            console.log("y", y)
-
             for (let index = 0 ; index < t.boardGame[y].length; index++ ) {
 
                 // si une valeur est enregistrée
@@ -344,10 +342,11 @@ class Sandboxe {
                         index - 1 // W
                     ]
 
+                    // vérfie s'il y a une case pour tous ses côtés
+                    // si pas de case on créer un cube
+                    // sur la meme dimension
                     for (let sideCase of positions) {
 
-                        // vérfie s'il y a une case pour tous ses côtés
-                        // si pas de case on créer un cube
                         if ( sideCase >= 0 && t.boardGame[y][sideCase] === null && sideCase < Math.pow(t.gridSize, 2)) {
 
                             // prépare nouvelles coordonées
@@ -360,6 +359,34 @@ class Sandboxe {
                             // met à jour le tableau t.boardGame
                             t.boardGame[y][sideCase] = cube
                         }
+                    }
+
+                    // vérifie s'il n'y a pas de case sur le niveau au dessus
+                    if ( t.boardGame[y+1][index] !== null && y < t.gridSize - 2 ) {
+
+                        // prépare nouvelles coordonées
+                        cube.position.x = t.boardGame[y][index].position.x
+                        cube.position.z = t.boardGame[y][index].position.z
+
+                        // créer le cube
+                        new Cube(cube, three)
+
+                        // met à jour le tableau t.boardGame
+                        t.boardGame[y+1][index] = cube
+                    }
+
+                    // vérifie s'il n'y a pas de case sur le niveau au dessous
+                    if ( t.boardGame[y-1][index] !== null && y > 0 ) {
+
+                        // prépare nouvelles coordonées
+                        cube.position.x = t.boardGame[y][index].position.x
+                        cube.position.z = t.boardGame[y][index].position.z
+
+                        // créer le cube
+                        new Cube(cube, three)
+
+                        // met à jour le tableau t.boardGame
+                        t.boardGame[y-1][index] = cube
                     }
                 }
             }
