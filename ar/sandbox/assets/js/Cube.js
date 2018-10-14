@@ -111,7 +111,7 @@ class Cube {
         if (t.mesh.active) {
 
             let material = new THREE.MeshBasicMaterial({
-                color: e.detail.color,
+                color: Number(e.detail.color),
                 wireframe: t.wireframe,
                 transparent: true,
                 opacity: t.alpha
