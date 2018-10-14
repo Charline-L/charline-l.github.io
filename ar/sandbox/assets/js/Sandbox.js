@@ -350,6 +350,7 @@ class Sandboxe {
     removeCube() {
         const t = this
 
+        console.log("in remove cube")
 
         let event = new CustomEvent('removeCube')
 
