@@ -80,16 +80,17 @@ class Cube {
             }
 
             // si on est en mode ajout on peut ajouter des cubes
-            if (window.isAdding){
-
-                t.addCube()
-            }
+            // if (window.isAdding){
+            //
+            //     t.addCube()
+            // }
         })
 
         // event trigger dans la class Sandbox
         window.addEventListener("changeColor", t.changeColor.bind(t))
-
         window.addEventListener("removeCube", t.removeCube.bind(t))
+        window.addEventListener("showWireframe", t.showWireframe.bind(t))
+        window.addEventListener("hideWireframe", t.hideWireframe.bind(t))
     }
 
     cubeActive() {
@@ -154,5 +155,17 @@ class Cube {
         const t = this
 
         // TODO : envoyer au server que le cube a été créé
+    }
+
+    showWireframe(){
+        const t = this
+
+        if (t.mesh.wireframe) t.mesh.visible = true
+    }
+
+    hideWireframe(){
+        const t = this
+
+        if (t.mesh.wireframe) t.mesh.visible = false
     }
 }
