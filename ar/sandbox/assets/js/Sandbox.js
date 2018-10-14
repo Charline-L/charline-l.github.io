@@ -249,7 +249,7 @@ class Sandboxe {
                   z: 1
               },
               color: 0xff0000,
-              alpha: 1,
+              alpha: 0.5,
               _id: 123456,
             },
             {
