@@ -28,7 +28,6 @@ class Sandboxe {
 
         // scene
         t.scene = new THREE.Scene()
-        t.outScene = new THREE.Scene()
 
         // flag
         t.isSeen = false
@@ -67,6 +66,9 @@ class Sandboxe {
         t.renderer.setClearColor(new THREE.Color('lightgrey'), 0)
         t.renderer.setSize(t.ww, t.wh)
         t.renderer.domElement.classList.add("sandboxe-game__canvas")
+        t.renderer.autoClear = false
+        t.renderer.gammaInput = true
+        t.renderer.gammaOutput = true
 
         // ajoute au dom
         document.body.insertBefore(t.renderer.domElement, t.$header)
@@ -218,7 +220,6 @@ class Sandboxe {
 
         let three = {
             scene: t.scene,
-            outScene: t.outScene,
             domEvents: t.domEvents
         }
 
