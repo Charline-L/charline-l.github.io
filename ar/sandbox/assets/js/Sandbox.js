@@ -317,7 +317,7 @@ class Sandboxe {
             for (let index = 0 ; index < t.boardGame[y].length; index++ ) {
 
                 // si une valeur est enregistrée
-                if ( t.boardGame[y][index] !== null ) {
+                if ( t.boardGame[y][index] !== null && t.boardGame[y][index].wireframe === false ) {
 
                     let cube = {
                         position: {
@@ -362,8 +362,8 @@ class Sandboxe {
                         }
                     }
 
-                    // vérifie s'il n'y a pas de case sur le niveau au dessus
-                    if ( y < t.gridSize - 2 && t.boardGame[y+1][index] === null ) {
+                    // vérifie s'il n'y a pas de case sur le niveau au dessus et que la case actuelle est bien remplie de couleur
+                    if ( y < t.gridSize - 2 && t.boardGame[y+1][index] === null && t.boardGame[y][index].wireframe === false ) {
 
                         // prépare nouvelles coordonées
                         cube.position.x = t.boardGame[y][index].position.x
@@ -378,8 +378,8 @@ class Sandboxe {
                         t.boardGame[y+1][index] = cube
                     }
 
-                    // vérifie s'il n'y a pas de case sur le niveau au dessous
-                    if ( y > 0 && t.boardGame[y-1][index] === null ) {
+                    // vérifie s'il n'y a pas de case sur le niveau au dessous et que la case actuelle est bien remplie de couleur
+                    if ( y > 0 && t.boardGame[y-1][index] === null && t.boardGame[y][index].wireframe === false ) {
 
                         // prépare nouvelles coordonées
                         cube.position.x = t.boardGame[y][index].position.x
