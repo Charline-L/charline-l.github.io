@@ -294,6 +294,7 @@ class Sandboxe {
 
             // changement des boutons
             t.$colors.classList.add('hidden')
+            t.$buttonDelete.classList.add('hidden')
             t.$buttonAdd.classList.remove('hidden')
 
             // Mode edition à false -> dé-autoriser le click sur la grille
@@ -323,6 +324,7 @@ class Sandboxe {
 
             // changement des boutons
             t.$colors.classList.add('hidden')
+            t.$buttonDelete.classList.add('hidden')
             t.$buttonEdit.classList.remove('hidden')
         } else {
 
