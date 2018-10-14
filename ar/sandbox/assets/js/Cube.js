@@ -136,6 +136,7 @@ class Cube {
             console.log("IS ACTIVE")
             let mesh = t.scene.getObjectByName(t.id)
 
+            console.log("mesh", mesh)
             // TODO : envoyer au server que le cube a été effacé
             t.scene.remove(mesh)
         }
