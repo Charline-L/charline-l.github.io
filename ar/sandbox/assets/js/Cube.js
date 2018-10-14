@@ -68,50 +68,32 @@ class Cube {
 
         t.domEvents.addEventListener(t.mesh, 'click', function () {
 
-            console.log("window.isEdition", window.isEdition)
-
             // Si on est en mode edition
             if (window.isEdition) {
 
-                console.log("t.mesh.active", t.mesh.active)
-
-                if (t.mesh.active) {
-                    // Désactivation du cube
-                    t.cubeInactive(t.mesh.name)
-                } else {
-                    // Activation du cube
-                    t.cubeActive(t.mesh.name)
-                }
-
-                // Cube ajouté
-                t.mesh.new = false
+                if (t.mesh.active) t.cubeInactive()
+                else t.cubeActive()
             }
         })
     }
 
-    cubeActive(name) {
+    cubeActive() {
         const t = this
 
         console.log("in cubeActive")
-
-        let mesh = t.scene.getObjectByName(name)
-
         // Cube actif
-        mesh.active = true
+        t.mesh.active = true
 
         // Afficher le button remove
         window.dispatchEvent(window.customEvents.showButtonDelete)
     }
 
-    cubeInactive(name) {
+    cubeInactive() {
         const t = this
 
         console.log("in cubeInactive")
-
-        let mesh = t.scene.getObjectByName(name)
-
         // Cube inactif
-        mesh.active = false
+        t.mesh.active = false
 
         // Ne pas afficher le button remove
         window.dispatchEvent(window.customEvents.hideButtonDelete)
