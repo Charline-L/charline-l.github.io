@@ -376,10 +376,12 @@ class Sandboxe {
         let hasActiveCube = false
 
         // si on a toujours un cube de sectionné on n'efface pas le bouton delete
-        if ( node instanceof THREE.Mesh ) {
+        t.scene.traverse( function( node ) {
+            if ( node instanceof THREE.Mesh ) {
 
-            if (node.active) hasActiveCube = true
-        }
+                if (node.active) hasActiveCube = true
+            }
+        })
 
         if (!hasActiveCube) t.$buttonDelete.classList.add('hidden')
     }
