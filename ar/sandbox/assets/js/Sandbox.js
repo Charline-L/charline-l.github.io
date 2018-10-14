@@ -350,14 +350,16 @@ class Sandboxe {
                         // si pas de case on créer un cube
                         if ( sideCase >= 0 && t.boardGame[y][sideCase] === null && sideCase < Math.pow(t.gridSize, 2)) {
 
-                            console.log("NEW WIREFRAME")
+
 
                             // prépare nouvelles coordonées
-                            cube.x = sideCase % t.gridSize
-                            cube.z = (sideCase - cube.x) / t.gridSize
+                            cube.position.z = sideCase % t.gridSize
+                            cube.position.x = (sideCase - cube.x) / t.gridSize
 
                             // créer le cube
                             new Cube(cube, three)
+
+                            console.log("NEW WIREFRAME", cube)
 
                             // met à jour le tableau t.boardGame
                             t.boardGame[y][sideCase] = cube
