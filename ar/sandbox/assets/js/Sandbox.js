@@ -370,7 +370,6 @@ class Sandboxe {
                         cube.position.z = t.boardGame[y][index].position.z
                         cube.position.y = y + 1
 
-                        console.log("in plus", y, index, cube)
                         // créer le cube
                         new Cube(cube, three)
 

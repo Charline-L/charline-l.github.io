@@ -57,9 +57,13 @@ class Cube {
         // donner nom unique au cube
         t.mesh.name = t.id
         t.mesh.active = false
+        t.mesh.wireframe = t.wireframe
 
         // ajoute à notre groupe qui va l'ajouter à la scène
         grid.add(t.mesh)
+
+        // si mesh wireframe non visible
+        if (t.mesh.wireframe) t.mesh.visible = false
     }
 
     bindEvents() {
@@ -139,6 +143,8 @@ class Cube {
 
             t.mesh.active = false
             t.mesh.visible = false
+
+            // TODO : actualiser le board
 
             // TODO : envoyer au server que le cube a été effacé
         }
