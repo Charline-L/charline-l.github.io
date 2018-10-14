@@ -1,23 +1,24 @@
 class Cube {
-    constructor(infos, scene, domEvents) {
+    constructor(cube, three) {
         const t = this
 
         // infomations de positions du cube
-        t.x = infos.position.x
-        t.y = infos.position.y
-        t.z = infos.position.z
+        t.x = cube.position.x
+        t.y = cube.position.y
+        t.z = cube.position.z
 
-        t.id = infos._id
+        t.id = cube._id
 
-        t.wireframe = infos.wireframe
-        t.color = infos.color
-        t.alpha = infos.alpha
+        t.wireframe = cube.wireframe
+        t.color = cube.color
+        t.alpha = cube.alpha
 
         // scene récupéré depuis la classe Sandboxe
-        t.scene = scene
+        t.scene = three.scene
+        t.outScene = three.outScene
 
         // domeEvents récupéré
-        t.domEvents = domEvents
+        t.domEvents = three.domEvents
 
         // grille
         t.gridSize = 3
@@ -29,8 +30,39 @@ class Cube {
     init() {
         const t = this
 
+        t.createMaterialSelected()
         t.appendCube()
         t.bindEvents()
+    }
+
+    createMaterialSelected() {
+        const t = this
+
+        let vxs = `
+            uniform float offset;
+            void main() {
+               vec4 pos = modelViewMatrix * vec4( position + normal * offset, 1.0 );
+               gl_Position = projectionMatrix * pos;
+            }
+        `
+
+        let fgs = `
+            void main(){
+              gl_FragColor = vec4( 1.0, 1.0, 0.0, 1.0 );
+            }
+        `
+        let uniforms = {
+            offset: {
+                type: 'f',
+                value: 1
+            }
+        }
+
+        t.matShader = new THREE.ShaderMaterial({
+            uniforms: uniforms,
+            vertexShader: vxs,
+            fragmentShader: fgs
+        });
     }
 
     appendCube() {
@@ -40,14 +72,14 @@ class Cube {
         let grid = t.scene.getObjectByName('grid')
 
         // défini la forme / texture du cube
-        let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
+        t.geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
         let material = new THREE.MeshBasicMaterial({
             color: t.color,
             wireframe: t.wireframe,
             transparent: true,
             opacity: t.alpha
         })
-        t.mesh = new THREE.Mesh(geometry, material)
+        t.mesh = new THREE.Mesh(t.geometry, material)
 
         // positionne le cube
         t.mesh.position.x = (t.x * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
@@ -89,8 +121,14 @@ class Cube {
         // Cube actif
         t.mesh.active = true
 
+        // ajoute le contour
+        let outline = new THREE.Mesh(t.geometry, t.matShader)
+        outline.material.depthWrite = false
+        outline.name = t.id + 'outline'
+        t.outScene.add(outline)
+
         // Afficher le button remove
-        window.dispatchEvent( new CustomEvent('showButtonDelete') )
+        window.dispatchEvent(new CustomEvent('showButtonDelete'))
     }
 
     cubeInactive() {
@@ -99,11 +137,15 @@ class Cube {
         // Cube inactif
         t.mesh.active = false
 
+        // enleve le contout
+        let outline = t.outScene.getObjectByName(t.id+'outline')
+        t.outScene.remove(outline)
+
         // Ne pas afficher le button remove
-        window.dispatchEvent( new CustomEvent('hideButtonDelete') )
+        window.dispatchEvent(new CustomEvent('hideButtonDelete'))
     }
 
-    changeColor(e){
+    changeColor(e) {
         const t = this
 
         if (t.mesh.active) {

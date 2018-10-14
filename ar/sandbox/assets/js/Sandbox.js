@@ -28,6 +28,7 @@ class Sandboxe {
 
         // scene
         t.scene = new THREE.Scene()
+        t.outScene = new THREE.Scene()
 
         // flag
         t.isSeen = false
@@ -185,6 +186,7 @@ class Sandboxe {
         // ajoute renderer au tableau d'update
         t.onRenderFcts.push(() => {
             t.renderer.render(t.scene, t.camera)
+            t.renderer.render(t.outScene, t.camera)
         })
     }
 
@@ -262,7 +264,7 @@ class Sandboxe {
             }
         ]
 
-        for (let cubeRegister of cubesRegistered) new Cube(cubeRegister, t.scene, t.domEvents)
+        for (let cubeRegister of cubesRegistered) new Cube(cubeRegister, {scene: t.scene, outScene: t.outScene, domEvents: t.domEvents})
     }
 
     updateCubeColor() {
