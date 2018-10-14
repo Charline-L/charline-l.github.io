@@ -104,12 +104,12 @@ class Cube {
     changeColor(e){
         const t = this
 
-        console.log("changeColor", e)
+        console.log("changeColor", e.detail)
 
         if (t.mesh.active) {
 
             let material = new THREE.MeshBasicMaterial({
-                color: e.details.color,
+                color: e.detail.color,
                 wireframe: t.wireframe,
                 transparent: true,
                 opacity: t.alpha
