@@ -66,9 +66,6 @@ class Sandboxe {
         t.renderer.setClearColor(new THREE.Color('lightgrey'), 0)
         t.renderer.setSize(t.ww, t.wh)
         t.renderer.domElement.classList.add("sandboxe-game__canvas")
-        t.renderer.autoClear = false
-        t.renderer.gammaInput = true
-        t.renderer.gammaOutput = true
 
         // ajoute au dom
         document.body.insertBefore(t.renderer.domElement, t.$header)
@@ -188,7 +185,6 @@ class Sandboxe {
         // ajoute renderer au tableau d'update
         t.onRenderFcts.push(() => {
             t.renderer.render(t.scene, t.camera)
-            t.renderer.render(t.outScene, t.camera)
         })
     }
 
