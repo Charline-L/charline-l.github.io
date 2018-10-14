@@ -312,8 +312,7 @@ class Sandboxe {
             domEvents: t.domEvents
         }
 
-        for (let y = 0; y < 1; y++ ) {
-        // for (let y = 0; y < t.boardGame.length; y++ ) {
+        for (let y = 0; y < t.boardGame.length; y++ ) {
 
             for (let index = 0 ; index < t.boardGame[y].length; index++ ) {
 
@@ -343,14 +342,11 @@ class Sandboxe {
                         index - 1 // W
                     ]
 
-
                     for (let sideCase of positions) {
 
                         // vérfie s'il y a une case pour tous ses côtés
                         // si pas de case on créer un cube
                         if ( sideCase >= 0 && t.boardGame[y][sideCase] === null && sideCase < Math.pow(t.gridSize, 2)) {
-
-
 
                             // prépare nouvelles coordonées
                             cube.position.x = sideCase % t.gridSize
@@ -358,8 +354,6 @@ class Sandboxe {
 
                             // créer le cube
                             new Cube(cube, three)
-
-                            console.log("NEW WIREFRAME", cube)
 
                             // met à jour le tableau t.boardGame
                             t.boardGame[y][sideCase] = cube
