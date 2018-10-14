@@ -271,6 +271,16 @@ class Sandboxe {
                 color: 0x0000ff,
                 alpha: 1,
                 _id: 123456,
+            },
+            {
+                position: {
+                    x: 1,
+                    y: 1,
+                    z: 1
+                },
+                color: 0x00ffff,
+                alpha: 1,
+                _id: 123456,
             }
         ]
 

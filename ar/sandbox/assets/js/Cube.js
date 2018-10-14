@@ -52,6 +52,7 @@ class Cube {
         // positionne le cube
         mesh.position.x = (t.x * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
         mesh.position.z = (t.z * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
+        mesh.position.y = t.y
 
         // donner nom unique au cube
         mesh.name = t.id
