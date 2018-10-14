@@ -68,23 +68,20 @@ class Cube {
 
         t.domEvents.addEventListener(t.mesh, 'click', function () {
 
+            console.log("window.isEdition", window.isEdition)
+
             // Si on est en mode edition
             if (window.isEdition) {
 
-                // // Si le cube existe déjà
-                // if (!t.mesh.new) {
-                    // Si le cube est déjà actif
-                    if (t.mesh.active) {
-                        // Désactivation du cube
-                        t.cubeInactive(t.mesh.name)
-                    } else {
-                        // Activation du cube
-                        t.cubeActive(t.mesh.name)
-                    }
-                // } else {
-                //     // Ajout du cube
-                //     t.updateMesh(t.mesh.name)
-                // }
+                console.log("t.mesh.active", t.mesh.active)
+
+                if (t.mesh.active) {
+                    // Désactivation du cube
+                    t.cubeInactive(t.mesh.name)
+                } else {
+                    // Activation du cube
+                    t.cubeActive(t.mesh.name)
+                }
 
                 // Cube ajouté
                 t.mesh.new = false
@@ -94,6 +91,8 @@ class Cube {
 
     cubeActive(name) {
         const t = this
+
+        console.log("in cubeActive")
 
         let mesh = t.scene.getObjectByName(name)
 
@@ -106,6 +105,8 @@ class Cube {
 
     cubeInactive(name) {
         const t = this
+
+        console.log("in cubeInactive")
 
         let mesh = t.scene.getObjectByName(name)
 
