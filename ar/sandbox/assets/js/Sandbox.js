@@ -290,6 +290,7 @@ class Sandboxe {
             }
         ]
 
+        // on créer les cubes
         for (let cubeRegister of t.cubesRegistered ) {
 
             // on append le cube
@@ -299,8 +300,62 @@ class Sandboxe {
             t.boardGame[cubeRegister.position.y][cubeRegister.position.x + (cubeRegister.position.z * t.gridSize)] = cubeRegister
         }
 
-        console.log("t.boardGame", t.boardGame)
+        // on lance la création des cubes wireframes
+        t.createWireframe()
     }
+
+    createWireframe(){
+        const t = this
+
+        let three = {
+            scene: t.scene,
+            domEvents: t.domEvents
+        }
+
+        for (let y = 0; y < t.boardGame.length; y++ ) {
+
+            for (let index = 0 ; t.boardGame[y].length; index++ ) {
+
+                let cube = {
+                    position: {
+                        x: null,
+                        y: y,
+                        z: null
+                    },
+                    color: 0xffffff,
+                    wireframe: true,
+                    alpha: 1,
+                    _id: null,
+                }
+
+                let NW = index - t.gridSize - 1
+                let N = index - t.gridSize
+                let NE = index - t.gridSize + 1
+                let E = index + 1
+                let SE = index + t.gridSize + 1
+                let S = index + t.gridSize
+                let SW = index + t.gridSize - 1
+                let W = index - 1
+
+                // vérfie s'il y a une case pour tous ses côtés
+                // si pas de case on créer un cube
+                if ( NW >= 0 || t.boardGame[y][NW] === null) {
+
+                    // prépare nouvelles coordonées
+                    cube.x = NW % t.gridSize
+                    cube.z = (NW - cube.x) / t.gridSize
+
+                    // créer le cube
+                    new Cube(cube, three)
+
+                    // met à jour le tableau t.boardGame
+                    t.boardGame[y][NW] = cube
+                }
+            }
+        }
+    }
+
+
 
     updateCubeColor() {
         const t = this
