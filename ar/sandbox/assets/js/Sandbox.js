@@ -314,6 +314,8 @@ class Sandboxe {
 
         for (let y = 0; y < t.boardGame.length; y++ ) {
 
+            console.log("y", y)
+
             for (let index = 0 ; index < t.boardGame[y].length; index++ ) {
 
                 // si une valeur est enregistrée
