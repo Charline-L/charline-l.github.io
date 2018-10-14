@@ -236,7 +236,7 @@ class Sandboxe {
                 color: 0xff0000,
                 alpha: 0.5,
                 wireframe: false,
-                _id: 123456,
+                _id: 0,
             },
             {
                 position: {
@@ -247,7 +247,7 @@ class Sandboxe {
                 color: 0x00ff00,
                 alpha: 1,
                 wireframe: false,
-                _id: 123456,
+                _id: 1,
             },
             {
                 position: {
@@ -258,7 +258,7 @@ class Sandboxe {
                 color: 0x0000ff,
                 alpha: 1,
                 wireframe: false,
-                _id: 123456,
+                _id: 2,
             },
             {
                 position: {
@@ -269,7 +269,7 @@ class Sandboxe {
                 color: 0x00ffff,
                 alpha: 1,
                 wireframe: false,
-                _id: 123456,
+                _id: 3,
             }
         ]
 
