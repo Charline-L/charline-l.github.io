@@ -28,7 +28,8 @@ class Sandboxe {
         // scene
         t.scene = new THREE.Scene()
 
-        // // flag
+        // flag
+        t.isSeen = false
         // t.elementSelected = false
 
         // // grille
@@ -233,6 +234,11 @@ class Sandboxe {
 
     getCubes(){
         const t = this
+
+        // si déjà vu on ne rapelle pas les classes
+        if (t.isSeen) return null;
+
+        t.isSeen = true
 
         // appelle le serveur pour récupérer les cubes associées au marker
         let cubesRegistered = [
