@@ -78,7 +78,7 @@ class Cube {
         })
 
         // event trigger dans la class Sandbox
-        window.addEventListener("changeColor", (e)=> {
+        window.addEventListener("changeColor", (e) => {
             t.changeColor(e)
         })
     }
@@ -90,7 +90,7 @@ class Cube {
         t.mesh.active = true
 
         // Afficher le button remove
-        window.dispatchEvent( new Event('showButtonDelete') )
+        window.dispatchEvent( new CustomEvent('showButtonDelete') )
     }
 
     cubeInactive() {
@@ -100,7 +100,7 @@ class Cube {
         t.mesh.active = false
 
         // Ne pas afficher le button remove
-        window.dispatchEvent( new Event('hideButtonDelete') )
+        window.dispatchEvent( new CustomEvent('hideButtonDelete') )
     }
 
     changeColor(e){

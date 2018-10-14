@@ -271,8 +271,16 @@ class Sandboxe {
         let cubeColor = t.hslToHex(t.$colorSlideChroma.value, 100, 50);
         t.$colorResult.style.backgroundColor = 'hsl(' + t.$colorSlideChroma.value + ', 100%, 50%)'
 
+        let event = new CustomEvent('changeColor',
+            {
+                detail: {
+                    color: cubeColor,
+                }
+            })
+
+        console.log("event", event)
         // trigger event de mise à jour de la couleur
-        window.dispatchEvent( new Event('changeColor', {detail: {color: cubeColor}} ))
+        window.dispatchEvent(event)
 
         // // Loop sur les éléments Mesh
         // t.scene.traverse(function (node) {
