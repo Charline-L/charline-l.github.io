@@ -33,8 +33,8 @@ class Website {
         const t = this
 
         window.customEvents = {
-            hideButtonRemove: new Event('hideButtonRemove'),
-            showButtonRemove: new Event('showButtonRemove'),
+            hideButtonDelete: new Event('hideButtonDelete'),
+            showButtonDelete: new Event('showButtonDelete'),
         }
     }
 }

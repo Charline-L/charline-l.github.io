@@ -56,7 +56,7 @@ class Cube {
 
         // donner nom unique au cube
         t.mesh.name = t.id
-        t.mesh.new = true
+        // t.mesh.new = true
         t.mesh.active = false
 
         // ajoute à notre groupe qui va l'ajouter à la scène
@@ -71,8 +71,8 @@ class Cube {
             // Si on est en mode edition
             if (window.isEdition) {
 
-                // Si le cube existe déjà
-                if (!t.mesh.new) {
+                // // Si le cube existe déjà
+                // if (!t.mesh.new) {
                     // Si le cube est déjà actif
                     if (t.mesh.active) {
                         // Désactivation du cube
@@ -81,10 +81,10 @@ class Cube {
                         // Activation du cube
                         t.cubeActive(t.mesh.name)
                     }
-                } else {
-                    // Ajout du cube
-                    t.updateMesh(t.mesh.name)
-                }
+                // } else {
+                //     // Ajout du cube
+                //     t.updateMesh(t.mesh.name)
+                // }
 
                 // Cube ajouté
                 t.mesh.new = false
@@ -101,7 +101,7 @@ class Cube {
         mesh.active = true
 
         // Afficher le button remove
-        window.dispatchEvent(window.customEvents.showButtonRemove)
+        window.dispatchEvent(window.customEvents.showButtonDelete)
     }
 
     cubeInactive(name) {
@@ -113,15 +113,15 @@ class Cube {
         mesh.active = false
 
         // Ne pas afficher le button remove
-        window.dispatchEvent(window.customEvents.hideButtonRemove)
+        window.dispatchEvent(window.customEvents.hideButtonDelete)
     }
-
-    updateMesh(name) {
-        const t = this
-
-        let mesh = t.scene.getObjectByName(name)
-        let material = new THREE.MeshBasicMaterial({color: t.color})
-
-        mesh.material = material
-    }
+    //
+    // updateMesh(name) {
+    //     const t = this
+    //
+    //     let mesh = t.scene.getObjectByName(name)
+    //     let material = new THREE.MeshBasicMaterial({color: t.color})
+    //
+    //     mesh.material = material
+    // }
 }

@@ -105,10 +105,12 @@ class Sandboxe {
         // Edit button
         t.$buttonEdit.addEventListener("click", t.editMode.bind(t))
         t.$buttonAdd.addEventListener("click", t.addMode.bind(t))
-        t.$buttonRemove.addEventListener("click", t.removeCube.bind(t))
+        // TODO === à remettre
+        // t.$buttonRemove.addEventListener("click", t.removeCube.bind(t))
 
-        // Watche évènements lancés depuis les classes Cubes
-        window.addEventListener("hideButtonRemove", t.hideButtonRemove.bind(t))
+        // Watcher évènements lancés depuis les classes Cubes
+        window.addEventListener("hideButtonDelete", t.hideButtonDelete.bind(t))
+        window.addEventListener("showButtonRemove", t.showButtonDelete.bind(t))
     }
 
     resize() {
@@ -164,32 +166,6 @@ class Sandboxe {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + t.pattern,
         })
-
-        // // pour le nom des markers
-        // let count = 0
-        //
-        // // création de la grille lui sera liée
-        // for (let i = 0; i < t.gridSize; i++) {
-        //     for (let j = 0; j < t.gridSize; j++) {
-        //
-        //         let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
-        //         let material = new THREE.MeshBasicMaterial({color: t.colors.white, wireframe: true})
-        //         let mesh = new THREE.Mesh(geometry, material)
-        //
-        //         mesh.position.x = (i * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
-        //         mesh.position.z = (j * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
-        //
-        //         mesh.name = 'mesh-' + count++
-        //
-        //         // ajoute à notre groupe
-        //         grid.add(mesh)
-        //
-        //         // chacun des block on ajoute un écouteur d'évènements
-        //         t.domEvents.addEventListener(mesh, 'click', () => {
-        //             t.updateMesh(mesh.name)
-        //         })
-        //     }
-        // }
     }
 
     initDetectMarker() {
@@ -199,7 +175,7 @@ class Sandboxe {
 
         t.onRenderFcts.push(() => {
 
-            if (grid.visible) t.getCubes()
+            if (grid.visible && !t.isSeen) t.getCubes()
         })
     }
 
@@ -232,35 +208,24 @@ class Sandboxe {
         })
     }
 
-    // updateMesh(name) {
-    //     const t = this
-    //
-    //     let mesh = t.scene.getObjectByName(name)
-    //     let material = new THREE.MeshBasicMaterial({color: t.colors.blue})
-    //
-    //     mesh.material = material
-    // }
-
-    getCubes(){
+    getCubes() {
         const t = this
 
-        // si déjà vu on ne rapelle pas les classes
-        if (t.isSeen) return null;
-
+        // met le flag à true pour en pas repasser dans la fonction
         t.isSeen = true
 
         // appelle le serveur pour récupérer les cubes associées au marker
         let cubesRegistered = [
             {
-              position: {
-                  x: 1,
-                  y: 0,
-                  z: 1
-              },
-              color: 0xff0000,
-              alpha: 0.5,
+                position: {
+                    x: 1,
+                    y: 0,
+                    z: 1
+                },
+                color: 0xff0000,
+                alpha: 0.5,
                 wireframe: false,
-              _id: 123456,
+                _id: 123456,
             },
             {
                 position: {
@@ -303,13 +268,13 @@ class Sandboxe {
     updateCubeColor() {
         const t = this
 
-        t.cubeColor = t.hslToHex(t.$colorSlideChroma.value,100,50);
+        t.cubeColor = t.hslToHex(t.$colorSlideChroma.value, 100, 50);
         t.$colorResult.style.backgroundColor = 'hsl(' + t.$colorSlideChroma.value + ', 100%, 50%)'
 
         // Loop sur les éléments Mesh
-        t.scene.traverse( function( node ) {
+        t.scene.traverse(function (node) {
 
-            if ( node instanceof THREE.Mesh ) {
+            if (node instanceof THREE.Mesh) {
                 // Si le cube est sélectionné
                 if (node.active) {
                     // Changement de couleur
@@ -329,7 +294,6 @@ class Sandboxe {
 
             // changement des boutons
             t.$colors.classList.add('hidden')
-            t.$buttonRemove.classList.add('hidden')
             t.$buttonAdd.classList.remove('hidden')
 
             // Mode edition à false -> dé-autoriser le click sur la grille
@@ -341,7 +305,6 @@ class Sandboxe {
 
             // changement des boutons
             t.$colors.classList.remove('hidden')
-            t.$buttonRemove.classList.remove('hidden')
             t.$buttonAdd.classList.add('hidden')
 
             // Mode edition à true -> autoriser le click sur la grille
@@ -352,7 +315,7 @@ class Sandboxe {
         t.$buttonEdit.classList.toggle('active')
     }
 
-    addMode(){
+    addMode() {
         const t = this
 
         // si active on revient au mode vue
@@ -379,30 +342,30 @@ class Sandboxe {
         const t = this
 
         // Loop sur les éléments Mesh
-        t.scene.traverse( function( node ) {
+        t.scene.traverse(function (node) {
 
-            if ( node instanceof THREE.Mesh ) {
+            if (node instanceof THREE.Mesh) {
                 // Si le cube est sélectionné
                 if (node.active) {
                     // Couleur transparentes sur le cube
-                    let material = new THREE.MeshBasicMaterial({color: "#000000", wireframe: true })
+                    let material = new THREE.MeshBasicMaterial({color: "#ffffff", wireframe: true})
                     node.material = material
                     t.cubeInactive(node.name)
                 }
             }
         })
 
-        // Ne pas afficher le button remove
-        t.$buttonRemove.classList.add('hidden')
+        // enlève le boutton delete
+        t.hideButtonDelete()
     }
 
-    hideButtonRemove() {
+    hideButtonDelete() {
         const t = this
 
         t.$buttonRemove.classList.add('hidden')
     }
 
-    showButtonRemove() {
+    showButtonDelete() {
         const t = this
 
         t.$buttonRemove.classList.remove('hidden')
