@@ -92,7 +92,7 @@ class Cube {
 
         // ajoute le contour
         let edges = new THREE.EdgesGeometry( t.geometry )
-        t.line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xffffff } ) )
+        t.line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0x000000 } ) )
         t.mesh.add( t.line )
 
         // Afficher le button remove
@@ -106,7 +106,7 @@ class Cube {
         t.mesh.active = false
 
         // enleve le contour
-        t.scene.remove(t.line)
+        t.mesh.remove(t.line)
 
         // Ne pas afficher le button remove
         window.dispatchEvent(new CustomEvent('hideButtonDelete'))
