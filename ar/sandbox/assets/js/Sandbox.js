@@ -41,6 +41,7 @@ class Sandboxe {
 
         t.createRenderer()
         t.createCamera()
+        t.createLight()
         t.createArToolKitSource()
 
         t.bindEvents()
@@ -76,6 +77,13 @@ class Sandboxe {
 
         t.camera = new THREE.PerspectiveCamera(75, t.ww / t.wh, 0.1, 1000)
         t.scene.add(t.camera)
+    }
+
+    createLight() {
+        const t = this
+
+        let light = new THREE.PointLight(0xffffff, 5, 100);
+        t.scene.add(light)
     }
 
     createArToolKitSource() {

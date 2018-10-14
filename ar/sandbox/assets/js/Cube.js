@@ -40,14 +40,14 @@ class Cube {
         let grid = t.scene.getObjectByName('grid')
 
         // défini la forme / texture du cube
-        let geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
+        t.geometry = new THREE.BoxGeometry(t.sizeCube, t.sizeCube, t.sizeCube)
         let material = new THREE.MeshBasicMaterial({
             color: t.color,
             wireframe: t.wireframe,
             transparent: true,
             opacity: t.alpha
         })
-        t.mesh = new THREE.Mesh(geometry, material)
+        t.mesh = new THREE.Mesh(t.geometry, material)
 
         // positionne le cube
         t.mesh.position.x = (t.x * t.sizeCube) - ((t.gridSize - 1) / 2 * t.sizeCube)
@@ -91,10 +91,13 @@ class Cube {
         t.mesh.active = true
 
         // ajoute le contour
-        let outline = new THREE.EdgesHelper( t.mesh, 0x000000)
-        outline.name = t.id+'outline'
-        outline.material.linewidth = 2
-        t.scene.add(outline)
+        let edges = new THREE.EdgesGeometry( t.geometry );
+        let line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0x0000ff } ) );
+        t.mesh.add( line )
+        // let outline = new THREE.EdgesHelper( t.mesh, 0x000000)
+        // outline.name = t.id+'outline'
+        // outline.material.linewidth = 20
+        // t.scene.add(outline)
 
         // Afficher le button remove
         window.dispatchEvent(new CustomEvent('showButtonDelete'))
@@ -106,9 +109,9 @@ class Cube {
         // Cube inactif
         t.mesh.active = false
 
-        // enleve le contout
-        let outline = t.scene.getObjectByName(t.id+'outline')
-        t.scene.remove(outline)
+        // // enleve le contout
+        // let outline = t.scene.getObjectByName(t.id+'outline')
+        // t.scene.remove(outline)
 
         // Ne pas afficher le button remove
         window.dispatchEvent(new CustomEvent('hideButtonDelete'))
