@@ -296,7 +296,7 @@ class Sandboxe {
             new Cube(cubeRegister, three)
 
             // on ajoute dans notre plateau de jeu les valeurs du cube
-            t.boardGame[cubeRegister.y][cubeRegister.x + (cubeRegister.z * t.gridSize)]
+            t.boardGame[cubeRegister.position.y][cubeRegister.position.x + (cubeRegister.position.z * t.gridSize)]
         }
 
         console.log("t.boardGame", t.boardGame)
