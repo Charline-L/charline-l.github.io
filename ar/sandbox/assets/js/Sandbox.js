@@ -274,7 +274,7 @@ class Sandboxe {
             }
         ]
 
-        for (let cubeRegister in cubesRegistered) new Cube(cubeRegister, t.scene)
+        for (let cubeRegister of cubesRegistered) new Cube(cubeRegister, t.scene)
     }
 }
 
