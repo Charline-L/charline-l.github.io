@@ -78,7 +78,9 @@ class Cube {
         })
 
         // event trigger dans la class Sandbox
-        window.addEventListener("changeColor", t.changeColor.bind(t))
+        window.addEventListener("changeColor", (e)=> {
+            t.changeColor(e)
+        })
     }
 
     cubeActive() {
