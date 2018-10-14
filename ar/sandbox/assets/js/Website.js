@@ -25,7 +25,7 @@ class Website {
             'patt.letterB'
         ]
 
-        new Sandboxe('patt.hiro')
+        new Sandboxe({pattern: 'patt.hiro', id: 'ar-sandbox'})
         // for (let pattern of patterns)  new Sandboxe(pattern)
     }
 }

@@ -1,10 +1,9 @@
 class Sandboxe {
-    constructor(pattern) {
+    constructor(infos) {
         const t = this
 
-        alert("OK sanboxe: " + pattern)
-
-        t.pattern = pattern
+        t.pattern = infos.pattern
+        t.id = infos.id
 
         // DOM
         t.$container = document.querySelector(".sandboxe-game__canvas")
@@ -17,11 +16,11 @@ class Sandboxe {
         t.ww = window.innerWidth
         t.wh = window.innerWidth
 
-        // toutes les couleurs
-        t.colors = {
-            white: 0xffffff,
-            blue: 0x00ffff
-        }
+        // // toutes les couleurs
+        // t.colors = {
+        //     white: 0xffffff,
+        //     blue: 0x00ffff
+        // }
 
         // loop des functions
         t.onRenderFcts = []
@@ -29,12 +28,12 @@ class Sandboxe {
         // scene
         t.scene = new THREE.Scene()
 
-        // flag
-        t.elementSelected = false
+        // // flag
+        // t.elementSelected = false
 
-        // grille
-        t.gridSize = 3
-        t.sizeCube = 1
+        // // grille
+        // t.gridSize = 3
+        // t.sizeCube = 1
 
         t.init()
     }
@@ -141,8 +140,6 @@ class Sandboxe {
     initMarker() {
         const t = this
 
-        alert("in init marker")
-
         // création d'un groupe d'éléments
         let grid = new THREE.Group()
 
@@ -152,8 +149,8 @@ class Sandboxe {
         // ajoute à la scene
         t.scene.add(grid)
 
-        // récupère le marker que l'on doit chercher
-        let controls = new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
+        // ajoute le marker que l'on doit "voir" à notre grille
+        new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + t.pattern,
         })
@@ -190,13 +187,9 @@ class Sandboxe {
 
         let grid = t.scene.getObjectByName('grid')
 
-        alert("in intDetectMarker",)
-
         t.onRenderFcts.push(() => {
 
-            if (grid.visible) {
-                alert("visible")
-            }
+            if (grid.visible) t.getCubes()
         })
     }
 
@@ -229,13 +222,53 @@ class Sandboxe {
         })
     }
 
-    updateMesh(name) {
+    // updateMesh(name) {
+    //     const t = this
+    //
+    //     let mesh = t.scene.getObjectByName(name)
+    //     let material = new THREE.MeshBasicMaterial({color: t.colors.blue})
+    //
+    //     mesh.material = material
+    // }
+
+    getCubes(){
         const t = this
 
-        let mesh = t.scene.getObjectByName(name)
-        let material = new THREE.MeshBasicMaterial({color: t.colors.blue})
+        // appelle le serveur pour récupérer les cubes associées au marker
+        let cubesRegistered = [
+            {
+              position: {
+                  x: 1,
+                  y: 0,
+                  z: 1
+              },
+              color: 0xff0000,
+              alpha: 1,
+              _id: 123456,
+            },
+            {
+                position: {
+                    x: 2,
+                    y: 0,
+                    z: 2
+                },
+                color: 0x00ff00,
+                alpha: 1,
+                _id: 123456,
+            },
+            {
+                position: {
+                    x: 1,
+                    y: 0,
+                    z: 0
+                },
+                color: 0x0000ff,
+                alpha: 1,
+                _id: 123456,
+            }
+        ]
 
-        mesh.material = material
+        for (let cubeRegister in cubesRegistered) new Cube(cubeRegister, t.scene)
     }
 }
 
