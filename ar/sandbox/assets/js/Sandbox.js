@@ -277,17 +277,17 @@ class Sandboxe {
                 wireframe: false,
                 _id: 2,
             },
-            // {
-            //     position: {
-            //         x: 1,
-            //         y: 1,
-            //         z: 1
-            //     },
-            //     color: 0x00ffff,
-            //     alpha: 1,
-            //     wireframe: false,
-            //     _id: 3,
-            // }
+            {
+                position: {
+                    x: 1,
+                    y: 1,
+                    z: 1
+                },
+                color: 0x00ffff,
+                alpha: 1,
+                wireframe: false,
+                _id: 3,
+            }
         ]
 
         // on créer les cubes
@@ -363,7 +363,7 @@ class Sandboxe {
                     }
 
                     // vérifie s'il n'y a pas de case sur le niveau au dessus et que la case actuelle est bien remplie de couleur
-                    if ( y < t.gridSize - 2 && t.boardGame[y+1][index] === null && t.boardGame[y][index].wireframe === false ) {
+                    if ( y < t.gridSize - 1 && t.boardGame[y+1][index] === null && t.boardGame[y][index].wireframe === false ) {
 
                         // prépare nouvelles coordonées
                         cube.position.x = t.boardGame[y][index].position.x
