@@ -332,36 +332,33 @@ class Sandboxe {
                         _id: null,
                     }
 
-                    let positions = {
-                        NW : index - t.gridSize - 1,
-                        N : index - t.gridSize,
-                        NE : index - t.gridSize + 1,
-                        E : index + 1,
-                        SE : index + t.gridSize + 1,
-                        S : index + t.gridSize,
-                        SW : index + t.gridSize - 1,
-                        W : index - 1
-                    }
+                    let positions = [
+                        index - t.gridSize - 1, // NW
+                        index - t.gridSize, // N
+                        index - t.gridSize + 1, // NE
+                        index + 1, // E
+                        index + t.gridSize + 1, // SE
+                        index + t.gridSize, // S
+                        index + t.gridSize - 1, // SW
+                        index - 1 // W
+                    ]
 
 
-                    for (let property in positions) {
-                        if (positions.hasOwnProperty(property)) {
-                            console.log("property", property)
+                    for (let sideCase of positions) {
 
-                            // vérfie s'il y a une case pour tous ses côtés
-                            // si pas de case on créer un cube
-                            // if ( property >= 0 || t.boardGame[y][position] === null) {
-                            //
-                            //     // prépare nouvelles coordonées
-                            //     cube.x = NW % t.gridSize
-                            //     cube.z = (NW - cube.x) / t.gridSize
-                            //
-                            //     // créer le cube
-                            //     new Cube(cube, three)
-                            //
-                            //     // met à jour le tableau t.boardGame
-                            //     t.boardGame[y][NW] = cube
-                            // }
+                        // vérfie s'il y a une case pour tous ses côtés
+                        // si pas de case on créer un cube
+                        if ( sideCase >= 0 && t.boardGame[y][position] === null && sideCase < Math.pow(t.gridSize, 2)) {
+
+                            // prépare nouvelles coordonées
+                            cube.x = sideCase % t.gridSize
+                            cube.z = (sideCase - cube.x) / t.gridSize
+
+                            // créer le cube
+                            new Cube(cube, three)
+
+                            // met à jour le tableau t.boardGame
+                            t.boardGame[y][sideCase] = cube
                         }
                     }
                 }
