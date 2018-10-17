@@ -1,5 +1,5 @@
 class Cube {
-    constructor(cube, three) {
+    constructor(cube, three, dom) {
         const t = this
 
         // infomations de positions du cube
