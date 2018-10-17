@@ -37,6 +37,9 @@ class Sandboxe {
         t.gridSize = 3
         t.boardGame = []
 
+        // permet d'intéragir avec le DOM >>> est envoyé dans la class Cube
+        t.domEvents = new THREEx.DomEvents(t.camera, t.renderer.domElement)
+
         // élements que l'on va passer dans notre class Cube
         t.three = {
             scene: t.scene,
@@ -46,6 +49,7 @@ class Sandboxe {
         t.dom = {
             $colorSlideChroma: t.$colorSlideChroma
         }
+
 
         t.init()
     }
@@ -129,9 +133,6 @@ class Sandboxe {
         const t = this
 
         document.addEventListener("resize", t.resize.bind(t))
-
-        // permet d'intéragir avec le DOM >>> est envoyé dans la class Cube
-        t.domEvents = new THREEx.DomEvents(t.camera, t.renderer.domElement)
 
         // Change color
         t.$colorSlideChroma.addEventListener("change", t.updateCubeColor.bind(t))
