@@ -141,6 +141,9 @@ class Cube {
             })
 
             t.mesh.material = material
+
+            // si on est en mode adition on enlève la sélection car sinon on change de couleur
+            if (window.isAddition) t.mesh.active = false
         }
     }
 
