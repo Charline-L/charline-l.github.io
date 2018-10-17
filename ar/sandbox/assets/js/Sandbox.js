@@ -532,8 +532,10 @@ class Sandboxe {
         let array = e.detail.cubePostion.y
         let index = (e.detail.cubePostion.z * t.gridSize) + e.detail.cubePostion.x
 
-        alert("array: " + array)
-        alert("index: " + index)
+        console.log("array:", array)
+        console.log("index:", index)
+
+        console.log("e.detail.cubePostion", e.detail.cubePostion)
 
         console.log("t.boardGame avant", t.boardGame)
         // met à jour sa valeur
