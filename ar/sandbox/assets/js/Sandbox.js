@@ -35,7 +35,7 @@ class Sandboxe {
 
         // pour représentation sous la forme d'un tableau du plateau de jeu
         t.gridSize = 3
-        t.boardGame = []
+        // t.boardGame = []
 
 
         t.init()
@@ -150,8 +150,6 @@ class Sandboxe {
         // Watcher évènements lancés depuis les classes Cubes
         window.addEventListener("hideButtonDelete", t.hideButtonDelete.bind(t))
         window.addEventListener("showButtonDelete", t.showButtonDelete.bind(t))
-        window.addEventListener("updateBoard", t.updateBoard.bind(t))
-
     }
 
     resize() {
@@ -255,29 +253,42 @@ class Sandboxe {
         // met le flag à true pour en pas repasser dans la fonction
         t.isSeen = true
 
+        let count = 0
+
         // appelle le serveur pour récupérer les cubes associées au marker
         t.cubesRegistered = [
             {
                 position: {
-                    x: 1,
+                    x: 0,
                     y: 0,
-                    z: 1
+                    z: 0
                 },
                 color: 0xff0000,
                 alpha: 0.5,
                 wireframe: false,
-                _id: 0,
+                _id: count,
             },
             {
                 position: {
-                    x: 2,
+                    x: 0,
+                    y: 0,
+                    z: 1
+                },
+                color: 0xff0000,
+                alpha: 1,
+                wireframe: false,
+                _id: count++,
+            },
+            {
+                position: {
+                    x: 0,
                     y: 0,
                     z: 2
                 },
                 color: 0x00ff00,
                 alpha: 1,
                 wireframe: false,
-                _id: 1,
+                _id: count++,
             },
             {
                 position: {
@@ -285,21 +296,68 @@ class Sandboxe {
                     y: 0,
                     z: 0
                 },
-                color: 0x0000ff,
+                color: 0xfffff,
                 alpha: 1,
-                wireframe: false,
-                _id: 2,
+                wireframe: true,
+                _id: count++,
             },
             {
                 position: {
                     x: 1,
-                    y: 1,
+                    y: 0,
                     z: 1
                 },
-                color: 0x00ffff,
+                color: 0xfffff,
                 alpha: 1,
-                wireframe: false,
-                _id: 3,
+                wireframe: true,
+                _id: count++,
+            },
+            {
+                position: {
+                    x: 1,
+                    y: 0,
+                    z: 2
+                },
+                color: 0xfffff,
+                alpha: 1,
+                wireframe: true,
+                _id: count++,
+            },
+            {
+                position: {
+                    x: 2,
+                    y: 0,
+                    z: 0
+                },
+                color: 0xfffff,
+                alpha: 1,
+                wireframe: true,
+                visible: false,
+                _id: count++,
+            },
+            {
+                position: {
+                    x: 2,
+                    y: 0,
+                    z: 1
+                },
+                color: 0xfffff,
+                alpha: 1,
+                wireframe: true,
+                visible: false,
+                _id: count++,
+            },
+            {
+                position: {
+                    x: 2,
+                    y: 0,
+                    z: 2
+                },
+                color: 0xfffff,
+                alpha: 1,
+                wireframe: true,
+                visible: false,
+                _id: count++,
             }
         ]
 
@@ -310,104 +368,99 @@ class Sandboxe {
             new Cube(cubeRegister, t.three, t.dom)
 
             // on ajoute dans notre plateau de jeu les valeurs du cube
-            t.boardGame[cubeRegister.position.y][cubeRegister.position.x + (cubeRegister.position.z * t.gridSize)] = cubeRegister
+            // t.boardGame[cubeRegister.position.y][cubeRegister.position.x + (cubeRegister.position.z * t.gridSize)] = cubeRegister
         }
 
-        console.log("t.boardGame création cube", t.boardGame)
-        // on lance la création des cubes wireframes
-        t.createWireframe()
+        // update le board pour les cubes en wireframes
+        // t.createWireframe()
     }
 
-    createWireframe(){
-        const t = this
-
-        for (let y = 0; y < t.boardGame.length; y++ ) {
-
-            for (let index = 0 ; index < t.boardGame[y].length; index++ ) {
-
-                // si une valeur est enregistrée
-                if ( t.boardGame[y][index] !== null && t.boardGame[y][index].wireframe === false ) {
-
-                    let cube = {
-                        position: {
-                            x: null,
-                            y: null,
-                            z: null
-                        },
-                        color: 0xffffff,
-                        wireframe: true,
-                        alpha: 1,
-                        _id: null,
-                    }
-
-                    let positions = [
-                        index - t.gridSize - 1, // NW
-                        index - t.gridSize, // N
-                        index - t.gridSize + 1, // NE
-                        index + 1, // E
-                        index + t.gridSize + 1, // SE
-                        index + t.gridSize, // S
-                        index + t.gridSize - 1, // SW
-                        index - 1 // W
-                    ]
-
-                    // vérfie s'il y a une case pour tous ses côtés
-                    // si pas de case on créer un cube
-                    // sur la meme dimension
-                    for (let sideCase of positions) {
-
-                        if ( sideCase >= 0 && t.boardGame[y][sideCase] === null && sideCase < Math.pow(t.gridSize, 2)) {
-
-                            // prépare nouvelles coordonées
-                            cube.position.x = sideCase % t.gridSize
-                            cube.position.z = (sideCase - cube.position.x) / t.gridSize
-                            cube.position.y = y
-
-                            // créer le cube
-                            new Cube(cube, t.three, t.dom)
-
-                            // met à jour le tableau t.boardGame
-                            t.boardGame[y][sideCase] = cube
-                        }
-                    }
-
-                    // vérifie s'il n'y a pas de case sur le niveau au dessus et que la case actuelle est bien remplie de couleur
-                    if ( y < t.gridSize - 1 && t.boardGame[y+1][index] === null && t.boardGame[y][index].wireframe === false ) {
-
-                        // prépare nouvelles coordonées
-                        cube.position.x = t.boardGame[y][index].position.x
-                        cube.position.z = t.boardGame[y][index].position.z
-                        cube.position.y = y + 1
-
-                        // créer le cube
-                        new Cube(cube, t.three, t.dom)
-
-                        // met à jour le tableau t.boardGame
-                        t.boardGame[y+1][index] = cube
-                    }
-
-                    // vérifie s'il n'y a pas de case sur le niveau au dessous et que la case actuelle est bien remplie de couleur
-                    if ( y > 0 && t.boardGame[y-1][index] === null && t.boardGame[y][index].wireframe === false ) {
-
-                        // prépare nouvelles coordonées
-                        cube.position.x = t.boardGame[y][index].position.x
-                        cube.position.z = t.boardGame[y][index].position.z
-                        cube.position.y = y - 1
-
-                        // créer le cube
-                        new Cube(cube, t.three, t.dom)
-
-                        // met à jour le tableau t.boardGame
-                        t.boardGame[y-1][index] = cube
-                    }
-                }
-            }
-        }
-
-
-        console.log("t.boardGame fin createWireframe", t.boardGame)
-    }
-
+    // createWireframe(){
+    //     const t = this
+    //
+    //     for (let y = 0; y < t.boardGame.length; y++ ) {
+    //
+    //         for (let index = 0 ; index < t.boardGame[y].length; index++ ) {
+    //
+    //             // si une valeur est enregistrée
+    //             if ( t.boardGame[y][index] !== null && t.boardGame[y][index].wireframe === false ) {
+    //
+    //                 let cube = {
+    //                     position: {
+    //                         x: null,
+    //                         y: null,
+    //                         z: null
+    //                     },
+    //                     color: 0xffffff,
+    //                     wireframe: true,
+    //                     alpha: 1,
+    //                     _id: null,
+    //                 }
+    //
+    //                 let positions = [
+    //                     index - t.gridSize - 1, // NW
+    //                     index - t.gridSize, // N
+    //                     index - t.gridSize + 1, // NE
+    //                     index + 1, // E
+    //                     index + t.gridSize + 1, // SE
+    //                     index + t.gridSize, // S
+    //                     index + t.gridSize - 1, // SW
+    //                     index - 1 // W
+    //                 ]
+    //
+    //                 // vérfie s'il y a une case pour tous ses côtés
+    //                 // si pas de case on créer un cube
+    //                 // sur la meme dimension
+    //                 for (let sideCase of positions) {
+    //
+    //                     if ( sideCase >= 0 && t.boardGame[y][sideCase] === null && sideCase < Math.pow(t.gridSize, 2)) {
+    //
+    //                         // prépare nouvelles coordonées
+    //                         cube.position.x = sideCase % t.gridSize
+    //                         cube.position.z = (sideCase - cube.position.x) / t.gridSize
+    //                         cube.position.y = y
+    //
+    //                         // créer le cube
+    //                         new Cube(cube, t.three, t.dom)
+    //
+    //                         // met à jour le tableau t.boardGame
+    //                         t.boardGame[y][sideCase] = cube
+    //                     }
+    //                 }
+    //
+    //                 // vérifie s'il n'y a pas de case sur le niveau au dessus et que la case actuelle est bien remplie de couleur
+    //                 if ( y < t.gridSize - 1 && t.boardGame[y+1][index] === null && t.boardGame[y][index].wireframe === false ) {
+    //
+    //                     // prépare nouvelles coordonées
+    //                     cube.position.x = t.boardGame[y][index].position.x
+    //                     cube.position.z = t.boardGame[y][index].position.z
+    //                     cube.position.y = y + 1
+    //
+    //                     // créer le cube
+    //                     new Cube(cube, t.three, t.dom)
+    //
+    //                     // met à jour le tableau t.boardGame
+    //                     t.boardGame[y+1][index] = cube
+    //                 }
+    //
+    //                 // vérifie s'il n'y a pas de case sur le niveau au dessous et que la case actuelle est bien remplie de couleur
+    //                 if ( y > 0 && t.boardGame[y-1][index] === null && t.boardGame[y][index].wireframe === false ) {
+    //
+    //                     // prépare nouvelles coordonées
+    //                     cube.position.x = t.boardGame[y][index].position.x
+    //                     cube.position.z = t.boardGame[y][index].position.z
+    //                     cube.position.y = y - 1
+    //
+    //                     // créer le cube
+    //                     new Cube(cube, t.three, t.dom)
+    //
+    //                     // met à jour le tableau t.boardGame
+    //                     t.boardGame[y-1][index] = cube
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
     updateCubeColor() {
         const t = this
@@ -525,27 +578,25 @@ class Sandboxe {
         t.$buttonDelete.classList.remove('hidden')
     }
 
-    updateBoard(e) {
-        const t = this
-
-        // récupère l'action
-        let action = e.detail.action
-
-        // récupère sa position
-        let array = e.detail.cubePostion.y
-        let index = (e.detail.cubePostion.z * t.gridSize) + e.detail.cubePostion.x
-
-        console.log("array:", array)
-        console.log("index:", index)
-
-        console.log("e.detail.cubePostion", e.detail.cubePostion)
-
-        console.log("t.boardGame avant", t.boardGame)
-        // met à jour sa valeur
-        t.boardGame[array][index] = action === "delete" ? null :  e.detail.cube
-
-        console.log("t.boardGame apres", t.boardGame)
-
-        // TODO : update des wireframes
-    }
+    // updateBoard(e) {
+    //     const t = this
+    //
+    //     // récupère l'action
+    //     let action = e.detail.action
+    //
+    //     // récupère sa position
+    //     let array = e.detail.cubePostion.y
+    //     let index = (e.detail.cubePostion.z * t.gridSize) + e.detail.cubePostion.x
+    //
+    //     // console.log("array:", array)
+    //     // console.log("index:", index)
+    //     // console.log("e.detail.cubePostion", e.detail.cubePostion)
+    //     // console.log("t.boardGame avant", t.boardGame)
+    //
+    //     // met à jour sa valeur
+    //     // t.boardGame[array][index] = action === "delete" ? null :  e.detail.cube
+    // }
 }
+
+
+// TODO : reprise nettoyer code pour les input

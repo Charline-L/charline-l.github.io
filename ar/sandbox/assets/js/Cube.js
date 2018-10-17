@@ -148,27 +148,6 @@ class Cube {
             // reset les variables
             t.mesh.active = false
             t.mesh.visible = false
-
-            // TODO : actualiser le board
-            // mets à jour le plateau
-            let cubePostion = {
-                x : t.x,
-                y : t.y,
-                z : t.z
-            }
-
-            let event = new CustomEvent('updateBoard',
-                {
-                    detail: {
-                        action: "delete",
-                        cubePostion: cubePostion
-                    }
-                })
-
-            window.dispatchEvent(event)
-
-
-            // TODO : envoyer au server que le cube a été effacé
         }
     }
 
@@ -184,12 +163,6 @@ class Cube {
 
         // on passe le cube en sélection
         t.cubeActive()
-
-        // TODO : actualiser le board
-
-        // TODO : envoyer au server que le cube a été créé
-
-        // TODO : créer les nouveaux wireframes
     }
 
     showWireframe(){
