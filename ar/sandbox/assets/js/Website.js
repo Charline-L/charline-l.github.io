@@ -2,8 +2,6 @@ class Website {
     constructor() {
         const t = this
 
-        alert("in website")
-
         t.init()
     }
 

@@ -458,6 +458,9 @@ class Sandboxe {
 
             // trigger pour cacher les cubes en wireframe
             window.dispatchEvent( new CustomEvent("hideWireframe") )
+
+            // Mode adition à false -> dé-autoriser le click sur la grille
+            window.isAddition = false
         } else {
 
             // trigger change pour setter la couleur dans le result
@@ -469,6 +472,9 @@ class Sandboxe {
             // changement des boutons
             t.$colors.classList.remove('hidden')
             t.$buttonEdit.classList.add('hidden')
+
+            // Mode adition à true -> autoriser le click sur la grille
+            window.isAddition = true
         }
 
         // met à jour la class

@@ -79,11 +79,17 @@ class Cube {
                 else t.cubeActive()
             }
 
+
+            // TODO : reprise ici ::: ajouter un flag si en mode édition pour ajouter couleur au cube
+            // mettre à jour board + envoyer données BDD >>> elle qui renvoit le board ??? non trop de calcul je pense
+
             // si on est en mode ajout on peut ajouter des cubes
-            // if (window.isAdding){
-            //
-            //     t.addCube()
-            // }
+            if (window.isAddition){
+
+                alert("name : " + t.mesh)
+                alert("active : " + t.mesh.wireframe)
+                // t.addCube()
+            }
         })
 
         // event trigger dans la class Sandbox
@@ -153,6 +159,8 @@ class Cube {
 
     addCube() {
         const t = this
+
+        // TODO : actualiser le board
 
         // TODO : envoyer au server que le cube a été créé
     }
