@@ -93,7 +93,7 @@ class Cube {
         t.mesh.wireframe = t.wireframe
 
         // défini si visble
-        t.mesh.visible = t.visible && t.wireframe
+        t.mesh.visible = t.visible && !t.wireframe
 
         // prépare la selection
         t.mesh.selected = false
