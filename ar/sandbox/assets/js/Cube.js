@@ -152,9 +152,9 @@ class Cube {
             // TODO : actualiser le board
             // mets à jour le plateau
             let cubePostion = {
-                x : t.mesh.position.x,
-                y : t.mesh.position.y,
-                z : t.mesh.position.z
+                x : t.x,
+                y : t.y,
+                z : t.z
             }
 
             let event = new CustomEvent('updateBoard',
