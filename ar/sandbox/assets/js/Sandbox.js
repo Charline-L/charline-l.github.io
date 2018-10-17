@@ -313,6 +313,7 @@ class Sandboxe {
             t.boardGame[cubeRegister.position.y][cubeRegister.position.x + (cubeRegister.position.z * t.gridSize)] = cubeRegister
         }
 
+        console.log("t.boardGame création cube", t.boardGame)
         // on lance la création des cubes wireframes
         t.createWireframe()
     }
@@ -402,6 +403,9 @@ class Sandboxe {
                 }
             }
         }
+
+
+        console.log("t.boardGame fin createWireframe", t.boardGame)
     }
 
 
@@ -526,7 +530,6 @@ class Sandboxe {
 
         // récupère l'action
         let action = e.detail.action
-        alert("action: " + action)
 
         // récupère sa position
         let array = e.detail.cubePostion.y
