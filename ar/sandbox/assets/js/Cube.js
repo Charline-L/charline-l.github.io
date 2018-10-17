@@ -146,6 +146,9 @@ class Cube {
         t.line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0x000000 } ) )
         t.mesh.add( t.line )
 
+        // si mode edition trigger le changement de couleur
+        if (window.isEdition) t.$colorSlideChroma.dispatchEvent(new Event('change'))
+
         // Afficher le button remove
         window.dispatchEvent(new CustomEvent('showButtonDelete'))
     }
@@ -164,8 +167,6 @@ class Cube {
 
     changeColor(e) {
         const t = this
-
-        console.log("in changeColor")
 
         if (t.mesh.selected) {
 
@@ -200,8 +201,6 @@ class Cube {
 
     addCube() {
         const t = this
-
-        console.log("in addCube")
 
         // reset des variables
         t.mesh.selected = true
