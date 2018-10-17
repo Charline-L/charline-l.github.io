@@ -37,6 +37,16 @@ class Sandboxe {
         t.gridSize = 3
         t.boardGame = []
 
+        // élements que l'on va passer dans notre class Cube
+        t.three = {
+            scene: t.scene,
+            domEvents: t.domEvents
+        }
+
+        t.dom = {
+            $colorSlideChroma: t.$colorSlideChroma
+        }
+
         t.init()
     }
 
@@ -237,15 +247,6 @@ class Sandboxe {
         // met le flag à true pour en pas repasser dans la fonction
         t.isSeen = true
 
-        let dom = {
-            $colorSlideChroma: t.$colorSlideChroma
-        }
-
-        let three = {
-            scene: t.scene,
-            domEvents: t.domEvents
-        }
-
         // appelle le serveur pour récupérer les cubes associées au marker
         t.cubesRegistered = [
             {
@@ -294,11 +295,13 @@ class Sandboxe {
             }
         ]
 
+        console.log("dom sandbox", dom)
+
         // on créer les cubes
         for (let cubeRegister of t.cubesRegistered ) {
 
             // on append le cube
-            new Cube(cubeRegister, three, dom)
+            new Cube(cubeRegister, t.three, t.dom)
 
             // on ajoute dans notre plateau de jeu les valeurs du cube
             t.boardGame[cubeRegister.position.y][cubeRegister.position.x + (cubeRegister.position.z * t.gridSize)] = cubeRegister
@@ -311,10 +314,7 @@ class Sandboxe {
     createWireframe(){
         const t = this
 
-        let three = {
-            scene: t.scene,
-            domEvents: t.domEvents
-        }
+
 
         for (let y = 0; y < t.boardGame.length; y++ ) {
 
@@ -359,7 +359,7 @@ class Sandboxe {
                             cube.position.y = y
 
                             // créer le cube
-                            new Cube(cube, three)
+                            new Cube(cube, t.three, t.dom)
 
                             // met à jour le tableau t.boardGame
                             t.boardGame[y][sideCase] = cube
