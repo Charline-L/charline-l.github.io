@@ -312,8 +312,6 @@ class Sandboxe {
     createWireframe(){
         const t = this
 
-
-
         for (let y = 0; y < t.boardGame.length; y++ ) {
 
             for (let index = 0 ; index < t.boardGame[y].length; index++ ) {
@@ -373,7 +371,7 @@ class Sandboxe {
                         cube.position.y = y + 1
 
                         // créer le cube
-                        new Cube(cube, three)
+                        new Cube(cube, t.three, t.dom)
 
                         // met à jour le tableau t.boardGame
                         t.boardGame[y+1][index] = cube
@@ -388,7 +386,7 @@ class Sandboxe {
                         cube.position.y = y - 1
 
                         // créer le cube
-                        new Cube(cube, three)
+                        new Cube(cube, t.three, t.dom)
 
                         // met à jour le tableau t.boardGame
                         t.boardGame[y-1][index] = cube
