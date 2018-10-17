@@ -237,8 +237,6 @@ class Sandboxe {
     getCubes() {
         const t = this
 
-        console.log('in getCubes')
-
         // met le flag à true pour en pas repasser dans la fonction
         t.isSeen = true
 
@@ -392,6 +390,9 @@ class Sandboxe {
 
             // Mode edition à false -> dé-autoriser le click sur la grille
             window.isEdition = false
+
+            // désélectionne tous les cubes
+            window.dispatchEvent("deselectCube")
         } else {
 
             // trigger change pour setter la couleur dans le result
@@ -425,6 +426,9 @@ class Sandboxe {
 
             // Mode adition à false -> dé-autoriser le click sur la grille
             window.isAddition = false
+
+            // désélectionne tous les cubes
+
         } else {
 
             // trigger change pour setter la couleur dans le result

@@ -89,9 +89,6 @@ class Cube {
         // donne nom unique au cube
         t.mesh.name = t.id
 
-        // défini si a un wireframe
-        t.mesh.wireframe = t.wireframe
-
         // défini si visble
         t.mesh.visible = t.status === "show"
 
@@ -111,14 +108,22 @@ class Cube {
             // si on est en mode edition on peut changer la couleur du cube
             if (window.isEdition) {
 
-                if (t.mesh.selected) t.cubeDeselected()
+                if (t.mesh.selected) {
+
+                    // déslectionne le cube
+                    t.cubeDeselected()
+
+                    // lance event pour voir s'il faut effacer le bouton delete
+                    window.dispatchEvent(new CustomEvent('hideButtonDelete'))
+                }
                 else t.cubeSelected()
             }
 
             // si on est en mode ajout on peut ajouter des cubes
             if (window.isAddition){
 
-                if (t.mesh.wireframe) t.addCube()
+                // si cube e
+                if (t.status === "wireframe") t.addCube()
             }
         })
 
@@ -127,6 +132,7 @@ class Cube {
         window.addEventListener("removeCube", t.removeCube.bind(t))
         window.addEventListener("showWireframe", t.showWireframe.bind(t))
         window.addEventListener("hideWireframe", t.hideWireframe.bind(t))
+        window.addEventListener("cubeDeselected", t.cubeDeselected.bind(t))
     }
 
     cubeSelected() {
@@ -152,9 +158,6 @@ class Cube {
 
         // enleve le contour
         t.mesh.remove(t.line)
-
-        // Ne pas afficher le button remove
-        window.dispatchEvent(new CustomEvent('hideButtonDelete'))
     }
 
     changeColor(e) {
@@ -164,12 +167,14 @@ class Cube {
 
             let material = new THREE.MeshBasicMaterial({
                 color: Number(e.detail.color),
-                wireframe: t.mesh.wireframe,
+                wireframe: t.wireframe,
                 transparent: true,
                 opacity: t.alpha
             })
 
             t.mesh.material = material
+
+            // TODO : envoyer au serveur la nouvelle couleur
         }
     }
 
@@ -182,6 +187,9 @@ class Cube {
             t.mesh.selected = false
             t.mesh.visible = false
             t.status = "hidding"
+
+            // TODO : envoyer au serveur que le cube est "hidding"
+            // TODO : mettre à jour les cubes en wireframe
         }
     }
 
@@ -189,8 +197,8 @@ class Cube {
         const t = this
 
         // reset des variables
-        t.mesh.wireframe = false
         t.mesh.selected = true
+        t.mesh.visible = true
         t.status = "show"
 
         // trigger le changement de couleur
@@ -198,6 +206,21 @@ class Cube {
 
         // on passe le cube en sélection
         t.cubeSelected()
+
+        // TODO : envoyer au serveur le nouveau cube
+        // TODO : mettre à jour les cubes en wireframe
+    }
+
+    addWireframe() {
+        const t = this
+
+        // défini les variable
+        t.mesh.selected = false
+        // t.mesh.visible = true // visible ou pas visible dépend de où l'on appelera la fonction
+        t.status = "wireframe"
+
+        // applique la texture par défault
+        t.mesh.material = t.texture.wireframe
     }
 
     showWireframe(){
