@@ -89,12 +89,8 @@ class Cube {
             // si on est en mode ajout on peut ajouter des cubes
             if (window.isAddition){
 
-                // pour mettre à jour la texture
                 if (t.mesh.wireframe) t.addCube()
-
-                // si on change de couleur
-                if (t.mesh.active) t.cubeInactive()
-                else t.cubeActive()
+                else t.cubeInactive()
             }
         })
 
@@ -168,9 +164,13 @@ class Cube {
 
         // reset des variables
         t.mesh.wireframe = false
+        t.mesh.active = true
 
         // trigger le changement de couleur
         t.$colorSlideChroma.dispatchEvent(new Event('change'))
+
+        // on passe le cube en sélection
+        t.cubeActive()
 
         // TODO : actualiser le board
 
