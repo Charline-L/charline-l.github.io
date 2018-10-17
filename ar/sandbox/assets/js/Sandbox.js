@@ -535,8 +535,11 @@ class Sandboxe {
         alert("array: " + array)
         alert("index: " + index)
 
+        console.log("t.boardGame avant", t.boardGame)
         // met à jour sa valeur
         t.boardGame[array][index] = action === "delete" ? null :  e.detail.cube
+
+        console.log("t.boardGame apres", t.boardGame)
 
         // TODO : update des wireframes
     }
