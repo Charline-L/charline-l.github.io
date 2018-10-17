@@ -392,7 +392,7 @@ class Sandboxe {
             window.isEdition = false
 
             // désélectionne tous les cubes
-            window.dispatchEvent("cubeDeselected")
+            window.dispatchEvent( new CustomEvent("cubeDeselected") )
         } else {
 
             // trigger change pour setter la couleur dans le result
@@ -428,7 +428,7 @@ class Sandboxe {
             window.isAddition = false
 
             // désélectionne tous les cubes
-            window.dispatchEvent("cubeDeselected")
+            window.dispatchEvent( new CustomEvent("cubeDeselected") )
         } else {
 
             // trigger change pour setter la couleur dans le result
