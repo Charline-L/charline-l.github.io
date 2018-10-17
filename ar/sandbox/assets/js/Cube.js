@@ -147,7 +147,10 @@ class Cube {
         t.mesh.add( t.line )
 
         // si mode edition trigger le changement de couleur
-        if (window.isEdition) t.$colorSlideChroma.dispatchEvent(new Event('change'))
+        if (window.isEdition) {
+            console.log("in cubeSelected if")
+            t.$colorSlideChroma.dispatchEvent(new Event('change'))
+        }
 
         // Afficher le button remove
         window.dispatchEvent(new CustomEvent('showButtonDelete'))
@@ -155,8 +158,6 @@ class Cube {
 
     cubeDeselected() {
         const t = this
-
-        console.log("in cubeDeselected")
 
         // Cube inactif
         t.mesh.selected = false
@@ -170,7 +171,8 @@ class Cube {
 
         if (t.mesh.selected) {
 
-            console.log("stauts", t.status === "wireframe")
+            console.log("in change color", Number(e.detail.color))
+
             let material = new THREE.MeshBasicMaterial({
                 color: Number(e.detail.color),
                 wireframe: t.status === "wireframe",
