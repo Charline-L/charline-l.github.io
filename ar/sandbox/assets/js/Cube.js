@@ -107,7 +107,7 @@ class Cube {
 
 
             // si on est en mode edition on peut changer la couleur du cube
-            if (window.isEdition) {
+            if (window.isEdition || window.isAddition) {
 
                 if (t.mesh.selected) {
 
@@ -122,18 +122,6 @@ class Cube {
 
             // si on est en mode ajout on peut ajouter des cubes
             if (window.isAddition){
-
-                // sélection de cube
-                if (t.mesh.selected) {
-
-                    // déslectionne le cube
-                    t.cubeDeselected()
-
-                    // lance event pour voir s'il faut effacer le bouton delete
-                    window.dispatchEvent(new CustomEvent('hideButtonDelete'))
-                }
-                else t.cubeSelected()
-
 
                 // si cube
                 if (t.status === "wireframe") t.addCube()
@@ -160,10 +148,7 @@ class Cube {
         t.mesh.add( t.line )
 
         // si mode edition trigger le changement de couleur
-        if (window.isEdition) {
-            console.log("in cubeSelected if")
-            t.$colorSlideChroma.dispatchEvent(new Event('change'))
-        }
+        if (window.isEdition) t.$colorSlideChroma.dispatchEvent(new Event('change'))
 
         // Afficher le button remove
         window.dispatchEvent(new CustomEvent('showButtonDelete'))
@@ -222,8 +207,8 @@ class Cube {
         t.mesh.visible = true
         t.status = "show"
 
-        // trigger le changement de couleur
-        t.$colorSlideChroma.dispatchEvent(new Event('change'))
+        // // trigger le changement de couleur
+        // t.$colorSlideChroma.dispatchEvent(new Event('change'))
 
         // TODO : envoyer au serveur le nouveau cube
         // TODO : mettre à jour les cubes en wireframe
