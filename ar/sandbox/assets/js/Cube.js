@@ -92,8 +92,11 @@ class Cube {
         // défini si a un wireframe
         t.mesh.wireframe = t.wireframe
 
+        // défini si caché ou pas
+        t.mesh.hidding = t.hidding
+
         // défini si visble
-        t.mesh.visible = t.visible && !t.wireframe
+        t.mesh.visible = t.hidding && !t.wireframe
 
         // prépare la selection
         t.mesh.selected = false
@@ -201,7 +204,7 @@ class Cube {
     showWireframe(){
         const t = this
 
-        if (t.mesh.wireframe) t.mesh.visible = true
+        if (t.mesh.wireframe && t.mesh.hidding) t.mesh.visible = true
     }
 
     hideWireframe(){
