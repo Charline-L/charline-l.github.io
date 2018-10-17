@@ -105,15 +105,18 @@ class Cube {
         // si click sur un cube on lui change son "activité"
         t.domEvents.addEventListener(t.mesh, 'click', function () {
 
-            // si on est en mode ajout on peut ajouter des cubes
-            if (window.isAddition && t.status === "wireframe") t.addCube()
-
             // sélection de couleur
             if (window.isEdition || window.isAddition) {
 
                 if (t.mesh.selected) t.cubeDeselected()
                 else t.cubeSelected()
             }
+
+            // si on est en mode ajout on peut ajouter des cubes
+            if (window.isAddition && t.status === "wireframe") t.addCube()
+
+            // trigger le changement de couleur si cube sélectionné
+            if (t.mesh.selected) t.$colorSlideChroma.dispatchEvent(new Event('change'))
 
             // voir s'il faut efface le bouton delete
             if (window.isEdition ) {
@@ -140,9 +143,6 @@ class Cube {
         let edges = new THREE.EdgesGeometry( t.geometry )
         t.line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0x000000 } ) )
         t.mesh.add( t.line )
-
-        // si mode edition trigger le changement de couleur
-        t.$colorSlideChroma.dispatchEvent(new Event('change'))
     }
 
     cubeDeselected() {
