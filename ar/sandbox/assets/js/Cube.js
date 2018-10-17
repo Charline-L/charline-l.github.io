@@ -19,7 +19,6 @@ class Cube {
         // domeEvents récupéré
         t.domEvents = three.domEvents
 
-        console.log("dom", dom)
         // elements du dom
         t.$colorSlideChroma = dom.$colorSlideChroma
 
@@ -136,7 +135,7 @@ class Cube {
 
             let material = new THREE.MeshBasicMaterial({
                 color: Number(e.detail.color),
-                wireframe: t.wireframe,
+                wireframe: t.mesh.wireframe,
                 transparent: true,
                 opacity: t.alpha
             })
