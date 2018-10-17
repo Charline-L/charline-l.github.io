@@ -12,7 +12,7 @@ class Cube {
         t.wireframe = cube.wireframe
         t.color = cube.color
         t.alpha = cube.alpha
-        t.hidding = cube.hidding
+        t.status = cube.status
 
         // scene récupéré depuis la classe Sandboxe
         t.scene = three.scene
@@ -76,8 +76,8 @@ class Cube {
 
         // défini la texture du cube
         let material = t.texture.reset
-        if (t.visible && !t.wireframe) material = t.texture.actif
-        else if (t.visible && t.wireframe) material = t.texture.wireframe
+        if (t.status === "wireframe") material = t.texture.wireframe
+        else if (t.status === "show") material = t.texture.actif
 
         t.mesh = new THREE.Mesh(t.geometry, material)
 
@@ -92,11 +92,8 @@ class Cube {
         // défini si a un wireframe
         t.mesh.wireframe = t.wireframe
 
-        // défini si caché ou pas
-        t.mesh.hidding = t.hidding
-
         // défini si visble
-        t.mesh.visible = t.hidding && !t.wireframe
+        t.mesh.visible = t.status === "show" || t.status === "wireframe"
 
         // prépare la selection
         t.mesh.selected = false
@@ -204,12 +201,12 @@ class Cube {
     showWireframe(){
         const t = this
 
-        if (t.mesh.wireframe && t.mesh.hidding) t.mesh.visible = true
+        if (t.status === "wireframe") t.mesh.visible = true
     }
 
     hideWireframe(){
         const t = this
 
-        if (t.mesh.wireframe) t.mesh.visible = false
+        if (t.status === "wireframe") t.mesh.visible = false
     }
 }
