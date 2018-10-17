@@ -126,15 +126,18 @@ class Sandboxe {
         // resize
         document.addEventListener("resize", t.resize.bind(t))
 
-        // Change color
+        // change color
         t.$colorSlideChroma.addEventListener("change", t.updateCubeColor.bind(t))
 
-        // Edit button
+        // change l'alpha
+        t.$colorResult.addEventListener("click", t.updateAlphaCube.bind(t))
+
+        // edit button
         t.$buttonEdit.addEventListener("click", t.editMode.bind(t))
         t.$buttonAdd.addEventListener("click", t.addMode.bind(t))
         t.$buttonDelete.addEventListener("click", t.removeCube.bind(t))
 
-        // Watcher évènements lancés depuis les classes Cubes
+        // watcher évènements lancés depuis les classes Cubes
         window.addEventListener("hideButtonDelete", t.hideButtonDelete.bind(t))
         window.addEventListener("showButtonDelete", t.showButtonDelete.bind(t))
     }
@@ -363,13 +366,42 @@ class Sandboxe {
     updateCubeColor() {
         const t = this
 
+        // change la couleur
         let cubeColor = Website.hslToHex(t.$colorSlideChroma.value, 100, 50);
         t.$colorResult.style.backgroundColor = 'hsl(' + t.$colorSlideChroma.value + ', 100%, 50%)'
 
+        // récupère la valeur de l'alpha
+        let alpha = Number(t.$colorResult.style.opacity)
+
+        // prépare l'event
         let event = new CustomEvent('changeColor',
             {
                 detail: {
                     color: cubeColor,
+                    alpha: alpha
+                }
+            })
+
+        // trigger event de mise à jour de la couleur
+        window.dispatchEvent(event)
+    }
+
+    updateAlphaCube() {
+        const t = this
+
+        // change l'alpha
+        let alphaCube = Number(t.$colorResult.style.opacity) === 1 ? 0.5 : 1
+        t.$colorResult.style.opacity = alphaCube
+
+        // récupère la couleur
+        let cubeColor = Website.hslToHex(t.$colorSlideChroma.value, 100, 50);
+
+        // prépare l'event
+        let event = new CustomEvent('changeColor',
+            {
+                detail: {
+                    color: cubeColor,
+                    alpha: alphaCube,
                 }
             })
 

@@ -164,7 +164,7 @@ class Cube {
                 color: Number(e.detail.color),
                 wireframe: t.status === "wireframe",
                 transparent: true,
-                opacity: t.alpha
+                opacity: Number(e.detail.alpha)
             })
 
             t.mesh.material = material
@@ -191,7 +191,6 @@ class Cube {
     addCube() {
         const t = this
 
-        console.log("in add cube")
         // reset des variables
         t.mesh.selected = true
         t.mesh.visible = true
