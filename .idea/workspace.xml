@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ar/sandbox/assets/js/Cube.js" beforeDir="false" afterPath="$PROJECT_DIR$/ar/sandbox/assets/js/Cube.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -85,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="368" column="48" selection-start-line="368" selection-start-column="37" selection-end-line="368" selection-end-column="48" />
+            <state relative-caret-position="440">
+              <caret line="430" column="50" lean-forward="true" selection-start-line="430" selection-start-column="50" selection-end-line="430" selection-end-column="50" />
               <folding>
                 <element signature="n#!!block;n#createRenderer#0;n#Sandboxe#0" />
                 <element signature="n#!!block;n#createCamera#0;n#Sandboxe#0" />
@@ -106,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Cube.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="206" column="25" lean-forward="true" selection-start-line="206" selection-start-column="25" selection-end-line="206" selection-end-column="25" />
+            <state relative-caret-position="363">
+              <caret line="134" column="66" selection-start-line="134" selection-start-column="52" selection-end-line="134" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -215,8 +215,8 @@
         <option value="$PROJECT_DIR$/ar/sandbox/index.html" />
         <option value="$PROJECT_DIR$/ar/sandbox/assets/css/main.css" />
         <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Website.js" />
-        <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" />
         <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Cube.js" />
+        <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" />
       </list>
     </option>
   </component>
@@ -361,12 +361,12 @@
       <workItem from="1539342734195" duration="7497000" />
       <workItem from="1539443106145" duration="315000" />
       <workItem from="1539516455020" duration="26228000" />
-      <workItem from="1539804056856" duration="10243000" />
+      <workItem from="1539804056856" duration="10412000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88419000" />
+    <option name="totallyTimeSpent" value="88588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -705,10 +705,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Cube.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="134" column="66" selection-start-line="134" selection-start-column="52" selection-end-line="134" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="368" column="48" selection-start-line="368" selection-start-column="37" selection-end-line="368" selection-end-column="48" />
+        <state relative-caret-position="440">
+          <caret line="430" column="50" lean-forward="true" selection-start-line="430" selection-start-column="50" selection-end-line="430" selection-end-column="50" />
           <folding>
             <element signature="n#!!block;n#createRenderer#0;n#Sandboxe#0" />
             <element signature="n#!!block;n#createCamera#0;n#Sandboxe#0" />
@@ -721,13 +728,6 @@
             <element signature="n#!!block;n#hideButtonDelete#0;n#Sandboxe#0" />
             <element signature="n#!!block;n#showButtonDelete#0;n#Sandboxe#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Cube.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="206" column="25" lean-forward="true" selection-start-line="206" selection-start-column="25" selection-end-line="206" selection-end-column="25" />
         </state>
       </provider>
     </entry>
