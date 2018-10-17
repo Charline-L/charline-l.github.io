@@ -237,6 +237,8 @@ class Sandboxe {
     getCubes() {
         const t = this
 
+        console.log('in getCubes')
+
         // met le flag à true pour en pas repasser dans la fonction
         t.isSeen = true
 
