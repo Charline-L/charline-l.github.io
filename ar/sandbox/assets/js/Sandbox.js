@@ -48,7 +48,7 @@ class Sandboxe {
         t.createCamera()
         t.createLight()
         t.createArToolKitSource()
-        t.createGamePlay()
+        // t.createGamePlay()
 
         t.createVariables()
         t.bindEvents()
@@ -105,17 +105,17 @@ class Sandboxe {
         })
     }
 
-    createGamePlay() {
-        const t = this
-
-        // on va stocker dans objet de tableau toutes nos valeurs pour les cases
-        for (let i = 0; i < t.gridSize; i++) {
-
-            let array = []
-            for (let j = 0; j < Math.pow(t.gridSize, 2); j++) array[j] = null
-            t.boardGame[i] = array
-        }
-    }
+    // createGamePlay() {
+    //     const t = this
+    //
+    //     // on va stocker dans objet de tableau toutes nos valeurs pour les cases
+    //     for (let i = 0; i < t.gridSize; i++) {
+    //
+    //         let array = []
+    //         for (let j = 0; j < Math.pow(t.gridSize, 2); j++) array[j] = null
+    //         t.boardGame[i] = array
+    //     }
+    // }
 
     createVariables() {
         const t = this
