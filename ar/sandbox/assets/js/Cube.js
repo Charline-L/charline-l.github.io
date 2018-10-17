@@ -105,6 +105,12 @@ class Cube {
         // si click sur un cube on lui change son "activité"
         t.domEvents.addEventListener(t.mesh, 'click', function () {
 
+            // voir s'il faut efface le bouton delete
+            if (window.isEdition ) {
+                if (t.mesh.selected) window.dispatchEvent(new CustomEvent('hideButtonDelete'))
+                else window.dispatchEvent(new CustomEvent('showButtonDelete'))
+            }
+
             // sélection de couleur
             if (window.isEdition || window.isAddition) {
 
@@ -117,12 +123,6 @@ class Cube {
 
             // trigger le changement de couleur si cube sélectionné
             if (t.mesh.selected) t.$colorSlideChroma.dispatchEvent(new Event('change'))
-
-            // voir s'il faut efface le bouton delete
-            if (window.isEdition ) {
-                if (t.mesh.selected) window.dispatchEvent(new CustomEvent('hideButtonDelete'))
-                else window.dispatchEvent(new CustomEvent('showButtonDelete'))
-            }
         })
 
         // event trigger dans la class Sandbox
@@ -164,11 +164,8 @@ class Cube {
                 color: Number(e.detail.color),
                 wireframe: t.status === "wireframe",
                 transparent: true,
-                opacity: e.detail.alpha // === null ? t.alpha : Number(e.detail.alpha)
+                opacity: Number(e.detail.alpha)
             })
-
-            // met à jour la valeur de l'alpha si non null
-           // if ( e.detail.alpha !== null ) t.alpha = Number(e.detail.alpha)
 
             t.mesh.material = material
 
