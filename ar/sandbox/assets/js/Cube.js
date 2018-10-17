@@ -12,7 +12,7 @@ class Cube {
         t.wireframe = cube.wireframe
         t.color = cube.color
         t.alpha = cube.alpha
-        t.visible = cube.visible
+        t.hidding = cube.hidding
 
         // scene récupéré depuis la classe Sandboxe
         t.scene = three.scene
