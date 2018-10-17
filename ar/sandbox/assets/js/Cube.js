@@ -19,6 +19,9 @@ class Cube {
         // domeEvents récupéré
         t.domEvents = three.domEvents
 
+        // elements du dom
+        t.$colorSlideChroma = dom.$colorSlideChroma
+
         // grille
         t.gridSize = 3
         t.sizeCube = 1

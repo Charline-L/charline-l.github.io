@@ -237,6 +237,10 @@ class Sandboxe {
         // met le flag à true pour en pas repasser dans la fonction
         t.isSeen = true
 
+        let dom = {
+            $colorSlideChroma: t.$colorSlideChroma
+        }
+
         let three = {
             scene: t.scene,
             domEvents: t.domEvents
@@ -294,7 +298,7 @@ class Sandboxe {
         for (let cubeRegister of t.cubesRegistered ) {
 
             // on append le cube
-            new Cube(cubeRegister, three)
+            new Cube(cubeRegister, three, dom)
 
             // on ajoute dans notre plateau de jeu les valeurs du cube
             t.boardGame[cubeRegister.position.y][cubeRegister.position.x + (cubeRegister.position.z * t.gridSize)] = cubeRegister
