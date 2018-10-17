@@ -105,27 +105,18 @@ class Cube {
         // si click sur un cube on lui change son "activité"
         t.domEvents.addEventListener(t.mesh, 'click', function () {
 
+            // si on est en mode ajout on peut ajouter des cubes
+            if (window.isAddition && t.status === "wireframe") t.addCube()
 
-            // si on est en mode edition on peut changer la couleur du cube
+            // sélection de couleur
             if (window.isEdition || window.isAddition) {
 
-                if (t.mesh.selected) {
-
-                    // déslectionne le cube
-                    t.cubeDeselected()
-
-                    // lance event pour voir s'il faut effacer le bouton delete
-                    window.dispatchEvent(new CustomEvent('hideButtonDelete'))
-                }
+                if (t.mesh.selected) t.cubeDeselected()
                 else t.cubeSelected()
             }
 
-            // si on est en mode ajout on peut ajouter des cubes
-            if (window.isAddition){
-
-                // si cube
-                if (t.status === "wireframe") t.addCube()
-            }
+            // voir s'il faut efface le bouton delete
+            if (window.isEdition && t.mesh.selected) window.dispatchEvent(new CustomEvent('hideButtonDelete'))
         })
 
         // event trigger dans la class Sandbox
@@ -168,8 +159,6 @@ class Cube {
         const t = this
 
         if (t.mesh.selected) {
-
-            console.log("in change color", Number(e.detail.color))
 
             let material = new THREE.MeshBasicMaterial({
                 color: Number(e.detail.color),
