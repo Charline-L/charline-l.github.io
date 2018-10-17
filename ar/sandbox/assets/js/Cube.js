@@ -158,6 +158,8 @@ class Cube {
     addCube() {
         const t = this
 
+        alert("in addCube")
+
         // reset des variables
         t.mesh.active = true
         t.mesh.wireframe = false

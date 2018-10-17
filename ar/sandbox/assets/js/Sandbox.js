@@ -401,8 +401,6 @@ class Sandboxe {
     updateCubeColor() {
         const t = this
 
-        alert("in update cube")
-
         let cubeColor = Website.hslToHex(t.$colorSlideChroma.value, 100, 50);
         t.$colorResult.style.backgroundColor = 'hsl(' + t.$colorSlideChroma.value + ', 100%, 50%)'
 
