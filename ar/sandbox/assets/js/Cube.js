@@ -105,6 +105,7 @@ class Cube {
         // si click sur un cube on lui change son "activité"
         t.domEvents.addEventListener(t.mesh, 'click', function () {
 
+
             // si on est en mode edition on peut changer la couleur du cube
             if (window.isEdition) {
 
@@ -122,7 +123,19 @@ class Cube {
             // si on est en mode ajout on peut ajouter des cubes
             if (window.isAddition){
 
-                // si cube e
+                // sélection de cube
+                if (t.mesh.selected) {
+
+                    // déslectionne le cube
+                    t.cubeDeselected()
+
+                    // lance event pour voir s'il faut effacer le bouton delete
+                    window.dispatchEvent(new CustomEvent('hideButtonDelete'))
+                }
+                else t.cubeSelected()
+
+
+                // si cube
                 if (t.status === "wireframe") t.addCube()
             }
         })
@@ -211,9 +224,6 @@ class Cube {
 
         // trigger le changement de couleur
         t.$colorSlideChroma.dispatchEvent(new Event('change'))
-
-        // on passe le cube en sélection
-        t.cubeSelected()
 
         // TODO : envoyer au serveur le nouveau cube
         // TODO : mettre à jour les cubes en wireframe
