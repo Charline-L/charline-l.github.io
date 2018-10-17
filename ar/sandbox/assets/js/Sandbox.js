@@ -37,19 +37,6 @@ class Sandboxe {
         t.gridSize = 3
         t.boardGame = []
 
-        // permet d'intéragir avec le DOM >>> est envoyé dans la class Cube
-        t.domEvents = new THREEx.DomEvents(t.camera, t.renderer.domElement)
-
-        // élements que l'on va passer dans notre class Cube
-        t.three = {
-            scene: t.scene,
-            domEvents: t.domEvents
-        }
-
-        t.dom = {
-            $colorSlideChroma: t.$colorSlideChroma
-        }
-
 
         t.init()
     }
@@ -63,6 +50,7 @@ class Sandboxe {
         t.createArToolKitSource()
         t.createGamePlay()
 
+        t.createVariables()
         t.bindEvents()
 
         t.initArToolKitSource()
@@ -126,6 +114,23 @@ class Sandboxe {
             let array = []
             for (let j = 0; j < Math.pow(t.gridSize, 2); j++) array[j] = null
             t.boardGame[i] = array
+        }
+    }
+
+    createVariables() {
+        const t = this
+
+        // permet d'intéragir avec le DOM >>> est envoyé dans la class Cube
+        t.domEvents = new THREEx.DomEvents(t.camera, t.renderer.domElement)
+
+        // élements que l'on va passer dans notre class Cube
+        t.three = {
+            scene: t.scene,
+            domEvents: t.domEvents
+        }
+
+        t.dom = {
+            $colorSlideChroma: t.$colorSlideChroma
         }
     }
 
