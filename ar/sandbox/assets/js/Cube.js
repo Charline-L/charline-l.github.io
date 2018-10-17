@@ -86,9 +86,7 @@ class Cube {
             // si on est en mode ajout on peut ajouter des cubes
             if (window.isAddition){
 
-                alert("name : " + t.mesh)
-                alert("active : " + t.mesh.wireframe)
-                // t.addCube()
+                if (t.mesh.wireframe) t.addCube()
             }
         })
 
@@ -160,9 +158,18 @@ class Cube {
     addCube() {
         const t = this
 
+        // reset des variables
+        t.mesh.active = true
+        t.mesh.wireframe = false
+
+        // trigger le changement de couleur
+        t.$colorSlideChroma.dispatchEvent(new Event('change'))
+
         // TODO : actualiser le board
 
         // TODO : envoyer au server que le cube a été créé
+
+        // TODO : créer les nouveaux wireframes
     }
 
     showWireframe(){
