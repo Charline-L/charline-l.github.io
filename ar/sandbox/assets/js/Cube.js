@@ -89,7 +89,12 @@ class Cube {
             // si on est en mode ajout on peut ajouter des cubes
             if (window.isAddition){
 
+                // pour mettre à jour la texture
                 if (t.mesh.wireframe) t.addCube()
+
+                // si on change de couleur
+                if (t.mesh.active) t.cubeInactive()
+                else t.cubeActive()
             }
         })
 
@@ -141,9 +146,6 @@ class Cube {
             })
 
             t.mesh.material = material
-
-            // si on est en mode adition on enlève la sélection car sinon on change de couleur
-            if (window.isAddition) t.mesh.active = false
         }
     }
 
@@ -164,10 +166,7 @@ class Cube {
     addCube() {
         const t = this
 
-        alert("in addCube")
-
         // reset des variables
-        t.mesh.active = true
         t.mesh.wireframe = false
 
         // trigger le changement de couleur
