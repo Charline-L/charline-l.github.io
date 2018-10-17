@@ -19,6 +19,7 @@ class Cube {
         // domeEvents récupéré
         t.domEvents = three.domEvents
 
+        console.log("dom", dom)
         // elements du dom
         t.$colorSlideChroma = dom.$colorSlideChroma
 
