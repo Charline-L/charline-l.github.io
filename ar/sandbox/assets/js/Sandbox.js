@@ -150,6 +150,8 @@ class Sandboxe {
         // Watcher évènements lancés depuis les classes Cubes
         window.addEventListener("hideButtonDelete", t.hideButtonDelete.bind(t))
         window.addEventListener("showButtonDelete", t.showButtonDelete.bind(t))
+        window.addEventListener("updateBoard", t.updateBoard.bind(t))
+
     }
 
     resize() {
@@ -403,7 +405,6 @@ class Sandboxe {
     }
 
 
-
     updateCubeColor() {
         const t = this
 
@@ -518,5 +519,25 @@ class Sandboxe {
         const t = this
 
         t.$buttonDelete.classList.remove('hidden')
+    }
+
+    updateBoard(e) {
+        const t = this
+
+        // récupère l'action
+        let action = e.detail.action
+        alert("action: " + action)
+
+        // récupère sa position
+        let array = e.detail.cubePostion.y
+        let index = (e.detail.cubePostion.z * t.gridSize) + e.detail.cubePostion.x
+
+        alert("array: " + array)
+        alert("index: " + index)
+
+        // met à jour sa valeur
+        t.boardGame[array][index] = action === "delete" ? null :  e.detail.cube
+
+        // TODO : update des wireframes
     }
 }

@@ -82,15 +82,10 @@ class Cube {
                 else t.cubeActive()
             }
 
-
-            // TODO : reprise ici ::: ajouter un flag si en mode édition pour ajouter couleur au cube
-            // mettre à jour board + envoyer données BDD >>> elle qui renvoit le board ??? non trop de calcul je pense
-
             // si on est en mode ajout on peut ajouter des cubes
             if (window.isAddition){
 
                 if (t.mesh.wireframe) t.addCube()
-                else t.cubeInactive()
             }
         })
 
@@ -150,10 +145,28 @@ class Cube {
 
         if (t.mesh.active) {
 
+            // reset les variables
             t.mesh.active = false
             t.mesh.visible = false
 
             // TODO : actualiser le board
+            // mets à jour le plateau
+            let cubePostion = {
+                x : t.mesh.position.x,
+                y : t.mesh.position.y,
+                z : t.mesh.position.z
+            }
+
+            let event = new CustomEvent('updateBoard',
+                {
+                    detail: {
+                        action: "delete",
+                        cubePostion: cubePostion
+                    }
+                })
+
+            window.dispatchEvent(event)
+
 
             // TODO : envoyer au server que le cube a été effacé
         }
