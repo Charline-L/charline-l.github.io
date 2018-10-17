@@ -79,6 +79,8 @@ class Cube {
         if (t.visible && !t.wireframe) material = t.texture.actif
         else if (t.visible && t.wireframe) material = t.texture.wireframe
 
+        console.log('material', material)
+
         t.mesh = new THREE.Mesh(t.geometry, material)
 
         // positionne le cube

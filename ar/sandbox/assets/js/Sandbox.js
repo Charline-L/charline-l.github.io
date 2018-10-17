@@ -253,6 +253,7 @@ class Sandboxe {
                 color: 0xff0000,
                 alpha: 0.5,
                 wireframe: false,
+                visible: true,
                 _id: 0,
             },
             {
@@ -264,6 +265,7 @@ class Sandboxe {
                 color: 0xff0000,
                 alpha: 1,
                 wireframe: false,
+                visible: true,
                 _id: 1,
             },
             {
@@ -275,6 +277,7 @@ class Sandboxe {
                 color: 0x00ff00,
                 alpha: 1,
                 wireframe: false,
+                visible: true,
                 _id: 2,
             },
             {
@@ -286,6 +289,7 @@ class Sandboxe {
                 color: 0xfffff,
                 alpha: 1,
                 wireframe: true,
+                visible: true,
                 _id: 3,
             },
             {
@@ -297,6 +301,7 @@ class Sandboxe {
                 color: 0xfffff,
                 alpha: 1,
                 wireframe: true,
+                visible: true,
                 _id: 4,
             },
             {
@@ -308,6 +313,7 @@ class Sandboxe {
                 color: 0xfffff,
                 alpha: 1,
                 wireframe: true,
+                visible: true,
                 _id: 5,
             },
             {
