@@ -153,6 +153,8 @@ class Cube {
     cubeDeselected() {
         const t = this
 
+        console.log("in cubeDeselected")
+
         // Cube inactif
         t.mesh.selected = false
 
