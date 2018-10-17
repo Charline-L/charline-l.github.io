@@ -181,6 +181,7 @@ class Cube {
             // reset les variables
             t.mesh.selected = false
             t.mesh.visible = false
+            t.status = "hidding"
         }
     }
 
@@ -190,6 +191,7 @@ class Cube {
         // reset des variables
         t.mesh.wireframe = false
         t.mesh.selected = true
+        t.status = "show"
 
         // trigger le changement de couleur
         t.$colorSlideChroma.dispatchEvent(new Event('change'))
