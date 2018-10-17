@@ -295,8 +295,6 @@ class Sandboxe {
             }
         ]
 
-        console.log("dom sandbox", dom)
-
         // on créer les cubes
         for (let cubeRegister of t.cubesRegistered ) {
 

@@ -88,8 +88,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="359" lean-forward="true" selection-start-line="359" selection-end-line="359" />
+            <state relative-caret-position="23">
+              <caret line="296" column="8" selection-start-line="296" selection-start-column="8" selection-end-line="296" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -116,7 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>THREEx.ArToolkitContext</find>
       <find>custom</find>
       <find>_this.data.preset === 'hiro'</find>
       <find>camera_para.dat</find>
@@ -146,6 +145,7 @@
       <find>in update</find>
       <find>change</find>
       <find>new Cube</find>
+      <find>dom</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/ar/sandbox</dir>
@@ -349,12 +349,12 @@
       <workItem from="1539342734195" duration="7497000" />
       <workItem from="1539443106145" duration="315000" />
       <workItem from="1539516455020" duration="26228000" />
-      <workItem from="1539804056856" duration="1891000" />
+      <workItem from="1539804056856" duration="1955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80067000" />
+    <option name="totallyTimeSpent" value="80131000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -702,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="359" lean-forward="true" selection-start-line="359" selection-end-line="359" />
+        <state relative-caret-position="23">
+          <caret line="296" column="8" selection-start-line="296" selection-start-column="8" selection-end-line="296" selection-end-column="8" />
         </state>
       </provider>
     </entry>
