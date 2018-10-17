@@ -41,6 +41,8 @@ class Cube {
     defineTextures() {
         const t = this
 
+        t.texture = {}
+
         t.texture.reset = new THREE.MeshBasicMaterial({
             color: 0xffffff,
             wireframe: false,
