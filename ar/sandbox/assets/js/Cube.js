@@ -163,11 +163,14 @@ class Cube {
     changeColor(e) {
         const t = this
 
+        console.log("in changeColor")
+
         if (t.mesh.selected) {
 
+            console.log("stauts", t.status === "wireframe")
             let material = new THREE.MeshBasicMaterial({
                 color: Number(e.detail.color),
-                wireframe: t.mesh.status === "wireframe",
+                wireframe: t.status === "wireframe",
                 transparent: true,
                 opacity: t.alpha
             })
@@ -195,6 +198,8 @@ class Cube {
 
     addCube() {
         const t = this
+
+        console.log("in addCube")
 
         // reset des variables
         t.mesh.selected = true
