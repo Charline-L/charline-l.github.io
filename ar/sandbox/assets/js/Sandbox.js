@@ -373,13 +373,12 @@ class Sandboxe {
         // récupère la valeur de l'alpha
         let alpha = Number(t.$colorResult.style.opacity)
 
-        alert("alpha "+ alpha)
         // prépare l'event
         let event = new CustomEvent('changeColor',
             {
                 detail: {
                     color: cubeColor,
-                    alpha: null
+                    alpha: alpha
                 }
             })
 

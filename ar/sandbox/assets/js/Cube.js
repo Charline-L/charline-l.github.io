@@ -164,11 +164,11 @@ class Cube {
                 color: Number(e.detail.color),
                 wireframe: t.status === "wireframe",
                 transparent: true,
-                opacity: e.detail.alpha === null ? t.alpha : Number(e.detail.alpha)
+                opacity: e.detail.alpha // === null ? t.alpha : Number(e.detail.alpha)
             })
 
             // met à jour la valeur de l'alpha si non null
-           if ( e.detail.alpha !== null ) t.alpha = Number(e.detail.alpha)
+           // if ( e.detail.alpha !== null ) t.alpha = Number(e.detail.alpha)
 
             t.mesh.material = material
 
