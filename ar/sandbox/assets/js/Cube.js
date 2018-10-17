@@ -116,7 +116,10 @@ class Cube {
             }
 
             // voir s'il faut efface le bouton delete
-            if (window.isEdition && t.mesh.selected) window.dispatchEvent(new CustomEvent('hideButtonDelete'))
+            if (window.isEdition ) {
+                if (t.mesh.selected) window.dispatchEvent(new CustomEvent('hideButtonDelete'))
+                else window.dispatchEvent(new CustomEvent('showButtonDelete'))
+            }
         })
 
         // event trigger dans la class Sandbox
@@ -139,10 +142,7 @@ class Cube {
         t.mesh.add( t.line )
 
         // si mode edition trigger le changement de couleur
-        if (window.isEdition) t.$colorSlideChroma.dispatchEvent(new Event('change'))
-
-        // Afficher le button remove
-        window.dispatchEvent(new CustomEvent('showButtonDelete'))
+        t.$colorSlideChroma.dispatchEvent(new Event('change'))
     }
 
     cubeDeselected() {
@@ -191,6 +191,7 @@ class Cube {
     addCube() {
         const t = this
 
+        console.log("in add cube")
         // reset des variables
         t.mesh.selected = true
         t.mesh.visible = true
