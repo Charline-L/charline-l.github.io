@@ -374,7 +374,6 @@ class Sandboxe {
         // récupère l'alpha
         let alphaCube = t.$colorResult.style.opacity
 
-        alert("alpha couleur: " + alphaCube)
         // prépare l'event
         let event = new CustomEvent('changeColor',
             {

@@ -160,12 +160,11 @@ class Cube {
 
         if (t.mesh.selected) {
 
-            alert("receptionne "+ e.detail.alpha)
             let material = new THREE.MeshBasicMaterial({
                 color: Number(e.detail.color),
                 wireframe: t.status === "wireframe",
                 transparent: true,
-                opacity: e.detail.alpha === null ? t.alpha : e.detail.alpha
+                opacity: e.detail.alpha
             })
 
             t.mesh.material = material
