@@ -371,12 +371,16 @@ class Sandboxe {
         let cubeColor = Website.hslToHex(t.$colorSlideChroma.value, 100, 50);
         t.$colorResult.style.backgroundColor = 'hsl(' + t.$colorSlideChroma.value + ', 100%, 50%)'
 
+        // récupère l'alpha
+        let alphaCube = t.$colorResult.style.opacity
+
+        alert("alpha couleur: " + alphaCube)
         // prépare l'event
         let event = new CustomEvent('changeColor',
             {
                 detail: {
                     color: cubeColor,
-                    alpha: null
+                    alpha: alphaCube
                 }
             })
 
