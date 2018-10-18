@@ -428,12 +428,14 @@ class Sandboxe {
             window.dispatchEvent( new CustomEvent("cubeDeselected") )
         } else {
 
-            // trigger change pour setter la couleur dans le result
-            t.$colorSlideChroma.dispatchEvent(new Event('change'))
-
             // changement des boutons
             t.$colors.classList.remove('hidden')
             t.$buttonAdd.classList.add('hidden')
+
+            // trigger change pour setter la couleur dans le result petit timer pour l'alpha
+            setTimeout(()=> {
+                t.$colorSlideChroma.dispatchEvent(new Event('change'))
+            }, 500)
 
             // Mode edition à true -> autoriser le click sur la grille
             window.isEdition = true
