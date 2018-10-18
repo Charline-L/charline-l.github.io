@@ -165,7 +165,7 @@ class Cube {
                 color: Number(e.detail.color),
                 wireframe: t.status === "wireframe",
                 transparent: true,
-                opacity: e.detail.alpha
+                opacity: e.detail.alpha === null ? t.alpha : e.detail.alpha
             })
 
             t.mesh.material = material

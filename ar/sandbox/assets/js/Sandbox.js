@@ -433,9 +433,7 @@ class Sandboxe {
             t.$buttonAdd.classList.add('hidden')
 
             // trigger change pour setter la couleur dans le result petit timer pour l'alpha
-            setTimeout(()=> {
-                t.$colorSlideChroma.dispatchEvent(new Event('change'))
-            }, 500)
+            t.$colorSlideChroma.dispatchEvent(new Event('change'))
 
             // Mode edition à true -> autoriser le click sur la grille
             window.isEdition = true
