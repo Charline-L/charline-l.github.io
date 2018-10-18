@@ -71,7 +71,7 @@ class Sandboxe {
 
         // lui ajoute les propriétés
         t.renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-        t.renderer.setSize(t.ww - 200, t.wh - 200)
+        t.renderer.setSize(t.ww, t.wh)
         t.renderer.domElement.classList.add("sandboxe-game__canvas")
 
         // ajoute au dom
