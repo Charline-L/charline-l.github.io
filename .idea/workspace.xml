@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ar/sandbox/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/ar/sandbox/assets/css/main.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -58,7 +58,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="1470" />
+          <entry key="css" value="1471" />
           <entry key="html" value="2264" />
           <entry key="js" value="21522" />
           <entry key="txt" value="522" />
@@ -66,7 +66,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1470" />
+          <entry key="CSS" value="1471" />
           <entry key="HTML" value="2264" />
           <entry key="JavaScript" value="21522" />
           <entry key="PLAIN_TEXT" value="522" />
@@ -85,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
+            <state relative-caret-position="-519">
               <caret line="99" column="10" lean-forward="true" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
               <folding>
                 <element signature="n#!!block;n#createVariables#0;n#Sandboxe#0" />
@@ -102,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="91" column="15" lean-forward="true" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
+            <state relative-caret-position="290">
+              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -133,7 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>visible</find>
       <find>t.$modeEdition</find>
       <find>sandboxe-game__mode</find>
       <find>slideChroma</find>
@@ -163,6 +162,7 @@
       <find>alert</find>
       <find>https://charline-l.github.io/ar/sandbox/index.html</find>
       <find>t.ww</find>
+      <find>game</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/ar/sandbox</dir>
@@ -218,10 +218,10 @@
         <option value="$PROJECT_DIR$/ar/marine-AR-Sandbox/index.html" />
         <option value="$PROJECT_DIR$/ar/marine-AR-Sandbox/assets/js/Sandbox.js" />
         <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Website.js" />
-        <option value="$PROJECT_DIR$/ar/sandbox/assets/css/main.css" />
         <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Cube.js" />
         <option value="$PROJECT_DIR$/ar/sandbox/index.html" />
         <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" />
+        <option value="$PROJECT_DIR$/ar/sandbox/assets/css/main.css" />
       </list>
     </option>
   </component>
@@ -366,12 +366,12 @@
       <workItem from="1539342734195" duration="7497000" />
       <workItem from="1539443106145" duration="315000" />
       <workItem from="1539516455020" duration="26228000" />
-      <workItem from="1539804056856" duration="14380000" />
+      <workItem from="1539804056856" duration="14518000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92556000" />
+    <option name="totallyTimeSpent" value="92694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -696,13 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="91" column="15" lean-forward="true" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Cube.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -719,7 +712,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="-519">
           <caret line="99" column="10" lean-forward="true" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
           <folding>
             <element signature="n#!!block;n#createVariables#0;n#Sandboxe#0" />
@@ -729,6 +722,13 @@
             <element signature="n#!!block;n#hideButtonDelete#0;n#Sandboxe#0" />
             <element signature="n#!!block;n#showButtonDelete#0;n#Sandboxe#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
         </state>
       </provider>
     </entry>
