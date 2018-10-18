@@ -15,6 +15,7 @@ class Sandboxe {
         t.$colors = document.querySelector(".sandboxe-game__colors")
         t.$colorSlideChroma = document.querySelector(".sandboxe-game__slide-chroma")
         t.$colorResult = document.querySelector(".sandboxe-game__result")
+        t.$colorResult.style.opacity = 1
 
         // variable urls
         THREEx.ArToolkitContext.baseURL = './assets/markers/'
@@ -386,7 +387,6 @@ class Sandboxe {
     updateAlphaCube() {
         const t = this
 
-        alert("t.$colorResult.style.opacity" + t.$colorResult.style.opacity)
         // change l'alpha
         let alphaCube = Number(t.$colorResult.style.opacity) === 1 ? 0.5 : 1
         t.$colorResult.style.opacity = alphaCube
