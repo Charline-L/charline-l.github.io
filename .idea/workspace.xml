@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ar/sandbox/assets/markers/patt.charline" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ar/sandbox/assets/js/Website.js" beforeDir="false" afterPath="$PROJECT_DIR$/ar/sandbox/assets/js/Website.js" afterDir="false" />
-    </list>
+    <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -31,11 +27,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="charline" value="1" />
           <entry key="css" value="11" />
-          <entry key="hiro" value="3" />
+          <entry key="hiro" value="5" />
           <entry key="html" value="20" />
           <entry key="js" value="32" />
-          <entry key="kanji" value="1" />
+          <entry key="kanji" value="2" />
+          <entry key="letterA" value="1" />
           <entry key="letterB" value="1" />
           <entry key="letterC" value="1" />
           <entry key="letterD" value="1" />
@@ -54,7 +52,7 @@
           <entry key="CSS" value="11" />
           <entry key="HTML" value="20" />
           <entry key="JavaScript" value="32" />
-          <entry key="PLAIN_TEXT" value="15" />
+          <entry key="PLAIN_TEXT" value="20" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
@@ -122,12 +120,40 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Website.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="506">
               <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/markers/patt.charline">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2183" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/markers/patt.hiro">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-500" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/markers/patt.kanji">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4101" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/markers/patt.letterA">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2" />
           </provider>
         </entry>
       </file>
@@ -298,14 +324,6 @@
               <item name="ar" type="462c0819:PsiDirectoryNode" />
               <item name="sandbox" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="charline-l.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="ar" type="462c0819:PsiDirectoryNode" />
-              <item name="sandbox" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -383,12 +401,12 @@
       <workItem from="1539966732068" duration="367000" />
       <workItem from="1539967127586" duration="35000" />
       <workItem from="1539973632848" duration="10000" />
-      <workItem from="1540160749114" duration="72000" />
+      <workItem from="1540160749114" duration="472000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95045000" />
+    <option name="totallyTimeSpent" value="95445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="6" />
@@ -406,7 +424,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.33737597" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33709133" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -744,6 +762,26 @@
         <state relative-caret-position="506">
           <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/markers/patt.letterA">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/markers/patt.charline">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2183" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/markers/patt.hiro">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-500" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/markers/patt.kanji">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4101" />
       </provider>
     </entry>
   </component>
