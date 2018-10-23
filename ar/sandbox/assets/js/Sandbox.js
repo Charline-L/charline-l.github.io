@@ -101,7 +101,7 @@ class Sandboxe {
         t.ambient = new THREE.AmbientLight( 0x666666 );
         t.scene.add( t.ambient );
 
-        alert("8")
+        alert("9")
         t.directionalLight = new THREE.DirectionalLight( 'white' )
         // t.directionalLight.position.set( 1, 0, t.gridSize ).setLength(2)
         t.directionalLight.position.set( 1, 0.5, 0 ).setLength(1)
