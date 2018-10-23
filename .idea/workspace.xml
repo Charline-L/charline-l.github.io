@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ar/sandbox/assets/img/damier.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ar/sandbox/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/ar/sandbox/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ar/sandbox/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ar/sandbox/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -104,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="376" lean-forward="true" selection-start-line="376" selection-end-line="376" />
+            <state relative-caret-position="230">
+              <caret line="372" selection-start-line="372" selection-end-line="372" />
               <folding>
                 <element signature="n#!!block;n#createVariables#0;n#Sandboxe#0" />
                 <element signature="n#!!block;n#initArToolKitSource#0;n#Sandboxe#0" />
@@ -118,10 +112,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="119">
               <caret line="101" column="27" lean-forward="true" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
             </state>
           </provider>
@@ -244,8 +238,8 @@
         <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Website.js" />
         <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Cube.js" />
         <option value="$PROJECT_DIR$/ar/sandbox/index.html" />
-        <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" />
         <option value="$PROJECT_DIR$/ar/sandbox/assets/css/main.css" />
+        <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" />
       </list>
     </option>
   </component>
@@ -407,12 +401,12 @@
       <workItem from="1539973632848" duration="10000" />
       <workItem from="1540160749114" duration="1481000" />
       <workItem from="1540212069343" duration="3477000" />
-      <workItem from="1540278283217" duration="3452000" />
+      <workItem from="1540278283217" duration="3534000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103383000" />
+    <option name="totallyTimeSpent" value="103465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="6" />
@@ -764,22 +758,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="101" column="27" lean-forward="true" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="376" lean-forward="true" selection-start-line="376" selection-end-line="376" />
+        <state relative-caret-position="230">
+          <caret line="372" selection-start-line="372" selection-end-line="372" />
           <folding>
             <element signature="n#!!block;n#createVariables#0;n#Sandboxe#0" />
             <element signature="n#!!block;n#initArToolKitSource#0;n#Sandboxe#0" />
             <element signature="n#!!block;n#initMarker#0;n#Sandboxe#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="101" column="27" lean-forward="true" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
         </state>
       </provider>
     </entry>
