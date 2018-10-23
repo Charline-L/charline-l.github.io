@@ -230,7 +230,7 @@ class Sandboxe {
         new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + t.pattern,
-            changeMatrixMode: 'cameraTransformMatrix'
+            // changeMatrixMode: 'cameraTransformMatrix'
         })
     }
 
