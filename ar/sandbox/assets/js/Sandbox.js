@@ -155,8 +155,6 @@ class Sandboxe {
         t.$buttonEdit.addEventListener("click", t.editMode.bind(t))
         t.$buttonAdd.addEventListener("click", t.addMode.bind(t))
         t.$buttonDelete.addEventListener("click", t.removeCube.bind(t))
-
-        // watcher évènements lancés depuis les classes Cubes
     }
 
     resize() {
