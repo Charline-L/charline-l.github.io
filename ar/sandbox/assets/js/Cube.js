@@ -101,10 +101,12 @@ class Cube {
         // ajoute à l'ombre
         t.mesh.castShadow = true;
         t.mesh.receiveShadow = true;
-        t.directionalLight.target = t.mesh
 
         // ajoute à notre groupe qui va l'ajouter à la scène
         grid.add(t.mesh)
+
+        // fixe ombre
+        t.directionalLight.target = t.mesh
     }
 
     bindEvents() {
