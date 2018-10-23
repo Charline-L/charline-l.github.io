@@ -85,7 +85,8 @@ class Sandboxe {
     createCamera() {
         const t = this
 
-        t.camera = new THREE.PerspectiveCamera(75, t.ww / t.wh, 0.1, 1000)
+        // t.camera = new THREE.PerspectiveCamera(75, t.ww / t.wh, 0.1, 1000)
+        t.camera = new THREE.Camera()
         t.scene.add(t.camera)
     }
 
