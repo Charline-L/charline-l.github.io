@@ -67,7 +67,7 @@
         <counts>
           <entry key="css" value="1780" />
           <entry key="html" value="2379" />
-          <entry key="js" value="22561" />
+          <entry key="js" value="22562" />
           <entry key="svg" value="18" />
           <entry key="txt" value="522" />
         </counts>
@@ -76,7 +76,7 @@
         <counts>
           <entry key="CSS" value="1780" />
           <entry key="HTML" value="2379" />
-          <entry key="JavaScript" value="22561" />
+          <entry key="JavaScript" value="22562" />
           <entry key="PLAIN_TEXT" value="522" />
           <entry key="SVG" value="18" />
         </counts>
@@ -105,8 +105,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="193">
-                  <caret line="233" column="53" selection-start-line="233" selection-start-column="53" selection-end-line="233" selection-end-column="53" />
+                <state relative-caret-position="216">
+                  <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
                   <folding>
                     <element signature="n#!!block;n#bindEvents#0;n#Sandboxe#0" />
                     <element signature="n#!!block;n#resize#0;n#Sandboxe#0" />
@@ -147,7 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>t.mesh.sta</find>
       <find>console</find>
       <find>aler</find>
       <find>https://charline-l.github.io/ar/sandbox/index.html</find>
@@ -177,6 +176,7 @@
       <find>t.mes</find>
       <find>new Cube</find>
       <find>cubeSize</find>
+      <find>direc</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/ar/sandbox</dir>
@@ -406,12 +406,12 @@
       <workItem from="1540160749114" duration="1481000" />
       <workItem from="1540212069343" duration="3477000" />
       <workItem from="1540278283217" duration="3949000" />
-      <workItem from="1540331352096" duration="4534000" />
+      <workItem from="1540331352096" duration="4591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108414000" />
+    <option name="totallyTimeSpent" value="108471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="6" />
@@ -776,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="233" column="53" selection-start-line="233" selection-start-column="53" selection-end-line="233" selection-end-column="53" />
+        <state relative-caret-position="216">
+          <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
           <folding>
             <element signature="n#!!block;n#bindEvents#0;n#Sandboxe#0" />
             <element signature="n#!!block;n#resize#0;n#Sandboxe#0" />
