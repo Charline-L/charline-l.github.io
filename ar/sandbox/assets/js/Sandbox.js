@@ -226,11 +226,12 @@ class Sandboxe {
         // ajoute à la scene
         t.scene.add(grid)
 
+        alert("marker ocntrols")
         // ajoute le marker que l'on doit "voir" à notre grille
         new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + t.pattern,
-            // changeMatrixMode: 'cameraTransformMatrix'
+            changeMatrixMode: 'cameraTransformMatrix'
         })
     }
 
