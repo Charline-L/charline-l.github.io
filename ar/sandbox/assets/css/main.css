@@ -122,10 +122,6 @@ html {
     pointer-events: none;
 }
 
-.not-active path {
-    fill: white;
-}
-
 .active {
     background-color: #f05d5e;
     border-color: #f05d5e;
