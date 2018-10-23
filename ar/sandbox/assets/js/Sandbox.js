@@ -95,6 +95,8 @@ class Sandboxe {
         // let light = new THREE.PointLight(0xffffff, 5, 100);
         // t.scene.add(light)
 
+        alert("in setUp lights")
+        // TODO :
         t.directionalLight = new THREE.DirectionalLight( 'white' )
         t.directionalLight.position.set( 1, 2, 0.3 ).setLength(2)
         t.directionalLight.shadow.mapSize.set(128,128)
@@ -204,7 +206,11 @@ class Sandboxe {
         // ajoute à la scene
         t.scene.add(grid)
 
-        // fixe la lumière sur la grid
+        // TODO : ajoute les ombres
+        grid.castShadow = true
+        grid.receiveShadow = false
+
+        // TODO : fixe la lumière sur la grid
         t.directionalLight.target = grid
 
         // ajoute le marker que l'on doit "voir" à notre grille
