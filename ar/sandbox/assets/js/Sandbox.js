@@ -403,6 +403,7 @@ class Sandboxe {
         planeMesh.receiveShadow = true
         planeMesh.depthWrite = false
         planeMesh.rotation.x = -Math.PI/2
+        planeMesh.position.y = -1
         grid.add(planeMesh)
 
         // fixela grille
