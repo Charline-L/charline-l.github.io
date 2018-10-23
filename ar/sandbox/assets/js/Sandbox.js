@@ -369,6 +369,7 @@ class Sandboxe {
         let randomS = Math.random() * (80 - 50) + 50
         let randomL = Math.random() * (100 - 50) + 50
 
+        alert("randomS : " + randomS + "randomL : " + randomL)
         // change la couleur
         let cubeColor = Website.hslToHex(t.$colorSlideChroma.value, randomS, randomL);
         t.$colorResult.style.backgroundColor = 'hsl(' + t.$colorSlideChroma.value + ', ' + randomS + '%, ' + randomL + '%)'
