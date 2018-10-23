@@ -206,10 +206,6 @@ class Sandboxe {
         // ajoute à la scene
         t.scene.add(grid)
 
-        // TODO : ajoute les ombres
-        grid.castShadow = true
-        grid.receiveShadow = false
-
         // TODO : fixe la lumière sur la grid
         t.directionalLight.target = grid
 

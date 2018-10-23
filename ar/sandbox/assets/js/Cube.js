@@ -95,6 +95,12 @@ class Cube {
         // prépare la selection
         t.mesh.selected = false
 
+        alert("shadow ok cube")
+
+        // TODO : ajoute les ombres
+        t.mesh.castShadow = true
+        t.mesh.receiveShadow = false
+
         // ajoute à notre groupe qui va l'ajouter à la scène
         grid.add(t.mesh)
     }
