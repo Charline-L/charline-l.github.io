@@ -66,7 +66,7 @@ class Sandboxe {
 
         // création éléments
         t.renderer = new THREE.WebGLRenderer({
-            antialias: true,
+            // antialias: true,
             alpha: true
         })
 
