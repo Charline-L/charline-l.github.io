@@ -22,7 +22,6 @@ class Website {
             'patt.letterB',
         ]
 
-        alert('OK HIRO')
         new Sandboxe({pattern: 'patt.hiro', id: 'ar-sandbox'})
         // for (let pattern of patterns)  new Sandboxe(pattern)
     }

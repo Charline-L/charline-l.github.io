@@ -369,7 +369,11 @@ class Sandboxe {
 
         // change la couleur
         let cubeColor = Website.hslToHex(t.$colorSlideChroma.value, 100, 50);
-        t.$colorResult.style.backgroundColor = 'hsl(' + t.$colorSlideChroma.value + ', 100%, 50%)'
+
+        // random hsl pour générer les couleurs dans la palette Wes Anderson
+        let randomS = Math.random() * (80 - 50) + 50
+        let randomL = Math.random() * (100 - 50) + 50
+        t.$colorResult.style.backgroundColor = 'hsl(' + t.$colorSlideChroma.value + ', ' + randomS + '%, ' + randomL + '%)'
 
         // récupère l'alpha
         let alphaCube = t.$colorResult.style.opacity
@@ -419,7 +423,7 @@ class Sandboxe {
             // changement des boutons
             t.$colors.classList.add('hidden')
             t.$buttonDelete.classList.add('hidden')
-            t.$buttonAdd.classList.remove('hidden')
+            t.$buttonAdd.classList.remove('not-active')
 
             // Mode edition à false -> dé-autoriser le click sur la grille
             window.isEdition = false
@@ -430,7 +434,8 @@ class Sandboxe {
 
             // changement des boutons
             t.$colors.classList.remove('hidden')
-            t.$buttonAdd.classList.add('hidden')
+            t.$buttonDelete.classList.remove('hidden')
+            t.$buttonAdd.classList.add('not-active')
 
             // trigger change pour setter la couleur dans le result petit timer pour l'alpha
             t.$colorSlideChroma.dispatchEvent(new Event('change'))
@@ -452,7 +457,7 @@ class Sandboxe {
             // changement des boutons
             t.$colors.classList.add('hidden')
             t.$buttonDelete.classList.add('hidden')
-            t.$buttonEdit.classList.remove('hidden')
+            t.$buttonEdit.classList.remove('not-active')
 
             // trigger pour cacher les cubes en wireframe
             window.dispatchEvent( new CustomEvent("hideWireframe") )
@@ -472,7 +477,7 @@ class Sandboxe {
 
             // changement des boutons
             t.$colors.classList.remove('hidden')
-            t.$buttonEdit.classList.add('hidden')
+            t.$buttonEdit.classList.add('not-active')
 
             // Mode adition à true -> autoriser le click sur la grille
             window.isAddition = true
