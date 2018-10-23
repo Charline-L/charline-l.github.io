@@ -95,8 +95,6 @@ class Sandboxe {
         // let light = new THREE.PointLight(0xffffff, 5, 100);
         // t.scene.add(light)
 
-        alert("in setUp lights")
-
         // TODO :
         t.ambient = new THREE.AmbientLight( 0x666666 );
         t.scene.add( t.ambient );
@@ -202,8 +200,6 @@ class Sandboxe {
     initMarker() {
         const t = this
 
-        alert("in int marker")
-
         // création d'un groupe d'éléments
         let grid = new THREE.Group()
 
@@ -223,17 +219,15 @@ class Sandboxe {
         // ajoute variables thee
         t.three.directionalLight = t.directionalLight
 
-        alert("ok plane added")
-
         // ajoute à la scene
         t.scene.add(grid)
 
-        alert("marker ocntrols")
+        alert("marker ocntrols test")
         // ajoute le marker que l'on doit "voir" à notre grille
         new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + t.pattern,
-            // changeMatrixMode: 'cameraTransformMatrix'
+            changeMatrixMode: 'cameraTransformMatrix'
         })
 
         t.scene.visible = false
@@ -281,8 +275,6 @@ class Sandboxe {
 
     getCubes() {
         const t = this
-
-        alert("in get cubes")
 
         // met le flag à true pour en pas repasser dans la fonction
         t.isSeen = true
