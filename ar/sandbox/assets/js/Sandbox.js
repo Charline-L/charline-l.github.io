@@ -367,12 +367,12 @@ class Sandboxe {
     updateCubeColor() {
         const t = this
 
-        // change la couleur
-        let cubeColor = Website.hslToHex(t.$colorSlideChroma.value, 100, 50);
-
         // random hsl pour générer les couleurs dans la palette Wes Anderson
         let randomS = Math.random() * (80 - 50) + 50
         let randomL = Math.random() * (100 - 50) + 50
+
+        // change la couleur
+        let cubeColor = Website.hslToHex(t.$colorSlideChroma.value, randomS, randomL);
         t.$colorResult.style.backgroundColor = 'hsl(' + t.$colorSlideChroma.value + ', ' + randomS + '%, ' + randomL + '%)'
 
         // récupère l'alpha
