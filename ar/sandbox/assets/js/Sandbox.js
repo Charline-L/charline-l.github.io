@@ -96,7 +96,11 @@ class Sandboxe {
         // t.scene.add(light)
 
         alert("in setUp lights")
+
         // TODO :
+        t.ambient = new THREE.AmbientLight( 0x666666 );
+        t.scene.add( t.ambient );
+
         t.directionalLight = new THREE.DirectionalLight( 'white' )
         t.directionalLight.position.set( 1, 2, 0.3 ).setLength(2)
         t.directionalLight.shadow.mapSize.set(128,128)
@@ -205,7 +209,7 @@ class Sandboxe {
         // add a transparent ground-plane shadow-receiver
         let material = new THREE.ShadowMaterial();
         material.opacity = 0.7; //! bug in threejs. can't set in constructor
-        let geometry = new THREE.PlaneGeometry(3, 3)
+        let geometry = new THREE.PlaneGeometry(50, 50)
         let planeMesh = new THREE.Mesh( geometry, material);
         planeMesh.receiveShadow = true;
         planeMesh.depthWrite = false;
@@ -222,6 +226,7 @@ class Sandboxe {
         new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + t.pattern,
+            changeMatrixMode: 'cameraTransformMatrix'
         })
     }
 
