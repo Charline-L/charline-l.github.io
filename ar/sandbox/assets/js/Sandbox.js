@@ -86,24 +86,17 @@ class Sandboxe {
         const t = this
 
         t.camera = new THREE.PerspectiveCamera(75, t.ww / t.wh, 0.1, 1000)
-        // t.camera = new THREE.Camera()
         t.scene.add(t.camera)
     }
 
     createLight() {
         const t = this
 
-        // let light = new THREE.PointLight(0xffffff, 5, 100);
-        // t.scene.add(light)
-
-        // TODO :
         t.ambient = new THREE.AmbientLight( 0x666666 )
         t.scene.add( t.ambient )
 
-        alert("22")
+        // set la lumière qui va faire l'ombre
         t.directionalLight = new THREE.DirectionalLight( 'white' )
-        // t.directionalLight.position.set( 1, 0, t.gridSize ).setLength(2)
-        // t.directionalLight.position.set( 1, 0.5, 0.1 ).setLength(2)
         t.directionalLight.position.set( 1, 2 , 0.3  ).setLength(2)
         t.directionalLight.shadow.mapSize.set(128,128)
         t.directionalLight.shadow.camera.bottom = - 0.6
@@ -111,7 +104,10 @@ class Sandboxe {
         t.directionalLight.shadow.camera.right = 1 + 0.6 + 1
         t.directionalLight.shadow.camera.left = -1 - 0.6 - 1
         t.directionalLight.castShadow = true
-        t.scene.add(new THREE.CameraHelper( t.directionalLight.shadow.camera ))
+
+        // t.scene.add(new THREE.CameraHelper( t.directionalLight.shadow.camera )) // HELPER
+
+        // ajoute à la scene
         t.scene.add( t.directionalLight )
     }
 
@@ -136,8 +132,7 @@ class Sandboxe {
         // élements que l'on va passer dans notre class Cube
         t.three = {
             scene: t.scene,
-            domEvents: t.domEvents,
-            directionalLight: t.directionalLight
+            domEvents: t.domEvents
         }
 
         t.dom = {
@@ -197,7 +192,6 @@ class Sandboxe {
             if (t.arToolkitSource.ready === false) return
             t.arToolkitContext.update(t.arToolkitSource.domElement)
 
-            // TODO :
             t.scene.visible = t.camera.visible
         })
     }
@@ -222,8 +216,6 @@ class Sandboxe {
 
         // donne un nom au groupe pour le récupérer dans la scene
         grid.name = 'grid'
-
-        alert("marker controls test")
     }
 
     initDetectMarker() {
@@ -352,10 +344,10 @@ class Sandboxe {
                     y: 0,
                     z: 0
                 },
-                color: 0xfffff,
+                color: 0xff00f,
                 alpha: 1,
-                wireframe: true,
-                status: "hidding",
+                wireframe: false,
+                status: "show",
                 _id: 6,
             },
             {
@@ -381,23 +373,42 @@ class Sandboxe {
                 wireframe: true,
                 status: "hidding",
                 _id: 8,
-            }
+            },
+            {
+                position: {
+                    x: 1,
+                    y: 1,
+                    z: 0
+                },
+                color: 0x00fff,
+                alpha: 1,
+                wireframe: false,
+                status: "show",
+                _id: 9,
+            },
+            {
+                position: {
+                    x: 1,
+                    y: 1,
+                    z: 1
+                },
+                color: 0xfff00,
+                alpha: 1,
+                wireframe: false,
+                status: "show",
+                _id: 10,
+            },
         ]
 
-        // on créer les cubes
-        for (let cubeRegister of t.cubesRegistered ) {
-
-            // on append le cube
-            new Cube(cubeRegister, t.three, t.dom)
-        }
+        // on append les cubes
+        for (let cubeRegister of t.cubesRegistered ) new Cube(cubeRegister, t.three, t.dom)
 
         // récupère notre grille dans notre scene
         let grid = t.scene.getObjectByName('grid')
 
         // ajoute BG transprent
-        // add a transparent ground-plane shadow-receiver
         let material = new THREE.ShadowMaterial();
-        material.opacity = 0.3 //! bug in threejs. can't set in constructor
+        material.opacity = 0.3
         let geometry = new THREE.PlaneGeometry(t.gridSize, t.gridSize)
         let planeMesh = new THREE.Mesh( geometry, material)
         planeMesh.receiveShadow = true
@@ -406,9 +417,8 @@ class Sandboxe {
         planeMesh.position.y = -1
         grid.add(planeMesh)
 
-        // fixela grille
+        // fixe la grille
         t.directionalLight.target = grid
-
     }
 
     updateCubeColor() {

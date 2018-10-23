@@ -20,9 +20,6 @@ class Cube {
         // domeEvents récupéré
         t.domEvents = three.domEvents
 
-        // lumière
-        t.directionalLight = three.directionalLight
-
         // elements du dom
         t.$colorSlideChroma = dom.$colorSlideChroma
 
@@ -104,9 +101,6 @@ class Cube {
 
         // ajoute à notre groupe qui va l'ajouter à la scène
         grid.add(t.mesh)
-
-        // fixe ombre
-        // t.directionalLight.target = t.mesh
     }
 
     bindEvents() {
