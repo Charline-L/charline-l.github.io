@@ -92,11 +92,19 @@ html {
     left: -50%
 }
 
-.sandboxe-game__result {
+.sandboxe-game__result-container {
     border-radius: 100%;
     width: 35px;
     height: 35px;
     opacity: 1;
+    background-image: url("../img/damier.png");
+    overflow: hidden;
+    background-size: cover;
+}
+
+.sandboxe-game__result {
+    width: 100%;
+    height: 100%;
 }
 
 .sandboxe-game__footer {
