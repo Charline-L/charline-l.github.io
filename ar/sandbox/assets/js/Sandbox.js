@@ -70,6 +70,9 @@ class Sandboxe {
             alpha: true
         })
 
+        t.renderer.shadowMap.type = THREE.PCFSoftShadowMap
+        t.renderer.shadowMap.enabled = true;
+
         // lui ajoute les propriétés
         t.renderer.setClearColor(new THREE.Color('lightgrey'), 0)
         t.renderer.setSize(t.ww, t.wh)
@@ -89,8 +92,19 @@ class Sandboxe {
     createLight() {
         const t = this
 
-        let light = new THREE.PointLight(0xffffff, 5, 100);
-        t.scene.add(light)
+        // let light = new THREE.PointLight(0xffffff, 5, 100);
+        // t.scene.add(light)
+
+        t.directionalLight = new THREE.DirectionalLight( 'white' )
+        t.directionalLight.position.set( 1, 2, 0.3 ).setLength(2)
+        t.directionalLight.shadow.mapSize.set(128,128)
+        t.directionalLight.shadow.camera.bottom = -0.6
+        t.directionalLight.shadow.camera.top = 0.6
+        t.directionalLight.shadow.camera.right = 0.6
+        t.directionalLight.shadow.camera.left = -0.6
+        t.directionalLight.castShadow = true
+        // scene.add(new THREE.CameraHelper( t.directionalLight.shadow.camera ))
+        t.scene.add( t.directionalLight )
     }
 
     createArToolKitSource() {
@@ -189,6 +203,9 @@ class Sandboxe {
 
         // ajoute à la scene
         t.scene.add(grid)
+
+        // fixe la lumière sur la grid
+        t.directionalLight.target = grid
 
         // ajoute le marker que l'on doit "voir" à notre grille
         new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
