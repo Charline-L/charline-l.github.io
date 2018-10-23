@@ -46,8 +46,8 @@ class Sandboxe {
         const t = this
 
         t.createRenderer()
-        t.createCamera()
         t.createLight()
+        t.createCamera()
         t.createArToolKitSource()
 
         t.createVariables()
@@ -66,11 +66,12 @@ class Sandboxe {
 
         // création éléments
         t.renderer = new THREE.WebGLRenderer({
-            // antialias: true,
+            // antialias: true, // TODO
             alpha: true
         })
 
-        t.renderer.shadowMap.type = THREE.PCFSoftShadowMap
+        // TODO :
+        t.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         t.renderer.shadowMap.enabled = true;
 
         // lui ajoute les propriétés
@@ -194,6 +195,7 @@ class Sandboxe {
             if (t.arToolkitSource.ready === false) return
             t.arToolkitContext.update(t.arToolkitSource.domElement)
 
+            // TODO :
             t.scene.visible = t.camera.visible
         })
     }
@@ -201,16 +203,27 @@ class Sandboxe {
     initMarker() {
         const t = this
 
+        // ajoute le marker que l'on doit "voir" à notre grille
+        new THREEx.ArMarkerControls(t.arToolkitContext, t.camera, {
+            type: 'pattern',
+            patternUrl: THREEx.ArToolkitContext.baseURL + t.pattern,
+            changeMatrixMode: 'cameraTransformMatrix'
+        })
+
+        t.scene.visible = false
+
         // création d'un groupe d'éléments
         let grid = new THREE.Group()
+
+        // ajoute à la scene
+        t.scene.add(grid)
 
         // donne un nom au groupe pour le récupérer dans la scene
         grid.name = 'grid'
 
         // add a transparent ground-plane shadow-receiver
-        let material = new THREE.MeshBasicMaterial({
-            color: 0xffff00});
-        // material.opacity = 0.7; //! bug in threejs. can't set in constructor
+        let material = new THREE.ShadowMaterial();;
+        material.opacity = 0.7; //! bug in threejs. can't set in constructor
         let geometry = new THREE.PlaneGeometry(5, 5)
         let planeMesh = new THREE.Mesh( geometry, material);
         planeMesh.receiveShadow = true;
@@ -218,21 +231,7 @@ class Sandboxe {
         planeMesh.rotation.x = -Math.PI/2
         grid.add(planeMesh);
 
-        // ajoute variables thee
-        t.three.directionalLight = t.directionalLight
-
-        // ajoute à la scene
-        t.scene.add(grid)
-
         alert("marker controls test")
-        // ajoute le marker que l'on doit "voir" à notre grille
-        new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
-            type: 'pattern',
-            patternUrl: THREEx.ArToolkitContext.baseURL + t.pattern,
-            changeMatrixMode: 'cameraTransformMatrix'
-        })
-
-        t.scene.visible = false
     }
 
     initDetectMarker() {
