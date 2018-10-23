@@ -219,6 +219,7 @@ class Sandboxe {
         // ajoute variables thee
         t.three.directionalLight = t.directionalLight
 
+        alert("ok plane added")
         // ajoute à la scene
         t.scene.add(grid)
 
