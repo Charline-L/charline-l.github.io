@@ -200,6 +200,8 @@ class Sandboxe {
     initMarker() {
         const t = this
 
+        alert("in int marker")
+
         // création d'un groupe d'éléments
         let grid = new THREE.Group()
 
@@ -220,6 +222,7 @@ class Sandboxe {
         t.three.directionalLight = t.directionalLight
 
         alert("ok plane added")
+
         // ajoute à la scene
         t.scene.add(grid)
 
