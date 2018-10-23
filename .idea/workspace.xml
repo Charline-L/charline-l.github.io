@@ -105,8 +105,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="102" column="17" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
+                <state relative-caret-position="308">
+                  <caret line="402" column="38" lean-forward="true" selection-start-line="402" selection-start-column="38" selection-end-line="402" selection-end-column="38" />
                   <folding>
                     <element signature="n#!!block;n#bindEvents#0;n#Sandboxe#0" />
                     <element signature="n#!!block;n#resize#0;n#Sandboxe#0" />
@@ -131,8 +131,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ar/shadow/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1971">
-                  <caret line="61" column="40" lean-forward="true" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+                <state relative-caret-position="260">
+                  <caret line="158" column="58" lean-forward="true" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="58" />
                   <folding>
                     <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -147,7 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console</find>
       <find>aler</find>
       <find>https://charline-l.github.io/ar/sandbox/index.html</find>
       <find>t.ww</find>
@@ -177,6 +176,7 @@
       <find>cubeSize</find>
       <find>direc</find>
       <find>new Cube</find>
+      <find>shadow</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/ar/sandbox</dir>
@@ -406,12 +406,12 @@
       <workItem from="1540160749114" duration="1481000" />
       <workItem from="1540212069343" duration="3477000" />
       <workItem from="1540278283217" duration="3949000" />
-      <workItem from="1540331352096" duration="7137000" />
+      <workItem from="1540331352096" duration="7229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111017000" />
+    <option name="totallyTimeSpent" value="111109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="6" />
@@ -765,8 +765,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/shadow/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1971">
-          <caret line="61" column="40" lean-forward="true" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+        <state relative-caret-position="260">
+          <caret line="158" column="58" lean-forward="true" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="58" />
           <folding>
             <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -776,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="102" column="17" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
+        <state relative-caret-position="308">
+          <caret line="402" column="38" lean-forward="true" selection-start-line="402" selection-start-column="38" selection-end-line="402" selection-end-column="38" />
           <folding>
             <element signature="n#!!block;n#bindEvents#0;n#Sandboxe#0" />
             <element signature="n#!!block;n#resize#0;n#Sandboxe#0" />
