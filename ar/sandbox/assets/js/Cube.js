@@ -106,7 +106,7 @@ class Cube {
         grid.add(t.mesh)
 
         // fixe ombre
-        t.directionalLight.target = t.mesh
+        // t.directionalLight.target = t.mesh
     }
 
     bindEvents() {
