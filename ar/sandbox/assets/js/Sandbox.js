@@ -130,7 +130,8 @@ class Sandboxe {
         // élements que l'on va passer dans notre class Cube
         t.three = {
             scene: t.scene,
-            domEvents: t.domEvents
+            domEvents: t.domEvents,
+            directionalLight: null
         }
 
         t.dom = {
@@ -203,11 +204,21 @@ class Sandboxe {
         // donne un nom au groupe pour le récupérer dans la scene
         grid.name = 'grid'
 
+        // add a transparent ground-plane shadow-receiver
+        let material = new THREE.ShadowMaterial();
+        material.opacity = 0.7; //! bug in threejs. can't set in constructor
+        let geometry = new THREE.PlaneGeometry(3, 3)
+        let planeMesh = new THREE.Mesh( geometry, material);
+        planeMesh.receiveShadow = true;
+        planeMesh.depthWrite = false;
+        planeMesh.rotation.x = -Math.PI/2
+        grid.add(planeMesh);
+
+        // ajoute variables thee
+        t.three.directionalLight = t.directionalLight
+
         // ajoute à la scene
         t.scene.add(grid)
-
-        // TODO : fixe la lumière sur la grid
-        t.directionalLight.target = grid
 
         // ajoute le marker que l'on doit "voir" à notre grille
         new THREEx.ArMarkerControls(t.arToolkitContext, grid, {

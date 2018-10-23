@@ -20,6 +20,9 @@ class Cube {
         // domeEvents récupéré
         t.domEvents = three.domEvents
 
+        // lumière
+        t.directionalLight = three.directionalLight
+
         // elements du dom
         t.$colorSlideChroma = dom.$colorSlideChroma
 
@@ -95,11 +98,10 @@ class Cube {
         // prépare la selection
         t.mesh.selected = false
 
-        alert("shadow ok cube")
-
-        // TODO : ajoute les ombres
-        t.mesh.castShadow = true
-        t.mesh.receiveShadow = false
+        // ajoute à l'ombre
+        t.mesh.castShadow = true;
+        t.mesh.receiveShadow = true;
+        t.directionalLight.target = t.mesh
 
         // ajoute à notre groupe qui va l'ajouter à la scène
         grid.add(t.mesh)
