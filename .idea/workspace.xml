@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ar/shadow/marker/camera_para.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/marker/patt.hiro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/shadow.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/vendors/artoolkit.api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/vendors/artoolkit.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/vendors/three.OrbitControls.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/vendors/three.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/vendors/threex-arbasecontrols.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/vendors/threex-armarkercontrols.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/vendors/threex-artoolkitcontext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/vendors/threex-artoolkitsource.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/vendors/threex-domEvents-c.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ar/shadow/vendors/threex-domEvents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ar/shadow/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ar/shadow/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -81,7 +66,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="1780" />
-          <entry key="html" value="2357" />
+          <entry key="html" value="2360" />
           <entry key="js" value="22175" />
           <entry key="svg" value="18" />
           <entry key="txt" value="522" />
@@ -90,7 +75,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="1780" />
-          <entry key="HTML" value="2357" />
+          <entry key="HTML" value="2360" />
           <entry key="JavaScript" value="22175" />
           <entry key="PLAIN_TEXT" value="522" />
           <entry key="SVG" value="18" />
@@ -103,7 +88,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ar/sandbox/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2346">
+            <state relative-caret-position="277">
               <caret line="131" column="47" selection-start-line="131" selection-start-column="47" selection-end-line="131" selection-end-column="47" />
               <folding>
                 <element signature="n#svg#0;n#div#0;n#main#0;n#body#0;n#!!top" />
@@ -132,17 +117,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+            <state relative-caret-position="943">
+              <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ar/shadow/shadow.html">
+        <entry file="file://$PROJECT_DIR$/ar/shadow/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-121">
-              <caret line="19" column="60" selection-start-line="16" selection-start-column="59" selection-end-line="19" selection-end-column="60" />
+            <state relative-caret-position="161">
+              <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -238,7 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/model.obj" />
         <option value="$PROJECT_DIR$/objet3D.html" />
         <option value="$PROJECT_DIR$/assets/materials.mtl" />
         <option value="$PROJECT_DIR$/js/ar.js" />
@@ -289,6 +273,7 @@
         <option value="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/ar/shadow/shadow.html" />
+        <option value="$PROJECT_DIR$/ar/shadow/index.html" />
       </list>
     </option>
   </component>
@@ -449,12 +434,12 @@
       <workItem from="1540160749114" duration="1481000" />
       <workItem from="1540212069343" duration="3477000" />
       <workItem from="1540278283217" duration="3949000" />
-      <workItem from="1540331352096" duration="1150000" />
+      <workItem from="1540331352096" duration="1332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105030000" />
+    <option name="totallyTimeSpent" value="105212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="6" />
@@ -760,19 +745,6 @@
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/img/logo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ar/sandbox/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2346">
-          <caret line="131" column="47" selection-start-line="131" selection-start-column="47" selection-end-line="131" selection-end-column="47" />
-          <folding>
-            <element signature="n#svg#0;n#div#0;n#main#0;n#body#0;n#!!top" />
-            <element signature="n#style#0;n#svg#0;n#div#0;n#main#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#svg#0;n#div#1;n#main#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#svg#0;n#div#2;n#main#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Website.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
@@ -809,23 +781,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ar/shadow/vendors/three.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/shadow/marker/patt.hiro">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ar/shadow/shadow.html">
+    <entry file="file://$PROJECT_DIR$/ar/sandbox/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-121">
-          <caret line="19" column="60" selection-start-line="16" selection-start-column="59" selection-end-line="19" selection-end-column="60" />
+        <state relative-caret-position="277">
+          <caret line="131" column="47" selection-start-line="131" selection-start-column="47" selection-end-line="131" selection-end-column="47" />
+          <folding>
+            <element signature="n#svg#0;n#div#0;n#main#0;n#body#0;n#!!top" />
+            <element signature="n#style#0;n#svg#0;n#div#0;n#main#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#div#1;n#main#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#div#2;n#main#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar/shadow/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
           <folding>
             <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
