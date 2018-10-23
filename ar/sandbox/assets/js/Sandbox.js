@@ -406,6 +406,7 @@ class Sandboxe {
         planeMesh.rotation.x = -Math.PI/2
         grid.add(planeMesh)
 
+        alert("lokk grid")
         // fixela grille
         t.directionalLight.target = grid
 
