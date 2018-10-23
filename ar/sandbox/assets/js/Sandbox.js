@@ -105,11 +105,11 @@ class Sandboxe {
         t.directionalLight = new THREE.DirectionalLight( 'white' )
         // t.directionalLight.position.set( 1, 0, t.gridSize ).setLength(2)
         t.directionalLight.position.set( 1, 0.5, 0 ).setLength(1)
-        t.directionalLight.shadow.mapSize.set(128,128)
+        t.directionalLight.shadow.mapSize.set(28,28)
         t.directionalLight.shadow.camera.bottom = -0.6
         t.directionalLight.shadow.camera.top = 0.6
         t.directionalLight.shadow.camera.right = 0.6
-        t.directionalLight.shadow.camera.left = 0
+        t.directionalLight.shadow.camera.left = -0.6
         t.directionalLight.castShadow = true
         t.scene.add(new THREE.CameraHelper( t.directionalLight.shadow.camera ))
         t.scene.add( t.directionalLight )
