@@ -70,9 +70,8 @@ class Sandboxe {
             alpha: true
         })
 
-        // TODO :
-        t.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        t.renderer.shadowMap.enabled = true;
+        t.renderer.shadowMap.type = THREE.PCFSoftShadowMap
+        t.renderer.shadowMap.enabled = true
 
         // lui ajoute les propriétés
         t.renderer.setClearColor(new THREE.Color('lightgrey'), 0)
@@ -98,19 +97,19 @@ class Sandboxe {
         // t.scene.add(light)
 
         // TODO :
-        t.ambient = new THREE.AmbientLight( 0x666666 );
-        t.scene.add( t.ambient );
+        t.ambient = new THREE.AmbientLight( 0x666666 )
+        t.scene.add( t.ambient )
 
-        alert("16")
+        alert("17")
         t.directionalLight = new THREE.DirectionalLight( 'white' )
         // t.directionalLight.position.set( 1, 0, t.gridSize ).setLength(2)
         // t.directionalLight.position.set( 1, 0.5, 0.1 ).setLength(2)
         t.directionalLight.position.set( 1, 2, 0.3 ).setLength(2)
-        t.directionalLight.shadow.mapSize.set(512,512)
-        t.directionalLight.shadow.camera.bottom = -1
-        t.directionalLight.shadow.camera.top = 1
-        t.directionalLight.shadow.camera.right = 1
-        t.directionalLight.shadow.camera.left = -1
+        t.directionalLight.shadow.mapSize.set(128,128)
+        t.directionalLight.shadow.camera.bottom = -0.6
+        t.directionalLight.shadow.camera.top = 0.6
+        t.directionalLight.shadow.camera.right = 0.6
+        t.directionalLight.shadow.camera.left = -0.6
         t.directionalLight.castShadow = true
         t.scene.add(new THREE.CameraHelper( t.directionalLight.shadow.camera ))
         t.scene.add( t.directionalLight )
@@ -406,7 +405,6 @@ class Sandboxe {
         planeMesh.rotation.x = -Math.PI/2
         grid.add(planeMesh)
 
-        alert("lokk grid")
         // fixela grille
         t.directionalLight.target = grid
 
