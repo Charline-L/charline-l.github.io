@@ -248,7 +248,7 @@ class Sandboxe {
         const t = this
 
         t.stats = new Stats();
-        document.body.appendChild( stats.dom );
+        document.body.appendChild( t.stats.dom );
 
         // ajoute renderer au tableau d'update
         t.onRenderFcts.push(() => {
