@@ -194,6 +194,8 @@ class Sandboxe {
         t.onRenderFcts.push(() => {
             if (t.arToolkitSource.ready === false) return
             t.arToolkitContext.update(t.arToolkitSource.domElement)
+
+            t.scene.visible = t.camera.visible
         })
     }
 
@@ -231,8 +233,10 @@ class Sandboxe {
         new THREEx.ArMarkerControls(t.arToolkitContext, grid, {
             type: 'pattern',
             patternUrl: THREEx.ArToolkitContext.baseURL + t.pattern,
-            changeMatrixMode: 'cameraTransformMatrix'
+            // changeMatrixMode: 'cameraTransformMatrix'
         })
+
+        t.scene.visible = false
     }
 
     initDetectMarker() {
