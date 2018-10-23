@@ -67,7 +67,7 @@
         <counts>
           <entry key="css" value="1780" />
           <entry key="html" value="2379" />
-          <entry key="js" value="22461" />
+          <entry key="js" value="22478" />
           <entry key="svg" value="18" />
           <entry key="txt" value="522" />
         </counts>
@@ -76,7 +76,7 @@
         <counts>
           <entry key="CSS" value="1780" />
           <entry key="HTML" value="2379" />
-          <entry key="JavaScript" value="22461" />
+          <entry key="JavaScript" value="22478" />
           <entry key="PLAIN_TEXT" value="522" />
           <entry key="SVG" value="18" />
         </counts>
@@ -105,8 +105,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+                <state relative-caret-position="354">
+                  <caret line="230" column="41" lean-forward="true" selection-start-line="230" selection-start-column="41" selection-end-line="230" selection-end-column="41" />
                   <folding>
                     <element signature="n#!!block;n#bindEvents#0;n#Sandboxe#0" />
                     <element signature="n#!!block;n#resize#0;n#Sandboxe#0" />
@@ -118,9 +118,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Cube.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23">
-                  <caret line="108" column="8" lean-forward="true" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="26" />
-                  <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="26" />
+                <state relative-caret-position="165">
+                  <caret line="48" column="53" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="53" />
                 </state>
               </provider>
             </entry>
@@ -132,8 +131,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ar/shadow/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="286">
-                  <caret line="172" column="50" lean-forward="true" selection-start-line="172" selection-start-column="27" selection-end-line="172" selection-end-column="50" />
+                <state relative-caret-position="355">
+                  <caret line="175" column="52" lean-forward="true" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="52" />
                   <folding>
                     <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -148,9 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>t.boe</find>
-      <find>let event</find>
-      <find>changeCol</find>
       <find>changeColor</find>
       <find>addCu</find>
       <find>t.mesh.wirefram</find>
@@ -178,6 +174,9 @@
       <find>render</find>
       <find>camera</find>
       <find>mate</find>
+      <find>light</find>
+      <find>plane</find>
+      <find>MEshBAs</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/ar/sandbox</dir>
@@ -407,12 +406,12 @@
       <workItem from="1540160749114" duration="1481000" />
       <workItem from="1540212069343" duration="3477000" />
       <workItem from="1540278283217" duration="3949000" />
-      <workItem from="1540331352096" duration="3818000" />
+      <workItem from="1540331352096" duration="3912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107698000" />
+    <option name="totallyTimeSpent" value="107792000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="6" />
@@ -759,8 +758,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/shadow/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="172" column="50" lean-forward="true" selection-start-line="172" selection-start-column="27" selection-end-line="172" selection-end-column="50" />
+        <state relative-caret-position="355">
+          <caret line="175" column="52" lean-forward="true" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="52" />
           <folding>
             <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -770,16 +769,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Cube.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="108" column="8" lean-forward="true" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="26" />
-          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="26" />
+        <state relative-caret-position="165">
+          <caret line="48" column="53" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+        <state relative-caret-position="354">
+          <caret line="230" column="41" lean-forward="true" selection-start-line="230" selection-start-column="41" selection-end-line="230" selection-end-column="41" />
           <folding>
             <element signature="n#!!block;n#bindEvents#0;n#Sandboxe#0" />
             <element signature="n#!!block;n#resize#0;n#Sandboxe#0" />
