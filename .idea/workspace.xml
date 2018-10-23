@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js" afterDir="false" />
-    </list>
+    <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -105,8 +103,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="377">
-                  <caret line="405" column="33" selection-start-line="405" selection-start-column="33" selection-end-line="405" selection-end-column="33" />
+                <state relative-caret-position="216">
+                  <caret line="398" column="47" selection-start-line="398" selection-start-column="47" selection-end-line="398" selection-end-column="47" />
                   <folding>
                     <element signature="n#!!block;n#bindEvents#0;n#Sandboxe#0" />
                     <element signature="n#!!block;n#resize#0;n#Sandboxe#0" />
@@ -131,8 +129,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ar/shadow/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="260">
-                  <caret line="158" column="58" lean-forward="true" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="58" />
+                <state relative-caret-position="441">
+                  <caret line="172" column="47" selection-start-line="172" selection-start-column="33" selection-end-line="172" selection-end-column="47" />
                   <folding>
                     <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -406,12 +404,12 @@
       <workItem from="1540160749114" duration="1481000" />
       <workItem from="1540212069343" duration="3477000" />
       <workItem from="1540278283217" duration="3949000" />
-      <workItem from="1540331352096" duration="7277000" />
+      <workItem from="1540331352096" duration="7325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111157000" />
+    <option name="totallyTimeSpent" value="111205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="995" extended-state="6" />
@@ -765,8 +763,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/shadow/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="158" column="58" lean-forward="true" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="58" />
+        <state relative-caret-position="441">
+          <caret line="172" column="47" selection-start-line="172" selection-start-column="33" selection-end-line="172" selection-end-column="47" />
           <folding>
             <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -776,8 +774,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ar/sandbox/assets/js/Sandbox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="405" column="33" selection-start-line="405" selection-start-column="33" selection-end-line="405" selection-end-column="33" />
+        <state relative-caret-position="216">
+          <caret line="398" column="47" selection-start-line="398" selection-start-column="47" selection-end-line="398" selection-end-column="47" />
           <folding>
             <element signature="n#!!block;n#bindEvents#0;n#Sandboxe#0" />
             <element signature="n#!!block;n#resize#0;n#Sandboxe#0" />

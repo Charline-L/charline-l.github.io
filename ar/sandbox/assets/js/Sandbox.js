@@ -396,7 +396,7 @@ class Sandboxe {
 
         // ajoute BG transprent
         // add a transparent ground-plane shadow-receiver
-        let material = new THREE.MeshLambertMaterial();
+        let material = new THREE.ShadowMaterial();
         // material.opacity = 0.7 //! bug in threejs. can't set in constructor
         let geometry = new THREE.PlaneGeometry(t.gridSize, t.gridSize)
         let planeMesh = new THREE.Mesh( geometry, material)
