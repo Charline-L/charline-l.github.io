@@ -135,7 +135,7 @@ class Sandboxe {
         t.three = {
             scene: t.scene,
             domEvents: t.domEvents,
-            directionalLight: null
+            directionalLight: t.directionalLight
         }
 
         t.dom = {
