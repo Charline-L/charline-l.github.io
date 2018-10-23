@@ -139,8 +139,6 @@ class Sandboxe {
         t.$buttonDelete.addEventListener("click", t.removeCube.bind(t))
 
         // watcher évènements lancés depuis les classes Cubes
-        window.addEventListener("hideButtonDelete", t.hideButtonDelete.bind(t))
-        window.addEventListener("showButtonDelete", t.showButtonDelete.bind(t))
     }
 
     resize() {
@@ -377,7 +375,6 @@ class Sandboxe {
 
         // récupère l'alpha
         let alphaCube = t.$colorResult.style.opacity
-
         // prépare l'event
         let event = new CustomEvent('changeColor',
             {
@@ -494,29 +491,5 @@ class Sandboxe {
 
         // trigger event de suppression du cube
         window.dispatchEvent(event)
-
-        // enlève le boutton delete
-        t.hideButtonDelete()
-    }
-
-    hideButtonDelete() {
-        const t = this
-
-        let hasActiveCube = false
-
-        // vérifie si on a toujours un cube de sectionné on n'efface pas le bouton delete
-        t.scene.traverse( function( node ) {
-            if ( node instanceof THREE.Mesh ) {
-                if (node.active) hasActiveCube = true
-            }
-        })
-
-        if (!hasActiveCube) t.$buttonDelete.classList.add('hidden')
-    }
-
-    showButtonDelete() {
-        const t = this
-
-        t.$buttonDelete.classList.remove('hidden')
     }
 }
