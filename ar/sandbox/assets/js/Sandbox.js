@@ -207,9 +207,10 @@ class Sandboxe {
         grid.name = 'grid'
 
         // add a transparent ground-plane shadow-receiver
-        let material = new THREE.ShadowMaterial();
+        let material = new THREE.MeshBasicMaterial({
+            color: 0xffff00});
         material.opacity = 0.7; //! bug in threejs. can't set in constructor
-        let geometry = new THREE.PlaneGeometry(50, 50)
+        let geometry = new THREE.PlaneGeometry(5, 5)
         let planeMesh = new THREE.Mesh( geometry, material);
         planeMesh.receiveShadow = true;
         planeMesh.depthWrite = false;
@@ -246,9 +247,6 @@ class Sandboxe {
 
     initRenderer() {
         const t = this
-
-        t.stats = new Stats();
-        document.body.appendChild( t.stats.dom );
 
         // ajoute renderer au tableau d'update
         t.onRenderFcts.push(() => {
