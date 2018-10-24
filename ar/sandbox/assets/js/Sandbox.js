@@ -38,7 +38,6 @@ class Sandboxe {
 
         // valeur du jeu
         t.gridSize = 3
-        t.cubeSize = 1
 
         t.init()
     }
@@ -407,10 +406,11 @@ class Sandboxe {
         // récupère notre grille dans notre scene
         let grid = t.scene.getObjectByName('grid')
 
+        alert("grille * grille")
         // ajoute BG transprent
         let material = new THREE.ShadowMaterial();
         material.opacity = 0.3
-        let geometry = new THREE.PlaneGeometry(t.gridSize * t.cubeSize, t.gridSize * t.cubeSize)
+        let geometry = new THREE.PlaneGeometry(t.gridSize * t.gridSize, t.gridSize * t.gridSize)
         let planeMesh = new THREE.Mesh( geometry, material)
         planeMesh.receiveShadow = true
         planeMesh.depthWrite = false
