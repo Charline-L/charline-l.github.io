@@ -406,7 +406,6 @@ class Sandboxe {
         // récupère notre grille dans notre scene
         let grid = t.scene.getObjectByName('grid')
 
-        alert("grille * grille")
         // ajoute BG transprent
         let material = new THREE.ShadowMaterial();
         material.opacity = 0.3
