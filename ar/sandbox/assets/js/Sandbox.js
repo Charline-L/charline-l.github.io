@@ -38,6 +38,7 @@ class Sandboxe {
 
         // valeur du jeu
         t.gridSize = 3
+        t.cubeSize = 1
 
         t.init()
     }
@@ -409,7 +410,7 @@ class Sandboxe {
         // ajoute BG transprent
         let material = new THREE.ShadowMaterial();
         material.opacity = 0.3
-        let geometry = new THREE.PlaneGeometry(t.gridSize, t.gridSize)
+        let geometry = new THREE.PlaneGeometry(t.gridSize * t.cubeSize, t.gridSize * t.cubeSize)
         let planeMesh = new THREE.Mesh( geometry, material)
         planeMesh.receiveShadow = true
         planeMesh.depthWrite = false
