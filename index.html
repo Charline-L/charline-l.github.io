@@ -1,43 +1,80 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr-FR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Competiton 2019</title>
+
+    <style>
+        body {
+            padding: 50px;
+        }
+
+        #block {
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            cursor: pointer;
+            margin: 50px;
+            display: block;
+        }
+    </style>
+
+    <link rel='manifest' href='manifest.json'>
+
 </head>
 <body>
 
-<ul>
-    <li>
-        <a href="ar/vrac/cube.html">Vrac AR cube</a>
-    </li>
-    <li>
-        <a href="ar/vrac/objet3D.html">Vrac AR objet3D</a>
-    </li>
-    <li>
-        <a href="ar/vrac/generator.html">Vrac AR generator</a>
-    </li>
-    <li>
-        <a href="ar/vrac/calcDistance.html">Vrac AR calcDistance</a>
-    </li>
-    <li>
-        <a href="ar/vrac/multiMarker.html">Vrac AR multiMarker</a>
-    </li>
-    <li>
-        <a href="ar/pong/index.html">Pong</a>
-    </li>
-    <li>
-        <a href="ar/sandbox/index.html">Sandbox</a>
-    </li>
-    <li>
-        <a href="ar/marine-AR-Sandbox/index.html">Sandbox Mama</a>
-    </li>
-    <li>
-        <a href="ar/shadow/index.html">Shadow</a>
-    </li>
-</ul>
+    <h1>Hello world</h1>
+
+    <div id="block"></div>
+
+
+    <!--<script>-->
+
+        <!--let deferredPrompt = null-->
+
+        <!--// installer l'app-->
+        <!--window.addEventListener('beforeinstallprompt', e => {-->
+            <!--console.log('beforeinstallprompt Event fired');-->
+            <!--e.preventDefault();-->
+            <!--// Stash the event so it can be triggered later.-->
+            <!--deferredPrompt = e;-->
+
+            <!--// ajoute event-->
+            <!--// When you want to trigger prompt:-->
+            <!--deferredPrompt.prompt();-->
+            <!--deferredPrompt.userChoice.then(choice => {-->
+                <!--console.log(choice);-->
+            <!--});-->
+
+            <!--deferredPrompt = null;-->
+
+
+            <!--return false;-->
+        <!--});-->
+
+
+    <!--</script>-->
+
+    <script>
+
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+                .then(function(registration) {
+                    console.log('Service Worker Registered');
+                });
+
+            navigator.serviceWorker.ready.then(function(registration) {
+                console.log('Service Worker Ready');
+            });
+        }
+    </script>
+
+    <script src="main.js"></script>
 
 </body>
 </html>
