@@ -6,6 +6,11 @@
       "src":"/assets/icon.png",
       "sizes": "192x192",
       "type": "image/png"
+    },
+    {
+      "src":"/assets/spash-screen.png",
+      "sizes": "192x192",
+      "type": "image/png"
     }
   ],
   "start_url": "/?utm_source=homescreen",
