@@ -7,8 +7,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!--ajouter la couleur choisie dans le manifeste-->
     <meta name="theme-color" content="#e05a47"/>
 
+    <!--pour la barre noire en haut de l'écrand es iphone X et +-->
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <title>Competiton 2019</title>
@@ -39,33 +41,7 @@
     <div id="block"></div>
 
 
-    <!--<script>-->
-
-        <!--let deferredPrompt = null-->
-
-        <!--// installer l'app-->
-        <!--window.addEventListener('beforeinstallprompt', e => {-->
-            <!--console.log('beforeinstallprompt Event fired');-->
-            <!--e.preventDefault();-->
-            <!--// Stash the event so it can be triggered later.-->
-            <!--deferredPrompt = e;-->
-
-            <!--// ajoute event-->
-            <!--// When you want to trigger prompt:-->
-            <!--deferredPrompt.prompt();-->
-            <!--deferredPrompt.userChoice.then(choice => {-->
-                <!--console.log(choice);-->
-            <!--});-->
-
-            <!--deferredPrompt = null;-->
-
-
-            <!--return false;-->
-        <!--});-->
-
-
-    <!--</script>-->
-
+    <!--pour enregistrer le service worker-->
     <script>
 
         if('serviceWorker' in navigator) {
@@ -80,6 +56,7 @@
         }
     </script>
 
+    <!--script de l'application-->
     <script src="main.js"></script>
 
 </body>

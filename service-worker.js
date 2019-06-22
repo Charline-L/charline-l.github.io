@@ -1,4 +1,5 @@
-const cacheName = `airhorner`;
+// ajoute nos fichiers dans le cache
+const cacheName = `nomApplication`;
 self.addEventListener('install', e => {
     e.waitUntil(
         caches.open(cacheName).then(cache => {
@@ -16,13 +17,8 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', event => {
     event.waitUntil(self.clients.claim());
 });
-//
-// self.addEventListener('fetch', function(event) {
-//
-//     console.log(event.request.url);
-//
-// });
 
+// récupère les fichiers du cache
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.open(cacheName)
