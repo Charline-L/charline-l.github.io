@@ -13,21 +13,29 @@
 
 
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-                    // Registration was successful
-                    console.log('Registered!');
-                }, function(err) {
-                    // registration failed :(
-                    console.log('ServiceWorker registration failed: ', err);
-                }).catch(function(err) {
-                    console.log(err);
-                });
-            });
-        } else {
-            console.log('service worker is not supported');
+
+        if('serviceWorker' in navigator) {
+            console.log('add service worker')
+            navigator.serviceWorker
+                .register('service-worker.js')
+                .then(function() { console.log("Service Worker Registered"); });
         }
+
+        // if ('serviceWorker' in navigator) {
+        //     window.addEventListener('load', function() {
+        //         navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+        //             // Registration was successful
+        //             console.log('Registered!');
+        //         }, function(err) {
+        //             // registration failed :(
+        //             console.log('ServiceWorker registration failed: ', err);
+        //         }).catch(function(err) {
+        //             console.log(err);
+        //         });
+        //     });
+        // } else {
+        //     console.log('service worker is not supported');
+        // }
 
 
 
