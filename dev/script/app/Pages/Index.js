@@ -1,15 +1,18 @@
 class Index {
-    constructor() {
 
-        this.isConnected = false
+    constructor() {
 
         this.init()
     }
 
-    init(){
+    async init(){
 
-        console.log('this.isConnected', this.isConnected)
-        document.location.href = this.isConnected ? '/pages/home' : '/pages/connect'
+        await new NeedToken()
+        Index.redirect()
     }
 
+    static redirect() {
+
+        document.location.href = localStorage.getItem('connected') === 'true' ? '/pages/home' : '/pages/login'
+    }
 }

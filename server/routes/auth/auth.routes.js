@@ -10,6 +10,10 @@ const { register, login } = require('./auth.controller')
 * */
 class AuthRouterClass {
 
+    constructor({passport}) {
+        this.passport = passport
+    }
+
     routes(){
 
         authRouter.post('/register',
@@ -28,9 +32,19 @@ class AuthRouterClass {
                     .catch(apiResponse => res.json(apiResponse))
             })
 
-        // TODO : lougout
+        authRouter.get('/logout',
+            this.passport.authenticate('jwt', { session: false }),
+            (req, res) => {
 
-        // TODO : vérifier connexion avant chaque route
+                res.cookie(process.env.COOKIE_NAME, null, {httpOnly: true});
+                res.json({status: 'success', message: 'ok logout'})
+        });
+
+        authRouter.get('/',
+            this.passport.authenticate('jwt', { session: false }),
+            (req, res) => {
+                res.json({status: 'success', message: 'ok cookie'})
+            })
     }
 
     init(){

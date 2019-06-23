@@ -28,7 +28,7 @@ class Login {
         const data = serialize(this.$form)
 
         // créer la requete
-        new Request({
+        new XHR({
             method: 'POST',
             url: 'auth/login',
             success: this.success.bind(this),
@@ -38,6 +38,7 @@ class Login {
     }
 
     success() {
+        console.log('ok')
         document.location.href = '/pages/home'
     }
 

@@ -28,7 +28,16 @@ const init = () => {
     server.use(cookieParser())
 
     // CORS *
-    server.use(cors())
+    server.use(cors(
+        {
+            origin: [
+                process.env.CLIENT,
+            ],
+            methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+            optionsSuccessStatus: 200,
+            credentials: true
+        }
+    ))
 
     // router
     server.use('/', mainRouter)
