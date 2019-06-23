@@ -18,6 +18,12 @@ class RegisterChild {
 
         this.$colors = document.querySelectorAll('.c-register-color__item')
         this.$avatar = document.querySelector('.c-register-color__avatar')
+
+        this.$recorders = document.querySelectorAll('.c-register-sound__button')
+
+        this.$player2 = document.getElementById('player')
+        this.chunks = []
+
         this.init()
     }
 
@@ -25,7 +31,36 @@ class RegisterChild {
 
         this.setUpElements()
         this.selectColor(0)
+        this.setupAudio()
         this.bindEvents()
+    }
+
+    setupAudio() {
+
+        const thisRegister = this
+
+        navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+            .then(function (stream) {
+
+                // créer notre recorder
+                thisRegister.mediaRecorder = new MediaRecorder(stream)
+
+                // watcher pour ajouter les données
+                thisRegister.mediaRecorder.ondataavailable = function(e) {
+                    thisRegister.chunks.push(e.data)
+                }
+
+                // watcher enregistrer le son
+                thisRegister.mediaRecorder.onstop = function(e) {
+
+                    // créer un blob
+                    const blob = new Blob(thisRegister.chunks, { 'type' : 'audio/ogg; codecs=opus' })
+                    const audioURL = window.URL.createObjectURL(blob)
+
+                    // ajoute les données ua player
+                    thisRegister.$player2.src = audioURL
+                }
+            })
     }
 
     setUpElements() {
@@ -56,6 +91,18 @@ class RegisterChild {
                 const isActive = $color.classList.contains('c-register-color__item--active')
 
                 if (!isActive) this.selectColor(getIndexNode($color, this.$colors), true)
+            })
+        })
+
+        // click son
+        this.$recorders.forEach($recorder => {
+
+            $recorder.addEventListener('click', () => {
+
+                const isActive = $recorder.classList.contains('c-register-sound__button--active')
+
+                if (!isActive) this.startRecording($recorder)
+                else this.stopRecording($recorder)
             })
         })
     }
@@ -101,5 +148,38 @@ class RegisterChild {
         if (fromClick) this.$buttons[this.currentStep].classList.add('p-register-child__button--active')
     }
 
+    startRecording($recorder) {
 
+        // affiche visuellement
+        $recorder.classList.add('c-register-sound__button--active')
+        $recorder.innerHTML = 'stop'
+
+        // vide données
+        this.chunks = []
+
+        // lance audio
+        this.mediaRecorder.start()
+
+        // stop par défaut dans 5s
+        this.timerMaxRecording = setTimeout(() => {
+            this.stopRecording($recorder)
+        }, 3000)
+    }
+
+    stopRecording($recorder) {
+
+        // enlève timer
+        clearTimeout(this.timerMaxRecording)
+
+        // affiche visuellement
+        $recorder.classList.remove('c-register-sound__button--active')
+        $recorder.innerHTML = 'enregistrer'
+
+        // lecture
+        this.mediaRecorder.stop()
+
+        // lance loader
+
+        // afiche l'input pré-rempli
+    }
 }
