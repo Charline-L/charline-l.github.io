@@ -189,9 +189,6 @@ class RegisterChild {
                 thisRegister.mediaRecorder .addEventListener('dataavailable', e => {
                     thisRegister.$player.src = URL.createObjectURL(e.data)
                 })
-
-                // Start recording
-                thisRegister.mediaRecorder .start()
             })
             .catch(() => {
                 alert('pas de media')
