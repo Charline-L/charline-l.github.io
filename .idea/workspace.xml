@@ -2,30 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dev/script/app/Pages/Connect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/script/app/Pages/Index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/script/app/Pages/Register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/script/app/Services/Request.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/script/vendors/serialize.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/connect.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/register-child.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/user.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/auth/auth.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/auth/auth.routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/main.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/db.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/script/app/Pages/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/script/app/Pages/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/script/vendors.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/vendors.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/Connect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/connect.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -118,8 +101,8 @@
           <entry key="css" value="5" />
           <entry key="env" value="2" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="6" />
-          <entry key="js" value="31" />
+          <entry key="html" value="7" />
+          <entry key="js" value="33" />
           <entry key="json" value="4" />
           <entry key="md" value="1" />
           <entry key="sass" value="4" />
@@ -129,9 +112,9 @@
         <counts>
           <entry key=".env file" value="2" />
           <entry key="CSS" value="5" />
-          <entry key="HTML" value="6" />
+          <entry key="HTML" value="7" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="31" />
+          <entry key="JavaScript" value="33" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Sass" value="4" />
@@ -142,8 +125,8 @@
           <entry key="browserslistrc" value="6" />
           <entry key="env" value="170" />
           <entry key="gitignore" value="8" />
-          <entry key="html" value="1104" />
-          <entry key="js" value="2831" />
+          <entry key="html" value="1108" />
+          <entry key="js" value="2981" />
           <entry key="json" value="178" />
           <entry key="md" value="83" />
           <entry key="sass" value="193" />
@@ -152,9 +135,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="170" />
-          <entry key="HTML" value="1104" />
+          <entry key="HTML" value="1108" />
           <entry key="JSON" value="178" />
-          <entry key="JavaScript" value="2831" />
+          <entry key="JavaScript" value="2981" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Sass" value="193" />
@@ -166,11 +149,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.52505785">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Register.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+                <state relative-caret-position="224">
+                  <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
                 </state>
               </provider>
             </entry>
@@ -184,11 +167,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/register-child.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+                <state relative-caret-position="184">
+                  <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
@@ -196,17 +179,35 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+                <state relative-caret-position="46">
+                  <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/connect.html">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Login.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="366">
-                  <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+                <state relative-caret-position="258">
+                  <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Home.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="46">
+                  <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pages/login.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="176">
+                  <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
                 </state>
               </provider>
             </entry>
@@ -234,15 +235,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="320">
                   <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/script/app/Services/Request.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="230">
-                  <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -355,9 +347,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pong/assets/js/Pong.js" />
-        <option value="$PROJECT_DIR$/ar/pong/assets/css/main.css" />
-        <option value="$PROJECT_DIR$/ar/sandbox/assets/vendors/threex.domEvents.js" />
         <option value="$PROJECT_DIR$/ar/sandbox/assets/vendors/threex-domEvents.js" />
         <option value="$PROJECT_DIR$/ar/sandbox/assets/vendors/threex-domEvents-c.js" />
         <option value="$PROJECT_DIR$/ar/pong/assets/js/Website.js" />
@@ -388,7 +377,6 @@
         <option value="$PROJECT_DIR$/server/routes/main.router.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/dev/script/app/App.js" />
-        <option value="$PROJECT_DIR$/dev/script/app/Pages/Connect.js" />
         <option value="$PROJECT_DIR$/dev/script/vendors/serialize.js" />
         <option value="$PROJECT_DIR$/dev/script/vendors/request.js" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -398,7 +386,6 @@
         <option value="$PROJECT_DIR$/server/routes/auth/auth.routes.js" />
         <option value="$PROJECT_DIR$/server/routes/auth/auth.controller.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Tools/Request.js" />
-        <option value="$PROJECT_DIR$/dev/script/app/Pages/Register.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Index.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" />
@@ -406,6 +393,11 @@
         <option value="$PROJECT_DIR$/pages/home.html" />
         <option value="$PROJECT_DIR$/pages/register.html" />
         <option value="$PROJECT_DIR$/pages/register-child.html" />
+        <option value="$PROJECT_DIR$/dev/script/app/Pages/Connect.js" />
+        <option value="$PROJECT_DIR$/pages/login.html" />
+        <option value="$PROJECT_DIR$/dev/script/app/Pages/Home.js" />
+        <option value="$PROJECT_DIR$/dev/script/app/Pages/Login.js" />
+        <option value="$PROJECT_DIR$/dev/script/app/Pages/Register.js" />
       </list>
     </option>
   </component>
@@ -481,6 +473,14 @@
               <item name="dev" type="462c0819:PsiDirectoryNode" />
               <item name="script" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charline-l.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
@@ -568,12 +568,12 @@
       <workItem from="1540212069343" duration="3477000" />
       <workItem from="1540278283217" duration="3949000" />
       <workItem from="1540331352096" duration="7949000" />
-      <workItem from="1561216462114" duration="13310000" />
+      <workItem from="1561216462114" duration="13642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125139000" />
+    <option name="totallyTimeSpent" value="125471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -591,7 +591,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.336374" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.336374" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -626,9 +626,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_OLD/ar/sandbox/assets/markers/patt.charline">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/_OLD/ar/sandbox/assets/markers/patt.kanji">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
@@ -830,13 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Connect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/script/app.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -928,13 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -946,20 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/connect.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -979,8 +948,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/register-child.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="184">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
         </state>
       </provider>
     </entry>

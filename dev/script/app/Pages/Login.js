@@ -1,11 +1,12 @@
-class Register {
+class Login {
 
     constructor() {
 
-        this.$form = document.querySelector('#registerForm')
+        this.$form = document.querySelector('#loginForm')
 
         this.init()
     }
+
 
     init() {
 
@@ -29,7 +30,7 @@ class Register {
         // créer la requete
         new Request({
             method: 'POST',
-            url: 'auth/register',
+            url: 'auth/login',
             success: this.success.bind(this),
             error: this.error.bind(this),
             data: data
@@ -37,7 +38,7 @@ class Register {
     }
 
     success() {
-        document.location.href = '/pages/register-child'
+        document.location.href = '/pages/home'
     }
 
     error(error) {
