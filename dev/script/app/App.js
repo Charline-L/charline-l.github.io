@@ -1,4 +1,4 @@
-class App {
+class app {
 
     constructor() {
 
@@ -12,8 +12,9 @@ class App {
 
     detectPage() {
 
-        console.log('in detect page')
+        const pageClass = document.getElementById('page').getAttribute('data-page')
+        eval(`new ${pageClass}()`);
     }
 }
 
-new App()
+new app()

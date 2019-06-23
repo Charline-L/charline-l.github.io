@@ -14,20 +14,38 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!--ajout du manifest-->
-    <link rel='manifest' href='manifest.json'>
+    <link rel='manifest' href='../manifest.json'>
     <!--END - PWA -->
 
 
-    <title>Competiton 2019</title>
-    <link rel="stylesheet" href="assets/style/app.min.css">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="../assets/style/app.min.css">
 
 </head>
 <body>
 
 <!--START - Page -->
-<div id="page" data-page="Index">
+<div id="page" data-page="Connect">
 
-    Faire redirection
+    <form>
+
+        <label>
+            Email:
+            <input type="text" name="email">
+        </label>
+
+        <label>
+            Mot de passe:
+            <input type="password" name="password">
+        </label>
+
+        <a>Mot de passe oublié ?</a>
+
+        <button type="submit">Envoyer</button>
+
+    </form>
+
+    <a href="register.html">Pas de compte ? </a>
 
 </div>
 <!--END - Page -->
@@ -35,7 +53,7 @@
 <!--START - pour enregistrer le service worker-->
 <script>
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
+        navigator.serviceWorker.register('../service-worker.js', {scope: '/'})
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });
@@ -48,8 +66,8 @@
 <!--END - pour enregistrer le service worker-->
 
 <!--START - scripts de l'application-->
-<script src="assets/script/vendors.min.js"></script>
-<script src="assets/script/app.min.js"></script>
+<script src="../assets/script/vendors.min.js"></script>
+<script src="../assets/script/app.min.js"></script>
 <!--END - scripts de l'application-->
 
 </body>

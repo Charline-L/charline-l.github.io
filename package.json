@@ -4,7 +4,7 @@
   "description": "competition 2019",
   "main": "main.js",
   "scripts": {
-    "start": "concurrently -n http-server,gulp \"http-server\" \"gulp watch\""
+    "start": "concurrently -n http-server,gulp,server \"http-server\" \"gulp watch\" \"nodemon server/server.js\""
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,14 @@
   },
   "homepage": "https://github.com/Charline-L/charline-l.github.io#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
     "concurrently": "^4.1.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "email-deep-validator": "^3.2.0",
+    "express": "^4.17.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-babel": "^8.0.0",
@@ -26,7 +33,10 @@
     "gulp-pixrem": "^1.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

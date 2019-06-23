@@ -14,20 +14,18 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!--ajout du manifest-->
-    <link rel='manifest' href='manifest.json'>
+    <link rel='manifest' href='../manifest.json'>
     <!--END - PWA -->
 
 
-    <title>Competiton 2019</title>
-    <link rel="stylesheet" href="assets/style/app.min.css">
+    <title>Création profil enfant</title>
+    <link rel="stylesheet" href="../assets/style/app.min.css">
 
 </head>
 <body>
 
 <!--START - Page -->
-<div id="page" data-page="Index">
-
-    Faire redirection
+<div id="page" data-page="RegisterChild">
 
 </div>
 <!--END - Page -->
@@ -35,7 +33,7 @@
 <!--START - pour enregistrer le service worker-->
 <script>
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
+        navigator.serviceWorker.register('../service-worker.js', {scope: '/'})
             .then(function (registration) {
                 console.log('Service Worker Registered');
             });
@@ -48,8 +46,8 @@
 <!--END - pour enregistrer le service worker-->
 
 <!--START - scripts de l'application-->
-<script src="assets/script/vendors.min.js"></script>
-<script src="assets/script/app.min.js"></script>
+<script src="../assets/script/vendors.min.js"></script>
+<script src="../assets/script/app.min.js"></script>
 <!--END - scripts de l'application-->
 
 </body>

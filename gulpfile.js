@@ -23,6 +23,7 @@ const path = {
         inputs: {
             styles: "dev/style/*.sass",
             js: "dev/script/",
+            jsApp: "dev/script/app/App.js",
         },
         outputs: {
             styles: "assets/style/",
@@ -63,7 +64,7 @@ gulp.task('vendors-js', gulp.series( () =>
 // JS lors du dévelopement
 gulp.task('app-js', gulp.series( () =>
 
-    gulp.src(path.inputs.js + 'app/*.js')
+    gulp.src([path.inputs.js + 'app/**/!(App)*.js', path.inputs.jsApp])
         // .pipe(babel({presets: ['es2015']}))
         .pipe(concat('app.min.js'))
         // .pipe(uglify())
@@ -83,7 +84,7 @@ gulp.task('watch', gulp.series(() => {
 
     gulp.watch(path.inputs.js + 'vendors/*.js', gulp.series(['vendors-js'] ))
 
-    gulp.watch(path.inputs.js + 'app/*.js', gulp.series( ['app-js'] ))
+    gulp.watch(path.inputs.js + 'app/**/*.js', gulp.series( ['app-js'] ))
 }))
 
 gulp.task('default', gulp.series(['styles', 'vendors-js', 'app-js']))
