@@ -1,0 +1,29 @@
+.p-register-child
+
+  &__container-step
+    display: flex
+    justify-content: center
+    align-items: center
+    +size(100%, auto)
+
+  &__step
+    width: 25%
+    text-align: center
+    font-size: rem(20px)
+
+    &--active
+      background-color: black
+      color: white
+
+  &__container-section
+    position: relative
+
+  &__section
+    +absolute(0, 0, -1)
+    +size(100vw, 100vh)
+    pointer-events: none
+
+    &--active
+      z-index: 1
+      pointer-events: initial
+      background-color: lightgrey

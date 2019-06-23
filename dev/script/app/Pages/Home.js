@@ -2,7 +2,6 @@ class Home {
 
     constructor() {
 
-        console.log('OK in Home')
         this.$logout = document.getElementById('logout')
 
         this.init()

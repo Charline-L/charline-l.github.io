@@ -37,7 +37,6 @@ class Register {
     }
 
     success() {
-        console.log('success')
 
         document.location.href = '/pages/register-child'
     }

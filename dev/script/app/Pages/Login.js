@@ -38,7 +38,6 @@ class Login {
     }
 
     success() {
-        console.log('ok')
         document.location.href = '/pages/home'
     }
 
