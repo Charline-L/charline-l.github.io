@@ -42,6 +42,8 @@ class RegisterChild {
         navigator.mediaDevices.getUserMedia({ audio: true, video: false })
             .then(function (stream) {
 
+                alert('create audio')
+
                 // créer notre recorder
                 thisRegister.mediaRecorder = new MediaRecorder(stream)
 
@@ -53,6 +55,8 @@ class RegisterChild {
                 // watcher enregistrer le son
                 thisRegister.mediaRecorder.onstop = function(e) {
 
+                    alert('audio stop')
+
                     // créer un blob
                     const blob = new Blob(thisRegister.chunks, { 'type' : 'audio/ogg; codecs=opus' })
                     const audioURL = window.URL.createObjectURL(blob)
@@ -60,6 +64,9 @@ class RegisterChild {
                     // ajoute les données ua player
                     thisRegister.$player2.src = audioURL
                 }
+            })
+            .catch(() => {
+                alert('pas de media')
             })
     }
 
