@@ -24,8 +24,6 @@ class Login {
         // prevent default
         e.preventDefault()
 
-        alert("send")
-
         // récupère nos données
         const data = serialize(this.$form)
 

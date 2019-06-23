@@ -27,8 +27,6 @@ class AuthRouterClass {
         authRouter.post('/login',
             (req, res) => {
 
-                console.log('login')
-
                 login(req.body, res)
                     .then(apiResponse => res.json(apiResponse))
                     .catch(apiResponse => res.json(apiResponse))

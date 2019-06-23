@@ -48,38 +48,17 @@ const init = () => {
         }
     ))
 
-    server.use(function (req, res, next) {
-
-        // Website you wish to allow to connect
-        res.setHeader('Access-Control-Allow-Origin', 'https://charline-l.github.io');
-
-        // Request methods you wish to allow
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-        // Request headers you wish to allow
-        res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-        // Set to true if you need the website to include cookies in the requests sent
-        // to the API (e.g. in case you use sessions)
-        res.setHeader('Access-Control-Allow-Credentials', true);
-
-        // Pass to next layer of middleware
-        next();
-    });
-
     // router
     server.use('/', mainRouter)
 
     // assets
     server.use('/public', express.static(path.join(__dirname, 'public')))
 
-    // lance
+    // lance server en https
     const serverhttps = https.createServer(options, server)
     serverhttps.listen(port, () => {
         console.log("server starting on port : " + port)
     });
-
-    // server.listen(port, () => {console.log(`Server is running on port ${port}`)})
 }
 
 

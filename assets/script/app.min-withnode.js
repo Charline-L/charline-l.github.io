@@ -68,8 +68,6 @@ class Login {
         // prevent default
         e.preventDefault()
 
-        alert("send")
-
         // récupère nos données
         const data = serialize(this.$form)
 
@@ -182,35 +180,9 @@ class RegisterChild {
 
         const thisRegister = this
 
-        if (!window.MediaRecorder) {
-            alert("no media recorder")
-        }
-
         navigator.mediaDevices.getUserMedia({ audio: true, video: false })
             .then(function (stream) {
 
-                // alert('create audio')
-                //
-                // // créer notre recorder
-                // thisRegister.mediaRecorder = new MediaRecorder(stream)
-                //
-                // // watcher pour ajouter les données
-                // thisRegister.mediaRecorder.ondataavailable = function(e) {
-                //     thisRegister.chunks.push(e.data)
-                // }
-                //
-                // // watcher enregistrer le son
-                // thisRegister.mediaRecorder.onstop = function(e) {
-                //
-                //     alert('audio stop')
-                //
-                //     // créer un blob
-                //     const blob = new Blob(thisRegister.chunks, { 'type' : 'audio/ogg; codecs=opus' })
-                //     const audioURL = window.URL.createObjectURL(blob)
-                //
-                //     // ajoute les données ua player
-                //     thisRegister.$player2.src = audioURL
-                // }
                 thisRegister.mediaRecorder = new MediaRecorder(stream)
 
                 // Set record to <audio> when recording will be finished
