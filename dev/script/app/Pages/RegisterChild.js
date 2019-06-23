@@ -42,7 +42,7 @@ class RegisterChild {
 
             $button.addEventListener('click', () => {
 
-                const isActive = getIndexNode($button, this.$buttons) === this.currentStep
+                const isActive = getIndexNode($button, this.$buttons) === this.currentStep && $button.classList.contains('p-register-child__button--active')
 
                 if (isActive) this.nextStep($button.getAttribute('data-name'))
             })
@@ -55,10 +55,9 @@ class RegisterChild {
 
                 const isActive = $color.classList.contains('c-register-color__item--active')
 
-                if (!isActive) this.selectColor(getIndexNode($color, this.$colors))
+                if (!isActive) this.selectColor(getIndexNode($color, this.$colors), true)
             })
         })
-
     }
 
     nextStep(name) {
@@ -83,16 +82,23 @@ class RegisterChild {
         this.$steps[this.currentStep].classList.add('p-register-child__step--active')
     }
 
+    selectColor(index, fromClick = false) {
 
-    selectColor(index) {
-
+        // récupère la couleur
         const color = this.$colors[index].getAttribute('data-color')
 
+        // change le style du sélecteur
         document.querySelector('.c-register-color__item--active').classList.remove('c-register-color__item--active')
         this.$colors[index].classList.add('c-register-color__item--active')
 
+        // change info pour server
         this.childInfos.color = color
+
+        // change info visuellement
         this.$avatar.style.backgroundColor = color
+
+        // passe le bouton en actif si vient d'un click
+        if (fromClick) this.$buttons[this.currentStep].classList.add('p-register-child__button--active')
     }
 
 

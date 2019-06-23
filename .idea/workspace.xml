@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dev/script/vendors/getIndexNode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/style/_c-register-color.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/style/_functions.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/style/_mixins.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/style/_p-register-child.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/script/vendors.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/vendors.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/style/app.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/style/app.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/Register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/style/app.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/app.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/register-child.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/register-child.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/style/_p-register-child.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_p-register-child.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/style/_reset.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_reset.sass" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -113,7 +103,7 @@
           <entry key="js" value="43" />
           <entry key="json" value="5" />
           <entry key="md" value="1" />
-          <entry key="sass" value="10" />
+          <entry key="sass" value="11" />
           <entry key="ts" value="2" />
         </counts>
       </usages-collector>
@@ -126,7 +116,7 @@
           <entry key="JavaScript" value="43" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Sass" value="10" />
+          <entry key="Sass" value="11" />
           <entry key="TypeScript" value="2" />
         </counts>
       </usages-collector>
@@ -136,10 +126,10 @@
           <entry key="env" value="182" />
           <entry key="gitignore" value="8" />
           <entry key="html" value="1564" />
-          <entry key="js" value="6204" />
+          <entry key="js" value="6525" />
           <entry key="json" value="178" />
           <entry key="md" value="83" />
-          <entry key="sass" value="902" />
+          <entry key="sass" value="1002" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -147,10 +137,10 @@
           <entry key=".env file" value="182" />
           <entry key="HTML" value="1564" />
           <entry key="JSON" value="178" />
-          <entry key="JavaScript" value="6204" />
+          <entry key="JavaScript" value="6525" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Sass" value="902" />
+          <entry key="Sass" value="1002" />
         </counts>
       </usages-collector>
     </session>
@@ -162,8 +152,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="218">
-                  <caret line="88" column="56" lean-forward="true" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
+                <state relative-caret-position="184">
+                  <caret line="84" column="33" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
                 </state>
               </provider>
             </entry>
@@ -189,8 +179,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/register-child.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="639">
-                  <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+                <state relative-caret-position="904">
+                  <caret line="71" column="17" lean-forward="true" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
@@ -198,8 +188,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/style/_p-register-child.sass">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="379">
-                  <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+                <state relative-caret-position="425">
+                  <caret line="31" selection-start-line="31" selection-end-line="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/style/_reset.sass">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="299">
+                  <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
                 </state>
               </provider>
             </entry>
@@ -378,7 +377,6 @@
         <option value="$PROJECT_DIR$/assets/script/vendors.min.js" />
         <option value="$PROJECT_DIR$/dev/script/vendors/anime.min.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/dev/style/_reset.sass" />
         <option value="$PROJECT_DIR$/server/models/user.model.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/dev/script/app/App.js" />
@@ -409,10 +407,11 @@
         <option value="$PROJECT_DIR$/dev/style/_functions.sass" />
         <option value="$PROJECT_DIR$/dev/style/_mixins.sass" />
         <option value="$PROJECT_DIR$/dev/script/vendors/getIndex.js" />
-        <option value="$PROJECT_DIR$/dev/style/_p-register-child.sass" />
         <option value="$PROJECT_DIR$/pages/register-child.html" />
         <option value="$PROJECT_DIR$/dev/style/app.sass" />
         <option value="$PROJECT_DIR$/dev/style/_c-register-color.sass" />
+        <option value="$PROJECT_DIR$/dev/style/_p-register-child.sass" />
+        <option value="$PROJECT_DIR$/dev/style/_reset.sass" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" />
       </list>
     </option>
@@ -607,12 +606,12 @@
       <workItem from="1540212069343" duration="3477000" />
       <workItem from="1540278283217" duration="3949000" />
       <workItem from="1540331352096" duration="7949000" />
-      <workItem from="1561216462114" duration="21133000" />
+      <workItem from="1561216462114" duration="21555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132962000" />
+    <option name="totallyTimeSpent" value="133384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -778,13 +777,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/_reset.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/services/db.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1031,13 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/_p-register-child.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/style/_c-register-color.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -1045,17 +1030,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_p-register-child.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_reset.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/register-child.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="904">
+          <caret line="71" column="17" lean-forward="true" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="88" column="56" lean-forward="true" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
+        <state relative-caret-position="184">
+          <caret line="84" column="33" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
         </state>
       </provider>
     </entry>
