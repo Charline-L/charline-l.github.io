@@ -84,13 +84,11 @@ class Login {
     }
 
     success() {
-        alert("succes")
 
         document.location.href = '/pages/home'
     }
 
     error(error) {
-        alert("error")
         console.log('error', error)
     }
 }
