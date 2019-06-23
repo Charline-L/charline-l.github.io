@@ -1,0 +1,35 @@
+{
+  "name": "charline-l.github.io",
+  "version": "1.0.0",
+  "description": "competition 2019",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently -n http-server,gulp \"http-server\" \"gulp watch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Charline-L/charline-l.github.io.git"
+  },
+  "author": "cl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Charline-L/charline-l.github.io/issues"
+  },
+  "homepage": "https://github.com/Charline-L/charline-l.github.io#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^4.0.1",
+    "gulp-pixrem": "^1.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
+  }
+}

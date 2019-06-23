@@ -1,14 +1,14 @@
 {
-  "short_name": "1ere PWA",
-  "name": "1erePWA",
+  "short_name": "Nom",
+  "name": "Nom",
   "icons": [
     {
-      "src":"/assets/icon.png",
+      "src":"/assets/img/icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src":"/assets/spash-screen.png",
+      "src":"/assets/img/spash-screen.png",
       "sizes": "512x512",
       "type": "image/png"
     }

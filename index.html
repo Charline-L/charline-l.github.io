@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="fr-FR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -31,6 +30,8 @@
         }
     </style>
 
+    <link rel="stylesheet" href="assets/style/app.min.css">
+
     <link rel='manifest' href='manifest.json'>
 
 </head>
@@ -41,7 +42,7 @@
     <div id="block"></div>
 
 
-    <!--pour enregistrer le service worker-->
+    <!--START - pour enregistrer le service worker-->
     <script>
 
         if('serviceWorker' in navigator) {
@@ -55,9 +56,13 @@
             });
         }
     </script>
+    <!--END - pour enregistrer le service worker-->
 
-    <!--script de l'application-->
-    <script src="main.js"></script>
+
+    <!--START - scripts de l'application-->
+    <script src="assets/script/vendors.min.js"></script>
+    <script src="assets/script/app.min.js"></script>
+    <!--END - scripts de l'application-->
 
 </body>
 </html>
