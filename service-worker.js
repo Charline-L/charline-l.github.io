@@ -6,7 +6,9 @@ self.addEventListener('install', e => {
             return cache.addAll([
                 `/`,
                 `/index.html`,
-                `/main.js`,
+                `/assets/script/app.min.js`,
+                `/assets/script/vendors.min.js`,
+                `/assets/style/app.min.css`,
             ])
                 .then(() => self.skipWaiting());
         })

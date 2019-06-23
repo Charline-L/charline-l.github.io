@@ -35,7 +35,7 @@ class XHR {
         };
 
         this.req.withCredentials = true
-        this.req.open(this.method, `http://192.168.1.75:3003/${this.url}`, true)
+        this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)
         this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         this.req.send(this.data)
     }

@@ -13,23 +13,20 @@ const
     pixrem          = require('gulp-pixrem')
 
 
-process.setMaxListeners(0)
-
-
 /**
  * Définitions des variables pour le chemin
  */
 const path = {
-        inputs: {
-            styles: "dev/style/*.sass",
-            js: "dev/script/",
-            jsApp: "dev/script/app/App.js",
-        },
-        outputs: {
-            styles: "assets/style/",
-            js: "assets/script/",
-        }
+    inputs: {
+        styles: "dev/style/*.sass",
+        js: "dev/script/",
+        jsApp: "dev/script/app/App.js",
+    },
+    outputs: {
+        styles: "assets/style/",
+        js: "assets/script/",
     }
+}
 
 
 /**
@@ -65,8 +62,7 @@ gulp.task('vendors-js', gulp.series( () =>
 gulp.task('app-js', gulp.series( () =>
 
     gulp.src([path.inputs.js + 'app/**/!(App)*.js', path.inputs.jsApp])
-        // .pipe(babel({presets: ['es2015']}))
-        .pipe(concat('app.min.js'))
+        .pipe(concat('app.min-withnode.js'))
         // .pipe(uglify())
         .pipe(gulp.dest(path.outputs.js))
         .pipe(livereload())

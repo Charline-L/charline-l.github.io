@@ -1,3 +1,146 @@
+class Home {
+
+    constructor() {
+
+        this.$logout = document.getElementById('logout')
+
+        this.init()
+    }
+
+    async init() {
+
+        await new NeedToken()
+        this.bindEvents()
+    }
+
+    bindEvents() {
+
+        this.$logout.addEventListener('click', Home.logout)
+    }
+
+    static logout() {
+
+        localStorage.setItem('connected', 'false')
+        document.location.href = "/"
+    }
+}
+class Index {
+
+    constructor() {
+
+        this.init()
+    }
+
+    async init(){
+
+        await new NeedToken()
+        Index.redirect()
+    }
+
+    static redirect() {
+
+        document.location.href = localStorage.getItem('connected') === 'true' ? '/pages/home' : '/pages/login'
+    }
+}
+class Login {
+
+    constructor() {
+
+        this.$form = document.querySelector('#loginForm')
+
+        this.init()
+    }
+
+
+    init() {
+
+        this.bindEvents()
+    }
+
+    bindEvents() {
+
+        // submit form
+        this.$form.addEventListener('submit', this.checkBeforeSubmit.bind(this))
+    }
+
+    checkBeforeSubmit(e) {
+
+        // prevent default
+        e.preventDefault()
+
+        alert("send")
+
+        // récupère nos données
+        const data = serialize(this.$form)
+
+        // créer la requete
+        new XHR({
+            method: 'POST',
+            url: 'auth/login',
+            success: this.success.bind(this),
+            error: this.error.bind(this),
+            data: data
+        })
+    }
+
+    success() {
+        alert("succes")
+
+        document.location.href = '/pages/home'
+    }
+
+    error(error) {
+        alert("error")
+        console.log('error', error)
+    }
+}
+class Register {
+
+    constructor() {
+
+        this.$form = document.querySelector('#registerForm')
+
+        this.init()
+    }
+
+    init() {
+
+        this.bindEvents()
+    }
+
+    bindEvents() {
+
+        // submit form
+        this.$form.addEventListener('submit', this.checkBeforeSubmit.bind(this))
+    }
+
+    checkBeforeSubmit(e) {
+
+        // prevent default
+        e.preventDefault()
+
+        // récupère nos données
+        const data = serialize(this.$form)
+
+        // créer la requete
+        new Request({
+            method: 'POST',
+            url: 'auth/register',
+            success: this.success.bind(this),
+            error: this.error.bind(this),
+            data: data
+        })
+    }
+
+    success() {
+
+        document.location.href = '/pages/register-child'
+    }
+
+    error(error) {
+        console.log('error', error)
+    }
+}
 window.MediaRecorder = require('audio-recorder-polyfill')
 
 class RegisterChild {
@@ -205,3 +348,91 @@ class RegisterChild {
         // afiche l'input pré-rempli
     }
 }
+class NeedToken {
+
+    constructor() {
+
+        new XHR({
+            method: 'GET',
+            url: 'auth',
+            success: this.success.bind(this),
+            error: this.error.bind(this),
+            data: null
+        })
+    }
+
+    success() {
+
+        localStorage.setItem('connected', 'true')
+    }
+
+    error() {
+
+        localStorage.setItem('connected', 'false')
+
+        // renvoi vers connexion
+        document.location.href = '/pages/login'
+    }
+}
+class XHR {
+
+    constructor(props) {
+
+        this.method = props.method
+        this.url = props.url
+        this.success = props.success
+        this.error = props.error
+        this.data = props.data
+
+        this.init()
+    }
+
+    init() {
+
+        this.req = new XMLHttpRequest()
+
+        const req = this.req
+        const thisRegister = this
+
+        this.req.onload = function () {
+
+            if (req.status === 200) {
+
+                const response = JSON.parse(this.responseText)
+
+                if (response.status === "success") thisRegister.success(response.message)
+                else thisRegister.error(response.message)
+            }
+
+            else {
+                console.log("Status de la réponse: %d (%s)", this.status, this.statusText)
+                thisRegister.error()
+            }
+        };
+
+        this.req.withCredentials = true
+        this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)
+        this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        this.req.send(this.data)
+    }
+}
+class app {
+
+    constructor() {
+
+        this.init()
+    }
+
+    init() {
+
+        this.detectPage()
+    }
+
+    detectPage() {
+
+        const pageClass = document.getElementById('page').getAttribute('data-page')
+        eval(`new ${pageClass}()`);
+    }
+}
+
+new app()

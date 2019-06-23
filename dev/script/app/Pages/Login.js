@@ -24,6 +24,8 @@ class Login {
         // prevent default
         e.preventDefault()
 
+        alert("send")
+
         // récupère nos données
         const data = serialize(this.$form)
 
@@ -38,10 +40,13 @@ class Login {
     }
 
     success() {
+        alert("succes")
+
         document.location.href = '/pages/home'
     }
 
     error(error) {
+        alert("error")
         console.log('error', error)
     }
 }
