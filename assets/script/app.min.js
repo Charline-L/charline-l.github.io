@@ -2,7 +2,17 @@ class App {
 
     constructor() {
 
-        console.log('ok app 5')
+        this.init()
+    }
+
+    init() {
+
+        this.detectPage()
+    }
+
+    detectPage() {
+
+        console.log('in detect page')
     }
 }
 
