@@ -49,8 +49,6 @@ const getTranscription = async (uselessWords) => {
         if (uselessWords.indexOf(transcriptionArray[i].toLocaleLowerCase()) < 0 ) finalWords.push(transcriptionArray[i])
     }
 
-    console.log('finalWords', finalWords)
-
     return finalWords
 }
 

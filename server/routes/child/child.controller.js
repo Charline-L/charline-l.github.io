@@ -93,7 +93,45 @@ const detectCity = (buffer, position) => {
     })
 }
 
+const schoolPossibilities = cityName => {
+
+    return new Promise( (resolve, reject) => {
+
+        console.log('cityName', cityName)
+        // récupère les coordonnées de la ville
+        SchoolModel.find(
+            {
+                $or:
+                [
+                    {
+                        'fields.localite_acheminement_uai' : { '$regex' : cityName.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toUpperCase(), '$options' : 'i' },
+                        'fields.nature_uai_libe' : 'ECOLE DE NIVEAU ELEMENTAIRE',
+                        'fields.secteur_public_prive_libe' : 'Public'
+                    },
+                    {
+                        'fields.libelle_commune' : cityName,
+                        'fields.nature_uai_libe' : 'ECOLE DE NIVEAU ELEMENTAIRE',
+                        'fields.secteur_public_prive_libe' : 'Public'
+                    }
+                ]
+            },
+            (error, schools) => {
+
+                // si erreur
+                if (error) reject({status: 'error', message: 'Une erreur est survenue'})
+
+                const schoolsToReturn = {
+                    number: schools.length,
+                    infos: schools
+                }
+
+                // retourne la ou les écoles
+                resolve({status: 'success', message: JSON.stringify(schoolsToReturn)})
+            })
+    })
+}
+
 /*
 * Export
 * */
-module.exports = { detectName, detectCity }
+module.exports = { detectName, detectCity, schoolPossibilities }

@@ -86,8 +86,6 @@ class Login {
         // prevent default
         e.preventDefault()
 
-        console.log('submit')
-
         // récupère nos données
         const data = serialize(this.$form)
 
@@ -188,6 +186,11 @@ class RegisterChild {
 
         this.$player = document.getElementById('player')
         this.chunks = []
+
+        this.$schoolName = document.querySelector('.p-register-child__school-name')
+        this.$oneSchool = document.querySelector('.p-register-child__one-school')
+        this.$multipleSchools = document.querySelector('.p-register-child__multiple-schools')
+        this.$changeSchool = document.querySelector('.p-register-child__change-school')
 
         this.init()
     }
@@ -310,6 +313,9 @@ class RegisterChild {
                 this.currentInfo = $input.value
             })
         })
+
+        // changer d'école
+        this.$changeSchool.addEventListener('click', this.showMultipleSchools.bind(this))
     }
 
     nextStep(name) {
@@ -324,8 +330,11 @@ class RegisterChild {
         // met à jour la varible globale
         this.currentStep++
 
+        // si ville on l'envoit pour vérifier l'école
+        if  (name === 'city') this.getSchoolPossibilities()
+
         // lance animation
-        this.updateStep()
+        else this.updateStep()
     }
 
     updateStep() {
@@ -335,6 +344,47 @@ class RegisterChild {
 
         this.$sections[this.currentStep].classList.add('p-register-child__section--active')
         this.$steps[this.currentStep].classList.add('p-register-child__step--active')
+    }
+
+    getSchoolPossibilities() {
+
+        new XHR({
+            method: 'POST',
+            url: 'child/school-possibilities',
+            success: this.successSchoolPossibilities.bind(this),
+            error: this.errorSchoolPossibilities.bind(this),
+            data: encodeURIComponent('city') + "=" + encodeURIComponent(this.childInfos.city)
+        })
+    }
+
+    successSchoolPossibilities(success) {
+        const response = JSON.parse(success)
+
+        // en fonction du nombre d'école on affiche ou pas la pré-sélection
+        if (response.number === 1) this.showOneSchool(response.infos)
+        else this.showMultipleSchools()
+
+        // passe à la prochiane étape
+        this.updateStep()
+    }
+
+    errorSchoolPossibilities(error) {
+
+        console.log('error', error)
+    }
+
+    showOneSchool(schools) {
+
+        this.$schoolName.innerHTML = schools[0].fields.appellation_officielle
+        this.$oneSchool.classList.add('p-register-child__one-school--active')
+    }
+
+    showMultipleSchools() {
+
+        console.log('show multiple schools')
+
+        this.$oneSchool.classList.remove('p-register-child__one-school--active')
+        this.$multipleSchools.classList.add('p-register-child__multiple-schools--active')
     }
 
     selectColor(index, fromClick = false) {
