@@ -68,6 +68,8 @@ class Login {
         // prevent default
         e.preventDefault()
 
+        console.log('submit')
+
         // récupère nos données
         const data = serialize(this.$form)
 
@@ -455,7 +457,8 @@ class XHR {
         }
 
         this.req.withCredentials = true
-        this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)
+        // this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)
+        this.req.open(this.method, `https://10.30.21.24:3003/${this.url}`, true)
 
         // pas d'hearder lorsque l'on envoit un blob
         if (this.needsHeader) this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded")

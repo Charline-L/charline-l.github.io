@@ -24,6 +24,8 @@ class Login {
         // prevent default
         e.preventDefault()
 
+        console.log('submit')
+
         // récupère nos données
         const data = serialize(this.$form)
 

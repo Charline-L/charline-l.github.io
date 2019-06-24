@@ -29,24 +29,27 @@ const init = () => {
     // Mongo
     db.connect()
 
+    // CORS
+    const whitelist = ['https://10.30.21.24:8000', 'https://192.168.1.75:8000', 'https://charline-l.github.io']
+    const corsOptions = {
+        origin: function (origin, callback) {
+            if (whitelist.indexOf(origin) !== -1) {
+                console.log('ok whiteliste')
+                callback(null, true)
+            } else {
+                console.log('not ok CORS')
+                callback(new Error('Not allowed by CORS'))
+            }
+        }
+    }
+    server.use(cors(corsOptions))
+
     // body parser paramétrage
     server.use(bodyParser.json({limit: '50mb'}));
     server.use(bodyParser.urlencoded({ extended: true, limit:'50mb'}));
 
     // cookie parser paramétrage
     server.use(cookieParser())
-
-    // CORS *
-    server.use(cors(
-        {
-            origin: [
-                process.env.CLIENT,
-            ],
-            methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-            optionsSuccessStatus: 200,
-            credentials: true
-        }
-    ))
 
     // router
     server.use('/', mainRouter)
