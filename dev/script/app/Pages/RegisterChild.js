@@ -202,9 +202,10 @@ class RegisterChild {
 
     successSchoolPossibilities(success) {
         const response = JSON.parse(success)
+        this.schools = response.infos
 
         // en fonction du nombre d'école on affiche ou pas la pré-sélection
-        if (response.number === 1) this.showOneSchool(response.infos)
+        if (response.number === 1) this.showOneSchool()
         else this.showMultipleSchools()
 
         // passe à la prochiane étape
@@ -216,15 +217,13 @@ class RegisterChild {
         console.log('error', error)
     }
 
-    showOneSchool(schools) {
+    showOneSchool() {
 
-        this.$schoolName.innerHTML = schools[0].fields.appellation_officielle
+        this.$schoolName.innerHTML = this.schools[0].fields.appellation_officielle
         this.$oneSchool.classList.add('p-register-child__one-school--active')
     }
 
     showMultipleSchools() {
-
-        console.log('show multiple schools')
 
         this.$oneSchool.classList.remove('p-register-child__one-school--active')
         this.$multipleSchools.classList.add('p-register-child__multiple-schools--active')
@@ -298,6 +297,7 @@ class RegisterChild {
                 break;
             case 3 :
                 url = 'detect-school'
+                formData.append('schools', JSON.stringify(this.schools))
                 break;
             default :
                 console.error('no step defined')

@@ -3,7 +3,7 @@
 * */
 const express       = require("express")
 const childRouter   = express.Router()
-const { detectName, detectCity, schoolPossibilities } = require('./child.controller')
+const { detectName, detectCity, detectSchool,schoolPossibilities } = require('./child.controller')
 const multer        = require('multer')
 
 /*
@@ -45,6 +45,16 @@ class ChildRouterClass {
             (req, res) => {
 
                 detectCity(req.file.buffer, JSON.parse(req.body.position))
+                    .then(apiResponse => res.json(apiResponse))
+                    .catch(apiResponse => res.json(apiResponse))
+            })
+
+        childRouter.post('/detect-school',
+            this.passport.authenticate('jwt', { session: false }),
+            upload.single('audio'),
+            (req, res) => {
+
+                detectSchool(req.file.buffer, JSON.parse(req.body.schools))
                     .then(apiResponse => res.json(apiResponse))
                     .catch(apiResponse => res.json(apiResponse))
             })

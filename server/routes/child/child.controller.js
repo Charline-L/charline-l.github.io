@@ -93,11 +93,44 @@ const detectCity = (buffer, position) => {
     })
 }
 
+
+const detectSchool = (buffer, schools) => {
+
+    return new Promise( (resolve, reject) => {
+
+        // enregistre le fichier
+        fs.writeFile( './server/public/audio.wav', buffer, async function(err) {
+
+            // erreur filesystem
+            if(err) reject({status: 'error', message: 'Une erreur est survenue'})
+
+            // détecter le mot
+            else {
+
+                // récupère le mot
+                const transcription = await getTranscription([])
+                const transcriptionString = transcription.toString().replace(',', ' ').toLocaleLowerCase()
+
+                let finalSchool = null
+
+                // parcours nos écoles
+                for(let i = 0; i < schools.length; i++) {
+
+                    const schoolName = schools[i].fields.appellation_officielle
+                    if ( schoolName.toLocaleLowerCase().indexOf(transcriptionString) > -1) finalSchool = schoolName
+                }
+
+                // récupère l'école depuis les villes envoyées
+                resolve({status: 'success', message: finalSchool})
+            }
+        })
+    })
+}
+
 const schoolPossibilities = cityName => {
 
     return new Promise( (resolve, reject) => {
 
-        console.log('cityName', cityName)
         // récupère les coordonnées de la ville
         SchoolModel.find(
             {
@@ -134,4 +167,4 @@ const schoolPossibilities = cityName => {
 /*
 * Export
 * */
-module.exports = { detectName, detectCity, schoolPossibilities }
+module.exports = { detectName, detectCity, detectSchool, schoolPossibilities }
