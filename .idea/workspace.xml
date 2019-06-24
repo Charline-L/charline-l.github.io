@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/models/city.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/school.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min-withnode.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min-withnode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/script/app/Services/XHR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Services/XHR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/register-child.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/register-child.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/public/audio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/audio.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/auth/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/auth/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/child/child.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/child/child.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/child/child.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/child/child.routes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -104,9 +112,9 @@
           <entry key="css" value="5" />
           <entry key="env" value="5" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="14" />
-          <entry key="js" value="90" />
-          <entry key="json" value="6" />
+          <entry key="html" value="15" />
+          <entry key="js" value="97" />
+          <entry key="json" value="7" />
           <entry key="md" value="2" />
           <entry key="sass" value="13" />
           <entry key="ts" value="2" />
@@ -117,9 +125,9 @@
         <counts>
           <entry key=".env file" value="5" />
           <entry key="CSS" value="5" />
-          <entry key="HTML" value="14" />
-          <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="90" />
+          <entry key="HTML" value="15" />
+          <entry key="JSON" value="9" />
+          <entry key="JavaScript" value="97" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="Sass" value="13" />
@@ -132,9 +140,9 @@
           <entry key="browserslistrc" value="6" />
           <entry key="env" value="208" />
           <entry key="gitignore" value="8" />
-          <entry key="html" value="1848" />
-          <entry key="js" value="11479" />
-          <entry key="json" value="268" />
+          <entry key="html" value="2019" />
+          <entry key="js" value="13415" />
+          <entry key="json" value="280" />
           <entry key="md" value="83" />
           <entry key="sass" value="1097" />
         </counts>
@@ -142,9 +150,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="208" />
-          <entry key="HTML" value="1848" />
-          <entry key="JSON" value="273" />
-          <entry key="JavaScript" value="11479" />
+          <entry key="HTML" value="2019" />
+          <entry key="JSON" value="285" />
+          <entry key="JavaScript" value="13415" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Sass" value="1097" />
@@ -154,11 +162,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/register-child.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="83" column="49" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="49" />
+            <state relative-caret-position="467">
+              <caret line="120" column="82" selection-start-line="120" selection-start-column="82" selection-end-line="120" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -166,44 +174,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/routes/auth/auth.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="50" column="18" lean-forward="true" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/style/_c-register-sound.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="160">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
         </entry>
@@ -211,40 +183,85 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-118">
-              <caret line="218" column="48" lean-forward="true" selection-start-line="218" selection-start-column="48" selection-end-line="218" selection-end-column="48" />
+            <state relative-caret-position="166">
+              <caret line="235" column="20" lean-forward="true" selection-start-line="235" selection-start-column="20" selection-end-line="235" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/routes/child/child.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+              <folding>
+                <element signature="e#114#132#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/services/googleSpeech.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="757">
+              <caret line="51" column="41" lean-forward="true" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/city.model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/school.model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="9" column="12" selection-end-line="43" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/routes/child/child.routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/script/app/Services/XHR.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+            <state relative-caret-position="300">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/register.html">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>MEshBAs</find>
       <find>camera</find>
       <find>t.mes</find>
       <find>cubeSize</find>
@@ -274,6 +291,7 @@
       <find>192.168.1.75</find>
       <find>console.lo</find>
       <find>mail</find>
+      <find>10.</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -283,8 +301,8 @@
       <dir>$PROJECT_DIR$/server/routes</dir>
       <dir>$PROJECT_DIR$/dev/script</dir>
       <dir>$PROJECT_DIR$/server</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/server/routes/auth</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -293,9 +311,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/manifest.json" />
-        <option value="$PROJECT_DIR$/.browserslistrc" />
-        <option value="$PROJECT_DIR$/assets/style/app.min.css" />
         <option value="$PROJECT_DIR$/assets/script/vendors.min.js" />
         <option value="$PROJECT_DIR$/dev/script/vendors/anime.min.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -332,18 +347,21 @@
         <option value="$PROJECT_DIR$/dev/script/vendors/blobToFile.js" />
         <option value="$PROJECT_DIR$/server/routes/main.router.js" />
         <option value="$PROJECT_DIR$/server/routes/auth/auth.routes.js" />
-        <option value="$PROJECT_DIR$/server/routes/child/child.routes.js" />
         <option value="$PROJECT_DIR$/server/services/googleSpeech.js" />
-        <option value="$PROJECT_DIR$/server/routes/child/child.controller.js" />
-        <option value="$PROJECT_DIR$/pages/register-child.html" />
         <option value="$PROJECT_DIR$/dev/style/_c-register-sound.sass" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Login.js" />
-        <option value="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/pages/login.html" />
+        <option value="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" />
         <option value="$PROJECT_DIR$/server/routes/auth/auth.controller.js" />
+        <option value="$PROJECT_DIR$/server/routes/child/child.routes.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Services/XHR.js" />
+        <option value="$PROJECT_DIR$/server/models/school.model.js" />
+        <option value="$PROJECT_DIR$/server/models/cities.model.js" />
+        <option value="$PROJECT_DIR$/server/models/city.model.js" />
+        <option value="$PROJECT_DIR$/server/routes/child/child.controller.js" />
+        <option value="$PROJECT_DIR$/pages/register-child.html" />
       </list>
     </option>
   </component>
@@ -453,6 +471,12 @@
               <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="charline-l.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charline-l.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -504,8 +528,8 @@
       <recent name="$PROJECT_DIR$/dev/script/app/Components" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dev/script/vendors" />
       <recent name="$PROJECT_DIR$/server/models" />
+      <recent name="$PROJECT_DIR$/dev/script/vendors" />
       <recent name="$PROJECT_DIR$/server/routes" />
       <recent name="$PROJECT_DIR$/server/services" />
       <recent name="$PROJECT_DIR$" />
@@ -556,12 +580,12 @@
       <workItem from="1540331352096" duration="7949000" />
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
-      <workItem from="1561313560812" duration="20616000" />
+      <workItem from="1561313560812" duration="31977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158781000" />
+    <option name="totallyTimeSpent" value="170142000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -569,7 +593,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.19951779" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19951779" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295325" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -579,7 +603,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.340935" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.340935" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -614,27 +638,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Services/NeedToken.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="64" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/_functions.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/style/_p-register-child.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -653,13 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -792,13 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service-worker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -863,16 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/child/child.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-          <folding>
-            <element signature="e#1355#1371#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/services/auth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
@@ -880,35 +859,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/googleSpeech.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/child/child.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#205#223#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/register.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/register-child.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="83" column="49" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="49" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Login.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -921,13 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-118">
-          <caret line="218" column="48" lean-forward="true" selection-start-line="218" selection-start-column="48" selection-end-line="218" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -945,24 +890,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+        <state relative-caret-position="174">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/auth/auth.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+    <entry file="file://$PROJECT_DIR$/../../../Ressources/school.json">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Services/XHR.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        <state relative-caret-position="300">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/child/child.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="9" column="12" selection-end-line="43" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/school.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/city.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/googleSpeech.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="51" column="41" lean-forward="true" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/child/child.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+          <folding>
+            <element signature="e#114#132#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/auth/auth.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-618">
+          <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="235" column="20" lean-forward="true" selection-start-line="235" selection-start-column="20" selection-end-line="235" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/register-child.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="120" column="82" selection-start-line="120" selection-start-column="82" selection-end-line="120" selection-end-column="82" />
         </state>
       </provider>
     </entry>

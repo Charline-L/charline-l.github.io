@@ -72,8 +72,6 @@ const login = (body, res) => {
 
         UserModel.findOne( {email: body.email}, async (error, user) => {
 
-            console.log(" body.email",  body.email)
-
             // vérifie si error
             if (error) reject({status: 'error', message: error})
             if (!user) reject({status: 'error', message: 'L\'adresse mail n\'existe pas'})

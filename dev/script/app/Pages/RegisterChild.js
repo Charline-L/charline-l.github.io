@@ -36,6 +36,7 @@ class RegisterChild {
         this.setUpElements()
         this.selectColor(0)
         this.setupAudio()
+        this.getLocation()
         this.bindEvents()
     }
 
@@ -71,6 +72,32 @@ class RegisterChild {
             .catch(() => {
                 alert('pas de media')
             })
+    }
+
+    getLocation() {
+
+        this.location = {
+            lat: null,
+            long: null
+        }
+
+        if (navigator.geolocation) {
+
+            navigator.geolocation.getCurrentPosition( (position) => {
+
+                this.location = {
+                    lat: position.coords.latitude,
+                    long: position.coords.longitude
+                }
+
+                console.log('this.location', this.location)
+            }, (error) => {
+                console.log('erreur', error)
+            });
+        }
+        else {
+            console.log('no geoloc')
+        }
     }
 
     setUpElements() {
@@ -211,6 +238,8 @@ class RegisterChild {
                 break;
             case 2 :
                 url = 'detect-city'
+                // ajoute la position
+                formData.append('position', JSON.stringify(this.location))
                 break;
             case 3 :
                 url = 'detect-school'
