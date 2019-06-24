@@ -38,7 +38,7 @@ class AuthRouterClass {
 
                 res.cookie(process.env.COOKIE_NAME, null, {httpOnly: true});
                 res.json({status: 'success', message: 'ok logout'})
-        });
+            })
 
         authRouter.get('/',
             this.passport.authenticate('jwt', { session: false }),

@@ -7,6 +7,7 @@ class XHR {
         this.success = props.success
         this.error = props.error
         this.data = props.data
+        this.needsHeader = props.needsHeader !== null ? props.needsHeader : true
 
         this.init()
     }
@@ -32,11 +33,14 @@ class XHR {
                 console.log("Status de la réponse: %d (%s)", this.status, this.statusText)
                 thisRegister.error()
             }
-        };
+        }
 
         this.req.withCredentials = true
         this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)
-        this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+        // pas d'hearder lorsque l'on envoit un blob
+        if (this.needsHeader) this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+
         this.req.send(this.data)
     }
 }

@@ -22,6 +22,8 @@ class RegisterChild {
         this.$avatar = document.querySelector('.c-register-color__avatar')
 
         this.$recorders = document.querySelectorAll('.c-register-sound__button')
+        this.$inputs = document.querySelectorAll('.c-register-sound__input')
+        this.$labels = document.querySelectorAll('.c-register-sound__label')
 
         this.$player = document.getElementById('player')
         this.chunks = []
@@ -41,14 +43,29 @@ class RegisterChild {
 
         const thisRegister = this
 
-        navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+        const constraints = {
+            audio: {
+                sampleRate: 48000,
+                channelCount: 1,
+                volume: 1.0,
+                echoCancellation: true,
+                autoGainControl: true
+            },
+            video: false
+        }
+
+        navigator.mediaDevices.getUserMedia(constraints)
             .then(function (stream) {
 
                 thisRegister.mediaRecorder = new MediaRecorder(stream)
 
-                // Set record to <audio> when recording will be finished
-                thisRegister.mediaRecorder .addEventListener('dataavailable', e => {
+                thisRegister.chunks = []
+
+                // passe l'audio dans le player
+                thisRegister.mediaRecorder.addEventListener('dataavailable', e => {
+                    thisRegister.chunks.push(e.data)
                     thisRegister.$player.src = URL.createObjectURL(e.data)
+                    thisRegister.sendBlob()
                 })
             })
             .catch(() => {
@@ -96,6 +113,14 @@ class RegisterChild {
 
                 if (!isActive) this.startRecording($recorder)
                 else this.stopRecording($recorder)
+            })
+        })
+
+        // changement des inputs
+        this.$inputs.forEach($input => {
+
+            $input.addEventListener('change', () => {
+                this.currentInfo = $input.value
             })
         })
     }
@@ -159,7 +184,7 @@ class RegisterChild {
         }, 3000)
     }
 
-    stopRecording($recorder) {
+    async stopRecording($recorder) {
 
         // enlève timer
         clearTimeout(this.timerMaxRecording)
@@ -168,11 +193,62 @@ class RegisterChild {
         $recorder.classList.remove('c-register-sound__button--active')
         $recorder.innerHTML = 'enregistrer'
 
-        // lecture
+        // arrete enregistrement
         this.mediaRecorder.stop()
+    }
 
-        // lance loader
+    sendBlob(){
 
-        // afiche l'input pré-rempli
+        // prépare enregistrement
+        let formData = new FormData()
+        formData.append('audio', new Blob(this.chunks))
+
+        // prépare url
+        let url = null
+        switch (this.currentStep) {
+            case 1 :
+                url = 'detect-name'
+                break;
+            case 2 :
+                url = 'detect-city'
+                break;
+            case 3 :
+                url = 'detect-school'
+                break;
+            default :
+                console.error('no step defined')
+                break
+        }
+
+        // envoit au server
+        new XHR({
+            method: 'POST',
+            url: 'child/' + url,
+            success: this.success.bind(this),
+            error: this.error.bind(this),
+            data: formData,
+            needsHeader: false
+        })
+    }
+
+    success(wordDetected) {
+
+        const stringOfWordsDetected = wordDetected.toString().replace(',', ' ')
+
+        // ajoute les mots
+        this.$inputs[this.currentStep - 1].value = stringOfWordsDetected
+
+        // affiche le résultat
+        this.$labels[this.currentStep - 1].classList.add('c-register-sound__label--active')
+
+        // enregistre l'info
+        this.currentInfo = stringOfWordsDetected
+
+        // active boutton
+        this.$buttons[this.currentStep].classList.add('p-register-child__button--active')
+    }
+
+    error() {
+        console.log('error')
     }
 }

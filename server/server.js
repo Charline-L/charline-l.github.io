@@ -30,8 +30,8 @@ const init = () => {
     db.connect()
 
     // body parser paramétrage
-    server.use(bodyParser.json({limit: '10mb'}));
-    server.use(bodyParser.urlencoded({ extended: true }));
+    server.use(bodyParser.json({limit: '50mb'}));
+    server.use(bodyParser.urlencoded({ extended: true, limit:'50mb'}));
 
     // cookie parser paramétrage
     server.use(cookieParser())
