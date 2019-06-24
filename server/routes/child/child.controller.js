@@ -3,6 +3,8 @@
 * */
 const SchoolModel = require('../../models/school.model')
 const CityModel = require('../../models/city.model')
+const ChildModel = require('../../models/child.model')
+
 const fs = require('fs')
 const { getTranscription } = require('../../services/googleSpeech')
 const levenshtein = require('js-levenshtein')
@@ -164,7 +166,24 @@ const schoolPossibilities = cityName => {
     })
 }
 
+const saveInfos = (infos, userID) => {
+
+    return new Promise( (resolve, reject) => {
+
+        infos.user = userID
+
+        ChildModel.create(infos)
+            .then( user => {
+
+                // envoie l'utilsateur complet
+                resolve({ status: "success", message: 'OK enreigstré' })
+            })
+            .catch( mongoResponse => reject({status: "error", message: mongoResponse}) )
+
+    })
+}
+
 /*
 * Export
 * */
-module.exports = { detectName, detectCity, detectSchool, schoolPossibilities }
+module.exports = { detectName, detectCity, detectSchool, schoolPossibilities, saveInfos }

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/models/child.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min-withnode.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min-withnode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/register-child.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/register-child.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/script/app/Services/XHR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Services/XHR.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/public/audio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/audio.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/child/child.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/child/child.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/child/child.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/child/child.routes.js" afterDir="false" />
@@ -107,7 +108,7 @@
           <entry key="env" value="5" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="15" />
-          <entry key="js" value="107" />
+          <entry key="js" value="110" />
           <entry key="json" value="7" />
           <entry key="md" value="2" />
           <entry key="sass" value="14" />
@@ -121,7 +122,7 @@
           <entry key="CSS" value="5" />
           <entry key="HTML" value="15" />
           <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="107" />
+          <entry key="JavaScript" value="110" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="Sass" value="14" />
@@ -135,7 +136,7 @@
           <entry key="env" value="208" />
           <entry key="gitignore" value="8" />
           <entry key="html" value="2210" />
-          <entry key="js" value="15822" />
+          <entry key="js" value="16388" />
           <entry key="json" value="280" />
           <entry key="md" value="83" />
           <entry key="sass" value="1174" />
@@ -146,7 +147,7 @@
           <entry key=".env file" value="208" />
           <entry key="HTML" value="2210" />
           <entry key="JSON" value="285" />
-          <entry key="JavaScript" value="15822" />
+          <entry key="JavaScript" value="16388" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Sass" value="1174" />
@@ -155,13 +156,13 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4089951">
+    <splitter split-orientation="horizontal" split-proportion="0.48770204">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/register-child.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="260">
+                <state relative-caret-position="1705">
                   <caret line="135" column="18" lean-forward="true" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
                 </state>
               </provider>
@@ -180,11 +181,20 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="299" selection-start-line="299" selection-end-line="299" />
+                <state relative-caret-position="235">
+                  <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Services/XHR.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-131">
+                  <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
                 </state>
               </provider>
             </entry>
@@ -192,8 +202,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/routes/child/child.routes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23">
-                  <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+                <state relative-caret-position="213">
+                  <caret line="75" column="20" lean-forward="true" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -201,8 +211,30 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/routes/child/child.controller.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="119" selection-start-line="119" selection-end-line="119" />
+                <state relative-caret-position="247">
+                  <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/routes/auth/auth.controller.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="130">
+                  <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="57" selection-end-column="112" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/server/models/child.model.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="138">
+                  <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+                  <folding>
+                    <element signature="e#145#165#0" />
+                    <element signature="e#747#763#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -222,11 +254,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>t.three.direc</find>
-      <find>shadow</find>
-      <find>pixrem</find>
-      <find>red</find>
-      <find>stopServe</find>
       <find>reloadTheme</find>
       <find>verifyMail</find>
       <find>a</find>
@@ -236,7 +263,6 @@
       <find>app.min</find>
       <find>require</find>
       <find>alert</find>
-      <find>console.</find>
       <find>regeneratorRuntime</find>
       <find>new XH</find>
       <find>__Ddirem</find>
@@ -251,6 +277,12 @@
       <find>cityNam</find>
       <find>leven</find>
       <find>console.lo</find>
+      <find>XHR</find>
+      <find>scho</find>
+      <find>register</find>
+      <find>--active</find>
+      <find>showS</find>
+      <find>console.</find>
       <find>console.log</find>
     </findStrings>
     <replaceStrings>
@@ -264,6 +296,7 @@
       <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/dev</dir>
       <dir>$PROJECT_DIR$/server</dir>
+      <dir>$PROJECT_DIR$/dev/script/app</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -272,7 +305,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/script/vendors.min.js" />
         <option value="$PROJECT_DIR$/dev/script/vendors/anime.min.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/server/models/user.model.js" />
@@ -310,7 +342,6 @@
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/pages/login.html" />
         <option value="$PROJECT_DIR$/server/routes/auth/auth.controller.js" />
-        <option value="$PROJECT_DIR$/dev/script/app/Services/XHR.js" />
         <option value="$PROJECT_DIR$/server/models/school.model.js" />
         <option value="$PROJECT_DIR$/server/models/cities.model.js" />
         <option value="$PROJECT_DIR$/server/models/city.model.js" />
@@ -320,9 +351,11 @@
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Login.js" />
         <option value="$PROJECT_DIR$/dev/style/_p-register-child.sass" />
         <option value="$PROJECT_DIR$/pages/register-child.html" />
+        <option value="$PROJECT_DIR$/dev/script/app/Services/XHR.js" />
+        <option value="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" />
         <option value="$PROJECT_DIR$/server/routes/child/child.routes.js" />
         <option value="$PROJECT_DIR$/server/routes/child/child.controller.js" />
-        <option value="$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js" />
+        <option value="$PROJECT_DIR$/server/models/child.model.js" />
       </list>
     </option>
   </component>
@@ -419,6 +452,13 @@
               <item name="script" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charline-l.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+              <item name="vendors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
@@ -549,12 +589,12 @@
       <workItem from="1540331352096" duration="7949000" />
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
-      <workItem from="1561313560812" duration="39001000" />
+      <workItem from="1561313560812" duration="41176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177166000" />
+    <option name="totallyTimeSpent" value="179341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -562,7 +602,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.14225437" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.14225437" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295325" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -572,7 +612,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.340935" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.340935" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -607,13 +647,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/style/_c-register-color.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/vendors/getIndexNode.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -828,13 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Services/XHR.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -856,13 +882,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/auth/auth.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -927,29 +946,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/register-child.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
+        <state relative-caret-position="1705">
           <caret line="135" column="18" lean-forward="true" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/child/child.controller.js">
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Services/XHR.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        <state relative-caret-position="-131">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/child/child.routes.js">
+    <entry file="file://$PROJECT_DIR$/server/routes/auth/auth.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="130">
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="57" selection-end-column="112" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/RegisterChild.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="299" selection-start-line="299" selection-end-line="299" />
+        <state relative-caret-position="235">
+          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/child/child.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="75" column="20" lean-forward="true" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/child/child.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/child.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <element signature="e#145#165#0" />
+            <element signature="e#747#763#0" />
+          </folding>
         </state>
       </provider>
     </entry>

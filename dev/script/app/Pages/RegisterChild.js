@@ -121,8 +121,9 @@ class RegisterChild {
             $button.addEventListener('click', () => {
 
                 const isActive = getIndexNode($button, this.$buttons) === this.currentStep && $button.classList.contains('p-register-child__button--active')
+                const isLast = $button.classList.contains('p-register-child__button--last')
 
-                if (isActive) this.nextStep($button.getAttribute('data-name'))
+                if (isActive) this.nextStep($button.getAttribute('data-name'), isLast)
             })
         })
 
@@ -161,7 +162,7 @@ class RegisterChild {
         this.$changeSchool.addEventListener('click', this.showMultipleSchools.bind(this))
     }
 
-    nextStep(name) {
+    nextStep(name, isLast) {
 
         // enregistre l'information
         this.childInfos[name] = this.currentInfo
@@ -177,7 +178,10 @@ class RegisterChild {
         if  (name === 'city') this.getSchoolPossibilities()
 
         // lance animation
-        else this.updateStep()
+        else {
+            if (isLast) this.saveInfos()
+            else this.updateStep()
+        }
     }
 
     updateStep() {
@@ -221,12 +225,17 @@ class RegisterChild {
 
         this.$schoolName.innerHTML = this.schools[0].fields.appellation_officielle
         this.$oneSchool.classList.add('p-register-child__one-school--active')
+
+        this.currentInfo = this.schools[0].fields.appellation_officielle
+        this.$buttons[this.currentStep].classList.add('p-register-child__button--active')
     }
 
     showMultipleSchools() {
 
         this.$oneSchool.classList.remove('p-register-child__one-school--active')
         this.$multipleSchools.classList.add('p-register-child__multiple-schools--active')
+
+        this.$buttons[this.currentStep].classList.remove('p-register-child__button--active')
     }
 
     selectColor(index, fromClick = false) {
@@ -239,7 +248,7 @@ class RegisterChild {
         this.$colors[index].classList.add('c-register-color__item--active')
 
         // change info pour server
-        this.childInfos.color = color
+        this.currentInfo = color
 
         // change info visuellement
         this.$avatar.style.backgroundColor = color
@@ -334,5 +343,30 @@ class RegisterChild {
 
     error() {
         console.log('error')
+    }
+
+    saveInfos() {
+
+        let formData = new FormData()
+        formData.append('infos', JSON.stringify(this.childInfos))
+
+        new XHR({
+            method: 'POST',
+            url: 'child/',
+            success: this.successSave.bind(this),
+            error: this.errorSave.bind(this),
+            data: formData,
+            needsHeader: false
+        })
+    }
+
+    successSave() {
+
+        document.location.href = '/pages/home'
+    }
+
+    errorSave() {
+
+        console.log('in errorSave')
     }
 }
