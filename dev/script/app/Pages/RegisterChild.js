@@ -31,8 +31,9 @@ class RegisterChild {
         this.init()
     }
 
-    init() {
+    async init() {
 
+        await new NeedToken()
         this.setUpElements()
         this.selectColor(0)
         this.setupAudio()
@@ -89,8 +90,6 @@ class RegisterChild {
                     lat: position.coords.latitude,
                     long: position.coords.longitude
                 }
-
-                console.log('this.location', this.location)
             }, (error) => {
                 console.log('erreur', error)
             });
@@ -211,7 +210,7 @@ class RegisterChild {
         }, 3000)
     }
 
-    async stopRecording($recorder) {
+    stopRecording($recorder) {
 
         // enlève timer
         clearTimeout(this.timerMaxRecording)
@@ -238,7 +237,6 @@ class RegisterChild {
                 break;
             case 2 :
                 url = 'detect-city'
-                // ajoute la position
                 formData.append('position', JSON.stringify(this.location))
                 break;
             case 3 :

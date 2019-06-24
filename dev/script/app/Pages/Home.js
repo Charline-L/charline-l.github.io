@@ -15,12 +15,30 @@ class Home {
 
     bindEvents() {
 
-        this.$logout.addEventListener('click', Home.logout)
+        this.$logout.addEventListener('click', this.logout.bind(this))
     }
 
-    static logout() {
+    logout() {
+
+        new XHR({
+            method: 'GET',
+            url: 'auth/logout',
+            success: this.successLougout.bind(this),
+            error: this.errorLogout.bind(this),
+            data: null
+        })
+    }
+
+    successLougout() {
 
         localStorage.setItem('connected', 'false')
-        document.location.href = "/"
+
+        // renvoi vers connexion
+        document.location.href = '/'
+    }
+
+    errorLogout() {
+
+        console.log('erreur pendant la déconnexion')
     }
 }
