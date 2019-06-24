@@ -21,6 +21,8 @@ class RegisterChild {
         this.$colors = document.querySelectorAll('.c-register-color__item')
         this.$avatar = document.querySelector('.c-register-color__avatar')
 
+        this.$name = document.querySelector('.p-register-child__name')
+
         this.$recorders = document.querySelectorAll('.c-register-sound__button')
         this.$inputs = document.querySelectorAll('.c-register-sound__input')
         this.$labels = document.querySelectorAll('.c-register-sound__label')
@@ -156,6 +158,9 @@ class RegisterChild {
         // enregistre l'information
         this.childInfos[name] = this.currentInfo
         this.currentInfo = null
+
+        // si name on ajoute dans le texte
+        if (name === 'name') this.$name.innerHTML = this.childInfos[name]
 
         // met à jour la varible globale
         this.currentStep++

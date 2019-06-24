@@ -1,78 +1,3 @@
-class NeedToken {
-
-    constructor() {
-
-        new XHR({
-            method: 'GET',
-            url: 'auth',
-            success: this.success.bind(this),
-            error: this.error.bind(this),
-            data: null
-        })
-    }
-
-    success() {
-
-        localStorage.setItem('connected', 'true')
-    }
-
-    error() {
-
-        localStorage.setItem('connected', 'false')
-
-        // renvoi vers connexion
-        document.location.href = '/pages/login'
-    }
-}
-class XHR {
-
-    constructor(props) {
-
-        this.method = props.method
-        this.url = props.url
-        this.success = props.success
-        this.error = props.error
-        this.data = props.data
-        this.needsHeader = props.needsHeader !== undefined ? props.needsHeader : true
-
-        this.init()
-    }
-
-    init() {
-
-        this.req = new XMLHttpRequest()
-
-        const req = this.req
-        const thisRegister = this
-
-        this.req.onload = function () {
-
-            if (req.status === 200) {
-
-                const response = JSON.parse(this.responseText)
-
-                if (response.status === "success") thisRegister.success(response.message)
-                else thisRegister.error(response.message)
-            }
-
-            else {
-                console.log("Status de la réponse: %d (%s)", this.status, this.statusText)
-                thisRegister.error()
-            }
-        }
-
-        console.log('before send XHR')
-
-        this.req.withCredentials = true
-        this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)
-        // this.req.open(this.method, `https://10.30.21.24:3003/${this.url}`, true)
-
-        // pas d'hearder lorsque l'on envoit un blob
-        if (this.needsHeader) this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded")
-
-        this.req.send(this.data)
-    }
-}
 class Home {
 
     constructor() {
@@ -255,6 +180,8 @@ class RegisterChild {
         this.$colors = document.querySelectorAll('.c-register-color__item')
         this.$avatar = document.querySelector('.c-register-color__avatar')
 
+        this.$name = document.querySelector('.p-register-child__name')
+
         this.$recorders = document.querySelectorAll('.c-register-sound__button')
         this.$inputs = document.querySelectorAll('.c-register-sound__input')
         this.$labels = document.querySelectorAll('.c-register-sound__label')
@@ -391,6 +318,9 @@ class RegisterChild {
         this.childInfos[name] = this.currentInfo
         this.currentInfo = null
 
+        // si name on ajoute dans le texte
+        if (name === 'name') this.$name.innerHTML = this.childInfos[name]
+
         // met à jour la varible globale
         this.currentStep++
 
@@ -511,6 +441,81 @@ class RegisterChild {
 
     error() {
         console.log('error')
+    }
+}
+class NeedToken {
+
+    constructor() {
+
+        new XHR({
+            method: 'GET',
+            url: 'auth',
+            success: this.success.bind(this),
+            error: this.error.bind(this),
+            data: null
+        })
+    }
+
+    success() {
+
+        localStorage.setItem('connected', 'true')
+    }
+
+    error() {
+
+        localStorage.setItem('connected', 'false')
+
+        // renvoi vers connexion
+        document.location.href = '/pages/login'
+    }
+}
+class XHR {
+
+    constructor(props) {
+
+        this.method = props.method
+        this.url = props.url
+        this.success = props.success
+        this.error = props.error
+        this.data = props.data
+        this.needsHeader = props.needsHeader !== undefined ? props.needsHeader : true
+
+        this.init()
+    }
+
+    init() {
+
+        this.req = new XMLHttpRequest()
+
+        const req = this.req
+        const thisRegister = this
+
+        this.req.onload = function () {
+
+            if (req.status === 200) {
+
+                const response = JSON.parse(this.responseText)
+
+                if (response.status === "success") thisRegister.success(response.message)
+                else thisRegister.error(response.message)
+            }
+
+            else {
+                console.log("Status de la réponse: %d (%s)", this.status, this.statusText)
+                thisRegister.error()
+            }
+        }
+
+        console.log('before send XHR')
+
+        this.req.withCredentials = true
+        this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)
+        // this.req.open(this.method, `https://10.30.21.24:3003/${this.url}`, true)
+
+        // pas d'hearder lorsque l'on envoit un blob
+        if (this.needsHeader) this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+
+        this.req.send(this.data)
     }
 }
 class app {
