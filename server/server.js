@@ -34,13 +34,14 @@ const init = () => {
     const corsOptions = {
         origin: function (origin, callback) {
             if (whitelist.indexOf(origin) !== -1) {
-                console.log('ok whiteliste')
                 callback(null, true)
             } else {
-                console.log('not ok CORS')
                 callback(new Error('Not allowed by CORS'))
             }
-        }
+        },
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        optionsSuccessStatus: 200,
+        credentials: true
     }
     server.use(cors(corsOptions))
 

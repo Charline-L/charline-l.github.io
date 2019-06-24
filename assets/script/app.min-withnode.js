@@ -428,7 +428,7 @@ class XHR {
         this.success = props.success
         this.error = props.error
         this.data = props.data
-        this.needsHeader = props.needsHeader !== null ? props.needsHeader : true
+        this.needsHeader = props.needsHeader !== undefined ? props.needsHeader : true
 
         this.init()
     }
