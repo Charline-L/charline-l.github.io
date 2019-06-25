@@ -57,12 +57,12 @@ const detectCity = (buffer, position) => {
                         $or:
                         [
                             {
-                                "latitude" : { $gte :  position.lat - 1 / 10, $lte : position.lat + 1 / 10},
-                                "longitude" : { $gte :  position.long - 1 / 10, $lte : position.long + 1 / 10}
+                                'latitude' : { $gte :  position.lat - 1 / 10, $lte : position.lat + 1 / 10},
+                                'longitude' : { $gte :  position.long - 1 / 10, $lte : position.long + 1 / 10}
                             },
                             {
-                                "latitude" : null,
-                                "longitude" : null
+                                'latitude' : null,
+                                'longitude' : null
                             }
                         ]
                     },
@@ -139,7 +139,7 @@ const schoolPossibilities = cityName => {
                 $or:
                 [
                     {
-                        'fields.localite_acheminement_uai' : { '$regex' : cityName.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toUpperCase(), '$options' : 'i' },
+                        'fields.localite_acheminement_uai' : { '$regex' : cityName.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase(), '$options' : 'i' },
                         'fields.nature_uai_libe' : 'ECOLE DE NIVEAU ELEMENTAIRE',
                         'fields.secteur_public_prive_libe' : 'Public'
                     },
@@ -173,8 +173,8 @@ const saveInfos = (infos, userID) => {
         infos.user = userID
 
         ChildModel.create(infos)
-            .then( () => resolve({ status: "success", message: 'OK enreigstré' }))
-            .catch( mongoResponse => reject({status: "error", message: mongoResponse}) )
+            .then( () => resolve({ status: 'success', message: 'OK enreigstré' }))
+            .catch( mongoResponse => reject({status: 'error', message: mongoResponse}) )
 
     })
 }
@@ -190,12 +190,28 @@ const getAccounts = userID => {
 
                 // si erreur
                 if (error) reject({status: 'error', message: 'Une erreur est survenue'})
-                else resolve({ status: "success", message: JSON.stringify(childs) })
+                else resolve({ status: 'success', message: JSON.stringify(childs) })
             })
+    })
+}
+
+const saveAvatar = body => {
+
+    return new Promise( (resolve, reject) => {
+
+        ChildModel.findOneAndUpdate(
+            {'_id': body.id},
+            {$set: { 'color': body.avatar }},
+            {upsert:true},
+            (error, child) => {
+
+                if (error) reject({status: 'error', message: 'Une erreur est survenue'})
+                else resolve({ status: 'success', message: 'ok modifé' })
+        })
     })
 }
 
 /*
 * Export
 * */
-module.exports = { detectName, detectCity, detectSchool, schoolPossibilities, saveInfos, getAccounts }
+module.exports = { detectName, detectCity, detectSchool, schoolPossibilities, saveInfos, getAccounts, saveAvatar }

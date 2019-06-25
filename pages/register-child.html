@@ -1,3 +1,91 @@
+<!--<!doctype html>-->
+<!--<html lang="fr-FR">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<meta name="viewport"-->
+          <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+
+    <!--&lt;!&ndash;START - PWA &ndash;&gt;-->
+    <!--&lt;!&ndash;ajouter la couleur choisie dans le manifeste&ndash;&gt;-->
+    <!--<meta name="theme-color" content="#e05a47"/>-->
+
+    <!--&lt;!&ndash;pour la barre noire en haut de l'écrand es iphone X et +&ndash;&gt;-->
+    <!--<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">-->
+
+    <!--&lt;!&ndash;ajout du manifest&ndash;&gt;-->
+    <!--<link rel='manifest' href='../manifest.json'>-->
+    <!--&lt;!&ndash;END - PWA &ndash;&gt;-->
+
+
+    <!--<title>Création profil enfant</title>-->
+    <!--<link rel="stylesheet" href="../assets/style/app.min.css">-->
+
+<!--</head>-->
+<!--<body>-->
+
+<!--&lt;!&ndash;START - Page &ndash;&gt;-->
+<!--<div id="page" data-page="RegisterChild" class="p-register-child">-->
+
+    <!--<main class="p-register-child__container-section">-->
+
+        <!--<section class="p-register-child__section c-register-color">-->
+
+            <!--<p>Salut, moi c’est *nom*. Choisis ta couleur préférée.</p>-->
+
+            <!--<div class="c-register-color__avatar"></div>-->
+
+            <!--<ul class="c-register-color__picker">-->
+
+                <!--<li class="c-register-color__item" data-color="red">-->
+                    <!--Rouge-->
+                <!--</li>-->
+
+                <!--<li class="c-register-color__item" data-color="yellow">-->
+                    <!--Jaune-->
+                <!--</li>-->
+
+                <!--<li class="c-register-color__item" data-color="green">-->
+                    <!--Vert-->
+                <!--</li>-->
+
+            <!--</ul>-->
+
+            <!--<button class="p-register-child__button" data-name="color">Commncer</button>-->
+
+        <!--</section>-->
+
+
+    <!--</main>-->
+
+
+<!--</div>-->
+<!--&lt;!&ndash;END - Page &ndash;&gt;-->
+
+<!--&lt;!&ndash;START - pour enregistrer le service worker&ndash;&gt;-->
+<!--<script>-->
+    <!--if ('serviceWorker' in navigator) {-->
+        <!--navigator.serviceWorker.register('../service-worker.js', {scope: '/'})-->
+            <!--.then(function (registration) {-->
+                <!--console.log('Service Worker Registered');-->
+            <!--});-->
+
+        <!--navigator.serviceWorker.ready.then(function (registration) {-->
+            <!--console.log('Service Worker Ready');-->
+        <!--});-->
+    <!--}-->
+<!--</script>-->
+<!--&lt;!&ndash;END - pour enregistrer le service worker&ndash;&gt;-->
+
+<!--&lt;!&ndash;START - scripts de l'application&ndash;&gt;-->
+<!--<script src="../assets/script/vendors.min.js"></script>-->
+<!--<script src="../assets/script/app.min.js"></script>-->
+<!--&lt;!&ndash;END - scripts de l'application&ndash;&gt;-->
+
+<!--</body>-->
+<!--</html>-->
+
+
 <!doctype html>
 <html lang="fr-FR">
 <head>
@@ -18,132 +106,56 @@
     <!--END - PWA -->
 
 
-    <title>Création profil enfant</title>
+    <title>Personnalisation de mon Poda</title>
     <link rel="stylesheet" href="../assets/style/app.min.css">
 
 </head>
 <body>
 
 <!--START - Page -->
-<div id="page" data-page="RegisterChild" class="p-register-child">
+<main class="g-layout__container">
 
-    <ul class="p-register-child__container-step">
+    <div class="g-layout__content">
 
-        <li class="p-register-child__step">
-            1
-        </li>
+        <section id="page" data-page="Custom" class="p-custom">
 
-        <li class="p-register-child__step">
-            2
-        </li>
+            <h1 class="p-custom__title">Salut toi ! Choisis ton Poda</h1>
 
-        <li class="p-register-child__step">
-            3
-        </li>
+            <div class="p-custom__container">
 
-        <li class="p-register-child__step">
-            4
-        </li>
+                <img src="" alt="Avatar sélectionné" class="p-custom__image p-custom__image--big">
 
-    </ul>
+                <ul class="p-custom__list">
 
-    <audio id="player" controls></audio>
+                    <li class="p-custom__item" data-gender="male">
 
-    <main class="p-register-child__container-section">
+                        <img src="" alt="Avatar masculin" class="p-custom__image p-custom__image--small">
+                        <audio src="../assets/audio/male.mp3" class="p-custom__audio"></audio>
 
-        <section class="p-register-child__section c-register-color">
+                    </li>
 
-            <p>Salut, moi c’est *nom*. Choisis ta couleur préférée.</p>
+                    <li class="p-custom__item" data-gender="female">
 
-            <div class="c-register-color__avatar"></div>
+                        <img src="" alt="Avatar féminin" class="p-custom__image p-custom__image--small">
+                        <audio src="../assets/audio/female.mp3" class="p-custom__audio"></audio>
 
-            <ul class="c-register-color__picker">
+                    </li>
 
-                <li class="c-register-color__item" data-color="red">
-                    Rouge
-                </li>
-
-                <li class="c-register-color__item" data-color="yellow">
-                    Jaune
-                </li>
-
-                <li class="c-register-color__item" data-color="green">
-                    Vert
-                </li>
-
-            </ul>
-
-            <button class="p-register-child__button" data-name="color">Etape suivante</button>
-
-        </section>
-
-        <section class="p-register-child__section c-register-sound">
-
-            <p>Ah super, j’adore cette couleur ! Comment tu t’appelles ?</p>
-
-            <label class="c-register-sound__label">
-                C'est bien ça ?
-                <input type="text" class="c-register-sound__input">
-            </label>
-
-            <button class="c-register-sound__button">Enregistrer</button>
-
-            <button class="p-register-child__button" data-name="name">Etape suivante</button>
-
-        </section>
-
-        <section class="p-register-child__section">
-
-            <p>Enchantée <span class="p-register-child__name"></span>, t’habites où ?</p>
-
-            <label class="c-register-sound__label">
-                C'est bien ça ?
-                <input type="text" class="c-register-sound__input">
-            </label>
-
-            <button class="c-register-sound__button">Enregistrer</button>
-
-            <button class="p-register-child__button" data-name="city">Etape suivante</button>
-
-        </section>
-
-        <section class="p-register-child__section">
-
-
-            <div class="p-register-child__one-school">
-
-                <p>Tu es dans cette école ?</p>
-
-                <p class="p-register-child__school-name"></p>
-
-                <button class="p-register-child__change-school">
-                    Clique ici pour change d'école
-                </button>
+                </ul>
 
             </div>
 
-            <div class="p-register-child__multiple-schools">
-
-                <p>Tu es dans quelle école ?</p>
-
-                <label class="c-register-sound__label">
-                    C'est bien ça ?
-                    <input type="text" class="c-register-sound__input">
-                </label>
-
-                <button class="c-register-sound__button">Enregistrer</button>
-
-            </div>
-
-            <button class="p-register-child__button p-register-child__button--last" data-name="school">Commencer !</button>
+            <button class="p-custom__validate">Commencer</button>
 
         </section>
 
-    </main>
+    </div>
 
-
-</div>
+</main>
 <!--END - Page -->
+
+
+
 
 <!--START - pour enregistrer le service worker-->
 <script>
