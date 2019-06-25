@@ -173,17 +173,29 @@ const saveInfos = (infos, userID) => {
         infos.user = userID
 
         ChildModel.create(infos)
-            .then( user => {
-
-                // envoie l'utilsateur complet
-                resolve({ status: "success", message: 'OK enreigstré' })
-            })
+            .then( () => resolve({ status: "success", message: 'OK enreigstré' }))
             .catch( mongoResponse => reject({status: "error", message: mongoResponse}) )
 
+    })
+}
+
+const getAccounts = userID => {
+
+    return new Promise( (resolve, reject) => {
+
+        // récupère les enfants liés au comptes
+        ChildModel.find(
+            {user: userID},
+            (error, childs) => {
+
+                // si erreur
+                if (error) reject({status: 'error', message: 'Une erreur est survenue'})
+                else resolve({ status: "success", message: JSON.stringify(childs) })
+            })
     })
 }
 
 /*
 * Export
 * */
-module.exports = { detectName, detectCity, detectSchool, schoolPossibilities, saveInfos }
+module.exports = { detectName, detectCity, detectSchool, schoolPossibilities, saveInfos, getAccounts }

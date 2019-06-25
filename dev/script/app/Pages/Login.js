@@ -39,7 +39,7 @@ class Login {
 
     success() {
 
-        document.location.href = '/pages/home'
+        document.location.href = '/pages/accounts'
     }
 
     error(error) {

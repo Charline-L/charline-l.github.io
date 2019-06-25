@@ -31,7 +31,9 @@ class Home {
 
     successLougout() {
 
-        localStorage.setItem('connected', 'false')
+        localStorage.setItem('connected')
+        localStorage.removeItem('child-name')
+        localStorage.removeItem('child-id')
 
         // renvoi vers connexion
         document.location.href = '/'
