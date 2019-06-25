@@ -31,7 +31,7 @@ class Home {
 
     successLougout() {
 
-        localStorage.setItem('connected')
+        localStorage.removeItem('connected')
         localStorage.removeItem('child-name')
         localStorage.removeItem('child-id')
 

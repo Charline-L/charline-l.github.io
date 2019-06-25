@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dev/script/app/Pages/Accounts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/style/_g-layout.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/style/_p-login.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/accounts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/script/app.min-withnode.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min-withnode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/script/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/style/app.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/style/app.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Services/XHR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Services/XHR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/style/_functions.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_g-functions.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/style/_mixins.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_g-mixins.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/style/_reset.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_g-reset.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/style/app.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/app.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/public/audio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/audio.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/child/child.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/child/child.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/child/child.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/child/child.routes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -236,8 +218,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Home.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="237">
-                  <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+                <state relative-caret-position="297">
+                  <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
                 </state>
               </provider>
             </entry>
@@ -580,12 +562,12 @@
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
       <workItem from="1561313560812" duration="41334000" />
-      <workItem from="1561449913285" duration="3644000" />
+      <workItem from="1561449913285" duration="3768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183143000" />
+    <option name="totallyTimeSpent" value="183267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -593,7 +575,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19831224" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.19831224" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295325" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -603,7 +585,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.340935" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.340935" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -941,8 +923,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+        <state relative-caret-position="297">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
