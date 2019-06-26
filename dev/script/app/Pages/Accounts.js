@@ -2,7 +2,7 @@ class Accounts {
 
     constructor() {
 
-        this.$list = document.querySelector('.p-account__list')
+        this.$page = document.querySelector('.p-account')
 
         this.init()
     }
@@ -41,8 +41,8 @@ class Accounts {
 
         const isActive = infos.color !== null
 
-        const li = document.createElement('li')
-        li.classList.add('p-account__item')
+        const item = document.createElement('div')
+        item.classList.add('p-account__item')
 
         const p = document.createElement('p')
         p.classList.add('p-account__name')
@@ -50,16 +50,16 @@ class Accounts {
 
         const img = document.createElement('img')
         img.classList.add('p-account__avatar')
-        img.src = isActive ? 'assets/img/'+infos.color+'.png' : 'assets/img/default.png'
+        img.src = isActive ? '../assets/img/avatar/'+infos.color+'.svg' : '../assets/img/avatar/default.png'
 
-        li.appendChild(img)
-        li.appendChild(p)
+        item.appendChild(img)
+        item.appendChild(p)
 
-        li.setAttribute('data-active', isActive)
-        li.setAttribute('data-id', infos._id)
-        li.setAttribute('data-name', infos.name)
+        item.setAttribute('data-active', isActive)
+        item.setAttribute('data-id', infos._id)
+        item.setAttribute('data-name', infos.name)
 
-        this.$list.appendChild(li)
+        this.$page.appendChild(item)
     }
 
     errorGetAccounts(error) {
