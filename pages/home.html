@@ -31,8 +31,148 @@
 
         <section id="page" data-page="Home" class="p-home">
 
-            <a href="profile.html" class="p-home__profile"></a>
+            <div class="p-home__top">
 
+                <a href="profile.html" class="p-home__profile">
+                    <img src="../assets/img/icon-profile.svg" alt="Icone profile">
+                </a>
+
+                <p class="p-home__today">Aujourd'hui</p>
+
+            </div>
+
+            <div class="p-home__scroll-content">
+
+                <div class="p-home__middle">
+
+                    <h1 class="p-home__date">Vendredi 28 juin 2019</h1>
+
+                    <div class="p-home__container-illustration"></div>
+
+                    <p class="p-home__introduction">Te revoilà ! Je pète la forme aujourd’hui. Et toi ?</p>
+
+                </div>
+
+                <div class="p-home__bottom p-home-results p-home-results--small">
+
+                    <img src="../assets/img/icon-barre.svg" alt="" class="p-home-results__barre">
+
+                    <h2 class="p-home-results__title">Bilan de la semaine</h2>
+
+                    <ul class="p-home-results__week">
+
+                        <li class="p-home-results__container-day">
+
+                            <p class="p-home-results__day-name">Lundi</p>
+
+                            <div class="p-home-results__container-image">
+                                <img src="../assets/img/square-bg.svg" alt="" class="p-home-results__day-bg">
+                                <img src="../assets/img/icon-steak.svg" alt="" class="p-home-results__day-icon">
+                            </div>
+
+                        </li>
+
+                        <li class="p-home-results__container-day">
+
+                            <p class="p-home-results__day-name">Mardi</p>
+
+                            <div class="p-home-results__container-image">
+                                <img src="../assets/img/square-bg.svg" alt="" class="p-home-results__day-bg">
+                                <img src="../assets/img/icon-chicken.svg" alt="" class="p-home-results__day-icon">
+                            </div>
+
+                        </li>
+
+                        <li class="p-home-results__container-day">
+
+                            <p class="p-home-results__day-name">Jeudi</p>
+
+                            <div class="p-home-results__container-image">
+                                <img src="../assets/img/square-bg.svg" alt="" class="p-home-results__day-bg">
+                                <img src="../assets/img/icon-fish.svg" alt="" class="p-home-results__day-icon">
+                            </div>
+
+                        </li>
+
+                        <li class="p-home-results__container-day js-day-to-add" data-day="friday">
+
+                            <p class="p-home-results__day-name">Vendredi</p>
+
+                            <div class="p-home-results__container-image">
+                                <img src="../assets/img/icon-add.svg" alt="" class="p-home-results__add-icon">
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                    <div class="p-home-results__swipe">
+
+                        <div class="p-home-results__no-results js-animate-top">
+
+                            <img class="p-home-results__loader" src="../assets/img/loader.svg" alt="">
+
+                            <p>Il manque <span class="p-home-results__missing">un</span> repas pour faire ton bilan.</p>
+
+                        </div>
+
+                        <div class="p-home-results__feelings">
+
+                            <p>Je me sens un peu faible... On a mangé trop de viande. Peux-tu m’aider à retrouver un peu d’énergie ?</p>
+
+                            <button class="p-home-results__promise">Je veux aider Poda !</button>
+
+                        </div>
+
+                        <div class="p-home-results__taste">
+
+                            <h3 class="p-home-results__title">As-tu déjà gouté ?</h3>
+
+                            <ul class="p-home-results__container-cards">
+
+                                <li class="p-home-results__card">
+
+                                </li>
+
+                                <li class="p-home-results__card">
+
+                                </li>
+
+                                <li class="p-home-results__card">
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="p-home-results__facts">
+
+                            <h3 class="p-home-results__title">Testons tes connaissances</h3>
+
+                            <ul class="p-home-results__container-cards">
+
+                                <li class="p-home-results__card">
+
+                                </li>
+
+                                <li class="p-home-results__card">
+
+                                </li>
+
+                                <li class="p-home-results__card">
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 
@@ -40,8 +180,6 @@
 
 </main>
 <!--END - Page -->
-
-
 
 
 <!--START - pour enregistrer le service worker-->

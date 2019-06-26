@@ -1,22 +1,61 @@
 .p-login
-  &__title
-    margin-bottom: rem(100px)
-    width: 100%
-    text-align: center
+  +size(100%, 100vh)
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  border: solid rem(10px) $purple
+  background-color: $blue
+
+  &__image
+    width: calc(100% + 20px)
+    transform: translateY(rem(-10px)) translateX(rem(-10px))
+    align-self: center
 
   &__form
-    margin-bottom: rem(20px)
+    +size(100%, auto)
+    padding: 0 rem(40px)
+
+  &__label
+    color: $dark
+    font-family: $montserrat
+    font-size: rem(14px)
+    margin-bottom: rem(30px)
+    display: block
+
+    span
+      margin-bottom: rem(10px)
+      display: block
 
   &__input
+    font-family: $montserrat
+    font-size: rem(14px)
     display: block
     width: 100%
-    margin-bottom: rem(10px)
-    border-bottom: solid 2px blue
+    background-color: $white
+    border-radius: rem(30px)
+    color: $dark
+    padding: rem(20px) rem(30px)
+
+    &::placeholder
+      color: $dark
 
   &__submit
-    background-color: blue
     width: 100%
+    margin-top: rem(60px)
+    display: block
+
+  &__account
+    flex-grow: 1
+    display: flex
+    justify-content: center
+    align-items: center
 
   &__link
-    color: blue
+    color: $dark
     text-decoration: underline
+    margin-top: rem(10px)
+    display: block
+    font-style: italic
+    font-family: $montserrat
+    font-size: rem(14px)

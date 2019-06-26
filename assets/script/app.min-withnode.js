@@ -1,77 +1,3 @@
-class NeedToken {
-
-    constructor() {
-
-        new XHR({
-            method: 'GET',
-            url: 'auth',
-            success: this.success.bind(this),
-            error: this.error.bind(this),
-            data: null
-        })
-    }
-
-    success() {
-
-        localStorage.setItem('connected', 'true')
-    }
-
-    error() {
-
-        localStorage.setItem('connected', 'false')
-
-        // renvoi vers connexion
-        document.location.href = '/pages/login'
-    }
-}
-class XHR {
-
-    constructor(props) {
-
-        this.method = props.method
-        this.url = props.url
-        this.success = props.success
-        this.error = props.error
-        this.data = props.data
-        this.needsHeader = props.needsHeader !== undefined ? props.needsHeader : true
-
-        this.init()
-    }
-
-    init() {
-
-        this.req = new XMLHttpRequest()
-
-        const req = this.req
-        const thisRegister = this
-
-        this.req.onload = function () {
-
-            if (req.status === 200) {
-
-                const response = JSON.parse(this.responseText)
-
-                if (response.status === "success") thisRegister.success(response.message)
-                else thisRegister.error(response.message)
-            }
-
-            else {
-                console.log("Status de la réponse: %d (%s)", this.status, this.statusText)
-                thisRegister.error()
-            }
-        }
-
-
-        this.req.withCredentials = true
-        this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)
-        // this.req.open(this.method, `https://10.30.21.24:3003/${this.url}`, true)
-
-        // pas d'hearder lorsque l'on envoit un blob
-        if (this.needsHeader) this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded")
-
-        this.req.send(this.data)
-    }
-}
 class Accounts {
 
     constructor() {
@@ -264,7 +190,16 @@ class Home {
 
     constructor() {
 
-        console.log('in home')
+        this.$results = document.querySelector('.p-home-results')
+        this.$middle = document.querySelector('.p-home__middle')
+        this.$container = document.querySelector('.p-home__scroll-content')
+        this.$swipe = document.querySelector('.p-home-results__swipe')
+
+        this.$animates = document.querySelectorAll('.js-animate-top')
+
+        this.areResultsOpen = false
+
+        this.$daysToAdd = document.querySelectorAll('.js-day-to-add')
 
         this.init()
     }
@@ -272,11 +207,150 @@ class Home {
     async init() {
 
         await new NeedToken()
+        Home.updateStorage('false')
+        this.setUpCSS()
+        this.setUpHammer()
         this.bindEvents()
+    }
+
+    static updateStorage(value) {
+
+        localStorage.setItem('results', value)
+    }
+
+    setUpCSS() {
+
+        // taille middle
+        this.resultH = this.$results.clientHeight
+        const containerH = this.$container.clientHeight
+
+        this.$middle.style.height = containerH - this.resultH + 'px'
+
+
+        // vérifie si bilan présent ou pas
+        const hasResults = localStorage.getItem('results')
+        if (hasResults === 'false') this.$results.classList.add('p-home-results--waiting')
+
+        // récupère la taille du swipe
+        this.swipeH = this.$swipe.clientHeight
+
+        // set la taille du container
+        anime.set(
+            this.$results,
+            {
+                height: this.resultH
+            }
+        )
+    }
+
+    setUpHammer() {
+
+        this.hammer = new Hammer(this.$results)
+        this.hammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL })
     }
 
     bindEvents() {
 
+        // swipe
+        this.hammer.on('swipeup', () => {
+
+            if (this.areResultsOpen) return null
+            else this.openResults()
+        })
+
+        this.hammer.on('swipedown', () => {
+
+            if (!this.areResultsOpen) return null
+            else this.closeResults()
+        })
+
+        // ajouter un repas
+        this.$daysToAdd.forEach($day => {
+            $day.addEventListener('click', () => {
+                this.addDay($day.getAttribute('data-day'))
+            })
+        })
+
+    }
+
+    openResults() {
+
+        const scopeHome = this
+
+        // prépare animation
+        anime.set(
+            this.$animates,
+            {
+                opacity: 0,
+                translateY: 10
+            }
+        )
+
+        // prépare la timeline
+        const timeline = anime.timeline({
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 250,
+            complete: () => {
+                scopeHome.areResultsOpen = true
+            }
+        })
+
+        // animation
+        timeline
+            .add({
+                targets: this.$results,
+                height: this.resultH + this.swipeH,
+                easing: 'easeOutElastic(1, .6)',
+                duration: 750,
+            })
+            .add({
+                targets: this.$animates,
+                opacity: 1,
+                translateY: 0,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                duration: 250,
+                delay: anime.stagger(100)
+            }, '-=250')
+    }
+
+
+    closeResults() {
+
+        const scopeHome = this
+
+        // prépare la timeline
+        const timeline = anime.timeline({
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 250,
+            complete: () => {
+                scopeHome.areResultsOpen = false
+            }
+        })
+
+        // animation
+        timeline
+            .add({
+                targets: this.$animates,
+                opacity: 1,
+                translateY: 0,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                duration: 250,
+                delay: anime.stagger(100)
+            }, 0)
+            .add({
+                targets: this.$results,
+                height: this.resultH,
+                easing: 'easeOutElastic(1, .6)',
+                duration: 750,
+            }, 0)
+
+
+    }
+
+    addDay(day) {
+
+        localStorage.setItem('day-to-add', day)
+        document.location = "/pages/register-food.html"
     }
 }
 class Index {
@@ -343,6 +417,24 @@ class Login {
 
     error(error) {
         console.log('error', error)
+    }
+}
+class Meal {
+    constructor() {
+
+        console.log('in meal')
+        this.init()
+    }
+
+    async init() {
+
+        await new NeedToken()
+        this.bindEvents()
+    }
+
+    bindEvents(){
+
+
     }
 }
 class Profile {
@@ -436,6 +528,80 @@ class Register {
 
     error(error) {
         console.log('error', error)
+    }
+}
+class NeedToken {
+
+    constructor() {
+
+        new XHR({
+            method: 'GET',
+            url: 'auth',
+            success: this.success.bind(this),
+            error: this.error.bind(this),
+            data: null
+        })
+    }
+
+    success() {
+
+        localStorage.setItem('connected', 'true')
+    }
+
+    error() {
+
+        localStorage.setItem('connected', 'false')
+
+        // renvoi vers connexion
+        document.location.href = '/pages/login'
+    }
+}
+class XHR {
+
+    constructor(props) {
+
+        this.method = props.method
+        this.url = props.url
+        this.success = props.success
+        this.error = props.error
+        this.data = props.data
+        this.needsHeader = props.needsHeader !== undefined ? props.needsHeader : true
+
+        this.init()
+    }
+
+    init() {
+
+        this.req = new XMLHttpRequest()
+
+        const req = this.req
+        const thisRegister = this
+
+        this.req.onload = function () {
+
+            if (req.status === 200) {
+
+                const response = JSON.parse(this.responseText)
+
+                if (response.status === "success") thisRegister.success(response.message)
+                else thisRegister.error(response.message)
+            }
+
+            else {
+                console.log("Status de la réponse: %d (%s)", this.status, this.statusText)
+                thisRegister.error()
+            }
+        }
+
+
+        this.req.withCredentials = true
+        this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)
+        // this.req.open(this.method, `https://10.30.21.24:3003/${this.url}`, true)
+
+        // pas d'hearder lorsque l'on envoit un blob
+        if (this.needsHeader) this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+
+        this.req.send(this.data)
     }
 }
 class app {
