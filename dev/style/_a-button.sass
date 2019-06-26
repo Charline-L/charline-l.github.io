@@ -7,14 +7,21 @@
     +size(100%, auto)
 
   &__stroke
-    +absolute(rem(-6px), rem(-3px))
+    +absolute(rem(-3px), rem(-3px))
     +size(100%, auto)
 
   &__text
     position: relative
     z-index: 1
     font-family: $montserrat
-    font-size: rem(14px)
+    font-size: rem(17px)
     color: $dark
     font-weight: 600
     padding-bottom: rem(6px)
+    display: block
+
+  &--small
+    height: rem(45px)
+
+    .a-button__text
+      font-size: rem(11px)

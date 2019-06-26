@@ -2,7 +2,7 @@ class Accounts {
 
     constructor() {
 
-        this.$page = document.querySelector('.p-account')
+        this.$list = document.querySelector('.p-account__list')
 
         this.init()
     }
@@ -41,8 +41,8 @@ class Accounts {
 
         const isActive = infos.color !== null
 
-        const item = document.createElement('div')
-        item.classList.add('p-account__item')
+        const li = document.createElement('li')
+        li.classList.add('p-account__item')
 
         const p = document.createElement('p')
         p.classList.add('p-account__name')
@@ -52,14 +52,14 @@ class Accounts {
         img.classList.add('p-account__avatar')
         img.src = isActive ? '../assets/img/avatar/'+infos.color+'.svg' : '../assets/img/avatar/default.png'
 
-        item.appendChild(img)
-        item.appendChild(p)
+        li.appendChild(img)
+        li.appendChild(p)
 
-        item.setAttribute('data-active', isActive)
-        item.setAttribute('data-id', infos._id)
-        item.setAttribute('data-name', infos.name)
+        li.setAttribute('data-active', isActive)
+        li.setAttribute('data-id', infos._id)
+        li.setAttribute('data-name', infos.name)
 
-        this.$page.appendChild(item)
+        this.$list.appendChild(li)
     }
 
     errorGetAccounts(error) {

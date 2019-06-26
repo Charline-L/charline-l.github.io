@@ -1,53 +1,131 @@
 .p-home
-  background-color: $purple
-  padding: 0 rem(10px) rem(10px) rem(10px)
+  background-color: $darkblue
+  padding: rem(10px)
   display: flex
   flex-direction: column
-  height: 100vh
   overflow: hidden
+
+  height: 100vh
+
+  &__poda-icon
+    position: fixed
+    bottom: 0
+    +size(auto, rem(84px))
+    left: 50%
+    transform: translateX(-50%) translateY(30%)
+    z-index: 3
+
+    img
+      +size(100%)
+      display: none
+
+.p-home-top
+  background-color: $darkblue
+  +size(100%, rem(60px))
+  display: flex
+  align-items: center
+  padding-bottom: rem(10px)
+
+  .p-home-progress, .p-home-back
+    display: none
+
+  &--progress
+    justify-content: center
+
+    .p-home-progress
+      display: flex
+
+  &--back
+    justify-content: flex-start
+
+    .p-home-back
+      display: flex
+
+
+.p-home-progress
+  padding: rem(10px) rem(30px)
+  align-items: center
+  justify-content: center
+  position: relative
+  +size(100%)
+
+  &__image
+    +size(auto, 100%)
+    margin-right: rem(15px)
+
+  &__container
+    padding: rem(5px) rem(20px)
+    border-radius: rem(30px)
+    background-color: $white
+    border: solid rem(5px) $xdarkblue
+    margin-right: rem(10px)
+    width: 61%
+    position: relative
+    overflow: hidden
+
+  &__text
+    font-family: $londrina
+    font-size: rem(12px)
+    font-weight: 900
+    letter-spacing: rem(2px)
+    position: relative
+    z-index: 1
+
+  &__fill
+    background-color: $yellow
+    +size(50%, 100%)
+    +absolute(0,0,0)
+
+
+.p-home-back
+  +size(rem(30px))
+
+.p-home-activity
+  overflow: scroll
+  flex-grow: 1
+  position: relative
+  background-color: $orange
+  border-radius: rem(5px)
 
   &__top
     text-align: center
-    position: relative
-    padding: rem(20px) rem(10px)
     color: $white
+    font-family: $montserrat
+    font-weight: 400
     display: flex
-    justify-content: flex-start
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    overflow: hidden
 
   &__today
-    +absolute(50%, 50%)
-    transform: translateX(-50%) translateY(-50%)
+    font-size: rem(14px)
+    margin-bottom: rem(15px)
+
+  &__date
+    font-size: rem(24px)
 
   &__profile
     +size(rem(30px))
+    align-self: flex-end
+    margin-top: rem(10px)
+    margin-right: rem(10px)
 
-  &__scroll-content
-    overflow: scroll
-    flex-grow: 1
-    position: relative
-    background-color: $orange
-    border-radius: rem(5px)
-
-  &__middle
+  &__container-illustration
     display: flex
-    flex-direction: column
     align-items: center
+    justify-content: center
     padding: rem(20px)
-    justify-content: space-between
     flex-grow: 1
+    width: 120vw
+    transform: translateX(-10vw)
+
+  &__illustration
+    +size(100%, 100%)
 
   &__bottom
     background-color: $pink
     +absolute(auto, 0, 2, 0)
-
-  &__date
-    color: $white
-    margin-bottom: rem(20px)
-
-  &__container-illustration
-    +size(100%, 35vh)
-    background-color: red
-    margin-bottom: rem(20px)
 
   &__introduction
     +size(75%, auto)
@@ -56,18 +134,25 @@
 
 .p-home-results
   +size(100%, auto)
-  padding: 0 rem(20px) rem(10px) rem(20px)
-  
+  //padding: 0 rem(20px) rem(10px) rem(20px)
+
   border-top-left-radius: rem(20px)
   border-top-right-radius: rem(20px)
 
   overflow: hidden
 
-  &--big
-    max-height: 75vh
+  &--complete
 
-    &__swipe
-      display: block
+    .p-home-results
+
+      &__swipe
+        display: block
+
+      &__no-results
+        display: none
+
+      &__title
+        display: block !important
 
   &--small
 
@@ -105,13 +190,20 @@
     margin: rem(13px) auto rem(20px) auto
 
   &__title
-    color: white
+    color: $darkblue
+    font-size: rem(26px)
+    font-family: $londrina
+    letter-spacing: rem(2px)
+
+    padding: 0 rem(40px)
+
     text-align: center
-    margin: rem(10px)
+    margin-bottom: rem(25px)
 
   &__week
     display: flex
     +size(100%, auto)
+    padding: 0 rem(20px) rem(20px) rem(20px)
 
   &__container-day
     +size(25%, auto)
@@ -121,9 +213,11 @@
     align-items: center
 
   &__day-name
-    color: white
+    color: $white
     text-align: center
     margin-bottom: rem(15px)
+    font-family: $montserrat
+    font-size: rem(14px)
 
   &__container-image
     +size(70px)
@@ -142,13 +236,31 @@
     transform: translateX(rem(-2px))
 
   &__no-results
-    padding: rem(30px) rem(20px) rem(20px) rem(20px)
+    padding: rem(30px) rem(20px) rem(70px) rem(20px)
     display: flex
     flex-direction: column
     align-items: center
+    font-family: $londrina
+    font-size: rem(17px)
+    line-height: rem(20px)
+    font-weight: 600
+    letter-spacing: 2px
+    color: $darkblue
+    text-align: center
 
-  &__loader
-    +size(rem(45px))
-    margin-bottom: rem(10px)
+  &__feelings
+    padding: rem(30px) rem(50px)
+    color: $white
+    font-family: $londrina
+    letter-spacing: rem(2px)
+    font-weight: 900
+    font-size: rem(17px)
+    text-align: center
 
+  &__promise
+    width: 100%
+    margin: rem(30px) 0
+
+  &__slideshow-taste
+    margin-bottom: rem(35px)
 

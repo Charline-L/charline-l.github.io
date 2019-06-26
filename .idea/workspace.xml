@@ -2,14 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dev/script/app/Components/Illustration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/script/app/Components/Results.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/script/app/Components/Slideshow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/script/vendors/lottie.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/style/_c-slideshow.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/style/_g-animations.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/style/_p-account.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/icon-add.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/icon-add.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/icon-chicken.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/icon-chicken.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/icon-fish.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/icon-fish.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/sprite-walk-13-16.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min-withnode.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min-withnode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/script/vendors.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/vendors.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/style/app.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/style/app.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/Accounts.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/Accounts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/style/_a-button.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_a-button.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/style/_p-accounts.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_p-accounts.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/style/_g-colors.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_g-colors.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/style/_g-layout.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_g-layout.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/style/_p-accounts.sass" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/style/_p-home.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_p-home.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/style/_p-login.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_p-login.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/style/app.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/app.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/accounts.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/accounts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -107,11 +127,11 @@
           <entry key="css" value="5" />
           <entry key="env" value="6" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="28" />
-          <entry key="js" value="134" />
+          <entry key="html" value="31" />
+          <entry key="js" value="142" />
           <entry key="json" value="7" />
           <entry key="md" value="2" />
-          <entry key="sass" value="37" />
+          <entry key="sass" value="45" />
           <entry key="ts" value="2" />
           <entry key="wav" value="6" />
         </counts>
@@ -120,12 +140,12 @@
         <counts>
           <entry key=".env file" value="6" />
           <entry key="CSS" value="5" />
-          <entry key="HTML" value="28" />
+          <entry key="HTML" value="31" />
           <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="134" />
+          <entry key="JavaScript" value="142" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Sass" value="37" />
+          <entry key="Sass" value="45" />
           <entry key="TypeScript" value="2" />
         </counts>
       </usages-collector>
@@ -135,53 +155,80 @@
           <entry key="browserslistrc" value="6" />
           <entry key="env" value="208" />
           <entry key="gitignore" value="8" />
-          <entry key="html" value="4439" />
-          <entry key="js" value="22259" />
+          <entry key="html" value="5492" />
+          <entry key="js" value="25662" />
           <entry key="json" value="280" />
           <entry key="md" value="83" />
-          <entry key="sass" value="5514" />
+          <entry key="sass" value="8791" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="208" />
-          <entry key="HTML" value="4439" />
+          <entry key="HTML" value="5492" />
           <entry key="JSON" value="285" />
-          <entry key="JavaScript" value="22259" />
+          <entry key="JavaScript" value="25662" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Sass" value="5514" />
+          <entry key="Sass" value="8791" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.52255636">
+    <splitter split-orientation="horizontal" split-proportion="0.5218045">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/style/_a-button.sass">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="253">
-                  <caret line="11" selection-start-line="11" selection-end-line="11" />
+                <state relative-caret-position="529">
+                  <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/pages/accounts.html">
+            <entry file="file://$PROJECT_DIR$/pages/home.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="260">
-                  <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+                <state relative-caret-position="126">
+                  <caret line="222" column="18" lean-forward="true" selection-start-line="222" selection-start-column="18" selection-end-line="222" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Accounts.js">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Slideshow.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="53" selection-start-line="53" selection-end-line="53" />
+                <state relative-caret-position="345">
+                  <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/style/_g-layout.sass">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="46">
+                  <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pages/login.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="237">
+                  <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="57" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pages/accounts.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="320">
+                  <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
@@ -190,29 +237,65 @@
       </split-first>
       <split-second>
         <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Accounts.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="189">
+                  <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Home.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="460">
+                  <caret line="20" column="16" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Illustration.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="309">
+                  <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/style/_p-home.sass">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="322">
-                  <caret line="63" column="18" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+                <state relative-caret-position="591">
+                  <caret line="203" column="17" selection-start-line="203" selection-start-column="17" selection-end-line="203" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/style/_p-accounts.sass">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="274">
-                  <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/style/_p-login.sass">
+            <entry file="file://$PROJECT_DIR$/dev/style/_g-animations.sass">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="161">
-                  <caret line="7" column="25" selection-start-line="1" selection-start-column="2" selection-end-line="7" selection-end-column="25" />
+                  <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/style/app.sass">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="15" selection-start-line="15" selection-end-line="15" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/style/_c-slideshow.sass">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="437">
+                  <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -223,36 +306,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>service</find>
-      <find>192.168</find>
-      <find>192.168.1.75</find>
-      <find>mail</find>
-      <find>10.</find>
-      <find>in jas</find>
-      <find>in has</find>
-      <find>final</find>
-      <find>cityNam</find>
-      <find>leven</find>
-      <find>console.lo</find>
-      <find>XHR</find>
-      <find>scho</find>
-      <find>register</find>
-      <find>--active</find>
-      <find>showS</find>
-      <find>console.</find>
-      <find>console.log</find>
-      <find>GET</find>
-      <find>document.location</find>
-      <find>=</find>
-      <find>encor</find>
-      <find>Profile</find>
-      <find>100vg</find>
-      <find>100vh</find>
-      <find>--small</find>
-      <find>setUpHammer</find>
-      <find>steak</find>
+      <find>rempli</find>
+      <find>_Container-il</find>
+      <find>__top</find>
+      <find>odcument</find>
+      <find>container-il</find>
+      <find>illus</find>
+      <find>-results_</find>
+      <find>openRe</find>
+      <find>swipeH</find>
+      <find>__swipe</find>
+      <find>p-ho</find>
+      <find>p-home-re</find>
+      <find>je me</find>
+      <find>__feel</find>
+      <find>p-home-b</find>
+      <find>p-home-back</find>
+      <find>je</find>
+      <find>--comple</find>
+      <find>c-slid</find>
+      <find>__container-ca</find>
+      <find>__title</find>
+      <find>home-re</find>
+      <find>__wee</find>
+      <find>week</find>
+      <find>feel</find>
+      <find>__tit</find>
+      <find>console</find>
+      <find>weel</find>
       <find>add</find>
-      <find>__form</find>
+      <find>illustra</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -267,6 +350,7 @@
       <dir>$PROJECT_DIR$/dev/script/app</dir>
       <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/dev/script/app/Pages</dir>
+      <dir>$PROJECT_DIR$/dev/style</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -275,13 +359,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/polyfill.js" />
-        <option value="$PROJECT_DIR$/.babelrc" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/service-worker.js" />
-        <option value="$PROJECT_DIR$/dev/script/vendors/blobToFile.js" />
-        <option value="$PROJECT_DIR$/server/routes/main.router.js" />
         <option value="$PROJECT_DIR$/server/services/googleSpeech.js" />
         <option value="$PROJECT_DIR$/dev/style/_c-register-sound.sass" />
         <option value="$PROJECT_DIR$/server/server.js" />
@@ -310,22 +387,29 @@
         <option value="$PROJECT_DIR$/pages/profile.html" />
         <option value="$PROJECT_DIR$/dev/style/_g-reset.sass" />
         <option value="$PROJECT_DIR$/dev/style/_g-mixins.sass" />
-        <option value="$PROJECT_DIR$/dev/style/_g-layout.sass" />
-        <option value="$PROJECT_DIR$/pages/home.html" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Meal.js" />
-        <option value="$PROJECT_DIR$/dev/script/app/Pages/Home.js" />
         <option value="$PROJECT_DIR$/pages/register-food.html" />
-        <option value="$PROJECT_DIR$/dev/style/_g-colors.sass" />
         <option value="$PROJECT_DIR$/dev/style/_fonts.sass" />
         <option value="$PROJECT_DIR$/dev/style/_g-fonts.sass" />
-        <option value="$PROJECT_DIR$/dev/style/app.sass" />
-        <option value="$PROJECT_DIR$/pages/login.html" />
+        <option value="$PROJECT_DIR$/dev/style/_p-accounts.sass" />
         <option value="$PROJECT_DIR$/dev/style/_p-login.sass" />
-        <option value="$PROJECT_DIR$/dev/style/_a-button.sass" />
+        <option value="$PROJECT_DIR$/dev/style/_p-account.sass" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Accounts.js" />
         <option value="$PROJECT_DIR$/pages/accounts.html" />
-        <option value="$PROJECT_DIR$/dev/style/_p-accounts.sass" />
+        <option value="$PROJECT_DIR$/dev/style/_g-colors.sass" />
+        <option value="$PROJECT_DIR$/dev/style/_g-animations.sass" />
+        <option value="$PROJECT_DIR$/pages/login.html" />
+        <option value="$PROJECT_DIR$/dev/style/_g-layout.sass" />
+        <option value="$PROJECT_DIR$/dev/style/app.sass" />
+        <option value="$PROJECT_DIR$/dev/style/_a-button.sass" />
+        <option value="$PROJECT_DIR$/dev/script/app/Components/Results.js" />
+        <option value="$PROJECT_DIR$/dev/style/_c-slideshow.sass" />
+        <option value="$PROJECT_DIR$/dev/script/app/Components/Slideshow.js" />
+        <option value="$PROJECT_DIR$/dev/script/app/Pages/Home.js" />
+        <option value="$PROJECT_DIR$/dev/script/vendors/lottie.min.js" />
         <option value="$PROJECT_DIR$/dev/style/_p-home.sass" />
+        <option value="$PROJECT_DIR$/pages/home.html" />
+        <option value="$PROJECT_DIR$/dev/script/app/Components/Illustration.js" />
       </list>
     </option>
   </component>
@@ -393,7 +477,26 @@
               <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="charline-l.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="bodymoving" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charline-l.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="bodymoving" type="462c0819:PsiDirectoryNode" />
+              <item name="walk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charline-l.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charline-l.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
@@ -418,6 +521,14 @@
               <item name="dev" type="462c0819:PsiDirectoryNode" />
               <item name="script" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charline-l.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="charline-l.github.io" type="b2602c69:ProjectViewProjectNode" />
@@ -492,11 +603,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/img/sprite" />
       <recent name="$PROJECT_DIR$/server/models" />
       <recent name="$PROJECT_DIR$/dev/script/vendors" />
       <recent name="$PROJECT_DIR$/server/routes" />
       <recent name="$PROJECT_DIR$/server/services" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/dev" />
@@ -552,12 +663,12 @@
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
       <workItem from="1561313560812" duration="41334000" />
-      <workItem from="1561449913285" duration="23191000" />
+      <workItem from="1561449913285" duration="39449000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202690000" />
+    <option name="totallyTimeSpent" value="218948000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -575,7 +686,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.340935" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.1995439" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -610,30 +721,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/routes/main.router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/child/public/blob.wav" />
-    <entry file="file://$PROJECT_DIR$/server/public/childtest.wav" />
-    <entry file="file://$PROJECT_DIR$/server/routes/child/test.wav" />
-    <entry file="file://$PROJECT_DIR$/server/public/audio.wav">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="680" column="29" lean-forward="true" selection-start-line="680" selection-start-column="29" selection-end-line="680" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="19" column="9" lean-forward="true" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/style/_c-register-sound.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -844,45 +931,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="165" column="5" lean-forward="true" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/style/_g-mixins.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
           <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/_g-layout.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/_g-fonts.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="100" selection-start-column="100" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/app.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -893,59 +945,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/_g-colors.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="5" selection-start-line="1" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/_a-button.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/style/_p-login.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="25" selection-start-line="1" selection-start-column="2" selection-end-line="7" selection-end-column="25" />
+        <state relative-caret-position="1196">
+          <caret line="52" column="23" lean-forward="true" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_g-fonts.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="100" selection-start-column="100" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_p-account.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Accounts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="189">
+          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_g-colors.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_g-animations.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/accounts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        <state relative-caret-position="320">
+          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/_p-accounts.sass">
+    <entry file="file://$PROJECT_DIR$/pages/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        <state relative-caret-position="237">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="57" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_g-layout.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/app.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_a-button.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Slideshow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Results.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="119" column="20" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_c-slideshow.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/vendors/lottie.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="16801" selection-start-line="7" selection-start-column="16801" selection-end-line="7" selection-end-column="16801" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/style/_p-home.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="63" column="18" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+        <state relative-caret-position="591">
+          <caret line="203" column="17" selection-start-line="203" selection-start-column="17" selection-end-line="203" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="222" column="18" lean-forward="true" selection-start-line="222" selection-start-column="18" selection-end-line="222" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Illustration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
         </state>
       </provider>
     </entry>

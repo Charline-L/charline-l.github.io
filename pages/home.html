@@ -31,29 +31,49 @@
 
         <section id="page" data-page="Home" class="p-home">
 
-            <div class="p-home__top">
+            <div class="p-home__top p-home-top p-home-top--progress">
 
-                <a href="profile.html" class="p-home__profile">
-                    <img src="../assets/img/icon-profile.svg" alt="Icone profile">
-                </a>
+                <div class="p-home-progress">
 
-                <p class="p-home__today">Aujourd'hui</p>
+                    <img src="../assets/img/poda-small.svg" alt="" class="p-home-progress__image">
 
-            </div>
+                    <div class="p-home-progress__container">
 
-            <div class="p-home__scroll-content">
+                        <div class="p-home-progress__fill"></div>
 
-                <div class="p-home__middle">
+                        <p class="p-home-progress__text">Humeur <span class="p-home-progress__current"></span>%</p>
 
-                    <h1 class="p-home__date">Vendredi 28 juin 2019</h1>
+                    </div>
 
-                    <div class="p-home__container-illustration"></div>
-
-                    <p class="p-home__introduction">Te revoilà ! Je pète la forme aujourd’hui. Et toi ?</p>
+                    <img src="../assets/img/progress.svg" alt="" class="p-home-progress__lines">
 
                 </div>
 
-                <div class="p-home__bottom p-home-results p-home-results--small">
+                <img class="p-home-back" src="../assets/img/icon-back.svg" alt="">
+
+            </div>
+
+            <div class="p-home-activity">
+
+                <div class="p-home-activity__top">
+
+                    <a href="profile.html" class="p-home-activity__profile">
+                        <img src="../assets/img/icon-profile.svg" alt="Icone profile">
+                    </a>
+
+                    <p class="p-home-activity__today">Aujourd'hui</p>
+
+                    <h1 class="p-home-activity__date">Vendredi 28 juin 2019</h1>
+
+                </div>
+
+                <div class="p-home-activity__container-illustration">
+
+                    <div class="p-home-activity__illustration"></div>
+
+                </div>
+
+                <div class="p-home-activity__bottom p-home-results p-home-results--small">
 
                     <img src="../assets/img/icon-barre.svg" alt="" class="p-home-results__barre">
 
@@ -110,9 +130,7 @@
 
                         <div class="p-home-results__no-results js-animate-top">
 
-                            <img class="p-home-results__loader" src="../assets/img/loader.svg" alt="">
-
-                            <p>Il manque <span class="p-home-results__missing">un</span> repas pour faire ton bilan.</p>
+                            <p>Encore <span class="p-home-results__missing">un</span> repas <br>pour que mon ventre soit rempli !</p>
 
                         </div>
 
@@ -120,7 +138,11 @@
 
                             <p>Je me sens un peu faible... On a mangé trop de viande. Peux-tu m’aider à retrouver un peu d’énergie ?</p>
 
-                            <button class="p-home-results__promise">Je veux aider Poda !</button>
+                            <button type="button" class="p-home-results__promise a-button">
+                                <img src="../assets/img/button-fill.svg" alt="" class="a-button__fill">
+                                <img src="../assets/img/button-stroke.svg" alt="" class="a-button__stroke">
+                                <span class="a-button__text">Je veux aider Poda !</span>
+                            </button>
 
                         </div>
 
@@ -128,17 +150,33 @@
 
                             <h3 class="p-home-results__title">As-tu déjà gouté ?</h3>
 
-                            <ul class="p-home-results__container-cards">
+                            <ul class="p-home-results__slideshow-taste c-slideshow">
 
-                                <li class="p-home-results__card">
+                                <li class="c-slideshow__card c-slideshow__card--button">
+
+                                    <img class="c-slideshow__content" src="../assets/img/card-burger.png" alt="">
+
+                                    <div class="c-slideshow__photo">
+
+                                        <img class="c-slideshow__image" src="../assets/img/card-food.png" alt="">
+
+                                        <img src="../assets/img/icon-close.svg" alt="" class="c-slideshow__close">
+
+                                    </div>
 
                                 </li>
 
-                                <li class="p-home-results__card">
+                                <li class="c-slideshow__card c-slideshow__card--button">
 
-                                </li>
+                                    <img class="c-slideshow__content" src="../assets/img/card-burger.png" alt="">
 
-                                <li class="p-home-results__card">
+                                    <div class="c-slideshow__photo">
+
+                                        <img class="c-slideshow__image" src="../assets/img/card-food.png" alt="">
+
+                                        <img src="../assets/img/icon-close.svg" alt="" class="c-slideshow__close">
+
+                                    </div>
 
                                 </li>
 
@@ -148,19 +186,19 @@
 
                         <div class="p-home-results__facts">
 
-                            <h3 class="p-home-results__title">Testons tes connaissances</h3>
+                            <h3 class="p-home-results__title">Testons tes connaissances !</h3>
 
-                            <ul class="p-home-results__container-cards">
+                            <ul class="c-slideshow">
 
-                                <li class="p-home-results__card">
+                                <li class="c-slideshow__card">
 
-                                </li>
-
-                                <li class="p-home-results__card">
+                                    <img class="c-slideshow__content" src="../assets/img/card-water.png" alt="">
 
                                 </li>
 
-                                <li class="p-home-results__card">
+                                <li class="c-slideshow__card">
+
+                                    <img class="c-slideshow__content" src="../assets/img/card-water.png" alt="">
 
                                 </li>
 
@@ -173,6 +211,14 @@
                 </div>
 
             </div>
+
+            <div class="p-home__poda-icon">
+
+                <img class="js-poda-icon" src="../assets/img/poda-small.svg" alt="">
+
+            </div>
+
+            <audio src="../assets/audio/home.mp3" id="audio"></audio>
 
         </section>
 

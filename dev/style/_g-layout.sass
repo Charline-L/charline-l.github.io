@@ -1,12 +1,12 @@
 .g-layout__container
-  +size(100vw, 100vh)
+  +size(100vw, auto)
   display: flex
-  justify-content: center
   align-items: center
   background-color: $white
 
 .g-layout__content
   +size(100%, 100vh)
   max-width: 600px
-  overflow: auto
-  border: solid 1px black
+
+  &--big
+    height: auto

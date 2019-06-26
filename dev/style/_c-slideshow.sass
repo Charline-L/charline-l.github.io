@@ -1,0 +1,26 @@
+.c-slideshow
+  display: flex
+  width: 300vw
+
+  &__card
+    +size(rem(246px), rem(275px))
+    position: relative
+    margin-right: rem(10px)
+    user-select: none
+
+    &:last-child
+      margin-right: 0
+
+  &__content
+    +size(100%)
+    position: relative
+
+  &__photo
+    +size(100%, 100%)
+    +absolute(0, 0, 2)
+    user-select: none
+
+    display: none
+
+  &__close
+    +absolute(rem(13px), auto, 3, auto, rem(13px))
