@@ -6,6 +6,8 @@ class AddMeal {
         this.$container = document.querySelector('.p-home__add-meal')
         this.$steps = document.querySelectorAll('.p-home-step')
         this.$top = document.querySelector('.p-home-top')
+        this.$mood = document.querySelector('.p-home-progress__current')
+        this.$progressFill = document.querySelector('.p-home-progress__fill')
 
         this.currentStep = 0
 
@@ -173,6 +175,11 @@ class AddMeal {
         this.$steps.forEach($step => {
             $step.classList.remove('p-home__add-meal--active')
         })
+
+        // change humeur
+        this.$mood.innerHTML = 45
+        this.$progressFill.classList.add('p-home-progress__fill--bad')
+        this.$progressFill.style.width = 45 + '%'
 
         // change le top
         this.$top.classList.add('p-home-top--progress')

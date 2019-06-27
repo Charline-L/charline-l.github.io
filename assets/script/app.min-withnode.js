@@ -6,6 +6,8 @@ class AddMeal {
         this.$container = document.querySelector('.p-home__add-meal')
         this.$steps = document.querySelectorAll('.p-home-step')
         this.$top = document.querySelector('.p-home-top')
+        this.$mood = document.querySelector('.p-home-progress__current')
+        this.$progressFill = document.querySelector('.p-home-progress__fill')
 
         this.currentStep = 0
 
@@ -174,6 +176,11 @@ class AddMeal {
             $step.classList.remove('p-home__add-meal--active')
         })
 
+        // change humeur
+        this.$mood.innerHTML = 45
+        this.$progressFill.classList.add('p-home-progress__fill--bad')
+        this.$progressFill.style.width = 45 + '%'
+
         // change le top
         this.$top.classList.add('p-home-top--progress')
         this.$top.classList.remove('p-home-top--back')
@@ -242,6 +249,8 @@ class Results {
         this.$iconBottom = document.querySelector('.js-poda-icon')
         this.$animates = document.querySelectorAll('.js-animate-top')
 
+        this.$page = document.querySelector('.p-home')
+
         this.areResultsOpen = false
 
         this.init()
@@ -305,10 +314,17 @@ class Results {
 
         // ouvre
         document.addEventListener("openResults", this.openResults.bind(this) )
-
     }
 
     openResults() {
+        const hasResults = localStorage.getItem('results') === 'true'
+
+        if (hasResults) this.openResultsBig()
+        else this.openResultsSmall()
+    }
+
+    openResultsBig() {
+
         const scopeHome = this
 
         // prépare animation
@@ -320,19 +336,73 @@ class Results {
             }
         )
 
-        if (localStorage.getItem('results') === 'false') {
-            anime.set(
-                this.$iconBottom,
-                { scale: 0 }
-            )
+        this.$results.classList.add('p-home-results--complete')
+        this.$results.classList.remove('p-home-results--small')
 
-            this.$iconBottom.style.display = 'block'
-            this.$results.classList.add('p-home-results--waiting')
-        }
-        else {
+        // récupère la taille du swipe
+        const oldH = this.swipeH
+        this.$swipe.style.height = 'auto'
+        this.swipeH = this.$swipe.clientHeight + 100
+        this.$swipe.style.height = oldH + 'px'
 
-            this.$results.classList.add('p-home-results--complete')
-        }
+        const pageH = this.$page.clientHeight
+
+        this.differenceTodAdd = this.swipeH - pageH * 0.25
+
+        // prépare la timeline
+        const timeline = anime.timeline({
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 250,
+            complete: () => {
+                scopeHome.areResultsOpen = true
+                document.dispatchEvent(new CustomEvent("resizeSlideshow"))
+            }
+        })
+
+        // animation
+        timeline
+            .add({
+                targets: this.$page,
+                height: '+=' + this.differenceTodAdd,
+                easing: 'easeOutElastic(1, .6)',
+                duration: 750,
+            }, 0)
+            .add({
+                targets: this.$results,
+                height: this.resultH + this.swipeH,
+                easing: 'easeOutElastic(1, .6)',
+                duration: 750,
+            }, 0)
+            .add({
+                targets: this.$animates,
+                opacity: 1,
+                translateY: 0,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                duration: 250,
+                delay: anime.stagger(100)
+            }, '-=250')
+    }
+
+    openResultsSmall() {
+
+        const scopeHome = this
+
+        // prépare animation
+        anime.set(
+            this.$animates,
+            {
+                opacity: 0,
+                translateY: 10
+            }
+        )
+
+        anime.set(
+            this.$iconBottom,
+            { scale: 0 }
+        )
+
+        this.$iconBottom.style.display = 'block'
+        this.$results.classList.add('p-home-results--waiting')
 
         // récupère la taille du swipe
         const oldH = this.swipeH
@@ -365,21 +435,54 @@ class Results {
                 duration: 250,
                 delay: anime.stagger(100)
             }, '-=250')
-
-        // si fermé pop petite icone en bas
-        if (localStorage.getItem('results') === 'false') {
-
-            timeline
-                .add({
-                    targets: this.$iconBottom,
-                    scale: 1,
-                    easing: 'easeOutElastic(1, .6)',
-                    duration: 500,
-                }, '-=250')
-        }
+            .add({
+                targets: this.$iconBottom,
+                scale: 1,
+                easing: 'easeOutElastic(1, .6)',
+                duration: 500,
+            }, '-=250')
     }
 
     closeResults() {
+
+        if (localStorage.getItem('results') === 'false') this.closeResultsSmall()
+        else this.closeResultsBig()
+    }
+
+    closeResultsBig() {
+
+        const scopeHome = this
+
+        this.$results.classList.add('p-home-results--small')
+        this.$results.classList.remove('p-home-results--complete')
+        this.$results.classList.remove('p-home-results--waiting')
+
+        // prépare la timeline
+        const timeline = anime.timeline({
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 250,
+            complete: () => {
+                scopeHome.areResultsOpen = false
+            }
+        })
+
+        // animation
+        timeline
+            .add({
+                targets: this.$results,
+                height: this.resultH,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                duration: 250,
+            }, 0)
+            .add({
+                targets: this.$page,
+                height: '-=' + this.differenceTodAdd,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                duration: 250,
+            }, 0)
+    }
+
+    closeResultsSmall() {
 
         const scopeHome = this
 
@@ -390,6 +493,7 @@ class Results {
             complete: () => {
                 scopeHome.areResultsOpen = false
 
+                this.$results.classList.add('p-home-results--small')
                 this.$results.classList.remove('p-home-results--complete')
                 this.$results.classList.remove('p-home-results--waiting')
             }
@@ -411,18 +515,12 @@ class Results {
                 easing: 'easeOutElastic(1, .6)',
                 duration: 750,
             }, 0)
-
-        // si fermé pop petite icone en bas
-        if (localStorage.getItem('results') === 'false') {
-
-            timeline
-                .add({
-                    targets: this.$iconBottom,
-                    scale: 0,
-                    easing: 'easeOutElastic(1, .6)',
-                    duration: 250,
-                }, 0)
-        }
+            .add({
+                targets: this.$iconBottom,
+                scale: 0,
+                easing: 'easeOutElastic(1, .6)',
+                duration: 250,
+            }, 0)
     }
 }
 class Slideshow {
@@ -451,6 +549,8 @@ class Slideshow {
 
     setUpCSS(){
 
+        console.log('in set up css')
+
         // taille container
         this.cardW = this.$slides[0].clientWidth
         const cardMargin = 10
@@ -467,7 +567,16 @@ class Slideshow {
         this.hammer = new Hammer(this.$container)
     }
 
+    resize() {
+
+        this.$container.style.width = window.innerWidth * 3 + 'px'
+        this.setUpCSS()
+    }
+
     bindEvents() {
+
+        // resize
+        document.addEventListener('resizeSlideshow', this.resize.bind(this))
 
         // swipe
         this.hammer.on('swipeleft', () => {
@@ -740,6 +849,8 @@ class Step2 {
         this.$instructions = this.$container.querySelectorAll('.p-step-two__instruction')
         this.$buttons = this.$container.querySelectorAll('.p-step-two__button')
         this.$heads = this.$container.querySelectorAll('.p-step-two__head')
+        this.$rights = this.$container.querySelectorAll('.p-step-two__right')
+        this.$lefts = this.$container.querySelectorAll('.p-step-two__left')
 
         this.$containerIllu = this.$container.querySelector('.p-step-two__poda')
 
@@ -849,6 +960,21 @@ class Step2 {
                 opacity: 0,
             }
         )
+
+        // main
+        anime.set(
+            this.$lefts[1],
+            {
+                opacity: 0,
+            }
+        )
+
+        anime.set(
+            this.$rights[1],
+            {
+                opacity: 0,
+            }
+        )
     }
 
     bindEvents() {
@@ -905,32 +1031,40 @@ class Step2 {
             }
         )
 
-        // arret le micro
-
+        // remet bras
+        anime.set(
+            this.$rights[1],
+            {opacity: 0}
+        )
+        anime.set(
+            this.$rights[0],
+            {opacity: 1}
+        )
     }
 
     sendBlob() {
 
-        // prépare enregistrement
-        let formData = new FormData()
-        formData.append('audio', new Blob(this.chunks))
+        this.success(['riz', 'viande', 'banane', 'fromage'])
 
-        // envoit au server
-        new XHR({
-            method: 'POST',
-            url: 'child/detect-food',
-            success: this.success.bind(this),
-            error: this.error.bind(this),
-            data: formData,
-            needsHeader: false
-        })
+        // PASSE EN DIRECT
+        // // prépare enregistrement
+        // let formData = new FormData()
+        // formData.append('audio', new Blob(this.chunks))
+        //
+        // // envoit au server
+        // new XHR({
+        //     method: 'POST',
+        //     url: 'child/detect-food',
+        //     success: this.success.bind(this),
+        //     error: this.error.bind(this),
+        //     data: formData,
+        //     needsHeader: false
+        // })
     }
 
     success(wordDetected) {
 
         // enregistre données
-        console.log("wordDetected", wordDetected)
-
         localStorage.setItem('food-detected', JSON.stringify(wordDetected))
 
         // prochaine étape
@@ -951,6 +1085,14 @@ class Step2 {
             easing: 'cubicBezier(.5, .05, .1, .3)',
             duration: 250,
             complete: () => {
+                // tete
+                anime.set(
+                    this.$heads[this.currentIndex],
+                    {
+                        opacity: 0
+                    }
+                )
+
                 // change tete
                 anime.set(
                     scopeStep.$heads[this.currentIndex],
@@ -966,16 +1108,45 @@ class Step2 {
         // si slide précédente
         if (this.currentIndex !== 0) {
 
+            anime.set(
+                this.$lefts[1],
+                {opacity: 0}
+            )
+            anime.set(
+                this.$lefts[0],
+                {opacity: 1}
+            )
+
+            anime.set(
+                this.$rights[1],
+                {opacity: 1}
+            )
+            anime.set(
+                this.$rights[0],
+                {opacity: 0}
+            )
+
             timeline
                 .add({
                     targets: this.$buttons[this.currentIndex - 1],
                     opacity: 0
-                })
+                }, 0)
                 .add({
                     targets: this.$instructions[this.currentIndex - 1],
                     opacity: 0,
                     translateY: -20
-                })
+                }, 0)
+        }
+        else {
+
+            anime.set(
+                this.$lefts[1],
+                {opacity: 1}
+            )
+            anime.set(
+                this.$lefts[0],
+                {opacity: 0}
+            )
         }
 
         // animation
@@ -983,20 +1154,12 @@ class Step2 {
             .add({
                 targets: this.$buttons[this.currentIndex],
                 opacity: 1,
-            })
+            }, 0)
             .add({
                 targets: this.$instructions[this.currentIndex],
                 opacity: 1,
                 translateY: 0
-            })
-
-        // tete
-        anime.set(
-            this.$heads[this.currentIndex],
-            {
-                opacity: 0
-            }
-        )
+            }, 0)
     }
 }
 class Step3 {
@@ -1584,6 +1747,8 @@ class Home {
 
         await new NeedToken()
 
+        new Logout()
+
         new Results()
 
         this.$slideshow.forEach($slideshow => {
@@ -1661,7 +1826,7 @@ class Login {
         console.log('error', error)
     }
 }
-class Profile {
+class Logout {
 
     constructor() {
 

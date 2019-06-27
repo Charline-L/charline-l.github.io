@@ -8,6 +8,8 @@ class Step2 {
         this.$instructions = this.$container.querySelectorAll('.p-step-two__instruction')
         this.$buttons = this.$container.querySelectorAll('.p-step-two__button')
         this.$heads = this.$container.querySelectorAll('.p-step-two__head')
+        this.$rights = this.$container.querySelectorAll('.p-step-two__right')
+        this.$lefts = this.$container.querySelectorAll('.p-step-two__left')
 
         this.$containerIllu = this.$container.querySelector('.p-step-two__poda')
 
@@ -117,6 +119,21 @@ class Step2 {
                 opacity: 0,
             }
         )
+
+        // main
+        anime.set(
+            this.$lefts[1],
+            {
+                opacity: 0,
+            }
+        )
+
+        anime.set(
+            this.$rights[1],
+            {
+                opacity: 0,
+            }
+        )
     }
 
     bindEvents() {
@@ -173,32 +190,40 @@ class Step2 {
             }
         )
 
-        // arret le micro
-
+        // remet bras
+        anime.set(
+            this.$rights[1],
+            {opacity: 0}
+        )
+        anime.set(
+            this.$rights[0],
+            {opacity: 1}
+        )
     }
 
     sendBlob() {
 
-        // prépare enregistrement
-        let formData = new FormData()
-        formData.append('audio', new Blob(this.chunks))
+        this.success(['riz', 'viande', 'banane', 'fromage'])
 
-        // envoit au server
-        new XHR({
-            method: 'POST',
-            url: 'child/detect-food',
-            success: this.success.bind(this),
-            error: this.error.bind(this),
-            data: formData,
-            needsHeader: false
-        })
+        // PASSE EN DIRECT
+        // // prépare enregistrement
+        // let formData = new FormData()
+        // formData.append('audio', new Blob(this.chunks))
+        //
+        // // envoit au server
+        // new XHR({
+        //     method: 'POST',
+        //     url: 'child/detect-food',
+        //     success: this.success.bind(this),
+        //     error: this.error.bind(this),
+        //     data: formData,
+        //     needsHeader: false
+        // })
     }
 
     success(wordDetected) {
 
         // enregistre données
-        console.log("wordDetected", wordDetected)
-
         localStorage.setItem('food-detected', JSON.stringify(wordDetected))
 
         // prochaine étape
@@ -219,6 +244,14 @@ class Step2 {
             easing: 'cubicBezier(.5, .05, .1, .3)',
             duration: 250,
             complete: () => {
+                // tete
+                anime.set(
+                    this.$heads[this.currentIndex],
+                    {
+                        opacity: 0
+                    }
+                )
+
                 // change tete
                 anime.set(
                     scopeStep.$heads[this.currentIndex],
@@ -234,16 +267,45 @@ class Step2 {
         // si slide précédente
         if (this.currentIndex !== 0) {
 
+            anime.set(
+                this.$lefts[1],
+                {opacity: 0}
+            )
+            anime.set(
+                this.$lefts[0],
+                {opacity: 1}
+            )
+
+            anime.set(
+                this.$rights[1],
+                {opacity: 1}
+            )
+            anime.set(
+                this.$rights[0],
+                {opacity: 0}
+            )
+
             timeline
                 .add({
                     targets: this.$buttons[this.currentIndex - 1],
                     opacity: 0
-                })
+                }, 0)
                 .add({
                     targets: this.$instructions[this.currentIndex - 1],
                     opacity: 0,
                     translateY: -20
-                })
+                }, 0)
+        }
+        else {
+
+            anime.set(
+                this.$lefts[1],
+                {opacity: 1}
+            )
+            anime.set(
+                this.$lefts[0],
+                {opacity: 0}
+            )
         }
 
         // animation
@@ -251,19 +313,11 @@ class Step2 {
             .add({
                 targets: this.$buttons[this.currentIndex],
                 opacity: 1,
-            })
+            }, 0)
             .add({
                 targets: this.$instructions[this.currentIndex],
                 opacity: 1,
                 translateY: 0
-            })
-
-        // tete
-        anime.set(
-            this.$heads[this.currentIndex],
-            {
-                opacity: 0
-            }
-        )
+            }, 0)
     }
 }

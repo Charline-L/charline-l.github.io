@@ -12,6 +12,8 @@ class Home {
 
         await new NeedToken()
 
+        new Logout()
+
         new Results()
 
         this.$slideshow.forEach($slideshow => {

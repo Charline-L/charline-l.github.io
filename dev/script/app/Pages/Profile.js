@@ -1,4 +1,4 @@
-class Profile {
+class Logout {
 
     constructor() {
 

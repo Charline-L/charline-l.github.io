@@ -24,6 +24,8 @@ class Slideshow {
 
     setUpCSS(){
 
+        console.log('in set up css')
+
         // taille container
         this.cardW = this.$slides[0].clientWidth
         const cardMargin = 10
@@ -40,7 +42,16 @@ class Slideshow {
         this.hammer = new Hammer(this.$container)
     }
 
+    resize() {
+
+        this.$container.style.width = window.innerWidth * 3 + 'px'
+        this.setUpCSS()
+    }
+
     bindEvents() {
+
+        // resize
+        document.addEventListener('resizeSlideshow', this.resize.bind(this))
 
         // swipe
         this.hammer.on('swipeleft', () => {
