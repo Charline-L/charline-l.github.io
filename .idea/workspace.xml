@@ -3,19 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/poda-straight.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/poda-straight.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min-withnode.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min-withnode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/script/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/style/app.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/style/app.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/AddMeal.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/AddMeal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Results.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Results.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Slideshow.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Slideshow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Step2.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Step2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Pages/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Pages/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/style/_p-home-progress.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_p-home-progress.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Step3.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Step3.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/public/audio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/audio.wav" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -114,7 +104,7 @@
           <entry key="env" value="6" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="40" />
-          <entry key="js" value="177" />
+          <entry key="js" value="178" />
           <entry key="json" value="7" />
           <entry key="md" value="2" />
           <entry key="sass" value="77" />
@@ -129,7 +119,7 @@
           <entry key="CSS" value="5" />
           <entry key="HTML" value="40" />
           <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="177" />
+          <entry key="JavaScript" value="178" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="SVG" value="2" />
@@ -143,8 +133,8 @@
           <entry key="browserslistrc" value="6" />
           <entry key="env" value="208" />
           <entry key="gitignore" value="8" />
-          <entry key="html" value="7145" />
-          <entry key="js" value="39661" />
+          <entry key="html" value="7159" />
+          <entry key="js" value="39780" />
           <entry key="json" value="280" />
           <entry key="md" value="83" />
           <entry key="sass" value="11616" />
@@ -153,9 +143,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="208" />
-          <entry key="HTML" value="7145" />
+          <entry key="HTML" value="7159" />
           <entry key="JSON" value="285" />
-          <entry key="JavaScript" value="39661" />
+          <entry key="JavaScript" value="39780" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Sass" value="11616" />
@@ -167,29 +157,20 @@
     <splitter split-orientation="horizontal" split-proportion="0.48887295">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step2.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-202">
-                  <caret line="205" column="53" selection-start-line="205" selection-start-column="53" selection-end-line="205" selection-end-column="53" />
+                <state relative-caret-position="274">
+                  <caret line="213" column="20" lean-forward="true" selection-start-line="213" selection-start-column="20" selection-end-line="213" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step3.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4024">
-                  <caret line="372" lean-forward="true" selection-start-line="372" selection-end-line="372" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/home.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="303">
-                  <caret line="251" column="43" selection-start-line="251" selection-start-column="43" selection-end-line="251" selection-end-column="43" />
+                <state relative-caret-position="159">
+                  <caret line="829" column="136" selection-start-line="829" selection-start-column="108" selection-end-line="829" selection-end-column="136" />
                   <folding>
                     <element signature="n#div#0;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
@@ -251,7 +232,6 @@
                     <element signature="n#style#0;n#path#24;n#g#9;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#path#25;n#g#9;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#path#26;n#g#9;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#div#2;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#2;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                   </folding>
                 </state>
@@ -280,11 +260,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Results.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="244">
-                  <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+                <state relative-caret-position="69">
+                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
                 </state>
               </provider>
             </entry>
@@ -298,11 +278,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/style/_c-slideshow.sass">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step3.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="69">
-                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+                <state relative-caret-position="396">
+                  <caret line="216" column="9" lean-forward="true" selection-start-line="216" selection-start-column="9" selection-end-line="216" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -406,7 +386,6 @@
         <option value="$PROJECT_DIR$/pages/register-food.html" />
         <option value="$PROJECT_DIR$/dev/style/_p-home.sass" />
         <option value="$PROJECT_DIR$/dev/style/_p-step-three.sass" />
-        <option value="$PROJECT_DIR$/dev/script/app/Components/Step3.js" />
         <option value="$PROJECT_DIR$/dev/style/_p-home-results.sass" />
         <option value="$PROJECT_DIR$/service-worker.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Components/AddMeal.js" />
@@ -415,9 +394,10 @@
         <option value="$PROJECT_DIR$/dev/style/_c-slideshow.sass" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Profile.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Home.js" />
-        <option value="$PROJECT_DIR$/pages/home.html" />
         <option value="$PROJECT_DIR$/dev/script/app/Components/Results.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Components/Step2.js" />
+        <option value="$PROJECT_DIR$/pages/home.html" />
+        <option value="$PROJECT_DIR$/dev/script/app/Components/Step3.js" />
       </list>
     </option>
   </component>
@@ -658,12 +638,12 @@
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
       <workItem from="1561313560812" duration="41334000" />
-      <workItem from="1561449913285" duration="77717000" />
+      <workItem from="1561449913285" duration="78733000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257216000" />
+    <option name="totallyTimeSpent" value="258232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -671,7 +651,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.27727547" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.17359856" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295325" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -1032,10 +1012,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Results.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="213" column="20" lean-forward="true" selection-start-line="213" selection-start-column="20" selection-end-line="213" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="251" column="43" selection-start-line="251" selection-start-column="43" selection-end-line="251" selection-end-column="43" />
+        <state relative-caret-position="159">
+          <caret line="829" column="136" selection-start-line="829" selection-start-column="108" selection-end-line="829" selection-end-column="136" />
           <folding>
             <element signature="n#div#0;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
@@ -1097,30 +1091,15 @@
             <element signature="n#style#0;n#path#24;n#g#9;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#path#25;n#g#9;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#path#26;n#g#9;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Results.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step3.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4024">
-          <caret line="372" lean-forward="true" selection-start-line="372" selection-end-line="372" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
-          <caret line="205" column="53" selection-start-line="205" selection-start-column="53" selection-end-line="205" selection-end-column="53" />
+        <state relative-caret-position="396">
+          <caret line="216" column="9" lean-forward="true" selection-start-line="216" selection-start-column="9" selection-end-line="216" selection-end-column="9" />
         </state>
       </provider>
     </entry>

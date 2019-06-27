@@ -9,6 +9,8 @@ class Step3 {
         this.$selection = this.$container.querySelector('.p-step-three__select')
         this.$foodToSelect = this.$container.querySelectorAll('.p-step-three__select-item')
 
+        this.$bin = this.$container.querySelector('.p-step-three__button--delete')
+
         this.$foodDragging = null
         this.isDragging = false
         this.oldPosition = {
@@ -41,10 +43,26 @@ class Step3 {
         }
     }
 
+    getBinPosition() {
+
+        const left = this.$bin.getBoundingClientRect().left
+        const top = this.$bin.getBoundingClientRect().top
+        const width = this.$bin.getBoundingClientRect().width
+        const height = this.$bin.getBoundingClientRect().height
+
+        this.binPosition = {
+            xMin: left,
+            xMax: left + width,
+            yMin: top,
+            yMax: top + height
+        }
+    }
+
     start() {
 
         // position
         this.getMouthPosition()
+        this.getBinPosition()
 
         // ajoute aliments
         this.addFood()
@@ -160,10 +178,35 @@ class Step3 {
         const insideMouthX = x > this.mouthPosition.xMin - marge && x < this.mouthPosition.xMax + marge
         const insideMouthY = y > this.mouthPosition.yMin - marge && y < this.mouthPosition.yMax + marge
 
+        // si sur poubelle
+        const insideBinX = x > this.binPosition.xMin - marge && x < this.binPosition.xMax + marge
+        const insideBinY = y > this.binPosition.yMin - marge && y < this.binPosition.yMax + marge
+
+
         if (insideMouthX && insideMouthY) this.eatFood()
+        if (insideBinX && insideBinY) this.deleteFood()
     }
 
     eatFood() {
+
+        // animation
+        anime.set(
+            this.$foodDragging,
+            {
+                scale: 0,
+            }
+        )
+
+        // reset variables
+        this.stopDragging()
+
+        // si dernier
+        this.numberFoodElements--
+
+        if (this.numberFoodElements === 0) this.nextstep()
+    }
+
+    deleteFood() {
 
         // animation
         anime.set(
