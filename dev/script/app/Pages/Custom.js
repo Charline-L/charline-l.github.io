@@ -14,7 +14,7 @@ class Custom {
 
     async init() {
 
-        // await new NeedToken()
+        await new NeedToken()
         this.updateSelection(0)
         this.setUpHammer()
         this.bindEvents()

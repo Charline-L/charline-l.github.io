@@ -7,7 +7,7 @@ class Index {
 
     async init(){
 
-        // await new NeedToken()
+        await new NeedToken()
         Index.redirect()
     }
 

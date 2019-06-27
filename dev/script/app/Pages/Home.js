@@ -10,7 +10,7 @@ class Home {
 
     async init() {
 
-        // await new NeedToken()
+        await new NeedToken()
 
         new Results()
 

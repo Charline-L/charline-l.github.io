@@ -9,7 +9,7 @@ class Accounts {
 
     async init() {
 
-        // await new NeedToken()
+        await new NeedToken()
         this.getAccounts()
     }
 
