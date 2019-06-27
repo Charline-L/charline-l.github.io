@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Step2.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Step2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/script/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -131,7 +131,7 @@
           <entry key="env" value="208" />
           <entry key="gitignore" value="8" />
           <entry key="html" value="6666" />
-          <entry key="js" value="36242" />
+          <entry key="js" value="36258" />
           <entry key="json" value="280" />
           <entry key="md" value="83" />
           <entry key="sass" value="10953" />
@@ -142,7 +142,7 @@
           <entry key=".env file" value="208" />
           <entry key="HTML" value="6666" />
           <entry key="JSON" value="285" />
-          <entry key="JavaScript" value="36242" />
+          <entry key="JavaScript" value="36258" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Sass" value="10953" />
@@ -285,11 +285,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/script/app/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+                <state relative-caret-position="207">
+                  <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
@@ -344,7 +344,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Register.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="184">
@@ -549,7 +549,6 @@
         <option value="$PROJECT_DIR$/dev/style/_p-account.sass" />
         <option value="$PROJECT_DIR$/dev/style/_g-layout.sass" />
         <option value="$PROJECT_DIR$/dev/style/_p-step-three.sass" />
-        <option value="$PROJECT_DIR$/dev/script/app/App.js" />
         <option value="$PROJECT_DIR$/pages/home.html" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Meal.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Accounts.js" />
@@ -558,6 +557,7 @@
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Index.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Profile.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Components/Step2.js" />
+        <option value="$PROJECT_DIR$/dev/script/app/App.js" />
       </list>
     </option>
   </component>
@@ -818,12 +818,12 @@
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
       <workItem from="1561313560812" duration="41334000" />
-      <workItem from="1561449913285" duration="67040000" />
+      <workItem from="1561449913285" duration="67081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246539000" />
+    <option name="totallyTimeSpent" value="246580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -1122,13 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
@@ -1301,13 +1294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/style/_p-step-three.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1081">
@@ -1326,6 +1312,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>
