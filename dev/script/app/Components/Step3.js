@@ -23,9 +23,24 @@ class Step3 {
 
     init() {
 
+        this.setUpAnimation()
+
         // TODO : à enelever pour mel
         // localStorage.setItem('food-detected', JSON.stringify(['riz', 'viande', 'fromage', 'banane']))
         // this.start()
+    }
+
+    setUpAnimation() {
+
+        const params = {
+            container: this.$mouth,
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: '../assets/bodymoving/mouth/data.json'
+        }
+
+        this.anim = lottie.loadAnimation(params)
     }
 
     getMouthPosition() {
@@ -203,7 +218,16 @@ class Step3 {
         // si dernier
         this.numberFoodElements--
 
-        if (this.numberFoodElements === 0) this.nextstep()
+        // animation de la bouche
+        this.anim.goToAndPlay(0, true)
+
+        const scopeStep3 = this
+        if (this.numberFoodElements === 0) {
+
+            setTimeout(function() {
+                scopeStep3.nextstep()
+            }, 1000)
+        }
     }
 
     deleteFood() {

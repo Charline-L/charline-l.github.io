@@ -1,3 +1,380 @@
+class Accounts {
+
+    constructor() {
+
+        this.$list = document.querySelector('.p-account__list')
+
+        this.init()
+    }
+
+    async init() {
+
+        await new NeedToken()
+        this.getAccounts()
+    }
+
+    getAccounts() {
+
+        new XHR({
+            method: 'GET',
+            url: 'child/accounts',
+            success: this.successGetAccounts.bind(this),
+            error: this.errorGetAccounts.bind(this),
+            data: null
+        })
+    }
+
+    successGetAccounts(data) {
+        const children = JSON.parse(data)
+
+        // ajoute les enfants le DOM
+        for(let i = 0; i< children.length; i++) this.appendAccount(children[i])
+
+        // stocke les comptes
+        this.$accounts = document.querySelectorAll('.p-account__item')
+
+        // lance écouter d'events
+        this.bindEvents()
+    }
+
+    appendAccount(infos) {
+
+        const isActive = infos.color !== null
+
+        const li = document.createElement('li')
+        li.classList.add('p-account__item')
+
+        const p = document.createElement('p')
+        p.classList.add('p-account__name')
+        p.innerText = infos.name
+
+        const img = document.createElement('img')
+        img.classList.add('p-account__avatar')
+        img.src = isActive ? '../assets/img/avatar/'+infos.color+'.svg' : '../assets/img/avatar/default.png'
+
+        li.appendChild(img)
+        li.appendChild(p)
+
+        li.setAttribute('data-active', isActive)
+        li.setAttribute('data-id', infos._id)
+        li.setAttribute('data-name', infos.name)
+
+        this.$list.appendChild(li)
+    }
+
+    errorGetAccounts(error) {
+
+        console.log('Erreur pendant la récupération des comptes', error)
+    }
+
+    bindEvents() {
+
+        this.$accounts.forEach($account => {
+
+            $account.addEventListener('click', () => {
+                const isActive = $account.getAttribute('data-active')
+
+                if (isActive) this.selectAccount($account.getAttribute('data-id'), $account.getAttribute('data-name'))
+                else document.location.href = '/pages/register-child'
+            })
+        })
+    }
+
+    selectAccount(id, name) {
+
+        localStorage.setItem('child-name', name)
+        localStorage.setItem('child-id', id)
+
+        document.location.href = '/pages/home'
+    }
+}
+class Custom {
+
+    constructor() {
+
+        this.$container = document.querySelector('.p-custom__container')
+        this.$image = document.querySelector('.p-custom__image')
+        this.$genders = document.querySelectorAll('.p-custom__item')
+        this.$validate = document.querySelector('.p-custom__validate')
+        this.$audios = document.querySelectorAll('.p-custom__audio')
+        this.currentSelected = null
+
+        this.init()
+    }
+
+    async init() {
+
+        await new NeedToken()
+        this.updateSelection(0)
+        this.setUpHammer()
+        this.bindEvents()
+    }
+
+    setUpHammer() {
+
+        this.hammer = new Hammer(this.$container)
+    }
+
+    updateSelection(index) {
+
+        // enlève sélection du précédent
+        if (this.currentSelected !== null ) this.$genders[this.currentSelected].classList.remove('p-custom__item--active')
+
+        // nouvelle sélection
+        this.$genders[index].classList.add('p-custom__item--active')
+        this.$image.setAttribute('src', this.$genders[index].querySelector('img').getAttribute('src'))
+        this.currentSelected = index
+
+        // lance audio
+        this.$audios[index].play()
+    }
+
+    bindEvents() {
+
+        // swipe
+        this.hammer.on('swipeleft', () => {
+
+            if (this.currentSelected === 0) this.updateSelection(1)
+        })
+
+        this.hammer.on('swiperight', () => {
+
+            if (this.currentSelected === 1) this.updateSelection(0)
+        })
+
+        // click
+        this.$genders.forEach($gender => {
+
+            $gender.addEventListener('click', () => {
+
+                const isActive = $gender.classList.contains('p-custom__item--active')
+
+                if (!isActive) this.updateSelection(Array.from(this.$genders).indexOf($gender))
+            })
+        })
+
+
+        // valide
+        this.$validate.addEventListener('click', this.validate.bind(this))
+    }
+
+    validate() {
+
+        new XHR({
+            method: 'POST',
+            url: 'child/save-avatar',
+            success: this.successValidate.bind(this),
+            error: this.errorValidate.bind(this),
+            data:
+                encodeURIComponent('avatar') +
+                "=" +
+                encodeURIComponent(this.$genders[this.currentSelected].getAttribute('data-gender')) +
+                "&" +
+                encodeURIComponent('id') +
+                "=" +
+                encodeURIComponent(localStorage.getItem('child-id'))
+        })
+    }
+
+    successValidate() {
+
+        document.location = '/pages/home'
+    }
+
+    errorValidate(error) {
+
+        console.log("error", error)
+    }
+}
+class Home {
+
+    constructor() {
+
+        this.$slideshow = document.querySelectorAll('.c-slideshow')
+        this.$illustration = document.querySelector('.p-home-activity__illustration')
+        this.$promise = document.querySelector('.p-home-promise')
+
+        this.init()
+    }
+
+    async init() {
+
+        await new NeedToken()
+
+        new Logout()
+
+        new Results()
+
+        this.$slideshow.forEach($slideshow => {
+            new Slideshow({$container: $slideshow})
+        })
+
+        new Illustration({$container: this.$illustration})
+
+        new AddMeal()
+
+        new Promise({$container: this.$promise})
+    }
+}
+class Index {
+
+    constructor() {
+
+        this.init()
+    }
+
+    async init(){
+
+        await new NeedToken()
+        Index.redirect()
+    }
+
+    static redirect() {
+
+        document.location.href = localStorage.getItem('connected') === 'true' ? '/pages/home' : '/pages/login'
+    }
+}
+class Login {
+
+    constructor() {
+
+        this.$form = document.querySelector('#loginForm')
+
+        this.init()
+    }
+
+
+    init() {
+
+        this.bindEvents()
+    }
+
+    bindEvents() {
+
+        // submit form
+        this.$form.addEventListener('submit', this.checkBeforeSubmit.bind(this))
+    }
+
+    checkBeforeSubmit(e) {
+
+        // prevent default
+        e.preventDefault()
+
+        // récupère nos données
+        const data = serialize(this.$form)
+
+        // créer la requete
+        new XHR({
+            method: 'POST',
+            url: 'auth/login',
+            success: this.success.bind(this),
+            error: this.error.bind(this),
+            data: data
+        })
+    }
+
+    success() {
+
+        document.location.href = '/pages/accounts'
+    }
+
+    error(error) {
+        console.log('error', error)
+    }
+}
+class Logout {
+
+    constructor() {
+
+        this.$logout = document.getElementById('logout')
+
+        this.init()
+    }
+
+    async init() {
+
+        await new NeedToken()
+        this.bindEvents()
+    }
+
+    bindEvents() {
+
+        this.$logout.addEventListener('click', this.logout.bind(this))
+    }
+
+    logout() {
+
+        new XHR({
+            method: 'GET',
+            url: 'auth/logout',
+            success: this.successLougout.bind(this),
+            error: this.errorLogout.bind(this),
+            data: null
+        })
+    }
+
+    successLougout() {
+
+        localStorage.removeItem('connected')
+        localStorage.removeItem('child-name')
+        localStorage.removeItem('child-id')
+
+        // renvoi vers connexion
+        document.location.href = '/'
+    }
+
+    errorLogout() {
+
+        console.log('erreur pendant la déconnexion')
+    }
+}
+class Register {
+
+    constructor() {
+
+        this.$form = document.querySelector('#registerForm')
+
+        this.init()
+    }
+
+    init() {
+
+        this.bindEvents()
+    }
+
+    bindEvents() {
+
+        // submit form
+        this.$form.addEventListener('submit', this.checkBeforeSubmit.bind(this))
+    }
+
+    checkBeforeSubmit(e) {
+
+        // prevent default
+        e.preventDefault()
+
+        // récupère nos données
+        const data = serialize(this.$form)
+
+        // créer la requete
+        new Request({
+            method: 'POST',
+            url: 'auth/register',
+            success: this.success.bind(this),
+            error: this.error.bind(this),
+            data: data
+        })
+    }
+
+    success() {
+
+        document.location.href = '/pages/register-child'
+    }
+
+    error(error) {
+        console.log('error', error)
+    }
+}
 class AddMeal {
 
     constructor() {
@@ -8,6 +385,7 @@ class AddMeal {
         this.$top = document.querySelector('.p-home-top')
         this.$mood = document.querySelector('.p-home-progress__current')
         this.$progressFill = document.querySelector('.p-home-progress__fill')
+        this.$containerIllustration = document.querySelector('.p-home-activity__container-illustration')
 
         this.currentStep = 0
         this.stepMax = this.$steps.length
@@ -171,6 +549,9 @@ class AddMeal {
         // change image
         Results.updateStorage('true')
         this.$daysToAdd.classList.remove('js-day-to-add')
+
+        // change PODa
+        this.$containerIllustration.classList.add('p-home-activity__container-illustration--sad')
 
         // reset sélection repas
         this.$container.classList.remove('p-home__add-meal--active')
@@ -408,6 +789,7 @@ class Promise {
                 // change le bouton
                 this.$openPromise.classList.add('p-home__open-promise--done')
                 this.$openPromise.querySelector('.a-button__fill').setAttribute('src', '../assets/img/button-disabled.svg')
+                this.$openPromise.querySelector('.a-button__text').innerHTML = 'J’ai promis !'
 
                 // Reviens bilan
                 this.$container.classList.remove('p-home-promise--active')
@@ -1413,9 +1795,24 @@ class Step3 {
 
     init() {
 
+        this.setUpAnimation()
+
         // TODO : à enelever pour mel
         // localStorage.setItem('food-detected', JSON.stringify(['riz', 'viande', 'fromage', 'banane']))
         // this.start()
+    }
+
+    setUpAnimation() {
+
+        const params = {
+            container: this.$mouth,
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: '../assets/bodymoving/mouth/data.json'
+        }
+
+        this.anim = lottie.loadAnimation(params)
     }
 
     getMouthPosition() {
@@ -1593,7 +1990,16 @@ class Step3 {
         // si dernier
         this.numberFoodElements--
 
-        if (this.numberFoodElements === 0) this.nextstep()
+        // animation de la bouche
+        this.anim.goToAndPlay(0, true)
+
+        const scopeStep3 = this
+        if (this.numberFoodElements === 0) {
+
+            setTimeout(function() {
+                scopeStep3.nextstep()
+            }, 1000)
+        }
     }
 
     deleteFood() {
@@ -1885,383 +2291,6 @@ class XHR {
         if (this.needsHeader) this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 
         this.req.send(this.data)
-    }
-}
-class Accounts {
-
-    constructor() {
-
-        this.$list = document.querySelector('.p-account__list')
-
-        this.init()
-    }
-
-    async init() {
-
-        await new NeedToken()
-        this.getAccounts()
-    }
-
-    getAccounts() {
-
-        new XHR({
-            method: 'GET',
-            url: 'child/accounts',
-            success: this.successGetAccounts.bind(this),
-            error: this.errorGetAccounts.bind(this),
-            data: null
-        })
-    }
-
-    successGetAccounts(data) {
-        const children = JSON.parse(data)
-
-        // ajoute les enfants le DOM
-        for(let i = 0; i< children.length; i++) this.appendAccount(children[i])
-
-        // stocke les comptes
-        this.$accounts = document.querySelectorAll('.p-account__item')
-
-        // lance écouter d'events
-        this.bindEvents()
-    }
-
-    appendAccount(infos) {
-
-        const isActive = infos.color !== null
-
-        const li = document.createElement('li')
-        li.classList.add('p-account__item')
-
-        const p = document.createElement('p')
-        p.classList.add('p-account__name')
-        p.innerText = infos.name
-
-        const img = document.createElement('img')
-        img.classList.add('p-account__avatar')
-        img.src = isActive ? '../assets/img/avatar/'+infos.color+'.svg' : '../assets/img/avatar/default.png'
-
-        li.appendChild(img)
-        li.appendChild(p)
-
-        li.setAttribute('data-active', isActive)
-        li.setAttribute('data-id', infos._id)
-        li.setAttribute('data-name', infos.name)
-
-        this.$list.appendChild(li)
-    }
-
-    errorGetAccounts(error) {
-
-        console.log('Erreur pendant la récupération des comptes', error)
-    }
-
-    bindEvents() {
-
-        this.$accounts.forEach($account => {
-
-            $account.addEventListener('click', () => {
-                const isActive = $account.getAttribute('data-active')
-
-                if (isActive) this.selectAccount($account.getAttribute('data-id'), $account.getAttribute('data-name'))
-                else document.location.href = '/pages/register-child'
-            })
-        })
-    }
-
-    selectAccount(id, name) {
-
-        localStorage.setItem('child-name', name)
-        localStorage.setItem('child-id', id)
-
-        document.location.href = '/pages/home'
-    }
-}
-class Custom {
-
-    constructor() {
-
-        this.$container = document.querySelector('.p-custom__container')
-        this.$image = document.querySelector('.p-custom__image')
-        this.$genders = document.querySelectorAll('.p-custom__item')
-        this.$validate = document.querySelector('.p-custom__validate')
-        this.$audios = document.querySelectorAll('.p-custom__audio')
-        this.currentSelected = null
-
-        this.init()
-    }
-
-    async init() {
-
-        await new NeedToken()
-        this.updateSelection(0)
-        this.setUpHammer()
-        this.bindEvents()
-    }
-
-    setUpHammer() {
-
-        this.hammer = new Hammer(this.$container)
-    }
-
-    updateSelection(index) {
-
-        // enlève sélection du précédent
-        if (this.currentSelected !== null ) this.$genders[this.currentSelected].classList.remove('p-custom__item--active')
-
-        // nouvelle sélection
-        this.$genders[index].classList.add('p-custom__item--active')
-        this.$image.setAttribute('src', this.$genders[index].querySelector('img').getAttribute('src'))
-        this.currentSelected = index
-
-        // lance audio
-        this.$audios[index].play()
-    }
-
-    bindEvents() {
-
-        // swipe
-        this.hammer.on('swipeleft', () => {
-
-            if (this.currentSelected === 0) this.updateSelection(1)
-        })
-
-        this.hammer.on('swiperight', () => {
-
-            if (this.currentSelected === 1) this.updateSelection(0)
-        })
-
-        // click
-        this.$genders.forEach($gender => {
-
-            $gender.addEventListener('click', () => {
-
-                const isActive = $gender.classList.contains('p-custom__item--active')
-
-                if (!isActive) this.updateSelection(Array.from(this.$genders).indexOf($gender))
-            })
-        })
-
-
-        // valide
-        this.$validate.addEventListener('click', this.validate.bind(this))
-    }
-
-    validate() {
-
-        new XHR({
-            method: 'POST',
-            url: 'child/save-avatar',
-            success: this.successValidate.bind(this),
-            error: this.errorValidate.bind(this),
-            data:
-                encodeURIComponent('avatar') +
-                "=" +
-                encodeURIComponent(this.$genders[this.currentSelected].getAttribute('data-gender')) +
-                "&" +
-                encodeURIComponent('id') +
-                "=" +
-                encodeURIComponent(localStorage.getItem('child-id'))
-        })
-    }
-
-    successValidate() {
-
-        document.location = '/pages/home'
-    }
-
-    errorValidate(error) {
-
-        console.log("error", error)
-    }
-}
-class Home {
-
-    constructor() {
-
-        this.$slideshow = document.querySelectorAll('.c-slideshow')
-        this.$illustration = document.querySelector('.p-home-activity__illustration')
-        this.$promise = document.querySelector('.p-home-promise')
-
-        this.init()
-    }
-
-    async init() {
-
-        await new NeedToken()
-
-        new Logout()
-
-        new Results()
-
-        this.$slideshow.forEach($slideshow => {
-            new Slideshow({$container: $slideshow})
-        })
-
-        new Illustration({$container: this.$illustration})
-
-        new AddMeal()
-
-        new Promise({$container: this.$promise})
-    }
-}
-class Index {
-
-    constructor() {
-
-        this.init()
-    }
-
-    async init(){
-
-        await new NeedToken()
-        Index.redirect()
-    }
-
-    static redirect() {
-
-        document.location.href = localStorage.getItem('connected') === 'true' ? '/pages/home' : '/pages/login'
-    }
-}
-class Login {
-
-    constructor() {
-
-        this.$form = document.querySelector('#loginForm')
-
-        this.init()
-    }
-
-
-    init() {
-
-        this.bindEvents()
-    }
-
-    bindEvents() {
-
-        // submit form
-        this.$form.addEventListener('submit', this.checkBeforeSubmit.bind(this))
-    }
-
-    checkBeforeSubmit(e) {
-
-        // prevent default
-        e.preventDefault()
-
-        // récupère nos données
-        const data = serialize(this.$form)
-
-        // créer la requete
-        new XHR({
-            method: 'POST',
-            url: 'auth/login',
-            success: this.success.bind(this),
-            error: this.error.bind(this),
-            data: data
-        })
-    }
-
-    success() {
-
-        document.location.href = '/pages/accounts'
-    }
-
-    error(error) {
-        console.log('error', error)
-    }
-}
-class Logout {
-
-    constructor() {
-
-        this.$logout = document.getElementById('logout')
-
-        this.init()
-    }
-
-    async init() {
-
-        await new NeedToken()
-        this.bindEvents()
-    }
-
-    bindEvents() {
-
-        this.$logout.addEventListener('click', this.logout.bind(this))
-    }
-
-    logout() {
-
-        new XHR({
-            method: 'GET',
-            url: 'auth/logout',
-            success: this.successLougout.bind(this),
-            error: this.errorLogout.bind(this),
-            data: null
-        })
-    }
-
-    successLougout() {
-
-        localStorage.removeItem('connected')
-        localStorage.removeItem('child-name')
-        localStorage.removeItem('child-id')
-
-        // renvoi vers connexion
-        document.location.href = '/'
-    }
-
-    errorLogout() {
-
-        console.log('erreur pendant la déconnexion')
-    }
-}
-class Register {
-
-    constructor() {
-
-        this.$form = document.querySelector('#registerForm')
-
-        this.init()
-    }
-
-    init() {
-
-        this.bindEvents()
-    }
-
-    bindEvents() {
-
-        // submit form
-        this.$form.addEventListener('submit', this.checkBeforeSubmit.bind(this))
-    }
-
-    checkBeforeSubmit(e) {
-
-        // prevent default
-        e.preventDefault()
-
-        // récupère nos données
-        const data = serialize(this.$form)
-
-        // créer la requete
-        new Request({
-            method: 'POST',
-            url: 'auth/register',
-            success: this.success.bind(this),
-            error: this.error.bind(this),
-            data: data
-        })
-    }
-
-    success() {
-
-        document.location.href = '/pages/register-child'
-    }
-
-    error(error) {
-        console.log('error', error)
     }
 }
 class app {

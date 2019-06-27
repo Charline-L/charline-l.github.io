@@ -168,6 +168,7 @@ class Promise {
                 // change le bouton
                 this.$openPromise.classList.add('p-home__open-promise--done')
                 this.$openPromise.querySelector('.a-button__fill').setAttribute('src', '../assets/img/button-disabled.svg')
+                this.$openPromise.querySelector('.a-button__text').innerHTML = 'J’ai promis !'
 
                 // Reviens bilan
                 this.$container.classList.remove('p-home-promise--active')

@@ -8,6 +8,7 @@ class AddMeal {
         this.$top = document.querySelector('.p-home-top')
         this.$mood = document.querySelector('.p-home-progress__current')
         this.$progressFill = document.querySelector('.p-home-progress__fill')
+        this.$containerIllustration = document.querySelector('.p-home-activity__container-illustration')
 
         this.currentStep = 0
         this.stepMax = this.$steps.length
@@ -171,6 +172,9 @@ class AddMeal {
         // change image
         Results.updateStorage('true')
         this.$daysToAdd.classList.remove('js-day-to-add')
+
+        // change PODa
+        this.$containerIllustration.classList.add('p-home-activity__container-illustration--sad')
 
         // reset sélection repas
         this.$container.classList.remove('p-home__add-meal--active')
