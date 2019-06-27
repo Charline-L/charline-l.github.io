@@ -8,6 +8,14 @@ class app {
     init() {
 
         this.detectPage()
+        this.scrollTop()
+    }
+
+    scrollTop() {
+
+        setTimeout( () => {
+            window.scrollTo(0, 1)
+        }, 1000)
     }
 
     detectPage() {
