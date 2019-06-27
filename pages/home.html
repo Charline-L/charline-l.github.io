@@ -8,13 +8,13 @@
 
     <!--START - PWA -->
     <!--ajouter la couleur choisie dans le manifeste-->
-    <!--<meta name="theme-color" content="#e05a47"/>-->
+    <meta name="theme-color" content="#e05a47"/>
 
     <!--pour la barre noire en haut de l'écrand es iphone X et +-->
-    <!--<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!--ajout du manifest-->
-    <!--<link rel='manifest' href='../manifest.json'>-->
+    <link rel='manifest' href='../manifest.json'>
     <!--END - PWA -->
 
     <title>Accueil</title>
@@ -120,6 +120,10 @@
                                 <p class="p-home-results__day-name">Vendredi</p>
 
                                 <div class="p-home-results__container-image">
+
+                                    <img src="../assets/img/square-bg.svg" alt="" class="p-home-results__day-bg">
+                                    <img src="../assets/img/icon-grillade.svg" alt="" class="p-home-results__day-icon">
+
                                     <img src="../assets/img/icon-add.svg" alt="" class="p-home-results__add-icon">
                                 </div>
 
@@ -138,8 +142,10 @@
 
                             <div class="p-home-results__feelings">
 
-                                <p>Je me sens un peu faible... On a mangé trop de viande. Peux-tu m’aider à retrouver un
-                                    peu d’énergie ?</p>
+                                <p>Houlaaaaa ! <br>
+                                J’ai mangé trop de viande...  <br>
+                                Peux-tu m’aider à retrouver  <br>
+                                une alimentation variée ?</p>
 
                                 <button type="button" class="p-home-results__promise a-button">
                                     <img src="../assets/img/button-fill.svg" alt="" class="a-button__fill">
@@ -829,6 +835,33 @@
 
                         <div class="p-step-three__select">
 
+                            <p class="p-step-three__title">C’était quoi comme viande ? </p>
+
+                            <ul class="p-step-three__container-select">
+
+                                <li class="p-step-three__select-item js-pop" data-select="steak">
+                                    <img src="../assets/img/food/viande/steak.svg" alt="">
+                                </li>
+
+                                <li class="p-step-three__select-item js-pop" data-select="saucisse">
+                                    <img src="../assets/img/food/viande/saucisse.svg" alt="">
+                                </li>
+
+                                <li class="p-step-three__select-item js-pop" data-select="boulette">
+                                    <img src="../assets/img/food/viande/boulette.svg" alt="">
+                                </li>
+
+                                <li class="p-step-three__select-item js-pop" data-select="poulet">
+                                    <img src="../assets/img/food/viande/poulet.svg" alt="">
+                                </li>
+
+                                <li class="p-step-three__select-item js-pop" data-select="grillade">
+                                    <img src="../assets/img/food/viande/grillade.svg" alt="">
+                                </li>
+
+                            </ul>
+
+                            <p class="p-step-three__other">C’est pas ça...</p>
 
 
                         </div>
@@ -860,16 +893,16 @@
 
 <!--START - pour enregistrer le service worker-->
 <script>
-    // if ('serviceWorker' in navigator) {
-    //     navigator.serviceWorker.register('../service-worker.js', {scope: '/'})
-    //         .then(function (registration) {
-    //             console.log('Service Worker Registered');
-    //         });
-    //
-    //     navigator.serviceWorker.ready.then(function (registration) {
-    //         console.log('Service Worker Ready');
-    //     });
-    // }
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('../service-worker.js', {scope: '/'})
+            .then(function (registration) {
+                console.log('Service Worker Registered');
+            });
+
+        navigator.serviceWorker.ready.then(function (registration) {
+            console.log('Service Worker Ready');
+        });
+    }
 </script>
 <!--END - pour enregistrer le service worker-->
 

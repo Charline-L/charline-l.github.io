@@ -7,7 +7,6 @@ class app {
 
     init() {
 
-        alert('no pwa')
         this.detectPage()
     }
 
@@ -17,5 +16,7 @@ class app {
         eval(`new ${pageClass}()`);
     }
 }
+
+
 
 new app()

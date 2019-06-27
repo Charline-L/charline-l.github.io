@@ -6,6 +6,8 @@ class Step3 {
         this.$containerFood = this.$container.querySelector('.p-step-three__container-food')
         this.$overlay = this.$container.querySelector('.p-step-three__overlay')
         this.$mouth = this.$container.querySelector('.p-step-three__mouth')
+        this.$selection = this.$container.querySelector('.p-step-three__select')
+        this.$foodToSelect = this.$container.querySelectorAll('.p-step-three__select-item')
 
         this.$foodDragging = null
         this.isDragging = false
@@ -19,8 +21,9 @@ class Step3 {
 
     init() {
 
-        this.getMouthPosition()
-        this.start()
+        // TODO : à enelever pour mel
+        // localStorage.setItem('food-detected', JSON.stringify(['riz', 'viande', 'fromage', 'banane']))
+        // this.start()
     }
 
     getMouthPosition() {
@@ -40,6 +43,9 @@ class Step3 {
 
     start() {
 
+        // position
+        this.getMouthPosition()
+
         // ajoute aliments
         this.addFood()
 
@@ -55,11 +61,9 @@ class Step3 {
 
     addFood() {
 
-        // TODO : changer pour récupérerles vrais envoyés
-        localStorage.setItem('food-detected', JSON.stringify(['riz', 'banane', 'fromage', 'viande']))
-
         // récupère éléments
         const food = JSON.parse(localStorage.getItem('food-detected'))
+        this.numberFoodElements = food.length
 
         // ajoute dans le DOM
         for(let i = 0; i < food.length; i++) {
@@ -91,12 +95,23 @@ class Step3 {
 
     bindEvents() {
 
-        // click + présicion
+        // click ouvrir présicion
         this.$foodSelect.forEach($foodSelect => {
 
             $foodSelect.addEventListener('click', () => {
 
-                console.log('click')
+                this.$currentSelection = $foodSelect
+
+                this.openSelection()
+            })
+        })
+
+        // click choisir viande
+        this.$foodToSelect.forEach($foodToSelect => {
+
+            $foodToSelect.addEventListener('click', () => {
+
+                this.selectFood($foodToSelect)
             })
         })
 
@@ -122,7 +137,6 @@ class Step3 {
             this.moveDragging(e)
         })
 
-        // TODO : drag mobile
         this.$containerFood.addEventListener('touchmove', e => {
 
             this.moveDragging(e)
@@ -161,6 +175,11 @@ class Step3 {
 
         // reset variables
         this.stopDragging()
+
+        // si dernier
+        this.numberFoodElements--
+
+        if (this.numberFoodElements === 0) this.nextstep()
     }
 
     startDragging(e, $food) {
@@ -172,13 +191,17 @@ class Step3 {
         this.isDragging = true
         this.$foodDragging = $food
 
+        // ajoute classe
+        this.$food.forEach($food => {
+            $food.classList.add('p-step-three__food--inactive')
+        })
+        this.$foodDragging.classList.remove('p-step-three__food--inactive')
+
         this.oldPosition.x = e.pageX
         this.oldPosition.y = e.pageY
-
     }
 
     moveDragging(e) {
-
 
         if (!this.isDragging) return null
         else this.moveElement(e)
@@ -192,6 +215,10 @@ class Step3 {
             x: null,
             y: null
         }
+
+        this.$food.forEach($food => {
+            $food.classList.remove('p-step-three__food--inactive')
+        })
     }
 
     dragElement(x, y) {
@@ -237,5 +264,120 @@ class Step3 {
             duration: 250,
             delay: 250
         })
+    }
+
+    openSelection() {
+
+        // prépare animation
+        const $title = this.$selection.querySelectorAll('.p-step-three__title')
+        const $other = this.$selection.querySelectorAll('.p-step-three__other')
+        const $pops = this.$selection.querySelectorAll('.js-pop')
+
+        anime.set(
+            $title,
+            {
+                opacity: 0,
+                translateY: 20
+            }
+        )
+
+        anime.set(
+            $other,
+            {
+                opacity: 0,
+                translateY: 20
+            }
+        )
+
+        anime.set(
+            $pops,
+            {
+                scale: 0
+            }
+        )
+
+        // affiche le fond
+        this.$selection.classList.add('p-step-three__select--active')
+
+        // aniamation
+        const timeline = anime.timeline()
+
+        timeline
+            .add({
+                targets: $title,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                opacity: 1,
+                duration: 250,
+                translateY: 0,
+            })
+            .add({
+                targets: $pops,
+                scale: 1,
+                easing: 'easeOutElastic(1, .6)',
+                duration: 1000,
+                delay: anime.stagger(500),
+            })
+            .add({
+                targets: $other,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                opacity: 1,
+                duration: 250,
+                translateY: 0,
+            })
+    }
+
+    selectFood($food) {
+
+        // ajoute icone dans l'écran d'avant
+        const url = $food.querySelector('img').getAttribute('src')
+        this.$currentSelection.querySelector('img').setAttribute('src', url)
+        this.$currentSelection.classList.remove('p-step-three__food--select')
+
+        // prépare animation
+        const $title = this.$selection.querySelectorAll('.p-step-three__title')
+        const $other = this.$selection.querySelectorAll('.p-step-three__other')
+        const $pops = this.$selection.querySelectorAll('.js-pop')
+
+        // aniamation
+        const timeline = anime.timeline({
+            complete: () => {
+                this.$selection.classList.remove('p-step-three__select--active')
+            }
+        })
+
+        timeline
+            .add({
+                targets: $title,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                opacity: 0,
+                duration: 250,
+                translateY: 20,
+            }, 0)
+            .add({
+                targets: $pops,
+                scale: 0,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                duration: 250,
+                // delay: anime.stagger(100),
+            }, 500)
+            .add({
+                targets: $other,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                opacity: 0,
+                duration: 250,
+                translateY: 20,
+            }, 0)
+
+
+        // TODO : faire poper écran en dessous ?
+
+
+        // TODO : ajouter pour le bilan
+
+    }
+
+    nextstep() {
+
+        document.dispatchEvent(new CustomEvent("nextStep"))
     }
 }

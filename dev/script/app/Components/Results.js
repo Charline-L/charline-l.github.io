@@ -71,6 +71,10 @@ class Results {
             if (!this.areResultsOpen) return null
             else this.closeResults()
         })
+
+        // ouvre
+        document.addEventListener("openResults", this.openResults.bind(this) )
+
     }
 
     openResults() {

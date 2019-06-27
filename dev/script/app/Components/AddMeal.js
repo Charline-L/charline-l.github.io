@@ -2,7 +2,7 @@ class AddMeal {
 
     constructor() {
 
-        this.$daysToAdd = document.querySelectorAll('.js-day-to-add')
+        this.$daysToAdd = document.querySelector('.js-day-to-add')
         this.$container = document.querySelector('.p-home__add-meal')
         this.$steps = document.querySelectorAll('.p-home-step')
         this.$top = document.querySelector('.p-home-top')
@@ -18,19 +18,14 @@ class AddMeal {
         this.step2 = new Step2({$container : document.querySelector('.p-home-step--two')})
         this.step3 = new Step3({$container : document.querySelector('.p-home-step--three')})
 
-        // TODO : Results.updateStorage('true')
-
         this.bindEvents()
     }
 
     bindEvents() {
 
         // ajouter un repas
-        this.$daysToAdd.forEach($day => {
-
-            $day.addEventListener('click', () => {
-                this.selectDay($day.getAttribute('data-day'))
-            })
+        this.$daysToAdd.addEventListener('click', () => {
+            this.selectDay(this.$daysToAdd.getAttribute('data-day'))
         })
 
         // changement de step
@@ -113,6 +108,11 @@ class AddMeal {
                     case 1 :
                         this.step2.start()
                         break;
+                    case 2 :
+                        this.step3.start()
+                        break;
+                    case 3 :
+                        this.showResults()
                     default :
                         console.log('no index')
                 }
@@ -160,5 +160,25 @@ class AddMeal {
                 easing: 'cubicBezier(.5, .05, .1, .3)',
                 delay: anime.stagger(100)
             }, '-=250')
+    }
+
+    showResults() {
+
+        // change image
+        Results.updateStorage('true')
+        this.$daysToAdd.classList.remove('js-day-to-add')
+
+        // reset sélection repas
+        this.$container.classList.remove('p-home__add-meal--active')
+        this.$steps.forEach($step => {
+            $step.classList.remove('p-home__add-meal--active')
+        })
+
+        // change le top
+        this.$top.classList.add('p-home-top--progress')
+        this.$top.classList.remove('p-home-top--back')
+
+        // ouvre le bilan
+        document.dispatchEvent(new CustomEvent("openResults"))
     }
 }

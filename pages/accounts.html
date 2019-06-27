@@ -8,13 +8,13 @@
 
     <!--START - PWA -->
     <!--ajouter la couleur choisie dans le manifeste-->
-    <!--<meta name="theme-color" content="#e05a47"/>-->
+    <meta name="theme-color" content="#e05a47"/>
 
     <!--pour la barre noire en haut de l'écrand es iphone X et +-->
-    <!--<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!--ajout du manifest-->
-    <!--<link rel='manifest' href='../manifest.json'>-->
+    <link rel='manifest' href='../manifest.json'>
     <!--END - PWA -->
 
 
@@ -53,16 +53,16 @@
 
 <!--START - pour enregistrer le service worker-->
 <script>
-    // if ('serviceWorker' in navigator) {
-    //     navigator.serviceWorker.register('../service-worker.js', {scope: '/'})
-    //         .then(function (registration) {
-    //             console.log('Service Worker Registered');
-    //         });
-    //
-    //     navigator.serviceWorker.ready.then(function (registration) {
-    //         console.log('Service Worker Ready');
-    //     });
-    // }
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('../service-worker.js', {scope: '/'})
+            .then(function (registration) {
+                console.log('Service Worker Registered');
+            });
+
+        navigator.serviceWorker.ready.then(function (registration) {
+            console.log('Service Worker Ready');
+        });
+    }
 </script>
 <!--END - pour enregistrer le service worker-->
 

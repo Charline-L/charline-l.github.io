@@ -77,6 +77,15 @@
     flex-direction: column
     align-items: center
 
+    .p-home-results__add-icon
+      display: none
+
+    &.js-day-to-add
+      .p-home-results__day-bg, .p-home-results__day-icon
+        display: none
+      .p-home-results__add-icon
+        display: block
+
   &__day-name
     color: $white
     text-align: center

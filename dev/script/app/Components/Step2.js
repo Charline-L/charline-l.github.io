@@ -164,6 +164,17 @@ class Step2 {
             targets: this.$buttons[this.currentIndex - 1],
             opacity: 0,
         })
+
+        // remet tete bonhomme normal
+        anime.set(
+            this.$heads[1],
+            {
+                opacity: 0,
+            }
+        )
+
+        // arret le micro
+
     }
 
     sendBlob() {
@@ -186,6 +197,8 @@ class Step2 {
     success(wordDetected) {
 
         // enregistre données
+        console.log("wordDetected", wordDetected)
+
         localStorage.setItem('food-detected', JSON.stringify(wordDetected))
 
         // prochaine étape
