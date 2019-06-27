@@ -22,7 +22,6 @@ class Step2 {
     init() {
 
         this.reset()
-        this.setUpRecorder()
         // this.getValues()
         this.setUpSlides()
         this.bindEvents()
@@ -30,6 +29,7 @@ class Step2 {
 
     start() {
 
+        this.setUpRecorder()
         this.updateStep()
     }
 
