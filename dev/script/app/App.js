@@ -8,7 +8,6 @@ class app {
     init() {
 
         this.detectPage()
-        alert('ok no token')
     }
 
     detectPage() {
@@ -17,7 +16,5 @@ class app {
         eval(`new ${pageClass}()`);
     }
 }
-
-
 
 new app()
