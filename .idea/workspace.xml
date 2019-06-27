@@ -131,7 +131,7 @@
           <entry key="env" value="208" />
           <entry key="gitignore" value="8" />
           <entry key="html" value="6648" />
-          <entry key="js" value="36184" />
+          <entry key="js" value="36193" />
           <entry key="json" value="280" />
           <entry key="md" value="83" />
           <entry key="sass" value="10939" />
@@ -142,7 +142,7 @@
           <entry key=".env file" value="208" />
           <entry key="HTML" value="6648" />
           <entry key="JSON" value="285" />
-          <entry key="JavaScript" value="36184" />
+          <entry key="JavaScript" value="36193" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Sass" value="10939" />
@@ -289,7 +289,7 @@
             <entry file="file://$PROJECT_DIR$/dev/script/app/App.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="368">
-                  <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+                  <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
@@ -768,12 +768,12 @@
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
       <workItem from="1561313560812" duration="41334000" />
-      <workItem from="1561449913285" duration="65377000" />
+      <workItem from="1561449913285" duration="65426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244876000" />
+    <option name="totallyTimeSpent" value="244925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -1275,7 +1275,7 @@
     <entry file="file://$PROJECT_DIR$/dev/script/app/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
         </state>
       </provider>
     </entry>

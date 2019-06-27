@@ -13,7 +13,7 @@ class app {
 
     scrollTop() {
 
-        setTimeout( () => {
+        setTimeout( function() {
             alert("scroll")
             window.scrollTo(0, 1)
         }, 1000)
