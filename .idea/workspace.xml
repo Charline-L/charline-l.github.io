@@ -2,11 +2,125 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/Capture d’écran 2019-06-26 à 18.53.40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/animationface.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/animationface.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/animationface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/bodymoving/speak/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Calque_2_personage_poda-faim_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37008.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37009.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37010.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37011.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37012.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37014.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37015.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37016.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37017.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37018.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37020.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37022.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37023.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37025.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37026.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37027.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37028.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37029.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37030.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37031.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37032.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37033.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37034.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37035.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37036.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37037.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37038.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37039.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37040.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37041.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37042.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37043.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37044.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37045.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37046.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37047.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37048.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37049.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37050.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37051.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37052.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37053.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37054.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37055.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37056.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37057.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37058.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37059.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37060.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37061.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37062.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37063.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37064.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37065.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37066.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37067.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37068.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37069.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37070.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37071.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37072.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37073.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37074.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37075.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37076.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37077.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37078.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37079.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37080.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37081.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37082.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37083.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37084.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37085.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37086.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37087.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37088.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37089.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37090.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37091.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37092.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37093.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37094.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37095.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37096.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37097.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37098.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12-05-37099.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/Capture_d__cran_2019-06-26___12.05.37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/bouche_heureux_personage_poda-faim_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/bouche_triste_personage_poda-faim_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/main_droite_personage_poda-faim_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/main_gauche_personage_poda-faim_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/pied_droit_personage_poda-faim_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/pied_gauche_personage_poda-faim_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/yeux_droit_personage_poda-faim_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/yeux_ferm__personage_poda-faim_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bodymoving/speak/images/yeux_gauche_personage_poda-faim_2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min-withnode.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min-withnode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Promise.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Promise.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Results.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Results.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Step1.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Step1.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -105,7 +219,7 @@
           <entry key="env" value="6" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="40" />
-          <entry key="js" value="183" />
+          <entry key="js" value="184" />
           <entry key="json" value="7" />
           <entry key="md" value="2" />
           <entry key="sass" value="84" />
@@ -120,7 +234,7 @@
           <entry key="CSS" value="6" />
           <entry key="HTML" value="40" />
           <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="183" />
+          <entry key="JavaScript" value="184" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="SVG" value="4" />
@@ -135,7 +249,7 @@
           <entry key="env" value="208" />
           <entry key="gitignore" value="8" />
           <entry key="html" value="7417" />
-          <entry key="js" value="42984" />
+          <entry key="js" value="42994" />
           <entry key="json" value="280" />
           <entry key="md" value="83" />
           <entry key="sass" value="12584" />
@@ -146,7 +260,7 @@
           <entry key=".env file" value="208" />
           <entry key="HTML" value="7417" />
           <entry key="JSON" value="285" />
-          <entry key="JavaScript" value="42984" />
+          <entry key="JavaScript" value="42994" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Sass" value="12584" />
@@ -170,8 +284,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/home.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="211">
-                  <caret line="148" column="46" selection-start-line="148" selection-start-column="46" selection-end-line="148" selection-end-column="75" />
+                <state relative-caret-position="183">
+                  <caret line="237" column="67" selection-start-line="237" selection-start-column="40" selection-end-line="237" selection-end-column="67" />
                   <folding>
                     <element signature="n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#style#0;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -298,16 +412,25 @@
             <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Home.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="233">
-                  <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+                  <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Promise.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="89">
+                  <caret line="155" selection-start-line="155" selection-end-line="155" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Promise.js">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="388">
-                  <caret line="168" column="75" selection-start-line="168" selection-start-column="75" selection-end-line="168" selection-end-column="75" />
+                <state relative-caret-position="420">
+                  <caret line="121" column="18" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -320,7 +443,7 @@
             <entry file="file://$PROJECT_DIR$/dev/script/app/Components/AddMeal.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="46">
-                  <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+                  <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -337,7 +460,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Results.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="344">
+                <state relative-caret-position="1840">
                   <caret line="80" column="80" selection-start-line="80" selection-start-column="54" selection-end-line="80" selection-end-column="80" />
                 </state>
               </provider>
@@ -347,7 +470,7 @@
             <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step3.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="337">
-                  <caret line="277" column="9" lean-forward="true" selection-start-line="277" selection-start-column="9" selection-end-line="277" selection-end-column="9" />
+                  <caret line="277" column="9" selection-start-line="277" selection-start-column="9" selection-end-line="277" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -356,7 +479,7 @@
             <entry file="file://$PROJECT_DIR$/dev/style/_p-home-promise.sass">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="348">
-                  <caret line="61" column="28" lean-forward="true" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+                  <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -365,7 +488,7 @@
             <entry file="file://$PROJECT_DIR$/dev/style/_p-home-activity.sass">
               <provider selected="true" editor-type-id="text-editor">
                 <state>
-                  <caret column="16" lean-forward="true" selection-start-column="1" selection-end-column="16" />
+                  <caret column="16" selection-start-column="1" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -383,7 +506,7 @@
             <entry file="file://$PROJECT_DIR$/dev/style/_p-home.sass">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="690">
-                  <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+                  <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -394,7 +517,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>--compl</find>
       <find>animates</find>
       <find>custom</find>
       <find>img</find>
@@ -424,6 +546,7 @@
       <find>cus</find>
       <find>IN FI</find>
       <find>__open</find>
+      <find>__mouth</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -490,7 +613,6 @@
         <option value="$PROJECT_DIR$/dev/script/app/Components/Step3.js" />
         <option value="$PROJECT_DIR$/dev/style/app.sass" />
         <option value="$PROJECT_DIR$/dev/style/_p-step-one.sass" />
-        <option value="$PROJECT_DIR$/dev/script/app/Components/Step1.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Home.js" />
         <option value="$PROJECT_DIR$/dev/script/vendors/lottie.min.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Components/AddMeal.js" />
@@ -499,6 +621,7 @@
         <option value="$PROJECT_DIR$/dev/script/app/Components/Results.js" />
         <option value="$PROJECT_DIR$/pages/home.html" />
         <option value="$PROJECT_DIR$/dev/script/app/Components/Promise.js" />
+        <option value="$PROJECT_DIR$/dev/script/app/Components/Step1.js" />
       </list>
     </option>
   </component>
@@ -716,12 +839,12 @@
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
       <workItem from="1561313560812" duration="41334000" />
-      <workItem from="1561449913285" duration="89805000" />
+      <workItem from="1561449913285" duration="90160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269304000" />
+    <option name="totallyTimeSpent" value="269659000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -1044,14 +1167,7 @@
     <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step3.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
-          <caret line="277" column="9" lean-forward="true" selection-start-line="277" selection-start-column="9" selection-end-line="277" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
+          <caret line="277" column="9" selection-start-line="277" selection-start-column="9" selection-end-line="277" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1068,35 +1184,56 @@
     <entry file="file://$PROJECT_DIR$/dev/script/app/Components/AddMeal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/style/_p-home-activity.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="16" lean-forward="true" selection-start-column="1" selection-end-column="16" />
+          <caret column="16" selection-start-column="1" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/style/_p-home.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
-          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_p-home-promise.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Results.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1840">
+          <caret line="80" column="80" selection-start-line="80" selection-start-column="54" selection-end-line="80" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Promise.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="148" column="46" selection-start-line="148" selection-start-column="46" selection-end-line="148" selection-end-column="75" />
+        <state relative-caret-position="183">
+          <caret line="237" column="67" selection-start-line="237" selection-start-column="40" selection-end-line="237" selection-end-column="67" />
           <folding>
             <element signature="n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1209,24 +1346,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/_p-home-promise.sass">
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="61" column="28" lean-forward="true" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Results.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="80" column="80" selection-start-line="80" selection-start-column="54" selection-end-line="80" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Promise.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="168" column="75" selection-start-line="168" selection-start-column="75" selection-end-line="168" selection-end-column="75" />
+        <state relative-caret-position="420">
+          <caret line="121" column="18" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
         </state>
       </provider>
     </entry>

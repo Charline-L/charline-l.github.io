@@ -108,23 +108,18 @@ class Step1 {
 
     setupMouthAnimation() {
 
-        // const params = {
-        //     container: this.$container.querySelector('.p-home-step__mouth-animation'),
-        //     renderer: 'svg',
-        //     loop: true,
-        //     autoplay: true,
-        //     path: '../assets/bodymoving/mouth/speak.json'
-        // }
-        //
-        // this.mouthAnim = lottie.loadAnimation(params)
-        //
-        // this.mouthAnim.pause()
+        const params = {
+            container: this.$container.querySelector('.p-step-one__mouth-animation'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '../assets/bodymoving/speak/data.json'
+        }
+
+        this.mouthAnim = lottie.loadAnimation(params)
     }
 
     soundEnded() {
-
-        // TODO : pause animation de la bouche
-        // this.mouthAnim.pause()
 
         anime({
             targets: this.$next,
