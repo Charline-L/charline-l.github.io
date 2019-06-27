@@ -4,11 +4,11 @@ self.addEventListener('install', e => {
     e.waitUntil(
         caches.open(cacheName).then(cache => {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/assets/script/app.min.js',
-                '/assets/script/vendors.min.js',
-                '/assets/style/app.min.css',
+                // '/',
+                // '/index.html',
+                // '/assets/script/app.min.js',
+                // '/assets/script/vendors.min.js',
+                // '/assets/style/app.min.css',
             ])
                 .then(() => self.skipWaiting());
         })
