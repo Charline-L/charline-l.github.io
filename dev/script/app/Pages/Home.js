@@ -4,6 +4,7 @@ class Home {
 
         this.$slideshow = document.querySelectorAll('.c-slideshow')
         this.$illustration = document.querySelector('.p-home-activity__illustration')
+        this.$promise = document.querySelector('.p-home-promise')
 
         this.init()
     }
@@ -23,5 +24,7 @@ class Home {
         new Illustration({$container: this.$illustration})
 
         new AddMeal()
+
+        new Promise({$container: this.$promise})
     }
 }

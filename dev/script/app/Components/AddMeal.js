@@ -10,6 +10,7 @@ class AddMeal {
         this.$progressFill = document.querySelector('.p-home-progress__fill')
 
         this.currentStep = 0
+        this.stepMax = this.$steps.length
 
         this.init()
     }
@@ -55,7 +56,8 @@ class AddMeal {
     nextStep() {
 
         this.currentStep++
-        this.showStep()
+        if (this.currentStep === 3) this.showResults()
+        else this.showStep()
     }
 
     showStep() {

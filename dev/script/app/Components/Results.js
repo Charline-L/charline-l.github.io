@@ -12,6 +12,9 @@ class Results {
         this.$animates = document.querySelectorAll('.js-animate-top')
 
         this.$page = document.querySelector('.p-home')
+        this.$openPromise = document.querySelector('.p-home__open-promise')
+
+        console.log('this.$openPromise', this.$openPromise)
 
         this.areResultsOpen = false
 
@@ -74,8 +77,16 @@ class Results {
             else this.closeResults()
         })
 
+        // ouvre promise
+        this.$openPromise.addEventListener('click', () => {
+            document.dispatchEvent(new CustomEvent("openPromise"))
+        })
+
         // ouvre
         document.addEventListener("openResults", this.openResults.bind(this) )
+
+        // ferme
+        document.addEventListener("closeResults", this.closeResults.bind(this) )
     }
 
     openResults() {

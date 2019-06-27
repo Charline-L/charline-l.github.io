@@ -5,6 +5,8 @@ class Step1 {
         this.$titles = this.$container.querySelectorAll('.p-step-one__text')
         this.$audios = this.$container.querySelectorAll('.p-step-one__audio')
         this.$next = this.$container.querySelector('.p-step-one__next')
+        this.$containerMouth = this.$container.querySelector('.p-step-one__mouth-animation')
+
 
         this.isAnimating = false
         this.currentIndex = 0
@@ -107,15 +109,15 @@ class Step1 {
     setupMouthAnimation() {
 
         // const params = {
-        //     container: this.$stepMouthAnimation.querySelector('.p-home-step__mouth'),
+        //     container: this.$container.querySelector('.p-home-step__mouth-animation'),
         //     renderer: 'svg',
         //     loop: true,
         //     autoplay: true,
-        //     path: '../assets/bodymoving/mouth/data.json'
+        //     path: '../assets/bodymoving/mouth/speak.json'
         // }
         //
         // this.mouthAnim = lottie.loadAnimation(params)
-
+        //
         // this.mouthAnim.pause()
     }
 
