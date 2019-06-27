@@ -23,7 +23,7 @@ class Step2 {
 
         this.reset()
         this.setUpRecorder()
-        this.getValues()
+        // this.getValues()
         this.setUpSlides()
         this.bindEvents()
     }
@@ -73,23 +73,23 @@ class Step2 {
 
     }
 
-    getValues() {
-
-        const topContainer = this.$containerIllu.getBoundingClientRect().top
-        const leftContainer = this.$containerIllu.getBoundingClientRect().left
-
-        this.$buttons.forEach( $button => {
-
-            const buttonW = $button.getBoundingClientRect().width
-            const buttonH = $button.getBoundingClientRect().height
-
-            const centerX = $button.getBoundingClientRect().left + buttonW / 2 - leftContainer
-            const centerY = $button.getBoundingClientRect().top + buttonH / 2 - topContainer
-            const origin = centerX + "px " + centerY + "px 0"
-
-            this.buttonsOrigins.push(origin)
-        })
-    }
+    // getValues() {
+    //
+    //     const topContainer = this.$containerIllu.getBoundingClientRect().top
+    //     const leftContainer = this.$containerIllu.getBoundingClientRect().left
+    //
+    //     this.$buttons.forEach( $button => {
+    //
+    //         const buttonW = $button.getBoundingClientRect().width
+    //         const buttonH = $button.getBoundingClientRect().height
+    //
+    //         const centerX = $button.getBoundingClientRect().left + buttonW / 2 - leftContainer
+    //         const centerY = $button.getBoundingClientRect().top + buttonH / 2 - topContainer
+    //         const origin = centerX + "px " + centerY + "px 0"
+    //
+    //         this.buttonsOrigins.push(origin)
+    //     })
+    // }
 
     setUpSlides() {
 
@@ -106,7 +106,7 @@ class Step2 {
         anime.set(
             this.$buttons,
             {
-                scale: 0
+                opacity: 0
             }
         )
 
@@ -114,7 +114,7 @@ class Step2 {
         anime.set(
             this.$heads[1],
             {
-                opacity: 0
+                opacity: 0,
             }
         )
     }
@@ -123,6 +123,7 @@ class Step2 {
 
         // click micro
         this.$buttons.forEach($button => {
+
             $button.addEventListener('click', () => {
 
                 const isStart = $button.classList.contains('p-step-two__button--start')
@@ -161,8 +162,7 @@ class Step2 {
         // enlève le micro
         anime({
             targets: this.$buttons[this.currentIndex - 1],
-            scale: 0,
-            transformOrigin: this.buttonsOrigins[this.currentIndex - 1],
+            opacity: 0,
         })
     }
 
@@ -224,8 +224,7 @@ class Step2 {
             timeline
                 .add({
                     targets: this.$buttons[this.currentIndex - 1],
-                    scale: 0,
-                    transformOrigin: this.buttonsOrigins[this.currentIndex - 1],
+                    opacity: 0
                 })
                 .add({
                     targets: this.$instructions[this.currentIndex - 1],
@@ -238,8 +237,7 @@ class Step2 {
         timeline
             .add({
                 targets: this.$buttons[this.currentIndex],
-                transformOrigin: this.buttonsOrigins[this.currentIndex],
-                scale: 1,
+                opacity: 1,
             })
             .add({
                 targets: this.$instructions[this.currentIndex],
