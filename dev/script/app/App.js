@@ -7,7 +7,7 @@ class app {
 
     init() {
 
-        alert('ok micro')
+        alert('no pwa')
         this.detectPage()
     }
 
