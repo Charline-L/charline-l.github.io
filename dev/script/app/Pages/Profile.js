@@ -9,7 +9,7 @@ class Logout {
 
     async init() {
 
-        await new NeedToken()
+        // await new NeedToken()
         this.bindEvents()
     }
 

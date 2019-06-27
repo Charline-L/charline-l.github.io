@@ -11,20 +11,15 @@ class Home {
 
     async init() {
 
-        await new NeedToken()
-
+        // await new NeedToken()
         new Logout()
-
         new Results()
+        new AddMeal()
+        new Illustration({$container: this.$illustration})
+        new Promise({$container: this.$promise})
 
         this.$slideshow.forEach($slideshow => {
             new Slideshow({$container: $slideshow})
         })
-
-        new Illustration({$container: this.$illustration})
-
-        new AddMeal()
-
-        new Promise({$container: this.$promise})
     }
 }

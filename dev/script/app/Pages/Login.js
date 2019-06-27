@@ -24,17 +24,20 @@ class Login {
         // prevent default
         e.preventDefault()
 
-        // récupère nos données
-        const data = serialize(this.$form)
+        // pour oral
+        this.success()
 
-        // créer la requete
-        new XHR({
-            method: 'POST',
-            url: 'auth/login',
-            success: this.success.bind(this),
-            error: this.error.bind(this),
-            data: data
-        })
+        // // récupère nos données
+        // const data = serialize(this.$form)
+        //
+        // // créer la requete
+        // new XHR({
+        //     method: 'POST',
+        //     url: 'auth/login',
+        //     success: this.success.bind(this),
+        //     error: this.error.bind(this),
+        //     data: data
+        // })
     }
 
     success() {
