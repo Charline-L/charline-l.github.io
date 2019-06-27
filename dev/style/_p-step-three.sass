@@ -1,0 +1,61 @@
+.p-step-three
+
+  &__poda
+    +size(80%, auto)
+    +absolute(rem(20px), 50%, 0)
+    transform: translateX(-50%)
+
+  &__title
+    color: $white
+    font-family: $londrina
+    font-size: rem(24px)
+    letter-spacing: rem(2px)
+
+  &__mouth
+    +size(rem(50px),rem(20px))
+    background-color: red
+    +absolute(65%, 50%, 1)
+    transform: translateX(-50%)
+
+  &__container-buttons
+    padding: rem(20px)
+    display: flex
+    justify-content: space-between
+    align-items: center
+    +absolute(auto, 0, 1, 0, 0)
+
+  &__button
+    +size(rem(45px))
+
+  &__overlay
+    +absolute(0,0,2)
+    +size(100%)
+    text-align: center
+    padding: rem(40px) rem(60px)
+
+    &:before
+      content: ""
+      +absolute(-100%, -100%)
+      +size(200vw, 200vh)
+      background-color: rgba(black, 0.5)
+
+    p
+      position: relative
+      z-index: 1
+
+  &__container-food
+    +size(100%, 90%)
+    +absolute(0, 0, 2, 0, 0)
+
+  &__food
+    &:nth-child(1)
+      +absolute(60%, 15%)
+
+    &:nth-child(2)
+      +absolute(65%, 50%)
+
+    &:nth-child(3)
+      +absolute(80%, 10%)
+
+    &:nth-child(4)
+      +absolute(85%, 60%)

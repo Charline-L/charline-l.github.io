@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dev/script/app/Components/Step3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/style/_p-step-three.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min-withnode.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min-withnode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Step2.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Step2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/style/app.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/style/app.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/AddMeal.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/AddMeal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/style/app.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/app.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/public/audio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/audio.wav" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -105,10 +109,10 @@
           <entry key="env" value="6" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="32" />
-          <entry key="js" value="159" />
+          <entry key="js" value="160" />
           <entry key="json" value="7" />
           <entry key="md" value="2" />
-          <entry key="sass" value="65" />
+          <entry key="sass" value="69" />
           <entry key="svg" value="1" />
           <entry key="ts" value="2" />
           <entry key="wav" value="6" />
@@ -120,11 +124,11 @@
           <entry key="CSS" value="5" />
           <entry key="HTML" value="32" />
           <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="159" />
+          <entry key="JavaScript" value="160" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="SVG" value="1" />
-          <entry key="Sass" value="65" />
+          <entry key="Sass" value="69" />
           <entry key="TypeScript" value="2" />
         </counts>
       </usages-collector>
@@ -134,35 +138,35 @@
           <entry key="browserslistrc" value="6" />
           <entry key="env" value="208" />
           <entry key="gitignore" value="8" />
-          <entry key="html" value="6356" />
-          <entry key="js" value="32209" />
+          <entry key="html" value="6648" />
+          <entry key="js" value="36112" />
           <entry key="json" value="280" />
           <entry key="md" value="83" />
-          <entry key="sass" value="9921" />
+          <entry key="sass" value="10939" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="208" />
-          <entry key="HTML" value="6356" />
+          <entry key="HTML" value="6648" />
           <entry key="JSON" value="285" />
-          <entry key="JavaScript" value="32209" />
+          <entry key="JavaScript" value="36112" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Sass" value="9921" />
+          <entry key="Sass" value="10939" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.58698726">
+    <splitter split-orientation="horizontal" split-proportion="0.4799733">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/old/_OLD_RegisterChild.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="341">
-                  <caret line="336" column="28" lean-forward="true" selection-start-line="336" selection-start-column="28" selection-end-line="336" selection-end-column="28" />
+                  <caret line="336" column="28" selection-start-line="336" selection-start-column="28" selection-end-line="336" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -170,10 +174,12 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/home.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="401">
-                  <caret line="233" column="69" lean-forward="true" selection-start-line="233" selection-start-column="69" selection-end-line="233" selection-end-column="69" />
+                <state relative-caret-position="356">
+                  <caret line="801" column="44" selection-start-line="801" selection-start-column="44" selection-end-line="801" selection-end-column="44" />
                   <folding>
                     <element signature="n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#0;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#style#0;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#path#0;n#g#0;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -313,7 +319,7 @@
             <entry file="file://$PROJECT_DIR$/server/routes/child/child.routes.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="435">
-                  <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+                  <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
@@ -321,26 +327,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Components/AddMeal.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23">
-                  <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step2.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="519">
-                  <caret line="166" column="5" lean-forward="true" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
+                <state relative-caret-position="296">
+                  <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/script/app.min-withnode.js">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step2.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2096">
-                  <caret line="931" column="20" lean-forward="true" selection-start-line="931" selection-start-column="20" selection-end-line="931" selection-end-column="20" />
+                <state relative-caret-position="192">
+                  <caret line="188" column="44" lean-forward="true" selection-start-line="188" selection-start-column="29" selection-end-line="188" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
@@ -348,26 +345,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="393">
-                  <caret line="84" column="22" lean-forward="true" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/style/_p-home-step.sass">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="138">
-                  <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/style/_p-step-two.sass">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="233">
-                  <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
+                <state relative-caret-position="508">
+                  <caret line="89" column="18" lean-forward="true" selection-start-line="84" selection-start-column="16" selection-end-line="89" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -375,8 +354,44 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/routes/child/child.controller.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="454">
-                  <caret line="226" column="115" selection-start-line="226" selection-start-column="115" selection-end-line="226" selection-end-column="115" />
+                <state relative-caret-position="293">
+                  <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/style/_p-step-three.sass">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="307">
+                  <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/style/_g-reset.sass">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="468">
+                  <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step3.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="121" column="32" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/style/app.sass">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="437">
+                  <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -387,10 +402,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>p-home-back</find>
-      <find>je</find>
-      <find>--comple</find>
-      <find>c-slid</find>
       <find>__container-ca</find>
       <find>__title</find>
       <find>home-re</find>
@@ -405,7 +416,6 @@
       <find>ended</find>
       <find>elas</find>
       <find>p-home-add-</find>
-      <find>anime</find>
       <find>set</find>
       <find>start</find>
       <find>__butto</find>
@@ -417,6 +427,11 @@
       <find>sendBlo</find>
       <find>js-pop</find>
       <find>stop</find>
+      <find>local</find>
+      <find>anime</find>
+      <find>stagg</find>
+      <find>cubic</find>
+      <find>mouth</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -431,6 +446,7 @@
       <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/dev/script/app/Pages</dir>
       <dir>$PROJECT_DIR$/dev/style</dir>
+      <dir>$PROJECT_DIR$/dev/script/app/Components</dir>
       <dir>$PROJECT_DIR$/dev/script/app</dir>
     </dirStrings>
   </component>
@@ -440,13 +456,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/style/_p-custom.sass" />
-        <option value="$PROJECT_DIR$/server/routes/auth/auth.routes.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Custom.js" />
         <option value="$PROJECT_DIR$/pages/register-child.html" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Profile.js" />
         <option value="$PROJECT_DIR$/pages/profile.html" />
-        <option value="$PROJECT_DIR$/dev/style/_g-reset.sass" />
         <option value="$PROJECT_DIR$/dev/style/_g-mixins.sass" />
         <option value="$PROJECT_DIR$/dev/script/app/Pages/Meal.js" />
         <option value="$PROJECT_DIR$/pages/register-food.html" />
@@ -476,9 +489,7 @@
         <option value="$PROJECT_DIR$/dev/style/_p-home-step.sass" />
         <option value="$PROJECT_DIR$/dev/style/_p-step-one.sass" />
         <option value="$PROJECT_DIR$/dev/script/app/App.js" />
-        <option value="$PROJECT_DIR$/dev/script/app/Components/AddMeal.js" />
         <option value="$PROJECT_DIR$/dev/style/_p-home-add-meal.sass" />
-        <option value="$PROJECT_DIR$/dev/style/app.sass" />
         <option value="$PROJECT_DIR$/dev/style/_p-home.sass" />
         <option value="$PROJECT_DIR$/dev/script/app/Components/Step1.js" />
         <option value="$PROJECT_DIR$/assets/script/app.min-withnode.js" />
@@ -489,8 +500,13 @@
         <option value="$PROJECT_DIR$/server/routes/child/child.controller.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/server/server.js" />
-        <option value="$PROJECT_DIR$/pages/home.html" />
         <option value="$PROJECT_DIR$/dev/script/app/Components/Step2.js" />
+        <option value="$PROJECT_DIR$/dev/style/app.sass" />
+        <option value="$PROJECT_DIR$/dev/script/app/Components/AddMeal.js" />
+        <option value="$PROJECT_DIR$/dev/style/_g-reset.sass" />
+        <option value="$PROJECT_DIR$/dev/style/_p-step-three.sass" />
+        <option value="$PROJECT_DIR$/dev/script/app/Components/Step3.js" />
+        <option value="$PROJECT_DIR$/pages/home.html" />
       </list>
     </option>
   </component>
@@ -751,12 +767,12 @@
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
       <workItem from="1561313560812" duration="41334000" />
-      <workItem from="1561449913285" duration="57563000" />
+      <workItem from="1561449913285" duration="65060000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237062000" />
+    <option name="totallyTimeSpent" value="244559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -764,7 +780,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.14767933" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.09704641" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295325" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -809,23 +825,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/routes/auth/auth.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
-          <folding>
-            <element signature="e#147#178#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Pages/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/mongoose/lib/model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -854,13 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="35" column="18" lean-forward="true" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/_g-reset.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1020,13 +1012,6 @@
     <entry file="file://$PROJECT_DIR$/dev/style/_p-home-add-meal.sass">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/style/app.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/style/_p-home.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -1061,14 +1046,14 @@
     <entry file="file://$PROJECT_DIR$/assets/script/app.min-withnode.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2096">
-          <caret line="931" column="20" lean-forward="true" selection-start-line="931" selection-start-column="20" selection-end-line="931" selection-end-column="20" />
+          <caret line="930" column="20" selection-start-line="930" selection-start-column="20" selection-end-line="930" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/style/_p-home-step.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1082,14 +1067,14 @@
     <entry file="file://$PROJECT_DIR$/server/routes/child/child.routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+          <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/old/_OLD_RegisterChild.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
-          <caret line="336" column="28" lean-forward="true" selection-start-line="336" selection-start-column="28" selection-end-line="336" selection-end-column="28" />
+          <caret line="336" column="28" selection-start-line="336" selection-start-column="28" selection-end-line="336" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1097,13 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/child/child.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="226" column="115" selection-start-line="226" selection-start-column="115" selection-end-line="226" selection-end-column="115" />
         </state>
       </provider>
     </entry>
@@ -1124,26 +1102,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="84" column="22" lean-forward="true" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
+        <state relative-caret-position="192">
+          <caret line="188" column="44" lean-forward="true" selection-start-line="188" selection-start-column="29" selection-end-line="188" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Components/AddMeal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="296">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/child/child.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_g-reset.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/app.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="89" column="18" lean-forward="true" selection-start-line="84" selection-start-column="16" selection-end-line="89" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/style/_p-step-three.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="121" column="32" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="233" column="69" lean-forward="true" selection-start-line="233" selection-start-column="69" selection-end-line="233" selection-end-column="69" />
+        <state relative-caret-position="356">
+          <caret line="801" column="44" selection-start-line="801" selection-start-column="44" selection-end-line="801" selection-end-column="44" />
           <folding>
             <element signature="n#div#0;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#path#0;n#g#0;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1253,13 +1275,6 @@
             <element signature="n#style#0;n#path#26;n#g#7;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#2;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="166" column="5" lean-forward="true" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
         </state>
       </provider>
     </entry>

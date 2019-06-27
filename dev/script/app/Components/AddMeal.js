@@ -16,6 +16,7 @@ class AddMeal {
 
         this.step1 = new Step1({$container : document.querySelector('.p-home-step--one')})
         this.step2 = new Step2({$container : document.querySelector('.p-home-step--two')})
+        this.step3 = new Step3({$container : document.querySelector('.p-home-step--three')})
 
         // TODO : Results.updateStorage('true')
 
