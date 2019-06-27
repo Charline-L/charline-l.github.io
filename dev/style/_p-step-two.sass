@@ -1,0 +1,35 @@
+.p-step-two
+  flex-direction: column
+  position: relative
+
+  &__title
+    color: $white
+    font-family: $londrina
+    font-size: rem(24px)
+    font-weight: 900
+    letter-spacing: rem(2px)
+    line-height: rem(35px)
+    padding: 0 rem(20px)
+    text-align: center
+    margin-bottom: rem(20px)
+
+  &__poda
+    flex-grow: 1
+
+  &__container-instructions
+    +absolute(auto, 0, 1, 0)
+    +size(100%, 50px)
+
+  &__instruction
+    +absolute(0, 0, 1)
+    +size(100%, auto)
+    text-align: center
+    font-family: $londrina
+    font-size: rem(12px)
+    letter-spacing: rem(2px)
+    color: $darkblue
+
+  &__poda
+    +size(calc(100vw + 20px), auto)
+    flex-grow: 1
+    transform: translateY(rem(40px)) translateX(rem(-40px))

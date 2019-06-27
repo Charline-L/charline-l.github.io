@@ -211,7 +211,27 @@ const saveAvatar = body => {
     })
 }
 
+const detectFood = buffer => {
+
+    return new Promise( (resolve, reject) => {
+
+        // enregistre le fichier
+        fs.writeFile( './server/public/audio.wav', buffer, async function(err) {
+
+            // erreur filesystem
+            if(err) reject({status: 'error', message: 'Une erreur est survenue'})
+
+            // détecter le mot
+            else {
+
+                const transcription = await getTranscription(['bonjour', 'aujourd\'hui', 'j\'ai', 'euh', 'manger', 'mangé', 'à', 'la', 'cantine', 'école', 'bon', 'des', 'le', 'la', 'de', 'du', 'en', 'boite'])
+                resolve({status: 'success', message: transcription})
+            }
+        })
+    })
+}
+
 /*
 * Export
 * */
-module.exports = { detectName, detectCity, detectSchool, schoolPossibilities, saveInfos, getAccounts, saveAvatar }
+module.exports = { detectName, detectCity, detectSchool, schoolPossibilities, saveInfos, getAccounts, saveAvatar, detectFood }

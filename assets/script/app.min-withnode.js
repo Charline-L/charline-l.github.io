@@ -14,9 +14,10 @@ class AddMeal {
 
     init() {
 
-        // TODO : Results.updateStorage('true')
-
         this.step1 = new Step1({$container : document.querySelector('.p-home-step--one')})
+        this.step2 = new Step2({$container : document.querySelector('.p-home-step--two')})
+
+        // TODO : Results.updateStorage('true')
 
         this.bindEvents()
     }
@@ -25,6 +26,7 @@ class AddMeal {
 
         // ajouter un repas
         this.$daysToAdd.forEach($day => {
+
             $day.addEventListener('click', () => {
                 this.selectDay($day.getAttribute('data-day'))
             })
@@ -42,7 +44,7 @@ class AddMeal {
         this.dayToAdd = day
 
         // affiche container
-        this.$container.classList.add('p-home-add-meal--active')
+        this.$container.classList.add('p-home__add-meal--active')
 
         // change le top
         this.$top.classList.remove('p-home-top--progress')
@@ -60,30 +62,41 @@ class AddMeal {
 
     showStep() {
 
-        const $nextStep = this.$steps[this.currentStep]
-        const $fades = $nextStep.querySelectorAll('.js-fade')
-        const $pops = $nextStep.querySelectorAll('.js-pop')
+        const isFirst = this.currentStep === 0
 
-        // TODO : animation fade de départ
+        let $currentStep
+        let $currentPops
+        let $currentFades
+
+        if (!isFirst) {
+
+            $currentStep = this.$steps[this.currentStep - 1]
+            $currentPops = $currentStep.querySelectorAll('.js-pop')
+            $currentFades = $currentStep.querySelectorAll('.js-fade')
+        }
+
+        const $nextStep = this.$steps[this.currentStep]
+        const $nextFades = $nextStep.querySelectorAll('.js-fade')
+        const $nextPops = $nextStep.querySelectorAll('.js-pop')
 
         // prépare animation
         anime.set(
-            $pops,
+            $nextPops,
             {
                 scale: 0
             }
         )
 
         anime.set(
-            $fades,
+            $nextFades,
             {
                 opacity: 0,
                 translateY: 20
             }
         )
 
-        // affiche
-        $nextStep.classList.add('p-home-step--active')
+        // affiche la slide si besoin
+        if (isFirst) $nextStep.classList.add('p-home-step--active')
 
         // lance animation
         const timeline = anime.timeline({
@@ -96,23 +109,51 @@ class AddMeal {
                     case 0 :
                         this.step1.start()
                         break;
+                    case 1 :
+                        this.step2.start()
+                        break;
                     default :
                         console.log('no index')
-
                 }
             }
         })
 
+        // animation de départ
+        if (!isFirst) {
+
+            timeline
+                .add({
+                    targets: $currentPops,
+                    scale: 1,
+                    easing: 'easeOutElastic(1, .6)',
+                    duration: 500,
+                    delay: anime.stagger(100)
+                })
+                .add({
+                    targets: $currentFades,
+                    opacity: 1,
+                    translateY: 0,
+                    easing: 'cubicBezier(.5, .05, .1, .3)',
+                    delay: anime.stagger(100),
+                    complete: () => {
+
+                        $nextStep.classList.add('p-home-step--active')
+                        $currentStep.classList.remove('p-home-step--active')
+                    }
+                }, '-=250')
+        }
+
         // animation
         timeline
             .add({
-                targets: $pops,
+                targets: $nextPops,
                 scale: 1,
                 easing: 'easeOutElastic(1, .6)',
                 duration: 500,
+                delay: anime.stagger(100)
             })
             .add({
-                targets: $fades,
+                targets: $nextFades,
                 opacity: 1,
                 translateY: 0,
                 easing: 'cubicBezier(.5, .05, .1, .3)',
@@ -599,7 +640,6 @@ class Step1 {
         this.isAnimating = true
 
         const timeline = anime.timeline({
-            easing: 'cubicBezier(.5, .05, .1, .3)',
             duration: 500,
             complete: () => {
 
@@ -614,6 +654,7 @@ class Step1 {
             timeline
                 .add({
                     targets: this.$titles[this.currentIndex - 1],
+                    easing: 'cubicBezier(.5, .05, .1, .3)',
                     opacity: 0,
                     translateY: -20
                 })
@@ -622,12 +663,14 @@ class Step1 {
         timeline
             .add({
                 targets: this.$titles[this.currentIndex],
+                easing: 'cubicBezier(.5, .05, .1, .3)',
                 opacity: 1,
                 translateY: 0,
             }, '-=250')
             .add({
                 targets: this.$next,
                 scale: 0,
+                duration: 250,
             }, 0)
     }
 
@@ -655,12 +698,269 @@ class Step1 {
             targets: this.$next,
             scale: 1,
         })
-
     }
 
     nextStep() {
 
         document.dispatchEvent(new CustomEvent("nextStep"))
+    }
+}
+window.MediaRecorder = require('audio-recorder-polyfill')
+
+class Step2 {
+
+    constructor(props) {
+
+        this.$container = props.$container
+        this.$instructions = this.$container.querySelectorAll('.p-step-two__instruction')
+        this.$buttons = this.$container.querySelectorAll('.p-step-two__button')
+        this.$heads = this.$container.querySelectorAll('.p-step-two__head')
+
+        this.$containerIllu = this.$container.querySelector('.p-step-two__poda')
+
+        this.buttonsOrigins = []
+        this.currentIndex = 0
+
+        this.$player = this.$container.querySelector('.p-step-two__audio')
+
+        this.init()
+    }
+
+    init() {
+
+        this.reset()
+        this.setUpRecorder()
+        this.getValues()
+        this.setUpSlides()
+        this.bindEvents()
+    }
+
+    start() {
+
+        this.updateStep()
+    }
+
+    reset(){
+
+        localStorage.removeItem('food-detected')
+    }
+
+    setUpRecorder() {
+
+        const scopeStep = this
+
+        const constraints = {
+            audio: {
+                sampleRate: 48000,
+                channelCount: 1,
+                volume: 1.0,
+                echoCancellation: true,
+                autoGainControl: true
+            },
+            video: false
+        }
+
+        navigator.mediaDevices.getUserMedia(constraints)
+            .then(function (stream) {
+
+                scopeStep.mediaRecorder = new MediaRecorder(stream)
+
+                scopeStep.chunks = []
+
+                // passe l'audio dans le player
+                scopeStep.mediaRecorder.addEventListener('dataavailable', e => {
+                    scopeStep.chunks.push(e.data)
+                    scopeStep.$player.src = URL.createObjectURL(e.data)
+                    scopeStep.sendBlob()
+                })
+            })
+            .catch(() => {
+                alert('pas de media')
+            })
+
+    }
+
+    getValues() {
+
+        const topContainer = this.$containerIllu.getBoundingClientRect().top
+        const leftContainer = this.$containerIllu.getBoundingClientRect().left
+
+        this.$buttons.forEach( $button => {
+
+            const buttonW = $button.getBoundingClientRect().width
+            const buttonH = $button.getBoundingClientRect().height
+
+            const centerX = $button.getBoundingClientRect().left + buttonW / 2 - leftContainer
+            const centerY = $button.getBoundingClientRect().top + buttonH / 2 - topContainer
+            const origin = centerX + "px " + centerY + "px 0"
+
+            this.buttonsOrigins.push(origin)
+        })
+    }
+
+    setUpSlides() {
+
+        // instructions
+        anime.set(
+            this.$instructions,
+            {
+                opacity: 0,
+                translateY: 20
+            }
+        )
+
+        // icone
+        anime.set(
+            this.$buttons,
+            {
+                scale: 0
+            }
+        )
+
+        // tete
+        anime.set(
+            this.$heads[1],
+            {
+                opacity: 0
+            }
+        )
+    }
+
+    bindEvents() {
+
+        // click micro
+        this.$buttons.forEach($button => {
+            $button.addEventListener('click', () => {
+
+                const isStart = $button.classList.contains('p-step-two__button--start')
+
+                if (isStart) this.startRecording()
+                else this.stopRecording()
+            })
+        })
+    }
+
+    startRecording() {
+
+        // vide données
+        this.chunks = []
+
+        // lance audio
+        this.mediaRecorder.start()
+
+        // stop par défaut dans 5s
+        this.timerMaxRecording = setTimeout(() => {
+            this.stopRecording()
+        }, 60000)
+
+        // animation
+        this.updateStep()
+    }
+
+    stopRecording() {
+
+        // enlève timer
+        clearTimeout(this.timerMaxRecording)
+
+        // arrete enregistrement
+        this.mediaRecorder.stop()
+
+        // enlève le micro
+        anime({
+            targets: this.$buttons[this.currentIndex - 1],
+            scale: 0,
+            transformOrigin: this.buttonsOrigins[this.currentIndex - 1],
+        })
+    }
+
+    sendBlob() {
+
+        // prépare enregistrement
+        let formData = new FormData()
+        formData.append('audio', new Blob(this.chunks))
+
+        // envoit au server
+        new XHR({
+            method: 'POST',
+            url: 'child/detect-food',
+            success: this.success.bind(this),
+            error: this.error.bind(this),
+            data: formData,
+            needsHeader: false
+        })
+    }
+
+    success(wordDetected) {
+
+        // enregistre données
+        localStorage.setItem('food-detected', JSON.stringify(wordDetected))
+
+        // prochaine étape
+        document.dispatchEvent(new CustomEvent("nextStep"))
+    }
+
+    error() {
+
+        console.log('error')
+    }
+
+    updateStep() {
+
+        const scopeStep = this
+
+        // prépare la timeline
+        const timeline = anime.timeline({
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 250,
+            complete: () => {
+                // change tete
+                anime.set(
+                    scopeStep.$heads[this.currentIndex],
+                    {
+                        opacity: 1
+                    }
+                )
+
+                scopeStep.currentIndex++
+            }
+        })
+
+        // si slide précédente
+        if (this.currentIndex !== 0) {
+
+            timeline
+                .add({
+                    targets: this.$buttons[this.currentIndex - 1],
+                    scale: 0,
+                    transformOrigin: this.buttonsOrigins[this.currentIndex - 1],
+                })
+                .add({
+                    targets: this.$instructions[this.currentIndex - 1],
+                    opacity: 0,
+                    translateY: -20
+                })
+        }
+
+        // animation
+        timeline
+            .add({
+                targets: this.$buttons[this.currentIndex],
+                transformOrigin: this.buttonsOrigins[this.currentIndex],
+                scale: 1,
+            })
+            .add({
+                targets: this.$instructions[this.currentIndex],
+                opacity: 1,
+                translateY: 0
+            })
+
+        // tete
+        anime.set(
+            this.$heads[this.currentIndex],
+            {
+                opacity: 0
+            }
+        )
     }
 }
 class NeedToken {
@@ -725,7 +1025,6 @@ class XHR {
                 thisRegister.error()
             }
         }
-
 
         this.req.withCredentials = true
         this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)

@@ -70,7 +70,6 @@ class Step1 {
         this.isAnimating = true
 
         const timeline = anime.timeline({
-            easing: 'cubicBezier(.5, .05, .1, .3)',
             duration: 500,
             complete: () => {
 
@@ -85,6 +84,7 @@ class Step1 {
             timeline
                 .add({
                     targets: this.$titles[this.currentIndex - 1],
+                    easing: 'cubicBezier(.5, .05, .1, .3)',
                     opacity: 0,
                     translateY: -20
                 })
@@ -93,12 +93,14 @@ class Step1 {
         timeline
             .add({
                 targets: this.$titles[this.currentIndex],
+                easing: 'cubicBezier(.5, .05, .1, .3)',
                 opacity: 1,
                 translateY: 0,
             }, '-=250')
             .add({
                 targets: this.$next,
                 scale: 0,
+                duration: 250,
             }, 0)
     }
 
@@ -126,7 +128,6 @@ class Step1 {
             targets: this.$next,
             scale: 1,
         })
-
     }
 
     nextStep() {
