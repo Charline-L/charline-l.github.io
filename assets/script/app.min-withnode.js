@@ -1,3 +1,742 @@
+class AddMeal {
+
+    constructor() {
+
+        this.$daysToAdd = document.querySelectorAll('.js-day-to-add')
+        this.$container = document.querySelector('.p-home__add-meal')
+        this.$steps = document.querySelectorAll('.p-home-step')
+        this.$top = document.querySelector('.p-home-top')
+
+        this.currentStep = 0
+
+        this.init()
+    }
+
+    init() {
+
+        // TODO : Results.updateStorage('true')
+
+        this.step1 = new Step1({$container : document.querySelector('.p-home-step--one')})
+
+        this.bindEvents()
+    }
+
+    bindEvents() {
+
+        // ajouter un repas
+        this.$daysToAdd.forEach($day => {
+            $day.addEventListener('click', () => {
+                this.selectDay($day.getAttribute('data-day'))
+            })
+        })
+
+        // changement de step
+        document.addEventListener("nextStep", this.nextStep.bind(this) )
+
+        // TODO : retour accueil
+    }
+
+    selectDay(day) {
+
+        // enregistre le jour
+        this.dayToAdd = day
+
+        // affiche container
+        this.$container.classList.add('p-home-add-meal--active')
+
+        // change le top
+        this.$top.classList.remove('p-home-top--progress')
+        this.$top.classList.add('p-home-top--back')
+
+        // lance step
+        this.showStep()
+    }
+
+    nextStep() {
+
+        this.currentStep++
+        this.showStep()
+    }
+
+    showStep() {
+
+        const $nextStep = this.$steps[this.currentStep]
+        const $fades = $nextStep.querySelectorAll('.js-fade')
+        const $pops = $nextStep.querySelectorAll('.js-pop')
+
+        // TODO : animation fade de départ
+
+        // prépare animation
+        anime.set(
+            $pops,
+            {
+                scale: 0
+            }
+        )
+
+        anime.set(
+            $fades,
+            {
+                opacity: 0,
+                translateY: 20
+            }
+        )
+
+        // affiche
+        $nextStep.classList.add('p-home-step--active')
+
+        // lance animation
+        const timeline = anime.timeline({
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 250,
+            complete: () => {
+
+                // lance préparation des écrans
+                switch (this.currentStep) {
+                    case 0 :
+                        this.step1.start()
+                        break;
+                    default :
+                        console.log('no index')
+
+                }
+            }
+        })
+
+        // animation
+        timeline
+            .add({
+                targets: $pops,
+                scale: 1,
+                easing: 'easeOutElastic(1, .6)',
+                duration: 500,
+            })
+            .add({
+                targets: $fades,
+                opacity: 1,
+                translateY: 0,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                delay: anime.stagger(100)
+            }, '-=250')
+    }
+}
+class Illustration {
+
+    constructor(props) {
+
+        this.$container = props.$container
+        this.$audio = document.getElementById("audioBodymoving")
+
+        this.init()
+    }
+
+    init() {
+
+        this.setUpAnimation()
+        this.bindEvents()
+    }
+
+    setUpAnimation() {
+
+        const params = {
+            container: this.$container,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '../assets/bodymoving/walk/data.json'
+        }
+
+        this.anim = lottie.loadAnimation(params)
+    }
+
+    bindEvents() {
+
+        // si click stop animation et parle
+        this.$container.addEventListener('click', () => {
+
+            // stop
+            this.anim.pause()
+
+            // parle
+            this.$audio.play()
+        })
+
+        // fin audio
+        this.$audio.addEventListener("ended", () => {
+            this.anim.play()
+        })
+    }
+}
+class Results {
+
+    constructor() {
+
+        this.$results = document.querySelector('.p-home-results')
+        this.$ilustration = document.querySelector('.p-home-activity__container-illustration')
+        this.$container = document.querySelector('.p-home-activity')
+        this.$swipe = document.querySelector('.p-home-results__swipe')
+        this.$top = document.querySelector('.p-home-activity__top')
+
+        this.$iconBottom = document.querySelector('.js-poda-icon')
+        this.$animates = document.querySelectorAll('.js-animate-top')
+
+        this.areResultsOpen = false
+
+        this.init()
+    }
+
+    async init() {
+
+        Results.updateStorage('false')
+        this.setUpCSS()
+        this.setUpHammer()
+        this.bindEvents()
+    }
+
+    static updateStorage(value) {
+
+        localStorage.setItem('results', value)
+    }
+
+    setUpCSS() {
+
+        // taille middle
+        this.resultH = this.$results.clientHeight
+        this.topH = this.$top.clientHeight
+
+        const containerH = this.$container.clientHeight
+
+        this.$ilustration.style.height = containerH - this.resultH - this.topH + 'px'
+
+        // récupère la taille du swipe
+        this.swipeH = this.$swipe.clientHeight
+
+        // set la taille du container
+        anime.set(
+            this.$results,
+            {
+                height: this.resultH
+            }
+        )
+    }
+
+    setUpHammer() {
+
+        this.hammer = new Hammer(this.$results)
+        this.hammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL })
+    }
+
+    bindEvents() {
+
+        // swipe
+        this.hammer.on('swipeup', () => {
+
+            if (this.areResultsOpen) return null
+            else this.openResults()
+        })
+
+        this.hammer.on('swipedown', () => {
+
+            if (!this.areResultsOpen) return null
+            else this.closeResults()
+        })
+    }
+
+    openResults() {
+        const scopeHome = this
+
+        // prépare animation
+        anime.set(
+            this.$animates,
+            {
+                opacity: 0,
+                translateY: 10
+            }
+        )
+
+        if (localStorage.getItem('results') === 'false') {
+            anime.set(
+                this.$iconBottom,
+                { scale: 0 }
+            )
+
+            this.$iconBottom.style.display = 'block'
+            this.$results.classList.add('p-home-results--waiting')
+        }
+        else {
+
+            this.$results.classList.add('p-home-results--complete')
+        }
+
+        // récupère la taille du swipe
+        const oldH = this.swipeH
+        this.$swipe.style.height = 'auto'
+        this.swipeH = this.$swipe.clientHeight
+        this.$swipe.style.height = oldH + 'px'
+
+        // prépare la timeline
+        const timeline = anime.timeline({
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 250,
+            complete: () => {
+                scopeHome.areResultsOpen = true
+            }
+        })
+
+        // animation
+        timeline
+            .add({
+                targets: this.$results,
+                height: this.resultH + this.swipeH,
+                easing: 'easeOutElastic(1, .6)',
+                duration: 750,
+            })
+            .add({
+                targets: this.$animates,
+                opacity: 1,
+                translateY: 0,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                duration: 250,
+                delay: anime.stagger(100)
+            }, '-=250')
+
+        // si fermé pop petite icone en bas
+        if (localStorage.getItem('results') === 'false') {
+
+            timeline
+                .add({
+                    targets: this.$iconBottom,
+                    scale: 1,
+                    easing: 'easeOutElastic(1, .6)',
+                    duration: 500,
+                }, '-=250')
+        }
+    }
+
+    closeResults() {
+
+        const scopeHome = this
+
+        // prépare la timeline
+        const timeline = anime.timeline({
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 250,
+            complete: () => {
+                scopeHome.areResultsOpen = false
+
+                this.$results.classList.remove('p-home-results--complete')
+                this.$results.classList.remove('p-home-results--waiting')
+            }
+        })
+
+        // animation
+        timeline
+            .add({
+                targets: this.$animates,
+                opacity: 1,
+                translateY: 0,
+                easing: 'cubicBezier(.5, .05, .1, .3)',
+                duration: 250,
+                delay: anime.stagger(100)
+            }, 0)
+            .add({
+                targets: this.$results,
+                height: this.resultH,
+                easing: 'easeOutElastic(1, .6)',
+                duration: 750,
+            }, 0)
+
+        // si fermé pop petite icone en bas
+        if (localStorage.getItem('results') === 'false') {
+
+            timeline
+                .add({
+                    targets: this.$iconBottom,
+                    scale: 0,
+                    easing: 'easeOutElastic(1, .6)',
+                    duration: 250,
+                }, 0)
+        }
+    }
+}
+class Slideshow {
+
+    constructor(props) {
+
+        this.$container = props.$container
+        this.$slides = this.$container.querySelectorAll('.c-slideshow__card')
+        this.$closes = this.$container.querySelectorAll('.c-slideshow__close')
+
+        this.$slidesButton = this.$container.querySelectorAll('.c-slideshow__card--button')
+
+        this.currentIndex = 0
+        this.maxSlide = this.$slides.length
+        this.isAnimating = false
+
+        this.init()
+    }
+
+    init() {
+
+        this.setUpCSS()
+        this.setUpHammer()
+        this.bindEvents()
+    }
+
+    setUpCSS(){
+
+        // taille container
+        this.cardW = this.$slides[0].clientWidth
+        const cardMargin = 10
+
+        this.$container.style.width = (this.cardW * 2 + cardMargin) + 'px'
+
+        // taille margin-left
+        const ww = window.innerWidth
+        this.$container.style.marginLeft = (ww - this.cardW) / 2 - cardMargin * 1.5 + 'px'
+    }
+
+    setUpHammer() {
+
+        this.hammer = new Hammer(this.$container)
+    }
+
+    bindEvents() {
+
+        // swipe
+        this.hammer.on('swipeleft', () => {
+
+            if (this.currentIndex === this.maxSlide || this.isAnimating) return null
+            else this.slide(-1)
+        })
+
+        this.hammer.on('swiperight', () => {
+
+            if (this.currentIndex === 0 || this.isAnimating) return null
+            else this.slide(1)
+        })
+
+        // click image produit
+        this.$slidesButton.forEach($slide => {
+
+            $slide.addEventListener('click', () => {
+
+                const isOpen = $slide.classList.contains('c-slideshow__card--open')
+                if (!isOpen && !this.isAnimating) this.openSlide($slide)
+            })
+        })
+
+        // ferme
+        this.$closes.forEach($close => {
+
+            $close.addEventListener('click', () => {
+
+                const $slide = $close.closest('.c-slideshow__card')
+                if (!this.isAnimating) this.closeSlide($slide)
+            })
+        })
+    }
+
+    slide (direction) {
+
+        const scopeSlideshow = this
+
+        // block
+        this.isAnimating = true
+
+        const nextIndex = this.currentIndex + (direction * -1)
+
+        // décale le slideshow
+        anime({
+            targets: this.$container,
+            translateX: direction * this.cardW * nextIndex,
+            complete: () => {
+                scopeSlideshow.isAnimating = false
+                this.currentIndex = nextIndex
+            }
+        })
+    }
+
+    openSlide($slide) {
+
+        this.isAnimating = true
+        const scopeSlideshow = this
+
+        const $photo = $slide.querySelector('.c-slideshow__photo')
+        const $close = $slide.querySelector('.c-slideshow__close')
+
+        // prépare animation
+        anime.set(
+            $photo,
+            { opacity: 0 }
+        )
+
+        anime.set(
+            $close,
+            { scale: 0 }
+        )
+
+        $photo.style.display = 'block'
+
+        // prépare la timeline
+        const timeline = anime.timeline({
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 500,
+            complete: function () {
+                $slide.classList.add('c-slideshow__card--open')
+                scopeSlideshow.isAnimating = false
+            }
+        })
+
+        // animation
+        timeline
+            .add({
+                targets: $photo,
+                opacity: 1,
+            })
+            .add({
+                targets: $close,
+                scale: 1,
+                easing: 'easeOutElastic(1, .6)',
+            })
+    }
+
+    closeSlide($slide) {
+
+        const scopeSlideshow = this
+        const $photo = $slide.querySelector('.c-slideshow__photo')
+
+        this.isAnimating = true
+
+        // prépare la timeline
+        const timeline = anime.timeline({
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 500,
+            complete: function () {
+                $slide.classList.remove('c-slideshow__card--open')
+                scopeSlideshow.isAnimating = false
+            }
+        })
+
+        // animation
+        timeline
+            .add({
+                targets: $photo,
+                opacity: 0,
+            })
+
+    }
+}
+class Step1 {
+    constructor(props) {
+
+        this.$container = props.$container
+        this.$titles = this.$container.querySelectorAll('.p-step-one__text')
+        this.$audios = this.$container.querySelectorAll('.p-step-one__audio')
+        this.$next = this.$container.querySelector('.p-step-one__next')
+
+        this.isAnimating = false
+        this.currentIndex = 0
+
+        this.numberSlides = this.$titles.length
+
+        this.init()
+    }
+
+    init() {
+
+        this.setUpTexts()
+        this.setUpArrow()
+        this.setupMouthAnimation()
+        this.bindEvents()
+    }
+
+    setUpTexts() {
+
+        anime.set(
+            this.$titles,
+            {
+                opacity: 0,
+                translateY: 20
+            }
+        )
+    }
+
+    setUpArrow() {
+
+        anime.set(
+            this.$next,
+            {
+                scale: 0
+            }
+        )
+    }
+
+    bindEvents() {
+
+        // flèche
+        this.$next.addEventListener('click', () => {
+
+            if (this.isAnimating) return null
+            else if (this.currentIndex === this.numberSlides) this.nextStep()
+            else this.nextText()
+        })
+
+        // audio fin
+        this.$audios.forEach($audio => {
+            $audio.addEventListener('ended', this.soundEnded.bind(this))
+        })
+    }
+
+    start() {
+
+        this.nextText()
+    }
+
+    nextText() {
+
+        const scopeStep = this
+        this.isAnimating = true
+
+        const timeline = anime.timeline({
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 500,
+            complete: () => {
+
+                this.$audios[scopeStep.currentIndex].play()
+                this.currentIndex++
+                this.isAnimating = false
+            }
+        })
+
+        if (this.currentIndex !== 0) {
+
+            timeline
+                .add({
+                    targets: this.$titles[this.currentIndex - 1],
+                    opacity: 0,
+                    translateY: -20
+                })
+        }
+
+        timeline
+            .add({
+                targets: this.$titles[this.currentIndex],
+                opacity: 1,
+                translateY: 0,
+            }, '-=250')
+            .add({
+                targets: this.$next,
+                scale: 0,
+            }, 0)
+    }
+
+    setupMouthAnimation() {
+
+        // const params = {
+        //     container: this.$stepMouthAnimation.querySelector('.p-home-step__mouth'),
+        //     renderer: 'svg',
+        //     loop: true,
+        //     autoplay: true,
+        //     path: '../assets/bodymoving/mouth/data.json'
+        // }
+        //
+        // this.mouthAnim = lottie.loadAnimation(params)
+
+        // this.mouthAnim.pause()
+    }
+
+    soundEnded() {
+
+        // TODO : pause animation de la bouche
+        // this.mouthAnim.pause()
+
+        anime({
+            targets: this.$next,
+            scale: 1,
+        })
+
+    }
+
+    nextStep() {
+
+        document.dispatchEvent(new CustomEvent("nextStep"))
+    }
+}
+class NeedToken {
+
+    constructor() {
+
+        new XHR({
+            method: 'GET',
+            url: 'auth',
+            success: this.success.bind(this),
+            error: this.error.bind(this),
+            data: null
+        })
+    }
+
+    success() {
+
+        localStorage.setItem('connected', 'true')
+    }
+
+    error() {
+
+        localStorage.setItem('connected', 'false')
+
+        // renvoi vers connexion
+        document.location.href = '/pages/login'
+    }
+}
+class XHR {
+
+    constructor(props) {
+
+        this.method = props.method
+        this.url = props.url
+        this.success = props.success
+        this.error = props.error
+        this.data = props.data
+        this.needsHeader = props.needsHeader !== undefined ? props.needsHeader : true
+
+        this.init()
+    }
+
+    init() {
+
+        this.req = new XMLHttpRequest()
+
+        const req = this.req
+        const thisRegister = this
+
+        this.req.onload = function () {
+
+            if (req.status === 200) {
+
+                const response = JSON.parse(this.responseText)
+
+                if (response.status === "success") thisRegister.success(response.message)
+                else thisRegister.error(response.message)
+            }
+
+            else {
+                console.log("Status de la réponse: %d (%s)", this.status, this.statusText)
+                thisRegister.error()
+            }
+        }
+
+
+        this.req.withCredentials = true
+        this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)
+        // this.req.open(this.method, `https://10.30.21.24:3003/${this.url}`, true)
+
+        // pas d'hearder lorsque l'on envoit un blob
+        if (this.needsHeader) this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+
+        this.req.send(this.data)
+    }
+}
 class Accounts {
 
     constructor() {
@@ -207,6 +946,8 @@ class Home {
         })
 
         new Illustration({$container: this.$illustration})
+
+        new AddMeal()
     }
 }
 class Index {
@@ -384,504 +1125,6 @@ class Register {
 
     error(error) {
         console.log('error', error)
-    }
-}
-class Illustration {
-    constructor(props) {
-
-        this.$container = props.$container
-        this.$audio = document.getElementById("audio")
-
-        this.init()
-    }
-
-    init() {
-
-        this.setUpAnimation()
-        this.bindEvents()
-    }
-
-    setUpAnimation() {
-
-        const params = {
-            container: this.$container,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: '../assets/bodymoving/walk/data.json'
-        }
-
-        this.anim = lottie.loadAnimation(params)
-    }
-
-    bindEvents() {
-
-        // si click stop animation et parle
-        this.$container.addEventListener('click', () => {
-
-            // stop
-            this.anim.pause()
-
-            // parle
-            this.$audio.play()
-        })
-
-        // fin audio
-        this.$audio.addEventListener("ended", () => {
-            this.anim.play()
-        })
-    }
-}
-class Results {
-
-    constructor() {
-
-        this.$results = document.querySelector('.p-home-results')
-        this.$ilustration = document.querySelector('.p-home-activity__container-illustration')
-        this.$container = document.querySelector('.p-home-activity')
-        this.$swipe = document.querySelector('.p-home-results__swipe')
-        this.$top = document.querySelector('.p-home-activity__top')
-
-        this.$iconBottom = document.querySelector('.js-poda-icon')
-        this.$animates = document.querySelectorAll('.js-animate-top')
-        this.$daysToAdd = document.querySelectorAll('.js-day-to-add')
-
-        this.areResultsOpen = false
-
-        this.init()
-    }
-
-    async init() {
-
-        Results.updateStorage('false')
-        this.setUpCSS()
-        this.setUpHammer()
-        this.bindEvents()
-    }
-
-    static updateStorage(value) {
-
-        localStorage.setItem('results', value)
-    }
-
-    setUpCSS() {
-
-        // taille middle
-        this.resultH = this.$results.clientHeight
-        this.topH = this.$top.clientHeight
-
-        const containerH = this.$container.clientHeight
-
-        this.$ilustration.style.height = containerH - this.resultH - this.topH + 'px'
-
-        // récupère la taille du swipe
-        this.swipeH = this.$swipe.clientHeight
-
-        // set la taille du container
-        anime.set(
-            this.$results,
-            {
-                height: this.resultH
-            }
-        )
-    }
-
-    setUpHammer() {
-
-        this.hammer = new Hammer(this.$results)
-        this.hammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL })
-    }
-
-    bindEvents() {
-
-        // swipe
-        this.hammer.on('swipeup', () => {
-
-            if (this.areResultsOpen) return null
-            else this.openResults()
-        })
-
-        this.hammer.on('swipedown', () => {
-
-            if (!this.areResultsOpen) return null
-            else this.closeResults()
-        })
-
-        // ajouter un repas
-        this.$daysToAdd.forEach($day => {
-            $day.addEventListener('click', () => {
-                this.addDay($day.getAttribute('data-day'))
-            })
-        })
-    }
-
-    openResults() {
-        const scopeHome = this
-
-        // prépare animation
-        anime.set(
-            this.$animates,
-            {
-                opacity: 0,
-                translateY: 10
-            }
-        )
-
-        if (localStorage.getItem('results') === 'false') {
-            anime.set(
-                this.$iconBottom,
-                { scale: 0 }
-            )
-
-            this.$iconBottom.style.display = 'block'
-            this.$results.classList.add('p-home-results--waiting')
-        }
-        else {
-
-            this.$results.classList.add('p-home-results--complete')
-        }
-
-        // récupère la taille du swipe
-        const oldH = this.swipeH
-        this.$swipe.style.height = 'auto'
-        this.swipeH = this.$swipe.clientHeight
-        this.$swipe.style.height = oldH + 'px'
-
-        // prépare la timeline
-        const timeline = anime.timeline({
-            easing: 'cubicBezier(.5, .05, .1, .3)',
-            duration: 250,
-            complete: () => {
-                scopeHome.areResultsOpen = true
-            }
-        })
-
-        // animation
-        timeline
-            .add({
-                targets: this.$results,
-                height: this.resultH + this.swipeH,
-                easing: 'easeOutElastic(1, .6)',
-                duration: 750,
-            })
-            .add({
-                targets: this.$animates,
-                opacity: 1,
-                translateY: 0,
-                easing: 'cubicBezier(.5, .05, .1, .3)',
-                duration: 250,
-                delay: anime.stagger(100)
-            }, '-=250')
-
-        // si fermé pop petite icone en bas
-        if (localStorage.getItem('results') === 'false') {
-
-            timeline
-                .add({
-                    targets: this.$iconBottom,
-                    scale: 1,
-                    easing: 'easeOutElastic(1, .6)',
-                    duration: 500,
-                }, '-=250')
-        }
-    }
-
-    closeResults() {
-
-        const scopeHome = this
-
-        // prépare la timeline
-        const timeline = anime.timeline({
-            easing: 'cubicBezier(.5, .05, .1, .3)',
-            duration: 250,
-            complete: () => {
-                scopeHome.areResultsOpen = false
-
-                this.$results.classList.remove('p-home-results--complete')
-                this.$results.classList.remove('p-home-results--waiting')
-            }
-        })
-
-        // animation
-        timeline
-            .add({
-                targets: this.$animates,
-                opacity: 1,
-                translateY: 0,
-                easing: 'cubicBezier(.5, .05, .1, .3)',
-                duration: 250,
-                delay: anime.stagger(100)
-            }, 0)
-            .add({
-                targets: this.$results,
-                height: this.resultH,
-                easing: 'easeOutElastic(1, .6)',
-                duration: 750,
-            }, 0)
-
-        // si fermé pop petite icone en bas
-        if (localStorage.getItem('results') === 'false') {
-
-            timeline
-                .add({
-                    targets: this.$iconBottom,
-                    scale: 0,
-                    easing: 'easeOutElastic(1, .6)',
-                    duration: 250,
-                }, 0)
-        }
-    }
-
-    addDay(day) {
-
-        // enregistre le jour
-        this.dayToAdd = day
-
-        // affiche
-        Results.updateStorage('true')
-        this.openResults()
-    }
-}
-class Slideshow {
-
-    constructor(props) {
-
-        this.$container = props.$container
-        this.$slides = this.$container.querySelectorAll('.c-slideshow__card')
-        this.$closes = this.$container.querySelectorAll('.c-slideshow__close')
-
-        this.$slidesButton = this.$container.querySelectorAll('.c-slideshow__card--button')
-
-        this.currentIndex = 0
-        this.maxSlide = this.$slides.length
-        this.isAnimating = false
-
-        this.init()
-    }
-
-    init() {
-
-        this.setUpCSS()
-        this.setUpHammer()
-        this.bindEvents()
-    }
-
-    setUpCSS(){
-
-        // taille container
-        this.cardW = this.$slides[0].clientWidth
-        const cardMargin = 10
-
-        this.$container.style.width = (this.cardW * 2 + cardMargin) + 'px'
-
-        // taille margin-left
-        const ww = window.innerWidth
-        this.$container.style.marginLeft = (ww - this.cardW) / 2 - cardMargin * 1.5 + 'px'
-    }
-
-    setUpHammer() {
-
-        this.hammer = new Hammer(this.$container)
-    }
-
-    bindEvents() {
-
-        // swipe
-        this.hammer.on('swipeleft', () => {
-
-            if (this.currentIndex === this.maxSlide || this.isAnimating) return null
-            else this.slide(-1)
-        })
-
-        this.hammer.on('swiperight', () => {
-
-            if (this.currentIndex === 0 || this.isAnimating) return null
-            else this.slide(1)
-        })
-
-        // click image produit
-        this.$slidesButton.forEach($slide => {
-
-            $slide.addEventListener('click', () => {
-
-                const isOpen = $slide.classList.contains('c-slideshow__card--open')
-                if (!isOpen && !this.isAnimating) this.openSlide($slide)
-            })
-        })
-
-        // ferme
-        this.$closes.forEach($close => {
-
-            $close.addEventListener('click', () => {
-
-                const $slide = $close.closest('.c-slideshow__card')
-                if (!this.isAnimating) this.closeSlide($slide)
-            })
-        })
-    }
-
-    slide (direction) {
-
-        const scopeSlideshow = this
-
-        // block
-        this.isAnimating = true
-
-        const nextIndex = this.currentIndex + (direction * -1)
-
-        // décale le slideshow
-        anime({
-            targets: this.$container,
-            translateX: direction * this.cardW * nextIndex,
-            complete: () => {
-                scopeSlideshow.isAnimating = false
-                this.currentIndex = nextIndex
-            }
-        })
-    }
-
-    openSlide($slide) {
-
-        this.isAnimating = true
-        const scopeSlideshow = this
-
-        const $photo = $slide.querySelector('.c-slideshow__photo')
-        const $close = $slide.querySelector('.c-slideshow__close')
-
-        // prépare animation
-        anime.set(
-            $photo,
-            { opacity: 0 }
-        )
-
-        anime.set(
-            $close,
-            { scale: 0 }
-        )
-
-        $photo.style.display = 'block'
-
-        // prépare la timeline
-        const timeline = anime.timeline({
-            easing: 'cubicBezier(.5, .05, .1, .3)',
-            duration: 500,
-            complete: function () {
-                $slide.classList.add('c-slideshow__card--open')
-                scopeSlideshow.isAnimating = false
-            }
-        })
-
-        // animation
-        timeline
-            .add({
-                targets: $photo,
-                opacity: 1,
-            })
-            .add({
-                targets: $close,
-                scale: 1,
-                easing: 'easeOutElastic(1, .6)',
-            })
-    }
-
-    closeSlide($slide) {
-
-        const scopeSlideshow = this
-        const $photo = $slide.querySelector('.c-slideshow__photo')
-
-        this.isAnimating = true
-
-        // prépare la timeline
-        const timeline = anime.timeline({
-            easing: 'cubicBezier(.5, .05, .1, .3)',
-            duration: 500,
-            complete: function () {
-                $slide.classList.remove('c-slideshow__card--open')
-                scopeSlideshow.isAnimating = false
-            }
-        })
-
-        // animation
-        timeline
-            .add({
-                targets: $photo,
-                opacity: 0,
-            })
-
-    }
-}
-class NeedToken {
-
-    constructor() {
-
-        new XHR({
-            method: 'GET',
-            url: 'auth',
-            success: this.success.bind(this),
-            error: this.error.bind(this),
-            data: null
-        })
-    }
-
-    success() {
-
-        localStorage.setItem('connected', 'true')
-    }
-
-    error() {
-
-        localStorage.setItem('connected', 'false')
-
-        // renvoi vers connexion
-        document.location.href = '/pages/login'
-    }
-}
-class XHR {
-
-    constructor(props) {
-
-        this.method = props.method
-        this.url = props.url
-        this.success = props.success
-        this.error = props.error
-        this.data = props.data
-        this.needsHeader = props.needsHeader !== undefined ? props.needsHeader : true
-
-        this.init()
-    }
-
-    init() {
-
-        this.req = new XMLHttpRequest()
-
-        const req = this.req
-        const thisRegister = this
-
-        this.req.onload = function () {
-
-            if (req.status === 200) {
-
-                const response = JSON.parse(this.responseText)
-
-                if (response.status === "success") thisRegister.success(response.message)
-                else thisRegister.error(response.message)
-            }
-
-            else {
-                console.log("Status de la réponse: %d (%s)", this.status, this.statusText)
-                thisRegister.error()
-            }
-        }
-
-
-        this.req.withCredentials = true
-        this.req.open(this.method, `https://192.168.1.75:3003/${this.url}`, true)
-        // this.req.open(this.method, `https://10.30.21.24:3003/${this.url}`, true)
-
-        // pas d'hearder lorsque l'on envoit un blob
-        if (this.needsHeader) this.req.setRequestHeader("Content-type","application/x-www-form-urlencoded")
-
-        this.req.send(this.data)
     }
 }
 class app {

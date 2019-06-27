@@ -10,7 +10,6 @@ class Results {
 
         this.$iconBottom = document.querySelector('.js-poda-icon')
         this.$animates = document.querySelectorAll('.js-animate-top')
-        this.$daysToAdd = document.querySelectorAll('.js-day-to-add')
 
         this.areResultsOpen = false
 
@@ -71,13 +70,6 @@ class Results {
 
             if (!this.areResultsOpen) return null
             else this.closeResults()
-        })
-
-        // ajouter un repas
-        this.$daysToAdd.forEach($day => {
-            $day.addEventListener('click', () => {
-                this.addDay($day.getAttribute('data-day'))
-            })
         })
     }
 
@@ -196,15 +188,5 @@ class Results {
                     duration: 250,
                 }, 0)
         }
-    }
-
-    addDay(day) {
-
-        // enregistre le jour
-        this.dayToAdd = day
-
-        // affiche
-        Results.updateStorage('true')
-        this.openResults()
     }
 }

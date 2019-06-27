@@ -1,0 +1,51 @@
+.p-home-activity
+  overflow: scroll
+  flex-grow: 1
+  position: relative
+  background-color: $orange
+  border-radius: rem(5px)
+
+  &__top
+    text-align: center
+    color: $white
+    font-family: $montserrat
+    font-weight: 400
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    overflow: hidden
+
+  &__today
+    font-size: rem(14px)
+    margin-bottom: rem(15px)
+
+  &__date
+    font-size: rem(24px)
+
+  &__profile
+    +size(rem(30px))
+    align-self: flex-end
+    margin-top: rem(10px)
+    margin-right: rem(10px)
+
+  &__container-illustration
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: rem(20px)
+    flex-grow: 1
+    width: 120vw
+    transform: translateX(-10vw)
+
+  &__illustration
+    +size(100%, 100%)
+
+  &__bottom
+    background-color: $pink
+    +absolute(auto, 0, 2, 0)
+
+  &__introduction
+    +size(75%, auto)
+    text-align: center
+    color: $white

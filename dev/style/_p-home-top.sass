@@ -1,0 +1,21 @@
+.p-home-top
+  background-color: $darkblue
+  +size(100%, rem(60px))
+  display: flex
+  align-items: center
+  padding-bottom: rem(10px)
+
+  .p-home-progress, .p-home-back
+    display: none
+
+  &--progress
+    justify-content: center
+
+    .p-home-progress
+      display: flex
+
+  &--back
+    justify-content: flex-start
+
+    .p-home-back
+      display: flex

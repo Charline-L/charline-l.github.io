@@ -53,156 +53,160 @@
 
             </div>
 
-            <div class="p-home-activity">
+            <div class="p-home__content">
 
-                <div class="p-home-activity__top">
+                <div class="p-home-activity">
 
-                    <a href="profile.html" class="p-home-activity__profile">
-                        <img src="../assets/img/icon-profile.svg" alt="Icone profile">
-                    </a>
+                    <div class="p-home-activity__top">
 
-                    <p class="p-home-activity__today">Aujourd'hui</p>
+                        <a href="profile.html" class="p-home-activity__profile">
+                            <img src="../assets/img/icon-profile.svg" alt="Icone profile">
+                        </a>
 
-                    <h1 class="p-home-activity__date">Vendredi 28 juin 2019</h1>
+                        <p class="p-home-activity__today">Aujourd'hui</p>
 
-                </div>
+                        <h1 class="p-home-activity__date">Vendredi 28 juin 2019</h1>
 
-                <div class="p-home-activity__container-illustration">
+                    </div>
 
-                    <div class="p-home-activity__illustration"></div>
+                    <div class="p-home-activity__container-illustration">
 
-                </div>
+                        <div class="p-home-activity__illustration"></div>
 
-                <div class="p-home-activity__bottom p-home-results p-home-results--small">
+                    </div>
 
-                    <img src="../assets/img/icon-barre.svg" alt="" class="p-home-results__barre">
+                    <div class="p-home-activity__bottom p-home-results p-home-results--small">
 
-                    <h2 class="p-home-results__title">Bilan de la semaine</h2>
+                        <img src="../assets/img/icon-barre.svg" alt="" class="p-home-results__barre">
 
-                    <ul class="p-home-results__week">
+                        <h2 class="p-home-results__title">Bilan de la semaine</h2>
 
-                        <li class="p-home-results__container-day">
+                        <ul class="p-home-results__week">
 
-                            <p class="p-home-results__day-name">Lundi</p>
+                            <li class="p-home-results__container-day">
 
-                            <div class="p-home-results__container-image">
-                                <img src="../assets/img/square-bg.svg" alt="" class="p-home-results__day-bg">
-                                <img src="../assets/img/icon-steak.svg" alt="" class="p-home-results__day-icon">
+                                <p class="p-home-results__day-name">Lundi</p>
+
+                                <div class="p-home-results__container-image">
+                                    <img src="../assets/img/square-bg.svg" alt="" class="p-home-results__day-bg">
+                                    <img src="../assets/img/icon-steak.svg" alt="" class="p-home-results__day-icon">
+                                </div>
+
+                            </li>
+
+                            <li class="p-home-results__container-day">
+
+                                <p class="p-home-results__day-name">Mardi</p>
+
+                                <div class="p-home-results__container-image">
+                                    <img src="../assets/img/square-bg.svg" alt="" class="p-home-results__day-bg">
+                                    <img src="../assets/img/icon-chicken.svg" alt="" class="p-home-results__day-icon">
+                                </div>
+
+                            </li>
+
+                            <li class="p-home-results__container-day">
+
+                                <p class="p-home-results__day-name">Jeudi</p>
+
+                                <div class="p-home-results__container-image">
+                                    <img src="../assets/img/square-bg.svg" alt="" class="p-home-results__day-bg">
+                                    <img src="../assets/img/icon-fish.svg" alt="" class="p-home-results__day-icon">
+                                </div>
+
+                            </li>
+
+                            <li class="p-home-results__container-day js-day-to-add" data-day="friday">
+
+                                <p class="p-home-results__day-name">Vendredi</p>
+
+                                <div class="p-home-results__container-image">
+                                    <img src="../assets/img/icon-add.svg" alt="" class="p-home-results__add-icon">
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                        <div class="p-home-results__swipe">
+
+                            <div class="p-home-results__no-results js-animate-top">
+
+                                <p>Encore <span class="p-home-results__missing">un</span> repas <br>pour que mon ventre soit rempli !</p>
+
                             </div>
 
-                        </li>
+                            <div class="p-home-results__feelings">
 
-                        <li class="p-home-results__container-day">
+                                <p>Je me sens un peu faible... On a mangé trop de viande. Peux-tu m’aider à retrouver un peu d’énergie ?</p>
 
-                            <p class="p-home-results__day-name">Mardi</p>
+                                <button type="button" class="p-home-results__promise a-button">
+                                    <img src="../assets/img/button-fill.svg" alt="" class="a-button__fill">
+                                    <img src="../assets/img/button-stroke.svg" alt="" class="a-button__stroke">
+                                    <span class="a-button__text">Je veux aider Poda !</span>
+                                </button>
 
-                            <div class="p-home-results__container-image">
-                                <img src="../assets/img/square-bg.svg" alt="" class="p-home-results__day-bg">
-                                <img src="../assets/img/icon-chicken.svg" alt="" class="p-home-results__day-icon">
                             </div>
 
-                        </li>
+                            <div class="p-home-results__taste">
 
-                        <li class="p-home-results__container-day">
+                                <h3 class="p-home-results__title">As-tu déjà gouté ?</h3>
 
-                            <p class="p-home-results__day-name">Jeudi</p>
+                                <ul class="p-home-results__slideshow-taste c-slideshow">
 
-                            <div class="p-home-results__container-image">
-                                <img src="../assets/img/square-bg.svg" alt="" class="p-home-results__day-bg">
-                                <img src="../assets/img/icon-fish.svg" alt="" class="p-home-results__day-icon">
+                                    <li class="c-slideshow__card c-slideshow__card--button">
+
+                                        <img class="c-slideshow__content" src="../assets/img/card-burger.png" alt="">
+
+                                        <div class="c-slideshow__photo">
+
+                                            <img class="c-slideshow__image" src="../assets/img/card-food.png" alt="">
+
+                                            <img src="../assets/img/icon-close.svg" alt="" class="c-slideshow__close">
+
+                                        </div>
+
+                                    </li>
+
+                                    <li class="c-slideshow__card c-slideshow__card--button">
+
+                                        <img class="c-slideshow__content" src="../assets/img/card-burger.png" alt="">
+
+                                        <div class="c-slideshow__photo">
+
+                                            <img class="c-slideshow__image" src="../assets/img/card-food.png" alt="">
+
+                                            <img src="../assets/img/icon-close.svg" alt="" class="c-slideshow__close">
+
+                                        </div>
+
+                                    </li>
+
+                                </ul>
+
                             </div>
 
-                        </li>
+                            <div class="p-home-results__facts">
 
-                        <li class="p-home-results__container-day js-day-to-add" data-day="friday">
+                                <h3 class="p-home-results__title">Testons tes connaissances !</h3>
 
-                            <p class="p-home-results__day-name">Vendredi</p>
+                                <ul class="c-slideshow">
 
-                            <div class="p-home-results__container-image">
-                                <img src="../assets/img/icon-add.svg" alt="" class="p-home-results__add-icon">
+                                    <li class="c-slideshow__card">
+
+                                        <img class="c-slideshow__content" src="../assets/img/card-water.png" alt="">
+
+                                    </li>
+
+                                    <li class="c-slideshow__card">
+
+                                        <img class="c-slideshow__content" src="../assets/img/card-water.png" alt="">
+
+                                    </li>
+
+                                </ul>
+
                             </div>
-
-                        </li>
-
-                    </ul>
-
-                    <div class="p-home-results__swipe">
-
-                        <div class="p-home-results__no-results js-animate-top">
-
-                            <p>Encore <span class="p-home-results__missing">un</span> repas <br>pour que mon ventre soit rempli !</p>
-
-                        </div>
-
-                        <div class="p-home-results__feelings">
-
-                            <p>Je me sens un peu faible... On a mangé trop de viande. Peux-tu m’aider à retrouver un peu d’énergie ?</p>
-
-                            <button type="button" class="p-home-results__promise a-button">
-                                <img src="../assets/img/button-fill.svg" alt="" class="a-button__fill">
-                                <img src="../assets/img/button-stroke.svg" alt="" class="a-button__stroke">
-                                <span class="a-button__text">Je veux aider Poda !</span>
-                            </button>
-
-                        </div>
-
-                        <div class="p-home-results__taste">
-
-                            <h3 class="p-home-results__title">As-tu déjà gouté ?</h3>
-
-                            <ul class="p-home-results__slideshow-taste c-slideshow">
-
-                                <li class="c-slideshow__card c-slideshow__card--button">
-
-                                    <img class="c-slideshow__content" src="../assets/img/card-burger.png" alt="">
-
-                                    <div class="c-slideshow__photo">
-
-                                        <img class="c-slideshow__image" src="../assets/img/card-food.png" alt="">
-
-                                        <img src="../assets/img/icon-close.svg" alt="" class="c-slideshow__close">
-
-                                    </div>
-
-                                </li>
-
-                                <li class="c-slideshow__card c-slideshow__card--button">
-
-                                    <img class="c-slideshow__content" src="../assets/img/card-burger.png" alt="">
-
-                                    <div class="c-slideshow__photo">
-
-                                        <img class="c-slideshow__image" src="../assets/img/card-food.png" alt="">
-
-                                        <img src="../assets/img/icon-close.svg" alt="" class="c-slideshow__close">
-
-                                    </div>
-
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-                        <div class="p-home-results__facts">
-
-                            <h3 class="p-home-results__title">Testons tes connaissances !</h3>
-
-                            <ul class="c-slideshow">
-
-                                <li class="c-slideshow__card">
-
-                                    <img class="c-slideshow__content" src="../assets/img/card-water.png" alt="">
-
-                                </li>
-
-                                <li class="c-slideshow__card">
-
-                                    <img class="c-slideshow__content" src="../assets/img/card-water.png" alt="">
-
-                                </li>
-
-                            </ul>
 
                         </div>
 
@@ -210,7 +214,44 @@
 
                 </div>
 
+                <div class="p-home__add-meal">
+
+                    <div class="p-home-step p-home-step--one p-step-one">
+
+                        <audio src="../assets/audio/step1.mp3" class="p-step-one__audio"></audio>
+                        <audio src="../assets/audio/step2.mp3" class="p-step-one__audio"></audio>
+
+                        <div class="p-home-step__title js-fade">
+
+                            <p class="p-step-one__text">Salut Tania ! Je suis content  de te revoir !</p>
+                            <p class="p-step-one__text">Qu’est-ce-que  t’as mangé à la cantine ce midi ?</p>
+
+                        </div>
+
+                        <div class="p-step-one__big-face js-pop">
+
+                            <div class="p-step-one__mouth-animation">
+
+                                <img class="p-step-one__face" src="../assets/img/poda-no-mouth.svg" alt="">
+
+                                <div class="p-step-one__mouth"></div>
+
+                            </div>
+
+                        </div>
+
+                        <img src="../assets/img/icon-next.svg" alt="" class="p-step-one__next">
+
+                    </div>
+
+                    <div class="p-home-step"></div>
+                    <div class="p-home-step"></div>
+                    <div class="p-home-step"></div>
+
+                </div>
+
             </div>
+
 
             <div class="p-home__poda-icon">
 
@@ -218,7 +259,7 @@
 
             </div>
 
-            <audio src="../assets/audio/home.mp3" id="audio"></audio>
+            <audio src="../assets/audio/home.mp3" id="audioBodymoving"></audio>
 
         </section>
 

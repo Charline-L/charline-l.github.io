@@ -1,0 +1,33 @@
+.p-home-progress
+  padding: rem(10px) rem(30px)
+  align-items: center
+  justify-content: center
+  position: relative
+  +size(100%)
+
+  &__image
+    +size(auto, 100%)
+    margin-right: rem(15px)
+
+  &__container
+    padding: rem(5px) rem(20px)
+    border-radius: rem(30px)
+    background-color: $white
+    border: solid rem(5px) $xdarkblue
+    margin-right: rem(10px)
+    width: 61%
+    position: relative
+    overflow: hidden
+
+  &__text
+    font-family: $londrina
+    font-size: rem(12px)
+    font-weight: 900
+    letter-spacing: rem(2px)
+    position: relative
+    z-index: 1
+
+  &__fill
+    background-color: $yellow
+    +size(50%, 100%)
+    +absolute(0,0,0)

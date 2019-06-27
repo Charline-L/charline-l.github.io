@@ -1,8 +1,9 @@
 class Illustration {
+
     constructor(props) {
 
         this.$container = props.$container
-        this.$audio = document.getElementById("audio")
+        this.$audio = document.getElementById("audioBodymoving")
 
         this.init()
     }

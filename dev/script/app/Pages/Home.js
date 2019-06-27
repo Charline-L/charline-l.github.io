@@ -19,5 +19,7 @@ class Home {
         })
 
         new Illustration({$container: this.$illustration})
+
+        new AddMeal()
     }
 }
