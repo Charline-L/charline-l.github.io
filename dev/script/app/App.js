@@ -8,6 +8,7 @@ class app {
     init() {
 
         this.detectPage()
+        alert('ok no token')
     }
 
     detectPage() {
