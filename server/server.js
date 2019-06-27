@@ -30,13 +30,18 @@ const init = () => {
     db.connect()
 
     // CORS
-    const whitelist = ['https://10.30.21.24:8000', 'https://192.168.1.75:8000', 'https://charline-l.github.io']
+    const whitelist = ['https://10.30.21.24:8000', 'https://192.168.1.75:8000','https://192.168.1.55:8000', 'https://charline-l.github.io']
     const corsOptions = {
         origin: function (origin, callback) {
             if (whitelist.indexOf(origin) !== -1) {
                 callback(null, true)
             } else {
-                callback(new Error('Not allowed by CORS'))
+                console.log('origin', origin)
+
+                // FIX dégeu cors
+                callback(null, true)
+
+                // callback(new Error('Not allowed by CORS'))
             }
         },
         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
