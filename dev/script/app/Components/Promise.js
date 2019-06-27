@@ -13,6 +13,8 @@ class Promise {
         this.$activity = document.querySelector('.p-home-activity')
         this.$page = document.querySelector('.p-home')
 
+        this.$openPromise = document.querySelector('.p-home__open-promise')
+
         this.isTouching = false
         this.oldPosition = {
             x: null,
@@ -106,9 +108,6 @@ class Promise {
             yMin: top,
             yMax: top + height
         }
-
-        console.log('in getFinishPosition', this.finishPosition)
-
     }
 
     moveElement(event) {
@@ -166,7 +165,9 @@ class Promise {
         const timeline = anime.timeline({
             complete: () => {
 
-                // TODO : changé le bouton de promise et pas de click à détecter
+                // change le bouton
+                this.$openPromise.classList.add('p-home__open-promise--done')
+                this.$openPromise.querySelector('.a-button__fill').setAttribute('src', '../assets/img/button-disabled.svg')
 
                 // Reviens bilan
                 this.$container.classList.remove('p-home-promise--active')
@@ -211,8 +212,5 @@ class Promise {
 
         // affiche promise
         this.$container.classList.add('p-home-promise--active')
-
-        // calcul position
-        this.getFinishPosition()
     }
 }

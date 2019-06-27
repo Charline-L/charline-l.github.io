@@ -14,8 +14,6 @@ class Results {
         this.$page = document.querySelector('.p-home')
         this.$openPromise = document.querySelector('.p-home__open-promise')
 
-        console.log('this.$openPromise', this.$openPromise)
-
         this.areResultsOpen = false
 
         this.init()
@@ -79,7 +77,9 @@ class Results {
 
         // ouvre promise
         this.$openPromise.addEventListener('click', () => {
-            document.dispatchEvent(new CustomEvent("openPromise"))
+
+            if (this.$openPromise.classList.contains('p-home__open-promise--done')) return null
+            else document.dispatchEvent(new CustomEvent("openPromise"))
         })
 
         // ouvre
