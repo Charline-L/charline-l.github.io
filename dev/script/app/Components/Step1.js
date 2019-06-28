@@ -10,7 +10,7 @@ class Step1 {
         this.isAnimating = false
         this.currentIndex = 0
 
-        alert('same audio')
+        alert('ok current')
         this.$audio = document.querySelector('#audioBodymoving')
 
         this.numberSlides = this.$titles.length
@@ -79,10 +79,15 @@ class Step1 {
 
                 // this.$audioMain.play()
                 // this.$audios[scopeStep.currentIndex].play()
-                this.$audio.play()
 
                 const delay = scopeStep.currentIndex === 0 ? 3000 : 4000
+                const currentTime = scopeStep.currentIndex === 0 ? 3.3 : 6.3
+
+                this.$audio.currentTime = currentTime
+                this.$audio.play()
+
                 setTimeout(() => {
+
                     scopeStep.$audio.pause()
                     scopeStep.soundEnded()
                 }, delay)

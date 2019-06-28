@@ -4,11 +4,7 @@
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/assets/script/app.min-withnode.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min-withnode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/style/app.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/style/app.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Illustration.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Illustration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Step1.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Step1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/style/_p-home.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dev/style/_p-home.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -137,7 +133,7 @@
           <entry key="env" value="208" />
           <entry key="gitignore" value="8" />
           <entry key="html" value="7615" />
-          <entry key="js" value="43664" />
+          <entry key="js" value="43744" />
           <entry key="json" value="292" />
           <entry key="md" value="83" />
           <entry key="sass" value="12736" />
@@ -148,7 +144,7 @@
           <entry key=".env file" value="208" />
           <entry key="HTML" value="7615" />
           <entry key="JSON" value="297" />
-          <entry key="JavaScript" value="43664" />
+          <entry key="JavaScript" value="43744" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Sass" value="12736" />
@@ -326,8 +322,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="299">
-                  <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+                <state relative-caret-position="375">
+                  <caret line="83" column="76" selection-start-line="83" selection-start-column="76" selection-end-line="83" selection-end-column="76" />
                 </state>
               </provider>
             </entry>
@@ -690,12 +686,12 @@
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
       <workItem from="1561313560812" duration="41334000" />
-      <workItem from="1561449913285" duration="96892000" />
+      <workItem from="1561449913285" duration="97105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276391000" />
+    <option name="totallyTimeSpent" value="276604000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -1203,8 +1199,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        <state relative-caret-position="375">
+          <caret line="83" column="76" selection-start-line="83" selection-start-column="76" selection-end-line="83" selection-end-column="76" />
         </state>
       </provider>
     </entry>
