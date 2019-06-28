@@ -13,6 +13,8 @@ class Step1 {
         alert('ok current')
         this.$audio = document.querySelector('#audioBodymoving')
 
+
+
         this.numberSlides = this.$titles.length
 
         this.init()
