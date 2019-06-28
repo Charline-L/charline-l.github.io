@@ -10,8 +10,8 @@ class Step1 {
         this.isAnimating = false
         this.currentIndex = 0
 
-        alert('same audio')
-        this.$audioMain = document.querySelector('#audioBodymoving')
+        // alert('same audio')
+        // this.$audioMain = document.querySelector('#audioBodymoving')
 
         this.numberSlides = this.$titles.length
 
@@ -77,8 +77,8 @@ class Step1 {
             duration: 500,
             complete: () => {
 
-                this.$audioMain.play()
-                // this.$audios[scopeStep.currentIndex].play()
+                // this.$audioMain.play()
+                this.$audios[scopeStep.currentIndex].play()
                 this.currentIndex++
                 this.isAnimating = false
             }
