@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Illustration.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Illustration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Step1.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Step1.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -131,7 +132,7 @@
           <entry key="env" value="208" />
           <entry key="gitignore" value="8" />
           <entry key="html" value="7615" />
-          <entry key="js" value="43746" />
+          <entry key="js" value="43785" />
           <entry key="json" value="292" />
           <entry key="md" value="83" />
           <entry key="sass" value="12736" />
@@ -142,7 +143,7 @@
           <entry key=".env file" value="208" />
           <entry key="HTML" value="7615" />
           <entry key="JSON" value="297" />
-          <entry key="JavaScript" value="43746" />
+          <entry key="JavaScript" value="43785" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Sass" value="12736" />
@@ -317,11 +318,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="368">
-                  <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+                <state relative-caret-position="46">
+                  <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
                 </state>
               </provider>
             </entry>
@@ -344,11 +345,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Illustration.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="371">
-                  <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+                <state relative-caret-position="348">
+                  <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
                 </state>
               </provider>
             </entry>
@@ -503,8 +504,8 @@
         <option value="$PROJECT_DIR$/dev/style/_p-step-two.sass" />
         <option value="$PROJECT_DIR$/pages/home.html" />
         <option value="$PROJECT_DIR$/dev/style/_p-home.sass" />
-        <option value="$PROJECT_DIR$/dev/script/app/Components/Illustration.js" />
         <option value="$PROJECT_DIR$/dev/script/app/Components/Step1.js" />
+        <option value="$PROJECT_DIR$/dev/script/app/Components/Illustration.js" />
       </list>
     </option>
   </component>
@@ -684,12 +685,12 @@
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
       <workItem from="1561313560812" duration="41334000" />
-      <workItem from="1561449913285" duration="97217000" />
+      <workItem from="1561449913285" duration="97302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276716000" />
+    <option name="totallyTimeSpent" value="276801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -1181,13 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Illustration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -1197,8 +1191,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        <state relative-caret-position="46">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Illustration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>

@@ -10,11 +10,9 @@ class Step1 {
         this.isAnimating = false
         this.currentIndex = 0
 
-        alert('ok current')
+        alert('current currentime')
+
         this.$audio = document.querySelector('#audioBodymoving')
-
-
-
         this.numberSlides = this.$titles.length
 
         this.init()

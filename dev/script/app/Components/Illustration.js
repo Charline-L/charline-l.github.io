@@ -36,9 +36,11 @@ class Illustration {
             this.anim.pause()
 
             // parle
+            this.$audio.currentTime = 0
             this.$audio.play()
 
             const scopeIllustration = this
+
             setTimeout(() => {
                 scopeIllustration.$audio.pause()
                 scopeIllustration.anim.play()
