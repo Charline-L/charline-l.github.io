@@ -7,10 +7,11 @@ class Step1 {
         this.$next = this.$container.querySelector('.p-step-one__next')
         this.$containerMouth = this.$container.querySelector('.p-step-one__mouth-animation')
 
-        alert('audio out')
-
         this.isAnimating = false
         this.currentIndex = 0
+
+        alert('same audio')
+        this.$audioMain = document.querySelector('#audioBodymoving')
 
         this.numberSlides = this.$titles.length
 
@@ -76,7 +77,8 @@ class Step1 {
             duration: 500,
             complete: () => {
 
-                this.$audios[scopeStep.currentIndex].play()
+                this.$audioMain.play()
+                // this.$audios[scopeStep.currentIndex].play()
                 this.currentIndex++
                 this.isAnimating = false
             }
