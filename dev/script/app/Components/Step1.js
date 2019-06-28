@@ -3,10 +3,11 @@ class Step1 {
 
         this.$container = props.$container
         this.$titles = this.$container.querySelectorAll('.p-step-one__text')
-        this.$audios = this.$container.querySelectorAll('.p-step-one__audio')
+        this.$audios = document.querySelectorAll('.p-step-one__audio')
         this.$next = this.$container.querySelector('.p-step-one__next')
         this.$containerMouth = this.$container.querySelector('.p-step-one__mouth-animation')
 
+        alert('audio out')
 
         this.isAnimating = false
         this.currentIndex = 0
@@ -75,8 +76,7 @@ class Step1 {
             duration: 500,
             complete: () => {
 
-                document.getElementById("audio").play()
-                // this.$audios[scopeStep.currentIndex].play()
+                this.$audios[scopeStep.currentIndex].play()
                 this.currentIndex++
                 this.isAnimating = false
             }

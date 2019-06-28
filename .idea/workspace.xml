@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46ec5b5-bc0c-411e-ad88-c67f053eec98" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/script/app.min-withnode.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min-withnode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/script/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/app.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/script/app/Components/Step1.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/script/app/Components/Step1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.html" afterDir="false" />
     </list>
@@ -131,8 +133,8 @@
           <entry key="browserslistrc" value="6" />
           <entry key="env" value="208" />
           <entry key="gitignore" value="8" />
-          <entry key="html" value="7583" />
-          <entry key="js" value="43455" />
+          <entry key="html" value="7586" />
+          <entry key="js" value="43482" />
           <entry key="json" value="292" />
           <entry key="md" value="83" />
           <entry key="sass" value="12716" />
@@ -141,9 +143,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="208" />
-          <entry key="HTML" value="7583" />
+          <entry key="HTML" value="7586" />
           <entry key="JSON" value="297" />
-          <entry key="JavaScript" value="43455" />
+          <entry key="JavaScript" value="43482" />
           <entry key="Markdown" value="83" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Sass" value="12716" />
@@ -212,8 +214,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/home.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="251">
-                  <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+                <state relative-caret-position="199">
+                  <caret line="917" selection-start-line="917" selection-end-line="917" />
                   <folding>
                     <element signature="n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#style#0;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -339,8 +341,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="468">
-                  <caret line="80" column="40" lean-forward="true" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+                <state relative-caret-position="207">
+                  <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -400,7 +402,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>--active</find>
       <find>red</find>
       <find>add</find>
       <find>step-</find>
@@ -430,6 +431,7 @@
       <find>logout</find>
       <find>120vw</find>
       <find>step</find>
+      <find>audio</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -677,12 +679,12 @@
       <workItem from="1561216462114" duration="26301000" />
       <workItem from="1561313278016" duration="35000" />
       <workItem from="1561313560812" duration="41334000" />
-      <workItem from="1561449913285" duration="95418000" />
+      <workItem from="1561449913285" duration="95696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274917000" />
+    <option name="totallyTimeSpent" value="275195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="985" extended-state="0" />
@@ -690,7 +692,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.17359856" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.17359856" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295325" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -700,7 +702,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295325" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2668187" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2668187" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1065,10 +1067,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/home.html">
+    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <caret line="212" column="30" lean-forward="true" selection-start-line="212" selection-start-column="30" selection-end-line="212" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="917" selection-start-line="917" selection-end-line="917" />
           <folding>
             <element signature="n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#svg#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1181,17 +1190,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="212" column="30" lean-forward="true" selection-start-line="212" selection-start-column="30" selection-end-line="212" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/script/app/Components/Step1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="80" column="40" lean-forward="true" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+        <state relative-caret-position="207">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
         </state>
       </provider>
     </entry>
