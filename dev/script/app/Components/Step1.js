@@ -10,8 +10,8 @@ class Step1 {
         this.isAnimating = false
         this.currentIndex = 0
 
-        // alert('same audio')
-        // this.$audioMain = document.querySelector('#audioBodymoving')
+        alert('same audio')
+        this.$audio = document.querySelector('#audioBodymoving')
 
         this.numberSlides = this.$titles.length
 
@@ -58,9 +58,9 @@ class Step1 {
         })
 
         // audio fin
-        this.$audios.forEach($audio => {
-            $audio.addEventListener('ended', this.soundEnded.bind(this))
-        })
+        // this.$audios.forEach($audio => {
+        //     $audio.addEventListener('ended', this.soundEnded.bind(this))
+        // })
     }
 
     start() {
@@ -78,7 +78,15 @@ class Step1 {
             complete: () => {
 
                 // this.$audioMain.play()
-                this.$audios[scopeStep.currentIndex].play()
+                // this.$audios[scopeStep.currentIndex].play()
+                this.$audio.play()
+
+                const delay = scopeStep.currentIndex === 0 ? 3000 : 4000
+                setTimeout(() => {
+                    scopeStep.$audio.pause()
+                    scopeStep.soundEnded()
+                }, delay)
+
                 this.currentIndex++
                 this.isAnimating = false
             }

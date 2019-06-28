@@ -37,11 +37,18 @@ class Illustration {
 
             // parle
             this.$audio.play()
+
+            const scopeIllustration = this
+            setTimeout(() => {
+                scopeIllustration.$audio.pause()
+                scopeIllustration.anim.play()
+            }, 3500)
         })
 
         // fin audio
-        this.$audio.addEventListener("ended", () => {
-            this.anim.play()
-        })
+
+        // this.$audio.addEventListener("ended", () => {
+        //     this.anim.play()
+        // })
     }
 }
