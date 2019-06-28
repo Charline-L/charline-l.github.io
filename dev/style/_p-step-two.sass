@@ -25,11 +25,14 @@
     +size(100%, auto)
     text-align: center
     font-family: $londrina
-    font-size: rem(12px)
+    font-size: rem(16px)
     letter-spacing: rem(2px)
     color: $darkblue
 
   &__poda
-    +size(calc(100vw + 20px), auto)
+    +size(calc(100vw - 10px), auto)
     flex-grow: 1
-    transform: translateY(rem(40px)) translateX(rem(-40px))
+    transform: translateY(rem(40px)) translateX(rem(-20px))
+
+    svg
+      overflow: visible
