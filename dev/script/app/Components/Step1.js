@@ -75,7 +75,8 @@ class Step1 {
             duration: 500,
             complete: () => {
 
-                this.$audios[scopeStep.currentIndex].play()
+                document.getElementById("audio").play()
+                // this.$audios[scopeStep.currentIndex].play()
                 this.currentIndex++
                 this.isAnimating = false
             }
