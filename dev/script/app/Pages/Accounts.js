@@ -4,7 +4,7 @@ class Accounts {
 
         this.$list = document.querySelector('.p-account__list')
 
-        this.init()
+        // this.init()
     }
 
     async init() {

@@ -20,13 +20,16 @@ class Logout {
 
     logout() {
 
-        new XHR({
-            method: 'GET',
-            url: 'auth/logout',
-            success: this.successLougout.bind(this),
-            error: this.errorLogout.bind(this),
-            data: null
-        })
+        // oral
+        this.successLougout()
+
+        // new XHR({
+        //     method: 'GET',
+        //     url: 'auth/logout',
+        //     success: this.successLougout.bind(this),
+        //     error: this.errorLogout.bind(this),
+        //     data: null
+        // })
     }
 
     successLougout() {
@@ -36,7 +39,7 @@ class Logout {
         localStorage.removeItem('child-id')
 
         // renvoi vers connexion
-        document.location.href = '/'
+        document.location.href = '/pages/accounts'
     }
 
     errorLogout() {
