@@ -1,9 +1,0 @@
-- [x] Custom marker
-- [ ] Faire la terrain de pong : récupère la distance des deux markers et ratio pour la largeur
-- [ ] Choisir la taille du terrain et pas juste à la première détection
-- [ ] Balle qui bouge de gauche à droite simplement
-- [ ] Intéractions balle-terrain
-- [ ] Intéractions balle-raquette
-- [ ] Différents type de balles
-- [ ] Tricks custom cards
-- [ ] Sauvegarde des points
